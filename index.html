@@ -64,21 +64,24 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .logo-area img {
-      height: 48px;
-      width: auto;
-    }
     .logo-text {
       font-family: var(--serif);
       font-size: 20px;
       font-weight: 600;
       color: var(--gold);
       letter-spacing: 1px;
+    }
+
+    /* === LOGO BANNER === */
+    .logo-banner {
+      width: 100%;
+      background: var(--bg-deep);
+    }
+    .logo-banner img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
     }
     .header-tag {
       font-family: var(--sans);
@@ -125,11 +128,6 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse at center top, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
-    }
-    .hero .logo-hero {
-      width: 280px;
-      max-width: 80%;
-      margin-bottom: 32px;
     }
     .hero .label { margin-bottom: 20px; position: relative; }
     .hero h1 {
@@ -637,7 +635,7 @@
       .hero-meta { gap: 20px; }
       section { padding: 60px 0; }
       .hero { padding: 80px 0 60px; }
-      .hero .logo-hero { width: 220px; }
+      .logo-banner img { max-height: 240px; }
     }
   </style>
 </head>
@@ -646,10 +644,7 @@
   <!-- HEADER -->
   <header>
     <div class="container">
-      <div class="logo-area">
-        <img src="logo.png" alt="Capital Corridor Campus" onerror="this.style.display='none'">
-        <div class="logo-text">Capital Corridor Campus</div>
-      </div>
+      <div class="logo-text">Capital Corridor Campus</div>
       <div class="header-tag">Strategic Briefing</div>
     </div>
   </header>
@@ -657,6 +652,11 @@
   <!-- CONFIDENTIAL -->
   <div class="confidential">
     <span>Confidential &nbsp;&mdash;&nbsp; Prepared for Dr. Nader Dormani</span>
+  </div>
+
+  <!-- LOGO BANNER -->
+  <div class="logo-banner">
+    <img src="logo.png" alt="Capital Corridor Campus — Where Government Meets Innovation">
   </div>
 
   <!-- HERO IMAGE -->
@@ -668,7 +668,6 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <img src="logo.png" alt="Capital Corridor Campus" class="logo-hero" onerror="this.style.display='none'">
       <p class="label">Strategic Activation Plan</p>
       <h1>Capital Corridor Campus</h1>
       <p class="hero-tagline">Where Government Meets Innovation</p>
