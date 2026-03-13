@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Capital Corridor Campus - Restricted Access</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap');
+
+        :root {
+            --bg-primary: #1a1612;
+            --bg-card: #221e17;
+            --gold: #c9a227;
+            --text-light: #f5f1eb;
+            --text-muted: #c9c3b8;
+            --border: #3a3530;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+
+        .subheading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .restricted-container {
+            background-color: var(--bg-card);
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            padding: 3rem 2rem;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .restricted-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, rgba(201, 162, 39, 0.5) 100%);
+        }
+
+        .restricted-header {
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+        }
+
+        .restricted-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .lock-icon {
+            display: inline-block;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .restricted-message {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section {
+            background-color: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: var(--text-light);
+        }
+
+        .footer-note {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-style: italic;
+        }
+
+        @media (max-width: 480px) {
+            .restricted-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .restricted-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .lock-icon {
+                font-size: 2rem;
+            }
+
+            .restricted-message {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="restricted-container">
+        <div class="restricted-header">
+            <div class="lock-icon">&#128274;</div>
+            <h1>Restricted Access</h1>
+        </div>
+
+        <p class="restricted-message">
+            This page contains confidential strategic planning documents and is restricted to authorized personnel only.
+        </p>
+
+        <div class="contact-section">
+            <div class="contact-label">For Access or Information</div>
+            <p style="margin-top: 0.5rem;">
+                <a href="mailto:soares@campuscorridor.ca" class="contact-email">soares@campuscorridor.ca</a>
+            </p>
+            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                +1 (873) 455-3667
+            </p>
+        </div>
+
+        <p class="footer-note">
+            Campus Corridor Campus | Capital Corridor de la Capitale
+        </p>
+    </div>
+</body>
+</html>
