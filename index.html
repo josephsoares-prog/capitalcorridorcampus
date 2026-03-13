@@ -1,981 +1,697 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capital Corridor Campus — Strategic Activation Plan</title>
-  <meta name="description" content="Capital Corridor Campus: A strategic repositioning of Promenade du Portage as a unified professional ecosystem connecting innovation and government.">
+  <title>Campus Corridor de la Capitale | Capital Corridor Campus</title>
+  <meta name="description" content="Espaces professionnels certifiés LEED Or au cœur du corridor fédéral de Gatineau. Bureau, salles de réunion, espaces événementiels. Professional workspace in Canada's federal corridor.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg-deep: #0d0d0d;
-      --bg-dark: #141414;
-      --bg-card: #1a1a1a;
-      --bg-elevated: #222222;
-      --bg-subtle: #2a2a2a;
-      --border: #333333;
-      --border-light: #3a3a3a;
-      --text-primary: #f0e6d3;
-      --text-secondary: rgba(240, 230, 211, 0.65);
-      --text-muted: rgba(240, 230, 211, 0.4);
-      --gold: #c9a84c;
-      --gold-bright: #dbb960;
-      --gold-dim: #a08530;
-      --gold-soft: rgba(201, 168, 76, 0.12);
-      --gold-border: rgba(201, 168, 76, 0.25);
-      --white: #ffffff;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
+    /* ── RESET & BASE ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: var(--sans);
-      background: var(--bg-deep);
-      color: var(--text-primary);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      color: #e8e4dc;
+      background: #1a1612;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* === UTILITY === */
-    .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
-    .label {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
+    /* ── TYPOGRAPHY ──────────────────────────────────── */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+    .subhead { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
+
+    /* ── COLOURS ─────────────────────────────────────── */
+    :root {
+      --bg: #1a1612;
+      --card: #221e17;
+      --gold: #c9a227;
+      --gold-soft: #d4b84a;
+      --cream: #f0ece0;
+      --text: #e8e4dc;
+      --text-muted: #a09888;
+      --suite-orange: #e8845a;
+      --suite-yellow: #d4a843;
+      --suite-blue: #5a8fd4;
     }
 
-    /* === HEADER === */
-    header {
-      padding: 24px 0;
-      background: var(--bg-deep);
-      border-bottom: 1px solid var(--border);
-    }
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo-text {
-      font-family: var(--serif);
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 1px;
-    }
+    /* ── UTILITY ─────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .gold { color: var(--gold); }
+    .text-center { text-align: center; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 
-    /* === LOGO BANNER === */
-    .logo-banner {
-      width: 100%;
-      background: var(--bg-deep);
+    /* ── LANGUAGE TOGGLE ─────────────────────────────── */
+    .lang-toggle {
+      position: fixed; top: 1.5rem; right: 2rem; z-index: 1000;
+      display: flex; gap: 0; border: 1px solid var(--gold); border-radius: 4px; overflow: hidden;
+      background: rgba(26,22,18,0.9); backdrop-filter: blur(8px);
     }
-    .logo-banner img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      display: block;
+    .lang-toggle button {
+      padding: 0.4rem 1rem; border: none; background: transparent;
+      color: var(--text-muted); font-family: 'Barlow', sans-serif; font-size: 0.85rem;
+      font-weight: 500; cursor: pointer; transition: all 0.3s;
     }
-    .header-tag {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
+    .lang-toggle button.active { background: var(--gold); color: var(--bg); }
 
-    /* === PROPERTY IMAGE BANDS === */
-    .image-band {
-      position: relative;
-      overflow: hidden;
+    /* ── NAVIGATION ──────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(26,22,18,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+      padding: 1rem 0;
     }
-    .image-band img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-      filter: brightness(0.7);
+    nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      color: var(--gold); font-weight: 700; text-decoration: none;
+      letter-spacing: 0.02em;
     }
-    .image-band-caption {
-      position: absolute;
-      bottom: 20px;
-      left: 32px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.3s; letter-spacing: 0.03em;
     }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-logo-en { display: none; }
+    .nav-logo-fr { display: block; }
+    .nav-hamburger { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
 
-    /* === HERO === */
+    /* ── HERO ─────────────────────────────────────────── */
     .hero {
-      padding: 100px 0 80px;
-      text-align: center;
-      background: var(--bg-dark);
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 6rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(26,22,18,0.3) 0%, var(--bg) 100%),
+                  radial-gradient(ellipse at 50% 30%, rgba(201,162,39,0.08) 0%, transparent 60%);
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center top, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+    .hero-content { max-width: 800px; }
+    .hero-badge {
+      display: inline-block; padding: 0.4rem 1.2rem; border: 1px solid var(--gold);
+      border-radius: 2px; font-size: 0.75rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;
     }
-    .hero .label { margin-bottom: 20px; position: relative; }
     .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(36px, 5vw, 56px);
-      font-weight: 600;
-      color: var(--gold);
-      line-height: 1.15;
-      margin-bottom: 12px;
-      position: relative;
+      font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.15;
+      margin-bottom: 1rem; color: var(--cream);
     }
-    .hero-tagline {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-      position: relative;
+    .hero .subhead {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: var(--gold-soft);
+      margin-bottom: 2.5rem;
     }
-    .hero-sub {
-      font-family: var(--serif);
-      font-size: clamp(17px, 2.2vw, 22px);
-      font-weight: 400;
-      color: var(--text-secondary);
-      font-style: italic;
-      margin-bottom: 40px;
-      position: relative;
+    .hero-address {
+      font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2.5rem;
+      letter-spacing: 0.05em;
     }
-    .hero-meta {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      position: relative;
+    .hero-cta {
+      display: inline-block; padding: 1rem 2.5rem;
+      background: var(--gold); color: var(--bg);
+      font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      border: none; cursor: pointer; transition: all 0.3s;
     }
-    .hero-meta-item {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
+    .hero-cta:hover { background: var(--gold-soft); transform: translateY(-2px); }
+
+    /* ── SECTION ──────────────────────────────────────── */
+    section { padding: 5rem 0; }
+    .section-label {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    section h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--cream); margin-bottom: 1rem; }
+    section .subhead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; }
+
+    /* ── STATS BAR ────────────────────────────────────── */
+    .stats-bar {
+      background: linear-gradient(135deg, var(--gold) 0%, #b8921f 100%);
+      padding: 2.5rem 0; color: var(--bg);
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; }
+    .stat-label { font-size: 0.85rem; font-weight: 500; opacity: 0.8; margin-top: 0.3rem; }
+
+    /* ── FLOOR CARDS ──────────────────────────────────── */
+    .floors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+    .floor-card {
+      background: var(--card); border: 1px solid rgba(201,162,39,0.1);
+      border-radius: 4px; overflow: hidden; transition: border-color 0.3s, transform 0.3s;
+    }
+    .floor-card:hover { border-color: rgba(201,162,39,0.3); transform: translateY(-4px); }
+    .floor-card-header {
+      padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid rgba(201,162,39,0.08);
+    }
+    .floor-number { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .floor-card h3 { font-size: 1.4rem; color: var(--cream); margin: 0.3rem 0 0.5rem; }
+    .floor-card-body { padding: 1.5rem; }
+    .floor-detail { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .floor-detail:last-child { border-bottom: none; }
+    .floor-detail-label { color: var(--text-muted); font-size: 0.9rem; }
+    .floor-detail-value { color: var(--cream); font-weight: 500; font-size: 0.9rem; }
+    .floor-card-footer { padding: 1rem 1.5rem; background: rgba(201,162,39,0.05); }
+    .suite-tag {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 2px;
+      font-size: 0.8rem; font-weight: 500; margin: 0.2rem 0.3rem 0.2rem 0;
+    }
+    .suite-orange { background: rgba(232,132,90,0.15); color: var(--suite-orange); border: 1px solid rgba(232,132,90,0.3); }
+    .suite-yellow { background: rgba(212,168,67,0.15); color: var(--suite-yellow); border: 1px solid rgba(212,168,67,0.3); }
+    .suite-blue { background: rgba(90,143,212,0.15); color: var(--suite-blue); border: 1px solid rgba(90,143,212,0.3); }
+
+    /* ── CAMPUS DIRECTORY ─────────────────────────────── */
+    .campus-directory {
+      background: var(--card); border: 1px solid rgba(201,162,39,0.1);
+      border-radius: 4px; padding: 2.5rem; max-width: 700px; margin: 0 auto;
+    }
+    .directory-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .directory-row:last-child { border-bottom: none; }
+    .directory-row.available { color: var(--gold); }
+    .directory-row.occupied { color: var(--text-muted); opacity: 0.6; }
+    .directory-floor { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+    .directory-status { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+    .available-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-right: 0.5rem; }
+    .occupied-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); margin-right: 0.5rem; opacity: 0.5; }
+
+    /* ── LEASE TERMS ──────────────────────────────────── */
+    .terms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .term-card {
+      background: var(--card); border: 1px solid rgba(201,162,39,0.08);
+      border-radius: 4px; padding: 1.5rem;
+    }
+    .term-card h4 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      color: var(--gold); margin-bottom: 0.8rem; font-weight: 600;
+    }
+    .term-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+    .term-card .term-value { color: var(--cream); font-weight: 500; font-size: 1.05rem; }
+
+    /* ── LOCATION ─────────────────────────────────────── */
+    .location-features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem; margin-top: 2rem;
+    }
+    .location-feature { display: flex; gap: 1rem; align-items: flex-start; }
+    .location-icon {
+      width: 48px; height: 48px; min-width: 48px;
+      border: 1px solid var(--gold); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.2rem;
+    }
+    .location-feature h4 { font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--cream); }
+    .location-feature p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+    /* ── POSITIONING QUOTE ────────────────────────────── */
+    .quote-section {
+      padding: 4rem 0; text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(201,162,39,0.03), transparent);
+    }
+    .quote-section blockquote {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: var(--gold-soft);
+      max-width: 750px; margin: 0 auto; line-height: 1.5;
     }
 
-    /* === CONFIDENTIAL BAR === */
-    .confidential {
-      background: var(--bg-card);
-      padding: 14px 0;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .confidential span {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-    }
-
-    /* === SECTIONS === */
-    section { padding: 80px 0; }
-    section + section { border-top: 1px solid var(--border); }
-
-    .section-label { margin-bottom: 16px; }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(28px, 3.5vw, 40px);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
-    .section-body {
-      font-size: 17px;
-      line-height: 1.75;
-      color: var(--text-secondary);
-      max-width: 720px;
-    }
-    .section-body + .section-body { margin-top: 20px; }
-
-    /* === OBJECTIVE === */
-    .objective-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .objective-card {
-      padding: 32px;
-      background: var(--bg-card);
-      border-radius: 2px;
-      border-left: 3px solid var(--gold);
-      border-top: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .objective-card h4 {
-      font-family: var(--serif);
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--gold-bright);
-      margin-bottom: 8px;
-    }
-    .objective-card p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* === MARKET PROBLEM === */
-    .problem-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 48px;
-    }
-    .problem-stat {
-      padding: 28px 32px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-    .problem-stat .stat-icon {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .problem-stat h4 {
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .problem-stat p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* === STRATEGY / ECOSYSTEM DIAGRAM === */
-    .ecosystem-visual {
-      margin-top: 56px;
+    /* ── 191 SECTION ──────────────────────────────────── */
+    .property-191 { background: rgba(34,30,23,0.5); }
+    .property-191 .highlight-box {
+      background: var(--card); border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 4px; padding: 2.5rem; max-width: 600px; margin: 2rem auto 0;
       text-align: center;
     }
-    .ecosystem-hub {
-      display: inline-block;
-      width: 280px;
-      max-width: 100%;
+    .highlight-box .big-number {
+      font-family: 'Playfair Display', serif; font-size: 3rem;
+      color: var(--gold); font-weight: 700;
     }
-    .ecosystem-hub img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .ecosystem-nodes {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-    .ecosystem-node {
-      padding: 14px 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--gold-border);
-      border-radius: 2px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold-bright);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    .ecosystem-connector {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 16px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+    .highlight-box .big-label { color: var(--text-muted); margin-top: 0.3rem; }
 
-    /* === THREE ENGINES === */
-    .engines-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
+    /* ── CONTACT / CTA ────────────────────────────────── */
+    .contact-section { background: var(--card); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .contact-info h3 { font-size: 1.5rem; color: var(--cream); margin-bottom: 1.5rem; }
+    .contact-line { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--text-muted); }
+    .contact-line .label { font-weight: 500; color: var(--cream); min-width: 70px; }
+    .contact-form { background: var(--bg); border: 1px solid rgba(201,162,39,0.1); border-radius: 4px; padding: 2rem; }
+    .contact-form h3 { font-size: 1.3rem; color: var(--cream); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.7rem 1rem; background: var(--card);
+      border: 1px solid rgba(201,162,39,0.15); border-radius: 3px;
+      color: var(--text); font-family: 'Barlow', sans-serif; font-size: 0.9rem;
     }
-    .engine-card {
-      padding: 40px 28px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--gold);
-      text-align: center;
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--gold);
     }
-    .engine-number {
-      font-family: var(--serif);
-      font-size: 36px;
-      font-weight: 300;
-      color: var(--gold);
-      margin-bottom: 8px;
+    .form-submit {
+      width: 100%; padding: 0.9rem; background: var(--gold); color: var(--bg);
+      border: none; font-family: 'Barlow', sans-serif; font-weight: 600;
+      font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.3s;
     }
-    .engine-card h4 {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-    .engine-card p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+    .form-submit:hover { background: var(--gold-soft); }
 
-    /* === TENANT ECOSYSTEM === */
-    .tenant-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 40px;
-    }
-    .tenant-tag {
-      padding: 12px 24px;
-      background: var(--gold-soft);
-      border: 1px solid var(--gold-border);
-      border-radius: 2px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--gold-bright);
-      letter-spacing: 0.5px;
-    }
-
-    /* === REVENUE === */
-    .revenue-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 40px;
-    }
-    .revenue-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-    .revenue-bullet {
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .revenue-item span {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-
-    /* === VALUE CREATION === */
-    .value-bars {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 56px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-    .value-bar-group { text-align: center; }
-    .value-bar {
-      width: 120px;
-      border-radius: 2px 2px 0 0;
-      margin: 0 auto 12px;
-      transition: height 0.6s ease;
-    }
-    .value-bar.low { height: 80px; background: var(--gold-dim); opacity: 0.4; }
-    .value-bar.mid { height: 140px; background: var(--gold); opacity: 0.7; }
-    .value-bar.high { height: 200px; background: linear-gradient(180deg, var(--gold-bright), var(--gold)); }
-    .value-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    .value-sublabel {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* === TIMELINE === */
-    .timeline {
-      margin-top: 48px;
-      position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 24px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--border);
-    }
-    .timeline-item {
-      display: flex;
-      gap: 32px;
-      margin-bottom: 40px;
-      position: relative;
-    }
-    .timeline-marker {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--bg-dark);
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--gold);
-      flex-shrink: 0;
-      z-index: 1;
-    }
-    .timeline-content { padding-top: 8px; }
-    .timeline-content h4 {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .timeline-period {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .timeline-content p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .timeline-target {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 4px 12px;
-      background: var(--gold-soft);
-      border: 1px solid var(--gold-border);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold-bright);
-      border-radius: 2px;
-    }
-
-    /* === EXECUTION === */
-    .execution-role {
-      margin-top: 40px;
-      padding: 40px;
-      background: var(--bg-card);
-      border: 1px solid var(--gold-border);
-      border-radius: 2px;
-    }
-    .execution-role .label { margin-bottom: 16px; }
-    .execution-role h3 {
-      font-family: var(--serif);
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--gold-bright);
-      margin-bottom: 16px;
-    }
-    .execution-role p {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text-secondary);
-    }
-    .responsibilities {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .responsibility {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-primary);
-      padding-left: 16px;
-      border-left: 2px solid var(--gold);
-    }
-
-    /* === OUTCOME === */
-    .outcome {
-      background: var(--bg-card);
-      padding: 100px 0;
-      text-align: center;
-    }
-    .outcome .section-title {
-      max-width: 700px;
-      margin: 0 auto 24px;
-      color: var(--gold-bright);
-    }
-    .outcome .section-body {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .outcome-results {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 48px;
-      flex-wrap: wrap;
-    }
-    .outcome-result { text-align: center; }
-    .outcome-result h4 {
-      font-family: var(--serif);
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .outcome-result p {
-      font-size: 13px;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* === NEXT STEPS === */
-    .next-steps {
-      text-align: center;
-      padding: 80px 0;
-    }
-    .next-steps .section-body {
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-    .next-cta {
-      display: inline-block;
-      padding: 16px 48px;
-      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
-      color: var(--bg-deep);
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-    .next-cta:hover { background: linear-gradient(135deg, var(--gold), var(--gold-bright)); }
-
-    /* === FOOTER === */
+    /* ── FOOTER ────────────────────────────────────────── */
     footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    footer p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-    footer a {
-      color: var(--gold-dim);
-      text-decoration: none;
-    }
-    footer a:hover { color: var(--gold); }
-
-    /* === SCROLL REVEAL === */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      padding: 2rem 0; border-top: 1px solid rgba(201,162,39,0.1);
+      text-align: center; font-size: 0.8rem; color: var(--text-muted);
     }
 
-    /* === RESPONSIVE === */
+    /* ── RESPONSIVE ────────────────────────────────────── */
     @media (max-width: 768px) {
-      .objective-grid,
-      .engines-grid { grid-template-columns: 1fr; }
-      .problem-stats,
-      .revenue-list,
-      .responsibilities { grid-template-columns: 1fr; }
-      .value-bars { gap: 24px; }
-      .value-bar { width: 80px; }
-      .hero-meta { gap: 20px; }
-      section { padding: 60px 0; }
-      .hero { padding: 80px 0 60px; }
-      .logo-banner img { max-height: 240px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 100%; left: 0; right: 0; background: rgba(26,22,18,0.98);
+        padding: 1rem 2rem; gap: 1rem;
+      }
+      .lang-toggle { top: auto; bottom: 1.5rem; right: 1.5rem; }
     }
+
+    /* ── ANIMATIONS ────────────────────────────────────── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('fr')" id="btn-fr">FR</button>
+    <button onclick="setLang('en')" id="btn-en">EN</button>
+  </div>
 
-  <!-- HEADER -->
-  <header>
+  <!-- NAVIGATION -->
+  <nav>
     <div class="container">
-      <div class="logo-text">Capital Corridor Campus</div>
-      <div class="header-tag">Strategic Briefing</div>
+      <a href="#" class="nav-brand">
+        <img src="2026-03-12_IBPROM_Dark_CCC_Logo_EN_v1.png" alt="Capital Corridor Campus" class="nav-logo nav-logo-en" style="height:40px;">
+        <img src="2026-03-12_IBPROM_Dark_CCC_Logo_FR_v1.png" alt="Campus Corridor de la Capitale" class="nav-logo nav-logo-fr" style="height:40px;">
+      </a>
+      <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#espaces" data-fr="Espaces" data-en="Spaces">Espaces</a></li>
+        <li><a href="#campus" data-fr="Campus" data-en="Campus">Campus</a></li>
+        <li><a href="#conditions" data-fr="Conditions" data-en="Terms">Conditions</a></li>
+        <li><a href="#emplacement" data-fr="Emplacement" data-en="Location">Emplacement</a></li>
+        <li><a href="#191" data-fr="191 Portage" data-en="191 Portage">191 Portage</a></li>
+        <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+      </ul>
     </div>
-  </header>
-
-  <!-- CONFIDENTIAL -->
-  <div class="confidential">
-    <span>Confidential &nbsp;&mdash;&nbsp; Prepared for Dr. Nader Dormani</span>
-  </div>
-
-  <!-- LOGO BANNER -->
-  <div class="logo-banner">
-    <img src="logo.png" alt="Capital Corridor Campus — Where Government Meets Innovation">
-  </div>
-
-  <!-- HERO IMAGE -->
-  <div class="image-band">
-    <img src="https://dormanicommercial.ca/wp-content/uploads/2025/01/191-Prom-Du-Portage-Gatineau-QC-Building-Photo-2-LargeHighDefinition.jpg" alt="191 Promenade du Portage, Gatineau">
-    <span class="image-band-caption">191 Promenade du Portage &nbsp;&middot;&nbsp; Gatineau</span>
-  </div>
+  </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <p class="label">Strategic Activation Plan</p>
-      <h1>Capital Corridor Campus</h1>
-      <p class="hero-tagline">Where Government Meets Innovation</p>
-      <p class="hero-sub">Repositioning Promenade du Portage as a Unified Professional Ecosystem</p>
-      <div class="hero-meta">
-        <span class="hero-meta-item">Promenade du Portage</span>
-        <span class="hero-meta-item">National Capital Region</span>
-        <span class="hero-meta-item">36-Month Horizon</span>
-      </div>
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <div class="hero-badge" data-fr="CERTIFIÉ LEED OR" data-en="LEED GOLD CERTIFIED">CERTIFIÉ LEED OR</div>
+      <h1 data-fr="Campus Corridor<br>de la Capitale" data-en="Capital Corridor<br>Campus">Campus Corridor<br>de la Capitale</h1>
+      <p class="subhead" data-fr="Là où gouvernement et innovation se rencontrent" data-en="Where Government Meets Innovation">Là où gouvernement et innovation se rencontrent</p>
+      <p class="hero-address">179 Promenade du Portage, Gatineau QC</p>
+      <a href="#espaces" class="hero-cta" data-fr="Découvrir les espaces" data-en="Explore Spaces">Découvrir les espaces</a>
     </div>
   </section>
 
-  <!-- OWNER'S OBJECTIVE -->
-  <section>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
     <div class="container">
-      <p class="label section-label">The Objective</p>
-      <h2 class="section-title reveal">Maximize Occupancy and<br>Long-Term Asset Value</h2>
-      <p class="section-body reveal">The goal is clear: increase occupancy, attract stronger tenants, and build lasting value across the Promenade du Portage portfolio. The question is not whether to act, but how.</p>
-      <div class="objective-grid">
-        <div class="objective-card reveal">
-          <h4>Occupancy</h4>
-          <p>Drive occupancy from current levels toward stabilization at 80–95% over 36 months.</p>
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number" data-fr="5" data-en="5">5</div>
+          <div class="stat-label" data-fr="étages professionnels" data-en="professional floors">étages professionnels</div>
         </div>
-        <div class="objective-card reveal">
-          <h4>Tenant Quality</h4>
-          <p>Attract mission-driven organizations that benefit from proximity to government.</p>
+        <div>
+          <div class="stat-number" data-fr="18 500+" data-en="18,500+">18 500+</div>
+          <div class="stat-label" data-fr="pieds carrés disponibles" data-en="square feet available">pieds carrés disponibles</div>
         </div>
-        <div class="objective-card reveal">
-          <h4>Asset Value</h4>
-          <p>Increase net operating income and long-term property valuation through strategic positioning.</p>
+        <div>
+          <div class="stat-number" data-fr="200 m" data-en="200 m">200 m</div>
+          <div class="stat-label" data-fr="de Place du Portage" data-en="from Place du Portage">de Place du Portage</div>
+        </div>
+        <div>
+          <div class="stat-number" data-fr="10 000+" data-en="10,000+">10 000+</div>
+          <div class="stat-label" data-fr="fonctionnaires à distance de marche" data-en="public servants within walking distance">fonctionnaires à distance de marche</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- THE MARKET PROBLEM -->
-  <section>
-    <div class="container">
-      <p class="label section-label">The Problem</p>
-      <h2 class="section-title reveal">Office Markets Are Competing<br>on Price. That Is a Dead End.</h2>
-      <p class="section-body reveal">Downtown office vacancy is at historic highs. Remote work has reshaped demand. Landlords are cutting rents, offering concessions, and relying on brokers to fill space. The result: buildings are treated as generic, interchangeable square footage.</p>
-      <div class="problem-stats">
-        <div class="problem-stat reveal">
-          <div class="stat-icon">01</div>
-          <h4>Remote Work Shift</h4>
-          <p>Structural decline in traditional office demand across all major markets.</p>
-        </div>
-        <div class="problem-stat reveal">
-          <div class="stat-icon">02</div>
-          <h4>High Vacancy</h4>
-          <p>Downtown cores carrying vacancy rates not seen in a generation.</p>
-        </div>
-        <div class="problem-stat reveal">
-          <div class="stat-icon">03</div>
-          <h4>Race to the Bottom</h4>
-          <p>Landlords competing on price and concessions erode asset value over time.</p>
-        </div>
-        <div class="problem-stat reveal">
-          <div class="stat-icon">04</div>
-          <h4>Broker Dependency</h4>
-          <p>Passive leasing strategies treat every building as generic office space.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE STRATEGIC OPPORTUNITY -->
-  <section>
-    <div class="container">
-      <p class="label section-label">The Opportunity</p>
-      <h2 class="section-title reveal">These Buildings Sit in Canada's<br>Federal Policy Corridor</h2>
-      <p class="section-body reveal">Promenade du Portage is not a generic office address. It sits at the heart of a concentrated zone of federal decision-making — steps from Parliament Hill, Place du Portage, and the Chaudière–Zibi district. This proximity is a strategic asset that most landlords are failing to monetize.</p>
-      <p class="section-body reveal">Organizations that work with or around government — GovTech, consulting, public affairs, venture capital, policy research — need to be here. They just need a reason to choose these buildings.</p>
-    </div>
-  </section>
-
-  <!-- PROPERTY IMAGE: 179 PROMENADE -->
-  <div class="image-band">
-    <img src="https://dormanicommercial.ca/wp-content/uploads/2025/01/variants-jPSSruUPwLZ6vQ1krHxCS8va-524a8a1c51138ee3dc55694382c1615aab3ba0e5badfe5576412c0e4fc10fe3d.jpeg" alt="179 Promenade du Portage, Gatineau">
-    <span class="image-band-caption">179 Promenade du Portage &nbsp;&middot;&nbsp; Gatineau</span>
   </div>
 
-  <!-- THE STRATEGY -->
-  <section>
+  <!-- AVAILABLE SPACES -->
+  <section id="espaces">
     <div class="container">
-      <p class="label section-label">The Strategy</p>
-      <h2 class="section-title reveal">Rebrand as One Unified<br>Professional Campus</h2>
-      <p class="section-body reveal">Capital Corridor Campus repositions the Promenade du Portage portfolio as a single, branded professional ecosystem — a destination, not just a lease. Tenants don't rent office space. They join a curated campus connecting innovation and government.</p>
+      <p class="section-label" data-fr="Espaces disponibles" data-en="Available Spaces">Espaces disponibles</p>
+      <h2 data-fr="Trois étages. Votre prochain espace." data-en="Three floors. Your next space.">Trois étages. Votre prochain espace.</h2>
+      <p class="subhead" data-fr="Des espaces flexibles, prêts à transformer, dans le corridor fédéral de la capitale." data-en="Flexible, build-to-suit spaces in Canada's federal corridor.">Des espaces flexibles, prêts à transformer, dans le corridor fédéral de la capitale.</p>
 
-      <div class="ecosystem-visual reveal">
-        <div class="ecosystem-hub"><img src="logo.png" alt="Capital Corridor Campus"></div>
-        <p class="ecosystem-connector">Connecting</p>
-        <div class="ecosystem-nodes">
-          <div class="ecosystem-node">Government</div>
-          <div class="ecosystem-node">Innovation</div>
-          <div class="ecosystem-node">Consulting</div>
-          <div class="ecosystem-node">Investment</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THREE DEMAND ENGINES -->
-  <section>
-    <div class="container">
-      <p class="label section-label">How It Works</p>
-      <h2 class="section-title reveal">Three Engines Drive<br>Tenant Demand</h2>
-      <p class="section-body reveal">The strategy creates demand through three mutually reinforcing engines. Together, they generate the gravity that draws tenants organically — beyond what brokers alone can deliver.</p>
-
-      <div class="engines-grid">
-        <div class="engine-card reveal">
-          <div class="engine-number">I</div>
-          <h4>Workspace</h4>
-          <p>Private offices, coworking desks, bookable meeting rooms, and event spaces. Flexible formats for organizations of every size.</p>
-        </div>
-        <div class="engine-card reveal">
-          <div class="engine-number">II</div>
-          <h4>Ecosystem</h4>
-          <p>Targeted tenant clustering — organizations that benefit from proximity to each other and to government. A curated community, not a random tenant mix.</p>
-        </div>
-        <div class="engine-card reveal">
-          <div class="engine-number">III</div>
-          <h4>Visibility</h4>
-          <p>Professional events, public conversations, and media. The campus becomes known as the place where government and innovation intersect.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TARGET TENANT ECOSYSTEM -->
-  <section>
-    <div class="container">
-      <p class="label section-label">Who Belongs Here</p>
-      <h2 class="section-title reveal">A Curated Tenant Ecosystem</h2>
-      <p class="section-body reveal">Capital Corridor Campus targets organizations that gain strategic advantage from proximity to the federal government and to each other. These tenants are selected, not stumbled upon.</p>
-      <div class="tenant-tags">
-        <span class="tenant-tag reveal">GovTech Companies</span>
-        <span class="tenant-tag reveal">Management Consulting</span>
-        <span class="tenant-tag reveal">Public Affairs Firms</span>
-        <span class="tenant-tag reveal">Venture Capital</span>
-        <span class="tenant-tag reveal">Innovation Programs</span>
-        <span class="tenant-tag reveal">Policy Research</span>
-        <span class="tenant-tag reveal">Government Relations</span>
-        <span class="tenant-tag reveal">Legal &amp; Regulatory</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVENUE BEYOND RENT -->
-  <section>
-    <div class="container">
-      <p class="label section-label">Revenue Model</p>
-      <h2 class="section-title reveal">Multiple Income Streams<br>From the Same Square Footage</h2>
-      <p class="section-body reveal">The campus model generates revenue well beyond traditional office rent. Every square foot works harder when programmed as part of an ecosystem.</p>
-      <div class="revenue-list">
-        <div class="revenue-item reveal"><span class="revenue-bullet"></span><span>Long-term office leases</span></div>
-        <div class="revenue-item reveal"><span class="revenue-bullet"></span><span>Coworking desk memberships</span></div>
-        <div class="revenue-item reveal"><span class="revenue-bullet"></span><span>Meeting room rentals</span></div>
-        <div class="revenue-item reveal"><span class="revenue-bullet"></span><span>Professional event hosting</span></div>
-        <div class="revenue-item reveal"><span class="revenue-bullet"></span><span>Podcast &amp; media studio</span></div>
-        <div class="revenue-item reveal"><span class="revenue-bullet"></span><span>Innovation program partnerships</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUE CREATION -->
-  <section>
-    <div class="container">
-      <p class="label section-label">Value Creation</p>
-      <h2 class="section-title reveal">Occupancy Drives<br>Asset Value</h2>
-      <p class="section-body reveal">The relationship between occupancy and property value is not linear — it compounds. Moving from 40% to 90% occupancy doesn't just increase rent collected. It transforms the asset's market position, financing options, and exit value.</p>
-      <div class="value-bars reveal">
-        <div class="value-bar-group">
-          <div class="value-bar low"></div>
-          <div class="value-label">40%</div>
-          <div class="value-sublabel">Current State</div>
-        </div>
-        <div class="value-bar-group">
-          <div class="value-bar mid"></div>
-          <div class="value-label">70%</div>
-          <div class="value-sublabel">Stabilizing</div>
-        </div>
-        <div class="value-bar-group">
-          <div class="value-bar high"></div>
-          <div class="value-label">90%</div>
-          <div class="value-sublabel">Target</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPLEMENTATION TIMELINE -->
-  <section>
-    <div class="container">
-      <p class="label section-label">Implementation</p>
-      <h2 class="section-title reveal">36-Month Strategic Roadmap</h2>
-      <p class="section-body reveal">The activation unfolds in four distinct phases, each building on the last. Early momentum compounds into long-term market position.</p>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">1</div>
-          <div class="timeline-content">
-            <p class="timeline-period">Months 0–6</p>
-            <h4>Activation</h4>
-            <p>Brand launch, website, marketing materials, and targeted tenant outreach. Broker coordination begins. The market learns the name.</p>
+      <div class="floors-grid">
+        <!-- 5th Floor -->
+        <div class="floor-card fade-in">
+          <div class="floor-card-header">
+            <img src="2026-03-12_IBPROM_ChezHenri_5eEtage_Plan_Clean_v1.png" alt="5th Floor Plan" style="width:100%;border-radius:4px;margin-bottom:0.75rem;">
+            <div class="floor-number" data-fr="5e Étage · 179 Promenade du Portage" data-en="5th Floor · 179 Promenade du Portage">5e Étage · 179 Promenade du Portage</div>
+            <h3 data-fr="Étage de la Concorde" data-en="The Concorde Floor">Étage de la Concorde</h3>
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Superficie totale" data-en="Total area">Superficie totale</span>
+              <span class="floor-detail-value" data-fr="5 924 pi²" data-en="5,924 sq ft">5 924 pi²</span>
+            </div>
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Configuration" data-en="Configuration">Configuration</span>
+              <span class="floor-detail-value" data-fr="3 suites combinables" data-en="3 combinable suites">3 suites combinables</span>
+            </div>
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Loyer estimé" data-en="Estimated rent">Loyer estimé</span>
+              <span class="floor-detail-value" data-fr="À partir de 2 267 $/mois" data-en="From $2,267/month">À partir de 2 267 $/mois</span>
+            </div>
+          </div>
+          <div class="floor-card-footer">
+            <span class="suite-tag suite-orange" data-fr="Parlement · 3 277 pi²" data-en="Parliament · 3,277 sq ft">Parlement · 3 277 pi²</span>
+            <span class="suite-tag suite-yellow" data-fr="Cabinet · 1 711 pi²" data-en="Cabinet · 1,711 sq ft">Cabinet · 1 711 pi²</span>
+            <span class="suite-tag suite-blue" data-fr="Ambassadeur · 936 pi²" data-en="Ambassador · 936 sq ft">Ambassadeur · 936 pi²</span>
           </div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">2</div>
-          <div class="timeline-content">
-            <p class="timeline-period">Months 6–12</p>
-            <h4>Ecosystem Growth</h4>
-            <p>Anchor tenants sign. Events begin. Ecosystem visibility builds through professional conversations and partnerships.</p>
-            <span class="timeline-target">Target: 30–40% Occupancy</span>
+
+        <!-- 3rd Floor -->
+        <div class="floor-card fade-in">
+          <div class="floor-card-header">
+            <div class="floor-number" data-fr="3e Étage · 179 Promenade du Portage" data-en="3rd Floor · 179 Promenade du Portage">3e Étage · 179 Promenade du Portage</div>
+            <h3 data-fr="Étage Innovation" data-en="The Innovation Floor">Étage Innovation</h3>
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Superficie brute" data-en="Gross area">Superficie brute</span>
+              <span class="floor-detail-value" data-fr="4 315 pi²" data-en="4,315 sq ft">4 315 pi²</span>
+            </div>
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Superficie nette" data-en="Net area">Superficie nette</span>
+              <span class="floor-detail-value" data-fr="3 785 pi²" data-en="3,785 sq ft">3 785 pi²</span>
+            </div>
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Configuration" data-en="Configuration">Configuration</span>
+              <span class="floor-detail-value" data-fr="Espace ouvert" data-en="Open plan">Espace ouvert</span>
+            </div>
           </div>
         </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">3</div>
-          <div class="timeline-content">
-            <p class="timeline-period">Months 12–24</p>
-            <h4>Expansion</h4>
-            <p>Tenant clustering accelerates. Partnerships with government-adjacent organizations deepen. The campus becomes a recognized address.</p>
-            <span class="timeline-target">Target: 60–80% Occupancy</span>
+
+        <!-- 2nd Floor -->
+        <div class="floor-card fade-in">
+          <div class="floor-card-header">
+            <img src="2026-03-12_IBPROM_ChezHenri_2eEtage_Plan_Clean_v1.png" alt="2nd Floor Plan" style="width:100%;border-radius:4px;margin-bottom:0.75rem;">
+            <div class="floor-number" data-fr="2e Étage · 179 Promenade du Portage" data-en="2nd Floor · 179 Promenade du Portage">2e Étage · 179 Promenade du Portage</div>
+            <h3 data-fr="Étage du Forum" data-en="The Forum Floor">Étage du Forum</h3>
           </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">4</div>
-          <div class="timeline-content">
-            <p class="timeline-period">Months 24–36</p>
-            <h4>Stabilization</h4>
-            <p>Capital Corridor Campus is a recognized professional hub in the National Capital Region. Demand is self-sustaining.</p>
-            <span class="timeline-target">Target: 80–95% Occupancy</span>
+          <div class="floor-card-body">
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Superficie" data-en="Area">Superficie</span>
+              <span class="floor-detail-value" data-fr="8 289 pi²" data-en="8,289 sq ft">8 289 pi²</span>
+            </div>
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Configuration" data-en="Configuration">Configuration</span>
+              <span class="floor-detail-value" data-fr="Étage complet, indivis" data-en="Full floor, undivided">Étage complet, indivis</span>
+            </div>
+            <div class="floor-detail">
+              <span class="floor-detail-label" data-fr="Loyer estimé" data-en="Estimated rent">Loyer estimé</span>
+              <span class="floor-detail-value" data-fr="~20 035 $/mois" data-en="~$20,035/month">~20 035 $/mois</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXECUTION -->
-  <section>
+  <!-- POSITIONING QUOTE -->
+  <div class="quote-section">
     <div class="container">
-      <p class="label section-label">Execution</p>
-      <h2 class="section-title reveal">This Strategy Requires<br>Central Leadership</h2>
-      <p class="section-body reveal">A campus ecosystem does not manage itself. It requires a dedicated strategic operator who drives ecosystem development, positions the brand, coordinates with brokers, and cultivates the tenant community.</p>
-      <div class="execution-role reveal">
-        <p class="label">Proposed Role</p>
-        <h3>Campus Administrator &amp; Strategic Operator</h3>
-        <p>A single point of leadership responsible for transforming the portfolio from passive office space into an active, curated professional ecosystem.</p>
-        <div class="responsibilities">
-          <div class="responsibility">Ecosystem development</div>
-          <div class="responsibility">Brand positioning</div>
-          <div class="responsibility">Tenant outreach &amp; curation</div>
-          <div class="responsibility">Broker coordination</div>
-          <div class="responsibility">Event programming</div>
-          <div class="responsibility">Partnership strategy</div>
+      <blockquote data-fr="Un campus professionnel pensé pour connecter le gouvernement, l'innovation et les services-conseils — au cœur du corridor fédéral de Gatineau." data-en="A professional campus designed to connect government, innovation, and consulting — in the heart of Gatineau's federal corridor.">Un campus professionnel pensé pour connecter le gouvernement, l'innovation et les services-conseils — au cœur du corridor fédéral de Gatineau.</blockquote>
+    </div>
+  </div>
+
+  <!-- CAMPUS DIRECTORY -->
+  <section id="campus">
+    <div class="container text-center">
+      <p class="section-label" data-fr="179 Promenade du Portage" data-en="179 Promenade du Portage">179 Promenade du Portage</p>
+      <h2 data-fr="Répertoire du campus" data-en="Campus Directory">Répertoire du campus</h2>
+      <p class="subhead" style="margin-left:auto; margin-right:auto;" data-fr="Cinq étages nommés. Un écosystème intégré." data-en="Five named floors. One integrated ecosystem.">Cinq étages nommés. Un écosystème intégré.</p>
+
+      <div class="campus-directory">
+        <div class="directory-row available">
+          <span class="directory-floor" data-fr="5e — Étage de la Concorde" data-en="5th — The Concorde Floor">5e — Étage de la Concorde</span>
+          <span class="directory-status"><span class="available-dot"></span><span data-fr="Disponible" data-en="Available">Disponible</span></span>
+        </div>
+        <div class="directory-row occupied">
+          <span class="directory-floor" data-fr="4e — Étage Stratégie" data-en="4th — The Strategy Floor">4e — Étage Stratégie</span>
+          <span class="directory-status"><span class="occupied-dot"></span><span data-fr="Occupé" data-en="Occupied">Occupé</span></span>
+        </div>
+        <div class="directory-row available">
+          <span class="directory-floor" data-fr="3e — Étage Innovation" data-en="3rd — The Innovation Floor">3e — Étage Innovation</span>
+          <span class="directory-status"><span class="available-dot"></span><span data-fr="Disponible" data-en="Available">Disponible</span></span>
+        </div>
+        <div class="directory-row available">
+          <span class="directory-floor" data-fr="2e — Étage du Forum" data-en="2nd — The Forum Floor">2e — Étage du Forum</span>
+          <span class="directory-status"><span class="available-dot"></span><span data-fr="Disponible" data-en="Available">Disponible</span></span>
+        </div>
+        <div class="directory-row occupied">
+          <span class="directory-floor" data-fr="RDC — Les Communes" data-en="GF — The Commons">RDC — Les Communes</span>
+          <span class="directory-status"><span class="occupied-dot"></span><span data-fr="Rez-de-chaussée" data-en="Ground Floor">Rez-de-chaussée</span></span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STRATEGIC OUTCOME -->
-  <section class="outcome">
+  <!-- LEASE TERMS -->
+  <section id="conditions" style="background: rgba(34,30,23,0.5);">
     <div class="container">
-      <p class="label section-label">Strategic Outcome</p>
-      <h2 class="section-title reveal">The Capital Corridor Campus Becomes<br>a Recognized Professional Ecosystem</h2>
-      <p class="section-body reveal">Connecting innovation and government in the National Capital Region. Not just occupied — positioned.</p>
-      <div class="outcome-results">
-        <div class="outcome-result reveal">
-          <h4>Stronger Demand</h4>
-          <p>Tenants seek the campus</p>
+      <p class="section-label" data-fr="Conditions de location" data-en="Lease Terms">Conditions de location</p>
+      <h2 data-fr="Structure de bail claire et flexible" data-en="Clear, Flexible Lease Structure">Structure de bail claire et flexible</h2>
+
+      <div class="terms-grid" style="margin-top: 2rem;">
+        <div class="term-card">
+          <h4 data-fr="Loyer de base" data-en="Base Rent">Loyer de base</h4>
+          <p class="term-value">$15 / pi² / <span data-fr="an" data-en="year">an</span></p>
         </div>
-        <div class="outcome-result reveal">
-          <h4>Higher Occupancy</h4>
-          <p>80–95% stabilization</p>
+        <div class="term-card">
+          <h4 data-fr="Frais d'exploitation" data-en="Operating Costs">Frais d'exploitation</h4>
+          <p class="term-value">$14 / pi² / <span data-fr="an" data-en="year">an</span></p>
         </div>
-        <div class="outcome-result reveal">
-          <h4>Increased Value</h4>
-          <p>Long-term asset appreciation</p>
+        <div class="term-card">
+          <h4 data-fr="Loyer total" data-en="Total Rent">Loyer total</h4>
+          <p class="term-value">$29 / pi² / <span data-fr="an" data-en="year">an</span></p>
+        </div>
+        <div class="term-card">
+          <h4 data-fr="Durée minimale" data-en="Minimum Term">Durée minimale</h4>
+          <p class="term-value" data-fr="5 ans" data-en="5 years">5 ans</p>
+        </div>
+        <div class="term-card">
+          <h4 data-fr="Disponibilité" data-en="Availability">Disponibilité</h4>
+          <p class="term-value" data-fr="Immédiate" data-en="Immediate">Immédiate</p>
+        </div>
+        <div class="term-card">
+          <h4 data-fr="Améliorations locatives" data-en="Tenant Improvements">Améliorations locatives</h4>
+          <p class="term-value" data-fr="Sur conditions" data-en="As agreed">Sur conditions</p>
+        </div>
+        <div class="term-card">
+          <h4 data-fr="Stationnement" data-en="Parking">Stationnement</h4>
+          <p class="term-value" data-fr="En sus" data-en="Additional">En sus</p>
+        </div>
+        <div class="term-card">
+          <h4 data-fr="Option meublé" data-en="Furnished Option">Option meublé</h4>
+          <p class="term-value" data-fr="Possible" data-en="Available">Possible</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEXT STEPS -->
-  <section class="next-steps">
+  <!-- LOCATION -->
+  <section id="emplacement">
     <div class="container">
-      <p class="label section-label">Next Steps</p>
-      <h2 class="section-title reveal">Ready to Activate</h2>
-      <p class="section-body reveal">Launch the Capital Corridor Campus brand. Build the website and marketing materials. Begin targeted tenant outreach and broker coordination. Start ecosystem partnerships.</p>
-      <a href="mailto:soares@ibprom.com" class="next-cta reveal">Begin the Conversation</a>
+      <p class="section-label" data-fr="Emplacement stratégique" data-en="Strategic Location">Emplacement stratégique</p>
+      <h2 data-fr="Au centre du corridor fédéral" data-en="At the Center of the Federal Corridor">Au centre du corridor fédéral</h2>
+
+      <div class="location-features">
+        <div class="location-feature">
+          <div class="location-icon">&#9962;</div>
+          <div>
+            <h4 data-fr="Colline du Parlement" data-en="Parliament Hill">Colline du Parlement</h4>
+            <p data-fr="Traversez le pont — 10 minutes à pied" data-en="Cross the bridge — 10-minute walk">Traversez le pont — 10 minutes à pied</p>
+          </div>
+        </div>
+        <div class="location-feature">
+          <div class="location-icon">&#127970;</div>
+          <div>
+            <h4 data-fr="Place du Portage" data-en="Place du Portage">Place du Portage</h4>
+            <p data-fr="10 000+ fonctionnaires fédéraux — 200 m" data-en="10,000+ federal public servants — 200 m">10 000+ fonctionnaires fédéraux — 200 m</p>
+          </div>
+        </div>
+        <div class="location-feature">
+          <div class="location-icon">&#128652;</div>
+          <div>
+            <h4 data-fr="O-Train Ligne 2" data-en="O-Train Line 2">O-Train Ligne 2</h4>
+            <p data-fr="Station du Portage — accès direct" data-en="Portage Station — direct access">Station du Portage — accès direct</p>
+          </div>
+        </div>
+        <div class="location-feature">
+          <div class="location-icon">&#127963;</div>
+          <div>
+            <h4 data-fr="Centre-ville de Gatineau" data-en="Downtown Gatineau">Centre-ville de Gatineau</h4>
+            <p data-fr="Restaurants, hôtels, services — à vos pieds" data-en="Restaurants, hotels, services — at your doorstep">Restaurants, hôtels, services — à vos pieds</p>
+          </div>
+        </div>
+        <div class="location-feature">
+          <div class="location-icon">&#128218;</div>
+          <div>
+            <h4 data-fr="Musée canadien de l'histoire" data-en="Canadian Museum of History">Musée canadien de l'histoire</h4>
+            <p data-fr="Voisin immédiat — événementiel prestigieux" data-en="Immediate neighbor — prestigious event venue">Voisin immédiat — événementiel prestigieux</p>
+          </div>
+        </div>
+        <div class="location-feature">
+          <div class="location-icon">&#128273;</div>
+          <div>
+            <h4 data-fr="Certification LEED Or" data-en="LEED Gold Certification">Certification LEED Or</h4>
+            <p data-fr="Performance environnementale certifiée" data-en="Certified environmental performance">Performance environnementale certifiée</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 191 PROMENADE DU PORTAGE -->
+  <section id="191" class="property-191">
+    <div class="container text-center">
+      <p class="section-label" data-fr="Deuxième propriété" data-en="Second Property">Deuxième propriété</p>
+      <h2 data-fr="191 Promenade du Portage" data-en="191 Promenade du Portage">191 Promenade du Portage</h2>
+      <p class="subhead" style="margin-left:auto; margin-right:auto;" data-fr="Place des Explorateurs — un immeuble entier à transformer." data-en="Place des Explorateurs — an entire building to transform.">Place des Explorateurs — un immeuble entier à transformer.</p>
+
+      <div class="highlight-box">
+        <div class="big-number" data-fr="26 057 pi²" data-en="26,057 sq ft">26 057 pi²</div>
+        <p class="big-label" data-fr="Superficie locative totale" data-en="Total leasable area">Superficie locative totale</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,162,39,0.15);">
+          <p style="color: var(--gold); font-size: 1.4rem; font-family: 'Playfair Display', serif;">$29 / pi² / <span data-fr="an" data-en="year">an</span></p>
+          <p style="color: var(--text-muted); margin-top: 0.3rem;" data-fr="Disponible depuis septembre 2023" data-en="Available since September 2023">Disponible depuis septembre 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label" data-fr="Communiquez avec nous" data-en="Get in Touch">Communiquez avec nous</p>
+          <h3 data-fr="Planifiez votre visite" data-en="Schedule Your Visit">Planifiez votre visite</h3>
+          <div class="contact-line">
+            <span class="label">Contact</span>
+            <span>Joseph Soares, MBA, Adm.A., PMP</span>
+          </div>
+          <div class="contact-line">
+            <span class="label" data-fr="Courriel" data-en="Email">Courriel</span>
+            <span><a href="mailto:soares@campuscorridor.ca" style="color: var(--gold); text-decoration: none;">soares@campuscorridor.ca</a></span>
+          </div>
+          <div class="contact-line">
+            <span class="label" data-fr="Tél." data-en="Phone">Tél.</span>
+            <span><a href="tel:8734553667" style="color: var(--text-muted); text-decoration: none;">873-455-3667</a></span>
+          </div>
+          <div class="contact-line">
+            <span class="label" data-fr="Adresse" data-en="Address">Adresse</span>
+            <span>179 Promenade du Portage, Gatineau QC</span>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3 data-fr="Demande de renseignements" data-en="Inquiry">Demande de renseignements</h3>
+          <form action="mailto:soares@campuscorridor.ca" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label data-fr="Nom" data-en="Name">Nom</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Courriel" data-en="Email">Courriel</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Organisation" data-en="Organization">Organisation</label>
+              <input type="text" name="organization">
+            </div>
+            <div class="form-group">
+              <label data-fr="Intérêt" data-en="Interest">Intérêt</label>
+              <select name="interest">
+                <option value="" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+                <option value="office" data-fr="Espace de bureau" data-en="Office space">Espace de bureau</option>
+                <option value="meeting" data-fr="Salle de réunion" data-en="Meeting room">Salle de réunion</option>
+                <option value="event" data-fr="Espace événementiel" data-en="Event space">Espace événementiel</option>
+                <option value="coworking" data-fr="Espace de travail partagé" data-en="Coworking">Espace de travail partagé</option>
+                <option value="tour" data-fr="Visite du campus" data-en="Campus tour">Visite du campus</option>
+                <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-fr="Message" data-en="Message">Message</label>
+              <textarea name="message"></textarea>
+            </div>
+            <button type="submit" class="form-submit" data-fr="Envoyer" data-en="Send">Envoyer</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>Capital Corridor Campus &nbsp;&mdash;&nbsp; Strategic Activation Plan<br>
-      Prepared by <a href="https://ibprom.com" target="_blank">IBPROM Corp</a> &nbsp;&middot;&nbsp; <a href="mailto:soares@ibprom.com">soares@ibprom.com</a></p>
+      <p data-fr="&copy; 2026 Campus Corridor de la Capitale. IBPROM Corp. Tous droits réservés." data-en="&copy; 2026 Capital Corridor Campus. IBPROM Corp. All rights reserved.">&copy; 2026 Campus Corridor de la Capitale. IBPROM Corp. Tous droits réservés.</p>
     </div>
   </footer>
 
-  <!-- SCROLL REVEAL -->
+  <!-- SCRIPTS -->
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    // Language switching
+    let currentLang = 'fr';
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+          } else if (el.tagName === 'OPTION') {
+            el.textContent = text;
+          } else {
+            el.innerHTML = text;
+          }
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      // Swap logos based on language
+      document.querySelectorAll('.nav-logo-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+      document.querySelectorAll('.nav-logo-fr').forEach(el => el.style.display = lang === 'fr' ? 'block' : 'none');
+    }
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelector('.nav-links').classList.remove('open');
+        }
+      });
+    });
   </script>
-
 </body>
 </html>
