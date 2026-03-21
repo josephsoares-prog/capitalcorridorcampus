@@ -1,762 +1,718 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-fr="Campus Corridor de la Capitale - Immobilier Commercial Gatineau" data-en="Capital Corridor Campus - Commercial Real Estate Gatineau">Campus Corridor de la Capitale</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital@0;1&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title data-en="Capital Corridor Campus" data-fr="Campus Corridor de la Capitale">Capital Corridor Campus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Cormorant+Garamond:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --bg: #1a1612;
-            --card: #221e17;
-            --gold: #c9a227;
-            --gold-soft: #d4b84a;
-            --cream: #f0ece0;
-            --text: #e8e4dc;
-            --text-muted: #a09888;
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --spacing-2xl: 4rem;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Barlow', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+        :root {
+            --gold: #C9A227;
+            --dark: #1A1612;
+            --card: #221E17;
+            --cream: #F0ECE0;
+            --text: #E8E4DC;
+            --muted: #A09888;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4, h5, h6 {
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
+            color: var(--cream);
+        }
+
+        h1 {
+            font-size: 3.5rem;
             line-height: 1.2;
         }
 
-        .subhead {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--text-muted);
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* ===== NAVBAR ===== */
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 4rem 0;
+            opacity: 0.5;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            font-family: 'Barlow', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: var(--gold);
+            box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .button.secondary:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* Navbar */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(26, 22, 18, 0.98);
-            backdrop-filter: blur(10px);
+            width: 100%;
+            background: var(--dark);
+            border-bottom: 2px solid var(--gold);
             z-index: 1000;
-            padding: var(--spacing-md) var(--spacing-lg);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+            padding: 0.8rem 0;
         }
 
         .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
-        .nav-brand {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            height: 60px;
+        }
+
+        .logo svg {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .logo-text .monogram {
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
-            font-weight: 900;
+            font-weight: 700;
             color: var(--gold);
-            letter-spacing: 0.15em;
+            letter-spacing: 2px;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.65rem;
+            color: var(--muted);
+            font-weight: 400;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: var(--spacing-xl);
-            list-style: none;
+            gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
             color: var(--text);
             text-decoration: none;
-            font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
             color: var(--gold);
         }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 0.4rem;
-            cursor: pointer;
-            background: none;
-            border: none;
+        .nav-links a:hover:after {
+            width: 100%;
         }
 
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background-color: var(--gold);
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* ===== LANGUAGE TOGGLE ===== */
         .lang-toggle {
-            position: fixed;
-            top: 80px;
-            right: var(--spacing-lg);
-            z-index: 999;
             display: flex;
             gap: 0.5rem;
-            background-color: var(--card);
-            border: 1px solid var(--gold);
-            border-radius: 4px;
-            padding: 0.3rem;
+            align-items: center;
+            margin-left: 2rem;
+            padding-left: 2rem;
+            border-left: 1px solid var(--muted);
         }
 
         .lang-btn {
-            padding: 0.5rem 1rem;
+            background: none;
             border: none;
-            background: transparent;
-            color: var(--text-muted);
+            color: var(--text);
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 0.5rem 0.75rem;
         }
 
         .lang-btn.active {
-            background-color: var(--gold);
-            color: var(--bg);
+            color: var(--gold);
         }
 
-        /* ===== HERO ===== */
+        .lang-btn:hover {
+            color: var(--gold);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            background: linear-gradient(135deg, rgba(201, 162, 39, 0.05) 0%, rgba(26, 22, 18, 0) 100%);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: var(--spacing-md);
-            color: var(--cream);
-        }
-
-        .hero .addresses {
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: var(--spacing-lg);
-            font-weight: 600;
-        }
-
-        .hero-subhead {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--text);
-            margin-bottom: var(--spacing-lg);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .badges {
+            padding: 6rem 2rem;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .badge {
-            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background-color: rgba(201, 162, 39, 0.15);
-            border: 1px solid var(--gold);
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background-color: var(--gold);
-            border-radius: 50%;
-        }
-
-        /* ===== STATS BAR ===== */
-        .stats-bar {
-            background-color: var(--gold);
-            color: var(--bg);
-            padding: var(--spacing-xl) var(--spacing-lg);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-xl);
             text-align: center;
-            font-weight: 600;
-        }
-
-        .stat {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .stat-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 900;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* ===== PROPERTIES SECTION ===== */
-        .properties-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .properties-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-xl);
-            color: var(--cream);
-        }
-
-        .properties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-2xl);
-        }
-
-        .building-card {
-            background: linear-gradient(135deg, var(--card) 0%, rgba(34, 30, 23, 0.8) 100%);
-            border: 1px solid rgba(201, 162, 39, 0.3);
-            border-radius: 4px;
-            padding: var(--spacing-lg);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .building-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 8px 32px rgba(201, 162, 39, 0.1);
-        }
-
-        .building-silhouette {
-            width: 100%;
-            height: 280px;
-            border-radius: 2px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding: var(--spacing-md);
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2420 50%, var(--dark) 100%);
             position: relative;
             overflow: hidden;
-            background-size: cover;
-            background-position: center;
         }
 
-        .building-silhouette::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(26,22,18,0) 40%, rgba(26,22,18,0.85) 100%);
+            background: radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .building-address {
+        .hero-content {
             position: relative;
-            z-index: 2;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gold-soft);
-            text-align: center;
+            z-index: 1;
+            max-width: 900px;
         }
 
-        .building-name {
-            font-family: 'Playfair Display', serif;
+        .hero-logo {
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-logo svg {
+            height: 200px;
+            width: auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--cream);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            color: var(--text);
         }
 
-        .building-details {
+        .hero-badges {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .building-detail-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(201, 162, 39, 0.1);
-        }
-
-        .building-detail-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .building-detail-value {
-            color: var(--gold-soft);
+        .badge {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            color: var(--gold);
             font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* ===== SPACES SECTION ===== */
-        .spaces-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            background-color: rgba(34, 30, 23, 0.5);
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: linear-gradient(90deg, var(--gold) 0%, #d4b140 100%);
+            padding: 3rem 2rem;
+            margin: 0;
+        }
+
+        .stats-container {
             max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
-        .section-header {
+        .stat-item {
             text-align: center;
-            margin-bottom: var(--spacing-xl);
+            color: var(--dark);
         }
 
-        .section-header h2 {
+        .stat-number {
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            color: var(--cream);
+            font-weight: 700;
+            color: var(--dark);
             margin-bottom: 0.5rem;
         }
 
-        .section-header .subhead {
-            font-size: 1.1rem;
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(26, 22, 18, 0.8);
+        }
+
+        /* Property Cards */
+        .properties {
+            padding: 4rem 2rem;
+        }
+
+        .properties h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .property-card {
+            background: var(--card);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .property-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .property-card:hover {
+            background: rgba(34, 30, 23, 0.8);
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(201, 162, 39, 0.15);
+        }
+
+        .property-card:hover::before {
+            opacity: 1;
+        }
+
+        .property-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .property-address {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .property-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .property-detail-label {
+            color: var(--muted);
+            min-width: 120px;
+            font-weight: 500;
+        }
+
+        .property-detail-value {
+            color: var(--text);
+        }
+
+        .badge-leed {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 162, 39, 0.2);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Spaces Section */
+        .spaces {
+            padding: 4rem 2rem;
+            background: rgba(26, 22, 18, 0.5);
+        }
+
+        .spaces h2 {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .spaces-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--spacing-xl);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .floor-card {
-            background-color: var(--card);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 4px;
-            padding: var(--spacing-lg);
-            transition: all 0.3s ease;
+        .space-card {
+            background: var(--card);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
         }
 
-        .floor-card:hover {
+        .space-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .space-card:hover {
             border-color: var(--gold);
-            box-shadow: 0 8px 32px rgba(201, 162, 39, 0.15);
-            transform: translateY(-4px);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(201, 162, 39, 0.1);
         }
 
-        .floor-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 900;
+        .space-card h4 {
             color: var(--gold);
             margin-bottom: 0.5rem;
         }
 
-        .floor-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-style: italic;
+        .space-floor {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .space-sq-ft {
+            font-size: 1.5rem;
             color: var(--cream);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
         }
 
-        .floor-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .spec {
+        .suite-list {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 1rem;
         }
 
-        .spec-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .suite-item {
+            padding: 1rem;
+            background: rgba(201, 162, 39, 0.05);
+            border-left: 3px solid var(--gold);
+            border-radius: 4px;
         }
 
-        .spec-value {
-            font-size: 1.1rem;
+        .suite-name {
             font-weight: 600;
-            color: var(--gold-soft);
+            color: var(--gold);
+            margin-bottom: 0.3rem;
         }
 
-        .floor-plan-image {
-            width: 100%;
-            height: 280px;
-            background-color: rgba(201, 162, 39, 0.05);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: var(--spacing-md);
-            overflow: hidden;
+        .suite-size {
+            font-size: 0.9rem;
+            color: var(--muted);
         }
 
-        .floor-plan-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .floor-description {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ===== POSITIONING QUOTE ===== */
-        .positioning-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1) 0%, rgba(34, 30, 23, 0.8) 100%);
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-        }
-
-        .positioning-content {
-            max-width: 900px;
-            margin: 0 auto;
+        /* Quote Section */
+        .quote-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1) 0%, transparent 100%);
             text-align: center;
+            border-top: 1px solid rgba(201, 162, 39, 0.3);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.3);
         }
 
-        .positioning-quote {
+        .quote-text {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             font-style: italic;
             color: var(--cream);
-            margin-bottom: var(--spacing-lg);
+            max-width: 900px;
+            margin: 0 auto;
             line-height: 1.8;
         }
 
-        .positioning-quote::before,
-        .positioning-quote::after {
-            content: '"';
-            color: var(--gold);
-            font-weight: 300;
+        /* Location Section */
+        .location {
+            padding: 4rem 2rem;
         }
 
-        /* ===== CAMPUS DIRECTORY ===== */
-        .directory-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            max-width: 1400px;
-            margin: 0 auto;
+        .location h2 {
+            margin-bottom: 3rem;
         }
 
-        .directory-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .directory-grid {
+        .location-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-xl);
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
         }
 
-        .directory-card {
-            background-color: var(--card);
-            border: 1px solid rgba(201, 162, 39, 0.2);
+        .location-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .location-block {
+            padding: 1.5rem;
+            background: var(--card);
+            border-left: 4px solid var(--gold);
             border-radius: 4px;
-            padding: var(--spacing-lg);
-            text-align: center;
         }
 
-        .directory-floor {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 900;
+        .location-block h4 {
             color: var(--gold);
             margin-bottom: 0.5rem;
         }
 
-        .directory-tenants {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ===== LEASE TERMS ===== */
-        .lease-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            background-color: rgba(34, 30, 23, 0.5);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .lease-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .lease-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-xl);
-        }
-
-        .lease-card {
-            background-color: var(--card);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 4px;
-            padding: var(--spacing-lg);
-        }
-
-        .lease-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--cream);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .lease-content {
+        .location-block p {
+            margin-bottom: 0;
             color: var(--text);
             font-size: 0.95rem;
-            line-height: 1.8;
         }
 
-        .lease-note {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: var(--spacing-sm);
-            font-style: italic;
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            height: 500px;
         }
 
-        /* ===== LOCATION SECTION ===== */
-        .location-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            max-width: 1400px;
-            margin: 0 auto;
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
-        .location-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: var(--spacing-xl);
+        /* 191 Section */
+        .property-191 {
+            padding: 4rem 2rem;
+            background: rgba(26, 22, 18, 0.5);
         }
 
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            align-items: start;
+        .property-191 h2 {
+            margin-bottom: 2rem;
         }
 
-        .location-content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .location-subsection {
-            background-color: var(--card);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 4px;
-            padding: var(--spacing-lg);
-        }
-
-        .location-subsection h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
-        }
-
-        .location-subsection p {
-            color: var(--text);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .location-map {
-            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(201, 162, 39, 0.05) 100%);
+        .property-191-content {
+            background: var(--card);
             border: 1px solid rgba(201, 162, 39, 0.3);
-            border-radius: 4px;
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            text-align: center;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: var(--spacing-lg);
+            border-radius: 8px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .map-placeholder {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold-soft);
-            font-weight: 700;
+        .property-191-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold), transparent);
         }
 
-        /* ===== 191 SECTION ===== */
-        .building-191-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            background: linear-gradient(135deg, rgba(201, 162, 39, 0.08) 0%, rgba(34, 30, 23, 0.9) 100%);
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-        }
-
-        .building-191-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .building-191-content h2 {
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-        }
-
-        .building-191-grid {
+        .property-191-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .building-191-text {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .building-191-text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-        }
-
-        .building-191-text p {
-            color: var(--text);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .building-191-visual {
-            background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.05) 100%);
-            border: 2px solid var(--gold-soft);
+        .info-box {
+            padding: 1.5rem;
+            background: rgba(201, 162, 39, 0.05);
+            border-left: 3px solid var(--gold);
             border-radius: 4px;
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            text-align: center;
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: var(--spacing-md);
         }
 
-        .building-191-visual .building-silhouette {
-            width: 200px;
-            height: 260px;
-            margin: 0 auto;
-        }
-
-        /* ===== VIDEO TOURS ===== */
-        .video-tours {
-            padding: var(--spacing-xl) var(--spacing-lg);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .video-tours h3 {
-            font-family: 'Playfair Display', serif;
+        .info-box h4 {
             color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Video Tours */
+        .video-section {
+            padding: 4rem 2rem;
+        }
+
+        .video-section h2 {
             text-align: center;
-            margin-bottom: var(--spacing-lg);
-            font-size: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
         }
 
-        .video-item {
-            background: var(--card-bg);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .video-item .video-wrapper {
+        .video-container {
             position: relative;
+            width: 100%;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .video-item .video-wrapper iframe {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -765,105 +721,157 @@
             border: none;
         }
 
-        .video-item .video-label {
-            padding: var(--spacing-sm) var(--spacing-md);
-            color: var(--gold-soft);
-            font-family: 'Barlow', sans-serif;
-            font-size: 0.9rem;
+        .video-label {
+            text-align: center;
+            margin-top: 1rem;
             font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Lease Terms */
+        .lease-terms {
+            padding: 4rem 2rem;
+            background: rgba(26, 22, 18, 0.5);
+        }
+
+        .lease-terms h2 {
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-section h2 {
+        .term-card {
+            background: var(--card);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
             text-align: center;
-            font-size: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .term-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(201, 162, 39, 0.1);
+        }
+
+        .term-card h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .term-value {
+            font-size: 1.8rem;
+            font-weight: 600;
             color: var(--cream);
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: 0.5rem;
         }
 
-        .contact-grid {
+        .term-description {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            margin-bottom: 3rem;
+        }
+
+        .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
+            gap: 3rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-lg);
+            gap: 1.5rem;
         }
 
-        .contact-item {
-            background-color: var(--card);
-            border: 1px solid rgba(201, 162, 39, 0.2);
+        .info-card {
+            padding: 1.5rem;
+            background: var(--card);
+            border-left: 4px solid var(--gold);
             border-radius: 4px;
-            padding: var(--spacing-lg);
+            transition: var(--transition);
         }
 
-        .contact-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+        .info-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px rgba(201, 162, 39, 0.1);
+        }
+
+        .info-card h4 {
             color: var(--gold);
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .contact-item p {
-            color: var(--text);
+        .info-card p {
+            margin-bottom: 0.5rem;
             font-size: 0.95rem;
+        }
+
+        .info-card a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .info-card a:hover {
+            text-decoration: underline;
         }
 
         .contact-form {
-            background-color: var(--card);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 4px;
-            padding: var(--spacing-lg);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
+            background: var(--card);
+            padding: 2.5rem;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 8px;
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
-            color: var(--cream);
-            font-weight: 600;
-            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .form-group input,
-        .form-group textarea {
-            background-color: rgba(240, 236, 224, 0.05);
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            background: rgba(201, 162, 39, 0.05);
             border: 1px solid rgba(201, 162, 39, 0.3);
-            border-radius: 2px;
-            padding: 0.75rem;
+            border-radius: 4px;
             color: var(--text);
             font-family: 'Barlow', sans-serif;
             font-size: 0.95rem;
-            transition: border-color 0.3s ease;
+            transition: var(--transition);
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--gold);
-            box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.1);
+            background: rgba(201, 162, 39, 0.1);
+            box-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
         }
 
         .form-group textarea {
@@ -871,66 +879,181 @@
             min-height: 120px;
         }
 
-        .submit-btn {
-            background-color: var(--gold);
-            color: var(--bg);
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 2px;
-            font-family: 'Barlow', sans-serif;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .form-submit {
+            width: 100%;
         }
 
-        .submit-btn:hover {
-            background-color: var(--gold-soft);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(201, 162, 39, 0.3);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: var(--card);
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
-            padding: var(--spacing-xl) var(--spacing-lg);
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
             text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card);
+            border-top: 2px solid var(--gold);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
         }
 
         .footer-content {
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-xl);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+        .footer-column h4 {
             color: var(--gold);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
-        .footer-section p {
-            color: var(--text-muted);
+        .footer-column p {
             font-size: 0.9rem;
-            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 0.75rem;
         }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(201, 162, 39, 0.1);
-            padding-top: var(--spacing-lg);
-            color: var(--text-muted);
+        .footer-column a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--cream);
+            text-decoration: underline;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-credit {
+            text-align: center;
+            border-top: 1px solid rgba(201, 162, 39, 0.2);
+            padding-top: 1.5rem;
+            color: var(--muted);
             font-size: 0.85rem;
         }
 
-        /* ===== RESPONSIVE ===== */
+        .footer-credit p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                margin-top: 80px;
+                padding: 3rem 1.5rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-logo svg {
+                height: 120px;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-group .button {
+                width: 100%;
+                max-width: 300px;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -939,235 +1062,302 @@
                 display: flex;
             }
 
-            .hero h1 {
-                font-size: 2rem;
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(10px, 10px);
             }
 
-            .hero-subhead {
-                font-size: 1.1rem;
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
             }
 
-            .section-header h2,
-            .location-section h2,
-            .lease-section h2,
-            .building-191-content h2,
-            .contact-section h2 {
-                font-size: 1.8rem;
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
             }
 
-            .properties-grid,
-            .spaces-grid,
-            .lease-grid,
-            .directory-grid {
+            .mobile-nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                border-bottom: 2px solid var(--gold);
+                padding: 1.5rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: var(--transition);
+            }
+
+            .mobile-nav.active {
+                max-height: 500px;
+            }
+
+            .mobile-nav a {
+                display: block;
+                color: var(--text);
+                text-decoration: none;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+                transition: var(--transition);
+            }
+
+            .mobile-nav a:hover {
+                color: var(--gold);
+                padding-left: 1rem;
+            }
+
+            .location-content,
+            .contact-content,
+            .property-grid,
+            .spaces-grid {
                 grid-template-columns: 1fr;
             }
 
-            .location-grid,
-            .building-191-grid,
-            .contact-grid {
+            .map-container {
+                height: 400px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .property-grid {
                 grid-template-columns: 1fr;
             }
 
-            .stats-bar {
+            .video-grid {
                 grid-template-columns: 1fr;
             }
 
-            .nav-brand {
-                font-size: 1rem;
-                letter-spacing: 0.1em;
-            }
-
-            .positioning-quote {
-                font-size: 1.4rem;
-            }
-
-            .floor-specs {
+            .footer-content {
                 grid-template-columns: 1fr;
-            }
-
-            nav {
-                padding: var(--spacing-sm) var(--spacing-lg);
-            }
-
-            .hero {
-                padding: var(--spacing-xl) var(--spacing-lg);
-                margin-top: 60px;
             }
         }
 
         @media (max-width: 480px) {
-            .badges {
-                flex-direction: column;
+            .container {
+                padding: 0 1rem;
             }
 
-            .badge {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .hero-subhead {
-                font-size: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .stat-value {
-                font-size: 1.5rem;
-            }
-
-            .floor-number {
+            h1 {
                 font-size: 2rem;
             }
-        }
 
-        /* ===== UTILITIES ===== */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
-        }
-
-        .hidden-mobile {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .hidden-mobile {
-                display: none;
+            h2 {
+                font-size: 1.5rem;
             }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero-logo svg {
+                height: 100px;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .quote-text {
+                font-size: 1.4rem;
+            }
+
+            .property-card,
+            .space-card,
+            .term-card,
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .section-divider {
+                margin: 2rem 0;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .scroll-reveal.active {
+            animation: slideInUp 0.8s ease-out forwards;
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="nav-brand" data-fr="CAPITAL CORRIDOR CAMPUS" data-en="CAPITAL CORRIDOR CAMPUS">
-                CAPITAL CORRIDOR CAMPUS
+            <a href="#" class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A227;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d4b140;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Architectural columns/corridors -->
+                    <rect x="20" y="15" width="12" height="70" fill="url(#logoGrad)"/>
+                    <rect x="44" y="15" width="12" height="70" fill="url(#logoGrad)"/>
+                    <rect x="68" y="15" width="12" height="70" fill="url(#logoGrad)"/>
+                    <!-- Top accent -->
+                    <rect x="15" y="12" width="70" height="3" fill="url(#logoGrad)"/>
+                    <!-- Bottom accent -->
+                    <rect x="15" y="85" width="70" height="3" fill="url(#logoGrad)"/>
+                </svg>
+                <div class="logo-text">
+                    <div class="monogram">CCC</div>
+                    <div class="tagline" data-en="Capital Corridor Campus" data-fr="Campus Corridor de la Capitale">Capital Corridor Campus</div>
+                </div>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#properties" data-en="Properties" data-fr="Propriétés">Properties</a>
+                <a href="#spaces" data-en="Available Spaces" data-fr="Espaces Disponibles">Available Spaces</a>
+                <a href="#location" data-en="Location" data-fr="Localisation">Location</a>
+                <a href="#lease" data-en="Lease Terms" data-fr="Conditions de Location">Lease Terms</a>
+                <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#properties" data-fr="Propriétés" data-en="Properties">Propriétés</a></li>
-                <li><a href="#spaces" data-fr="Espaces" data-en="Spaces">Espaces</a></li>
-                <li><a href="#location" data-fr="Localisation" data-en="Location">Localisation</a></li>
-                <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger">
+
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
+
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#properties" data-en="Properties" data-fr="Propriétés">Properties</a>
+            <a href="#spaces" data-en="Available Spaces" data-fr="Espaces Disponibles">Available Spaces</a>
+            <a href="#location" data-en="Location" data-fr="Localisation">Location</a>
+            <a href="#lease" data-en="Lease Terms" data-fr="Conditions de Location">Lease Terms</a>
+            <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
         </div>
     </nav>
 
-    <!-- Language Toggle -->
-    <div class="lang-toggle">
-        <button class="lang-btn active" id="fr-btn" data-lang="fr" data-fr="FR" data-en="FR">FR</button>
-        <button class="lang-btn" id="en-btn" data-lang="en" data-fr="EN" data-en="EN">EN</button>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <h1 data-fr="Campus Corridor de la Capitale" data-en="Capital Corridor Campus">
-                Campus Corridor de la Capitale
-            </h1>
-            <div class="addresses">
-                <span data-fr="179 et 191 Promenade du Portage" data-en="179 and 191 Promenade du Portage">
-                    179 et 191 Promenade du Portage
-                </span>
+            <div class="hero-logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A227;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d4b140;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="20" y="15" width="12" height="70" fill="url(#heroLogoGrad)"/>
+                    <rect x="44" y="15" width="12" height="70" fill="url(#heroLogoGrad)"/>
+                    <rect x="68" y="15" width="12" height="70" fill="url(#heroLogoGrad)"/>
+                    <rect x="15" y="12" width="70" height="3" fill="url(#heroLogoGrad)"/>
+                    <rect x="15" y="85" width="70" height="3" fill="url(#heroLogoGrad)"/>
+                </svg>
             </div>
-            <p class="hero-subhead" data-fr="Au cœur du corridor gouvernemental le plus concentré du Canada — où l'autorité fédérale, provinciale et municipale convergent pour créer des opportunités commerciales sans précédent." data-en="At the heart of Canada's most concentrated government corridor — where federal, provincial, and municipal authority converge to create unprecedented commercial opportunities.">
-                Au cœur du corridor gouvernemental le plus concentré du Canada — où l'autorité fédérale, provinciale et municipale convergent pour créer des opportunités commerciales sans précédent.
-            </p>
-            <div class="badges">
-                <div class="badge" data-fr="Certifié LEED Or" data-en="LEED Gold Certified">
-                    Certifié LEED Or
-                </div>
-                <div class="badge" data-fr="Centre-ville Gatineau" data-en="Downtown Gatineau">
-                    Centre-ville Gatineau
-                </div>
-                <div class="badge" data-fr="200m de la Place du Portage" data-en="200m from Place du Portage">
-                    200m de la Place du Portage
-                </div>
+
+            <h1 data-en="Capital Corridor Campus" data-fr="Campus Corridor de la Capitale">Capital Corridor Campus</h1>
+            <p class="subtitle" data-en="Two premium commercial properties at the heart of the government corridor" data-fr="Deux propriétés commerciales premium au coeur du corridor gouvernemental">Two premium commercial properties at the heart of the government corridor</p>
+
+            <div class="hero-badges">
+                <span class="badge" data-en="LEED Gold Certified" data-fr="Certifiée LEED Or">LEED Gold Certified</span>
+                <span class="badge" data-en="Immediate Availability" data-fr="Disponibilité Immédiate">Immediate Availability</span>
+                <span class="badge" data-en="5 Levels of Government" data-fr="5 Paliers de Gouvernement">5 Levels of Government</span>
+                <span class="badge" data-en="Promenade du Portage" data-fr="Promenade du Portage">Promenade du Portage</span>
+            </div>
+
+            <div class="cta-group">
+                <a href="#contact" class="button" data-en="Contact Us" data-fr="Contactez-nous">Contact Us</a>
+                <a href="#properties" class="button secondary" data-en="View Properties" data-fr="Voir les Propriétés">View Properties</a>
             </div>
         </div>
     </section>
 
     <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="stat">
-            <div class="stat-value" data-fr="2" data-en="2">2</div>
-            <div class="stat-label" data-fr="Propriétés" data-en="Properties">Propriétés</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" data-fr="44 500+" data-en="44,500+">44 500+</div>
-            <div class="stat-label" data-fr="Pi² disponibles" data-en="Sq ft available">Pi² disponibles</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" data-fr="5" data-en="5">5</div>
-            <div class="stat-label" data-fr="Paliers de gouvernement" data-en="Levels of Government">Paliers de gouvernement</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" data-fr="10 min" data-en="10 min">10 min</div>
-            <div class="stat-label" data-fr="Marche vers la Colline" data-en="Walk to Parliament Hill">Marche vers la Colline</div>
-        </div>
-    </section>
-
-    <!-- Our Properties Section -->
-    <section class="properties-section" id="properties">
-        <h2 data-fr="Nos Propriétés" data-en="Our Properties">Nos Propriétés</h2>
-
-        <div class="properties-grid">
-            <!-- Building 179 Card -->
-            <div class="building-card">
-                <div class="building-silhouette" style="background-image: url('179_exterior.jpg');">
-                    <div class="building-address">179 Promenade du Portage</div>
-                </div>
-                <div class="building-name" data-fr="Chez Henri" data-en="Chez Henri">Chez Henri</div>
-                <div class="building-details">
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Certification" data-en="Certification">Certification</span>
-                        <span class="building-detail-value" data-fr="LEED Or" data-en="LEED Gold">LEED Or</span>
-                    </div>
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Étages" data-en="Floors">Étages</span>
-                        <span class="building-detail-value" data-fr="5 niveaux" data-en="5 floors">5 niveaux</span>
-                    </div>
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Espaces disponibles" data-en="Available spaces">Espaces disponibles</span>
-                        <span class="building-detail-value" data-fr="936 à 8 289 pi²" data-en="936 to 8,289 sq ft">936 à 8 289 pi²</span>
-                    </div>
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Total" data-en="Total">Total</span>
-                        <span class="building-detail-value" data-fr="~18 400 pi²" data-en="~18,400 sq ft">~18 400 pi²</span>
-                    </div>
-                </div>
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-en="34,000+" data-fr="34 000+">34,000+</div>
+                <div class="stat-label" data-en="sq ft available" data-fr="pi² disponibles">sq ft available</div>
             </div>
+            <div class="stat-item">
+                <div class="stat-number" data-en="2" data-fr="2">2</div>
+                <div class="stat-label" data-en="Buildings" data-fr="Immeubles">Buildings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-en="$29" data-fr="29 $">$29</div>
+                <div class="stat-label" data-en="per sq ft all-in" data-fr="par pi² tout inclus">per sq ft all-in</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-en="10 min" data-fr="10 min">10 min</div>
+                <div class="stat-label" data-en="from Parliament Hill" data-fr="de la Colline du Parlement">from Parliament Hill</div>
+            </div>
+        </div>
+    </div>
 
-            <!-- Building 191 Card -->
-            <div class="building-card">
-                <div class="building-silhouette" style="background-image: url('191_exterior.jpg');">
-                    <div class="building-address">191 Promenade du Portage</div>
+    <!-- Properties Section -->
+    <section class="properties" id="properties">
+        <div class="container">
+            <h2 data-en="Our Properties" data-fr="Nos Propriétés">Our Properties</h2>
+            <div class="property-grid">
+                <div class="property-card">
+                    <h3 data-en="Chez Henri" data-fr="Chez Henri">Chez Henri</h3>
+                    <p class="property-address">179 Promenade du Portage, Gatineau, QC J8X 2K6</p>
+                    <div class="badge-leed" data-en="LEED Gold Certified" data-fr="Certifiée LEED Or">LEED Gold Certified</div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Building" data-fr="Immeuble">Building</span>
+                        <span class="property-detail-value" data-en="5 floors" data-fr="5 étages">5 floors</span>
+                    </div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Available Floors" data-fr="Étages Disponibles">Available Floors</span>
+                        <span class="property-detail-value" data-en="3 available (2nd, 3rd, 5th)" data-fr="3 disponibles (2e, 3e, 5e étage)">3 available (2nd, 3rd, 5th)</span>
+                    </div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Total Available" data-fr="Total Disponible">Total Available</span>
+                        <span class="property-detail-value" data-en="20,137 sq ft" data-fr="20 137 pi²">20,137 sq ft</span>
+                    </div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Construction" data-fr="Construction">Construction</span>
+                        <span class="property-detail-value" data-en="Heritage Renovated" data-fr="Rénové Patrimoine">Heritage Renovated</span>
+                    </div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Rate" data-fr="Taux">Rate</span>
+                        <span class="property-detail-value" data-en="$29/sq ft all-in" data-fr="29 $/pi² tout inclus">$29/sq ft all-in</span>
+                    </div>
                 </div>
-                <div class="building-name" data-fr="Place des Explorateurs" data-en="Place des Explorateurs">Place des Explorateurs</div>
-                <div class="building-details">
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Configuration" data-en="Configuration">Configuration</span>
-                        <span class="building-detail-value" data-fr="Immeuble complet" data-en="Full building">Immeuble complet</span>
+
+                <div class="property-card">
+                    <h3 data-en="Place des Explorateurs" data-fr="Place des Explorateurs">Place des Explorateurs</h3>
+                    <p class="property-address">191 Promenade du Portage, Gatineau, QC J8X 2K6</p>
+                    <div class="badge-leed" data-en="Vacant Shell" data-fr="Coque Vide">Vacant Shell</div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Building" data-fr="Immeuble">Building</span>
+                        <span class="property-detail-value" data-en="6 floors" data-fr="6 étages">6 floors</span>
                     </div>
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Surface" data-en="Space">Surface</span>
-                        <span class="building-detail-value" data-fr="26 057 pi²" data-en="26,057 sq ft">26 057 pi²</span>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Total Space" data-fr="Espace Total">Total Space</span>
+                        <span class="property-detail-value" data-en="26,057 sq ft" data-fr="26 057 pi²">26,057 sq ft</span>
                     </div>
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="État" data-en="Status">État</span>
-                        <span class="building-detail-value" data-fr="Coque vierge" data-en="Vacant shell">Coque vierge</span>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Opportunity" data-fr="Opportunité">Opportunity</span>
+                        <span class="property-detail-value" data-en="Full Building" data-fr="Immeuble Complet">Full Building</span>
                     </div>
-                    <div class="building-detail-item">
-                        <span class="building-detail-label" data-fr="Opportunité" data-en="Opportunity">Opportunité</span>
-                        <span class="building-detail-value" data-fr="Aménagement sur mesure" data-en="Custom build-out">Aménagement sur mesure</span>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="TI Allowance" data-fr="Allocation TI">TI Allowance</span>
+                        <span class="property-detail-value" data-en="$1.6M completed" data-fr="1,6 M$ complété">$1.6M completed</span>
+                    </div>
+                    <div class="property-detail">
+                        <span class="property-detail-label" data-en="Rate" data-fr="Taux">Rate</span>
+                        <span class="property-detail-value" data-en="$29/sq ft all-in" data-fr="29 $/pi² tout inclus">$29/sq ft all-in</span>
                     </div>
                 </div>
             </div>
@@ -1175,540 +1365,496 @@
     </section>
 
     <!-- Available Spaces Section -->
-    <section class="spaces-section" id="spaces">
-        <div class="section-header">
-            <h2 data-fr="Espaces Disponibles" data-en="Available Spaces">Espaces Disponibles</h2>
-            <p class="subhead" data-fr="179 Promenade du Portage — Chez Henri, Certifié LEED Or" data-en="179 Promenade du Portage — Chez Henri, LEED Gold Certified">
-                179 Promenade du Portage — Chez Henri, Certifié LEED Or
-            </p>
-        </div>
-
-        <div class="spaces-grid">
-            <!-- 5th Floor -->
-            <div class="floor-card">
-                <div class="floor-number" data-fr="5e" data-en="5th">5e</div>
-                <div class="floor-title" data-fr="Étage — Espace de bureaux sophistiqué" data-en="Floor — Sophisticated office space">
-                    Étage — Espace de bureaux sophistiqué
-                </div>
-
-                <div class="floor-plan-image">
-                    <img src="2026-03-12_IBPROM_ChezHenri_5eEtage_Plan_Clean_v1.png" alt="Floor Plan 5" loading="lazy">
-                </div>
-
-                <div class="floor-specs">
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Brute" data-en="Gross">Brute</span>
-                        <span class="spec-value" data-fr="8 289 pi²" data-en="8,289 sq ft">8 289 pi²</span>
-                    </div>
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Nette" data-en="Net">Nette</span>
-                        <span class="spec-value" data-fr="7 780 pi²" data-en="7,780 sq ft">7 780 pi²</span>
+    <section class="spaces" id="spaces">
+        <div class="container">
+            <h2 data-en="Available Spaces - 179 Promenade du Portage" data-fr="Espaces Disponibles - 179 Promenade du Portage">Available Spaces - 179 Promenade du Portage</h2>
+            <div class="spaces-grid">
+                <div class="space-card">
+                    <h4 data-en="Concorde Floor" data-fr="Étage de la Concorde">Concorde Floor</h4>
+                    <p class="space-floor" data-en="5th Floor" data-fr="5e Étage">5th Floor</p>
+                    <img src="CCC_179_5eEtage_Concorde_FloorPlan.png" alt="Concorde Floor Plan - 5th Floor, 179 Promenade du Portage" style="width:100%; border-radius:8px; margin:12px 0; border:1px solid rgba(201,162,39,0.2);">
+                    <div class="space-sq-ft" data-en="5,924 sq ft" data-fr="5 924 pi²">5,924 sq ft</div>
+                    <div class="suite-list">
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Parliament Suite" data-fr="Suite du Parlement">Parliament Suite</div>
+                            <div class="suite-size" data-en="3,277 sq ft" data-fr="3 277 pi²">3,277 sq ft</div>
+                        </div>
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Cabinet Suite" data-fr="Suite du Cabinet">Cabinet Suite</div>
+                            <div class="suite-size" data-en="1,711 sq ft" data-fr="1 711 pi²">1,711 sq ft</div>
+                        </div>
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Ambassador Suite" data-fr="Suite de l'Ambassadeur">Ambassador Suite</div>
+                            <div class="suite-size" data-en="936 sq ft" data-fr="936 pi²">936 sq ft</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="floor-specs">
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Configuration" data-en="Configuration">Configuration</span>
-                        <span class="spec-value" data-fr="Plan ouvert" data-en="Open plan">Plan ouvert</span>
-                    </div>
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Loyer estimé" data-en="Est. rent">Loyer estimé</span>
-                        <span class="spec-value" data-fr="~20 033 $/mois" data-en="~20,033/month">~20 033 $/mois</span>
-                    </div>
-                </div>
-
-                <p class="floor-description" data-fr="Espace intégral à étage avec accès direct aux ascenseurs, luminosité maximale, vues dégagées sur la région, et proximité directe des services gouvernementaux. Idéal pour les organisations requérant présence et visibilité au centre décisionnel du pays." data-en="Full-floor space with direct elevator access, maximum natural light, unobstructed regional views, and immediate proximity to government services. Ideal for organizations requiring presence and visibility at the nation's decision-making hub.">
-                    Espace intégral à étage avec accès direct aux ascenseurs, luminosité maximale, vues dégagées sur la région, et proximité directe des services gouvernementaux. Idéal pour les organisations requérant présence et visibilité au centre décisionnel du pays.
-                </p>
-            </div>
-
-            <!-- 3rd Floor -->
-            <div class="floor-card">
-                <div class="floor-number" data-fr="3e" data-en="3rd">3e</div>
-                <div class="floor-title" data-fr="Étage — Espace modulable premium" data-en="Floor — Premium flexible space">
-                    Étage — Espace modulable premium
-                </div>
-
-                <div class="floor-plan-image">
-                    <img src="2026-03-13_IBPROM_ChezHenri_3eEtage_Plan_Clean_v1.png" alt="Floor Plan 3" loading="lazy">
-                </div>
-
-                <div class="floor-specs">
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Surface totale" data-en="Total area">Surface totale</span>
-                        <span class="spec-value" data-fr="7 530 pi²" data-en="7,530 sq ft">7 530 pi²</span>
-                    </div>
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Configuration" data-en="Configuration">Configuration</span>
-                        <span class="spec-value" data-fr="Espace ouvert" data-en="Open space">Espace ouvert</span>
+                <div class="space-card">
+                    <h4 data-en="Innovation Floor" data-fr="Étage Innovation">Innovation Floor</h4>
+                    <p class="space-floor" data-en="3rd Floor" data-fr="3e Étage">3rd Floor</p>
+                    <div class="space-sq-ft" data-en="8,289 sq ft" data-fr="8 289 pi²">8,289 sq ft</div>
+                    <div class="suite-list">
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Full Floor" data-fr="Étage Complet">Full Floor</div>
+                            <div class="suite-size" data-en="Open plan configuration" data-fr="Configuration plan ouvert">Open plan configuration</div>
+                        </div>
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Ideal For" data-fr="Idéal pour">Ideal For</div>
+                            <div class="suite-size" data-en="Tech, consulting, creative agencies" data-fr="Tech, consulting, agences créatives">Tech, consulting, creative agencies</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="floor-specs">
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Loyer estimé" data-en="Est. rent">Loyer estimé</span>
-                        <span class="spec-value" data-fr="~18 198 $/mois" data-en="~18,198/month">~18 198 $/mois</span>
+                <div class="space-card">
+                    <h4 data-en="Forum Floor" data-fr="Étage du Forum">Forum Floor</h4>
+                    <p class="space-floor" data-en="2nd Floor" data-fr="2e Étage">2nd Floor</p>
+                    <div class="space-sq-ft" data-en="5,924 sq ft" data-fr="5 924 pi²">5,924 sq ft</div>
+                    <div class="suite-list">
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Full Floor" data-fr="Étage Complet">Full Floor</div>
+                            <div class="suite-size" data-en="Meeting-ready layout" data-fr="Agencement prêt pour réunions">Meeting-ready layout</div>
+                        </div>
+                        <div class="suite-item">
+                            <div class="suite-name" data-en="Perfect For" data-fr="Parfait pour">Perfect For</div>
+                            <div class="suite-size" data-en="Lobbying, associations, NGOs" data-fr="Lobbying, associations, ONG">Lobbying, associations, NGOs</div>
+                        </div>
                     </div>
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Disponibilité" data-en="Availability">Disponibilité</span>
-                        <span class="spec-value" data-fr="Immédiate" data-en="Immediate">Immédiate</span>
-                    </div>
-                </div>
-
-                <p class="floor-description" data-fr="Espace modulable à configuration ouverte permettant division flexible selon besoins spécifiques. Accès aux installations complètes du bâtiment, stationnement prioritaire disponible, et infrastructure pour organisations multifonctionnelles. Idéal pour équipes gouvernementales, consultants ou consortiums." data-en="Flexible open-plan space allowing customizable division per specific needs. Full building amenities access, priority parking available, and infrastructure for multifunctional organizations. Ideal for government teams, consultants, or consortiums.">
-                    Espace modulable à configuration ouverte permettant division flexible selon besoins spécifiques. Accès aux installations complètes du bâtiment, stationnement prioritaire disponible, et infrastructure pour organisations multifonctionnelles. Idéal pour équipes gouvernementales, consultants ou consortiums.
-                </p>
-            </div>
-
-            <!-- 2nd Floor -->
-            <div class="floor-card">
-                <div class="floor-number" data-fr="2e" data-en="2nd">2e</div>
-                <div class="floor-title" data-fr="Étage — Suites bureaux privés" data-en="Floor — Private office suites">
-                    Étage — Suites bureaux privés
-                </div>
-
-                <div class="floor-plan-image">
-                    <img src="2026-03-12_IBPROM_ChezHenri_2eEtage_Plan_Clean_v1.png" alt="Floor Plan 2" loading="lazy">
-                </div>
-
-                <div class="floor-specs">
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Brute" data-en="Gross">Brute</span>
-                        <span class="spec-value" data-fr="7 850 pi²" data-en="7,850 sq ft">7 850 pi²</span>
-                    </div>
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Nette" data-en="Net">Nette</span>
-                        <span class="spec-value" data-fr="6 960 pi²" data-en="6,960 sq ft">6 960 pi²</span>
-                    </div>
-                </div>
-
-                <div class="floor-specs">
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Configurations" data-en="Options">Configurations</span>
-                        <span class="spec-value" data-fr="Suites privées" data-en="Private suites">Suites privées</span>
-                    </div>
-                    <div class="spec">
-                        <span class="spec-label" data-fr="Loyer estimé" data-en="Est. rent">Loyer estimé</span>
-                        <span class="spec-value" data-fr="~18 960 $/mois" data-en="~18,960/month">~18 960 $/mois</span>
-                    </div>
-                </div>
-
-                <p class="floor-description" data-fr="Configuration de suites de bureaux fermés avec séparation indépendante, idéale pour cabinets professionnels, firmes juridiques, ou agences de conseil. Chaque suite bénéficie d'entrée autonome, climatisation zone, et accès aux services communs. Parfait pour prestige et discrétion." data-en="Enclosed office suite configuration with independent separation, ideal for professional practices, law firms, or consulting agencies. Each suite features independent entry, zone climate control, and common services access. Perfect for prestige and privacy.">
-                    Configuration de suites de bureaux fermés avec séparation indépendante, idéale pour cabinets professionnels, firmes juridiques, ou agences de conseil. Chaque suite bénéficie d'entrée autonome, climatisation zone, et accès aux services communs. Parfait pour prestige et discrétion.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Positioning Quote Section -->
-    <section class="positioning-section">
-        <div class="positioning-content">
-            <p class="positioning-quote" data-fr="Le Campus Corridor de la Capitale n'est pas simplement un espace commercial — c'est une adresse sur la carte décisionnelle du Canada, où vos affaires convergent avec le pouvoir." data-en="Capital Corridor Campus is not simply commercial space — it is an address on Canada's decision-making map, where your business converges with power.">
-                Le Campus Corridor de la Capitale n'est pas simplement un espace commercial — c'est une adresse sur la carte décisionnelle du Canada, où vos affaires convergent avec le pouvoir.
-            </p>
-        </div>
-    </section>
-
-    <!-- Campus Directory Section -->
-    <section class="directory-section">
-        <h2 data-fr="Répertoire du Campus" data-en="Campus Directory">Répertoire du Campus</h2>
-
-        <div class="directory-grid">
-            <div class="directory-card">
-                <div class="directory-floor" data-fr="5e" data-en="5th">5e</div>
-                <div class="directory-tenants" data-fr="Organisations multinationales, sociétés de conseil stratégique" data-en="Multinational organizations, strategic consulting firms">
-                    Organisations multinationales, sociétés de conseil stratégique
-                </div>
-            </div>
-
-            <div class="directory-card">
-                <div class="directory-floor" data-fr="3e" data-en="3rd">3e</div>
-                <div class="directory-tenants" data-fr="Équipes gouvernementales, consortiums provinciaux" data-en="Government teams, provincial consortiums">
-                    Équipes gouvernementales, consortiums provinciaux
-                </div>
-            </div>
-
-            <div class="directory-card">
-                <div class="directory-floor" data-fr="2e" data-en="2nd">2e</div>
-                <div class="directory-tenants" data-fr="Cabinets professionnels, firmes juridiques spécialisées" data-en="Professional practices, specialized law firms">
-                    Cabinets professionnels, firmes juridiques spécialisées
-                </div>
-            </div>
-
-            <div class="directory-card">
-                <div class="directory-floor" data-fr="RDC" data-en="Ground">RDC</div>
-                <div class="directory-tenants" data-fr="Services client, accueil, services auxiliaires" data-en="Client services, reception, support services">
-                    Services client, accueil, services auxiliaires
-                </div>
-            </div>
-
-            <div class="directory-card">
-                <div class="directory-floor" data-fr="Sous-sol" data-en="Basement">Sous-sol</div>
-                <div class="directory-tenants" data-fr="Stationnement sécurisé, accès technique, entreposage" data-en="Secured parking, technical access, storage">
-                    Stationnement sécurisé, accès technique, entreposage
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lease Terms Section -->
-    <section class="lease-section">
-        <h2 data-fr="Conditions de Bail" data-en="Lease Terms">Conditions de Bail</h2>
+    <div class="section-divider"></div>
 
-        <div class="lease-grid">
-            <div class="lease-card">
-                <div class="lease-title" data-fr="Stationnement" data-en="Parking">Stationnement</div>
-                <div class="lease-content" data-fr="Extérieur : 250 $/mois · Intérieur exécutif : 350 $/mois" data-en="Exterior: $250/month · Executive Interior: $350/month">
-                    Extérieur : 250 $/mois · Intérieur exécutif : 350 $/mois
-                </div>
-                <div class="lease-note" data-fr="Premier arrivé, premier servi" data-en="First come, first served">
-                    Premier arrivé, premier servi
-                </div>
-            </div>
-
-            <div class="lease-card">
-                <div class="lease-title" data-fr="Charges Communes" data-en="Common Area Charges">Charges Communes</div>
-                <div class="lease-content" data-fr="Incluses dans loyer : chauffage, climatisation, services de conciergerie, entretien immobilier, assurances bâtiment." data-en="Included in rent: heating, A/C, concierge services, building maintenance, building insurance.">
-                    Incluses dans loyer : chauffage, climatisation, services de conciergerie, entretien immobilier, assurances bâtiment.
-                </div>
-            </div>
-
-            <div class="lease-card">
-                <div class="lease-title" data-fr="Flexibilité de Bail" data-en="Lease Flexibility">Flexibilité de Bail</div>
-                <div class="lease-content" data-fr="Termes de 1 à 10 ans négociables. Options de renouvellement avec escalade prévisible. Extensions au-delà de 5 ans disponibles avec conditions avantageuses." data-en="Terms of 1 to 10 years negotiable. Renewal options with predictable escalation. Extensions beyond 5 years available under favorable terms.">
-                    Termes de 1 à 10 ans négociables. Options de renouvellement avec escalade prévisible. Extensions au-delà de 5 ans disponibles avec conditions avantageuses.
-                </div>
-            </div>
-
-            <div class="lease-card">
-                <div class="lease-title" data-fr="Infrastructure Technologique" data-en="Technology Infrastructure">Infrastructure Technologique</div>
-                <div class="lease-content" data-fr="Fibre optique 10 Gbps, redondance internet, infrastructure réseau robuste, accès aux services gouvernementaux numérisés, salle de serveurs conforme aux normes fédérales." data-en="10 Gbps fiber optic, internet redundancy, robust network infrastructure, access to digital government services, server room compliant with federal standards.">
-                    Fibre optique 10 Gbps, redondance internet, infrastructure réseau robuste, accès aux services gouvernementaux numérisés, salle de serveurs conforme aux normes fédérales.
-                </div>
-            </div>
-
-            <div class="lease-card">
-                <div class="lease-title" data-fr="Aménagements" data-en="Amenities">Aménagements</div>
-                <div class="lease-content" data-fr="Cafétéria de classe affaires, salle de conférence, espaces collaboratifs, réception 24/7, accès haut de gamme à transports publics, proximité restaurants haut de gamme." data-en="Business-class cafeteria, conference rooms, collaborative spaces, 24/7 reception, premium public transit access, proximity to upscale dining.">
-                    Cafétéria de classe affaires, salle de conférence, espaces collaboratifs, réception 24/7, accès haut de gamme à transports publics, proximité restaurants haut de gamme.
-                </div>
-            </div>
-
-            <div class="lease-card">
-                <div class="lease-title" data-fr="Conformité Environnementale" data-en="Environmental Compliance">Conformité Environnementale</div>
-                <div class="lease-content" data-fr="Certification LEED Or (179 uniquement). Systèmes économes en énergie. Matériaux durables. Conformité aux normes de qualité d'air intérieur. Programmes de recyclage complets." data-en="LEED Gold Certification (179 only). Energy-efficient systems. Sustainable materials. Indoor air quality standard compliance. Comprehensive recycling programs.">
-                    Certification LEED Or (179 uniquement). Systèmes économes en énergie. Matériaux durables. Conformité aux normes de qualité d'air intérieur. Programmes de recyclage complets.
-                </div>
-            </div>
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <p class="quote-text" data-en="The must-have address to influence and participate at the highest level of Canadian governance" data-fr="L'adresse incontournable pour influencer et participer au plus haut niveau de la gouvernance canadienne">The must-have address to influence and participate at the highest level of Canadian governance</p>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Location Section -->
-    <section class="location-section" id="location">
-        <h2 data-fr="Localisation Stratégique" data-en="Strategic Location">Localisation Stratégique</h2>
-
-        <div class="location-grid">
+    <section class="location" id="location">
+        <div class="container">
+            <h2 data-en="Strategic Location" data-fr="Localisation Stratégique">Strategic Location</h2>
             <div class="location-content">
-                <div class="location-subsection">
-                    <h3 data-fr="Gouvernement Fédéral" data-en="Federal Government">Gouvernement Fédéral</h3>
-                    <p data-fr="Place du Portage (à 200m) : Complexe qui accueille plus de 10 000 fonctionnaires fédéraux. Centre majeur des ministères clés, agences fédérales, et services gouvernementaux. Siège de plusieurs portefeuilles ministériels critiques. Infrastructure administrative la plus dense de la région." data-en="Place du Portage (200m away): Complex hosting 10,000+ federal civil servants. Major hub of key ministries, federal agencies, and government services. Seat of several critical ministerial portfolios. Region's most concentrated administrative infrastructure.">
-                        Place du Portage (à 200m) : Complexe qui accueille plus de 10 000 fonctionnaires fédéraux. Centre majeur des ministères clés, agences fédérales, et services gouvernementaux. Siège de plusieurs portefeuilles ministériels critiques. Infrastructure administrative la plus dense de la région.
-                    </p>
+                <div class="location-text">
+                    <div class="location-block">
+                        <h4 data-en="Federal Government" data-fr="Gouvernement Fédéral">Federal Government</h4>
+                        <p data-en="Place du Portage just 200m away. Home to 10,000+ federal employees." data-fr="Place du Portage à seulement 200 m. Siège de 10 000+ employés fédéraux.">Place du Portage just 200m away. Home to 10,000+ federal employees.</p>
+                    </div>
+                    <div class="location-block">
+                        <h4 data-en="Provincial Government" data-fr="Gouvernement Provincial">Provincial Government</h4>
+                        <p data-en="Quebec National Assembly and provincial ministries within walking distance." data-fr="Assemblée nationale du Québec et ministères provinciaux à distance de marche.">Quebec National Assembly and provincial ministries within walking distance.</p>
+                    </div>
+                    <div class="location-block">
+                        <h4 data-en="Municipal Government" data-fr="Gouvernement Municipal">Municipal Government</h4>
+                        <p data-en="Gatineau City Hall and municipal offices nearby for local government engagement." data-fr="Hôtel de Ville de Gatineau et bureaux municipaux à proximité.">Gatineau City Hall and municipal offices nearby for local government engagement.</p>
+                    </div>
+                    <div class="location-block">
+                        <h4 data-en="Judicial Center" data-fr="Centre Judiciaire">Judicial Center</h4>
+                        <p data-en="Superior Court and legal institutions within minutes for legal professionals." data-fr="Cour supérieure et institutions juridiques à quelques minutes.">Superior Court and legal institutions within minutes for legal professionals.</p>
+                    </div>
+                    <div class="location-block">
+                        <h4 data-en="Parliament Hill" data-fr="Colline du Parlement">Parliament Hill</h4>
+                        <p data-en="Just 10 minutes walk or 2-minute drive to the seat of Canadian Parliament." data-fr="À seulement 10 minutes à pied ou 2 minutes en voiture du Parlement du Canada.">Just 10 minutes walk or 2-minute drive to the seat of Canadian Parliament.</p>
+                    </div>
+                    <div class="location-block">
+                        <h4 data-en="Museum of History" data-fr="Musée de l'Histoire">Museum of History</h4>
+                        <p data-en="Canadian Museum of History just across the river for cultural engagement." data-fr="Musée canadien de l'histoire juste de l'autre côté de la rivière.">Canadian Museum of History just across the river for cultural engagement.</p>
+                    </div>
                 </div>
-
-                <div class="location-subsection">
-                    <h3 data-fr="Gouvernement Provincial" data-en="Provincial Government">Gouvernement Provincial</h3>
-                    <p data-fr="Bureaux régionaux du Québec à proximité directe. Sièges des organisations provinciales, services québécois spécialisés. Accès immédiat aux autorités provinciales et aux décideurs québécois de premier plan." data-en="Quebec regional offices in immediate proximity. Seats of provincial organizations and specialized Quebec services. Direct access to provincial authorities and top Quebec decision-makers.">
-                        Bureaux régionaux du Québec à proximité directe. Sièges des organisations provinciales, services québécois spécialisés. Accès immédiat aux autorités provinciales et aux décideurs québécois de premier plan.
-                    </p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.3489587825987!2d-75.71511392346842!3d45.42754027076877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0581b5555555%3A0x1a1a1a1a1a1a1a1a!2s179%20Promenade%20du%20Portage%2C%20Gatineau%2C%20QC%20J8X%202K6!5e0!3m2!1sen!2sca!4v1680000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-
-                <div class="location-subsection">
-                    <h3 data-fr="Gouvernement Municipal" data-en="Municipal Government">Gouvernement Municipal</h3>
-                    <p data-fr="Hôtel de ville de Gatineau et bureaux municipaux dans le secteur. Accès direct aux autorités municipales, services à la collectivité, et infrastructure locale. Zone de gouvernance complète au niveau municipal." data-en="Gatineau City Hall and municipal offices in area. Direct access to municipal authorities, community services, and local infrastructure. Complete municipal governance zone.">
-                        Hôtel de ville de Gatineau et bureaux municipaux dans le secteur. Accès direct aux autorités municipales, services à la collectivité, et infrastructure locale. Zone de gouvernance complète au niveau municipal.
-                    </p>
-                </div>
-
-                <div class="location-subsection">
-                    <h3 data-fr="Autorités Judiciaires" data-en="Judicial Authorities">Autorités Judiciaires</h3>
-                    <p data-fr="Palais de justice et cours fédérales à distance de marche. Infrastructure judiciaire majeure accessible directement. Idéal pour firmes juridiques, avocats, consultants en droit." data-en="Courts and federal tribunals within walking distance. Major judicial infrastructure directly accessible. Ideal for law firms, legal practices, and litigation consultants.">
-                        Palais de justice et cours fédérales à distance de marche. Infrastructure judiciaire majeure accessible directement. Idéal pour firmes juridiques, avocats, consultants en droit.
-                    </p>
-                </div>
-
-                <div class="location-subsection">
-                    <h3 data-fr="Colline du Parlement" data-en="Parliament Hill">Colline du Parlement</h3>
-                    <p data-fr="À 10 minutes à pied. Cœur battant de la démocratie canadienne. Proximité aux bureaux des parlementaires, des caucus politiques, et de l'infrastructure centrale. Accès aux plus hauts niveaux de gouvernance législative." data-en="10-minute walk. Heartbeat of Canadian democracy. Proximity to parliamentarian offices, political caucuses, and central infrastructure. Access to highest levels of legislative governance.">
-                        À 10 minutes à pied. Cœur battant de la démocratie canadienne. Proximité aux bureaux des parlementaires, des caucus politiques, et de l'infrastructure centrale. Accès aux plus hauts niveaux de gouvernance législative.
-                    </p>
-                </div>
-
-                <div class="location-subsection">
-                    <h3 data-fr="Musée Canadien de l'Histoire" data-en="Canadian Museum of History">Musée Canadien de l'Histoire</h3>
-                    <p data-fr="Voisin immédiat. Attraction touristique majeure, centre culturel canadien, espace de prestige et de rayonnement. Récréation professionnelle, événements corporatifs, et réceptions de classe affaires en contexte prestigieux." data-en="Immediate neighbor. Major tourist attraction, Canadian cultural hub, prestigious venue. Professional recreation, corporate events, and business-class receptions in prestigious context.">
-                        Voisin immédiat. Attraction touristique majeure, centre culturel canadien, espace de prestige et de rayonnement. Récréation professionnelle, événements corporatifs, et réceptions de classe affaires en contexte prestigieux.
-                    </p>
-                </div>
-            </div>
-
-            <div class="location-map">
-                <div class="map-placeholder" data-fr="CORRIDOR DE GOUVERNANCE CANADIENNE" data-en="CANADIAN GOVERNANCE CORRIDOR">
-                    CORRIDOR DE GOUVERNANCE CANADIENNE
-                </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: var(--spacing-md);">
-                    <span data-fr="Proximité à 5 paliers d'autorité gouvernementale" data-en="Proximity to 5 levels of government authority">Proximité à 5 paliers d'autorité gouvernementale</span>
-                </p>
-                <p style="color: var(--gold-soft); font-weight: 600; margin-top: var(--spacing-md);">
-                    <span data-fr="L'adresse incontournable pour influencer et participer" data-en="The must-have address to influence and participate">L'adresse incontournable pour influencer et participer</span>
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- 191 Promenade Section -->
-    <section class="building-191-section">
-        <div class="building-191-content">
-            <h2 data-fr="191 Promenade du Portage · Place des Explorateurs" data-en="191 Promenade du Portage · Place des Explorateurs">
-                191 Promenade du Portage · Place des Explorateurs
-            </h2>
+    <div class="section-divider"></div>
 
-            <div class="building-191-grid">
-                <div class="building-191-text">
-                    <h3 data-fr="Opportunité d'Immeuble Complet" data-en="Full Building Opportunity">
-                        Opportunité d'Immeuble Complet
-                    </h3>
-                    <p data-fr="Place des Explorateurs offre une opportunité exceptionnelle : une coque d'immeuble complète et vierge, prête pour aménagement sur mesure. Avec 26 057 pieds carrés, cet immeuble neuf permet aux locataires de créer un environnement de travail entièrement personnalisé, adapté à la vision et aux exigences opérationnelles les plus ambitieuses." data-en="Place des Explorateurs offers an exceptional opportunity: a complete vacant shell ready for custom build-out. With 26,057 sq ft, this pristine building allows tenants to create a fully personalized work environment, tailored to the most ambitious operational visions and requirements.">
-                        Place des Explorateurs offre une opportunité exceptionnelle : une coque d'immeuble complète et vierge, prête pour aménagement sur mesure. Avec 26 057 pieds carrés, cet immeuble neuf permet aux locataires de créer un environnement de travail entièrement personnalisé, adapté à la vision et aux exigences opérationnelles les plus ambitieuses.
-                    </p>
-                    <p data-fr="Situé au cœur du corridor gouvernemental le plus concentré du Canada, cet immeuble est parfait pour organisations cherchant présence majeure, flexibilité totale d'aménagement, et contrôle complet de l'infrastructure physique et technologique. Discussions de bail maintenant ouvertes pour locataires d'envergure." data-en="Located at the heart of Canada's most concentrated government corridor, this building is perfect for organizations seeking major presence, complete layout flexibility, and full control of physical and technology infrastructure. Lease discussions now open for major tenants.">
-                        Situé au cœur du corridor gouvernemental le plus concentré du Canada, cet immeuble est parfait pour organisations cherchant présence majeure, flexibilité totale d'aménagement, et contrôle complet de l'infrastructure physique et technologique. Discussions de bail maintenant ouvertes pour locataires d'envergure.
-                    </p>
-                </div>
-
-                <div class="building-191-visual">
-                    <div class="building-silhouette" style="background-image: url('191_exterior.jpg');">
-                        <div class="building-address">191 Promenade du Portage</div>
+    <!-- 191 Section -->
+    <section class="property-191">
+        <div class="container">
+            <h2 data-en="Place des Explorateurs - 191 Promenade du Portage" data-fr="Place des Explorateurs - 191 Promenade du Portage">Place des Explorateurs - 191 Promenade du Portage</h2>
+            <div class="property-191-content">
+                <p style="font-size: 1.1rem; color: var(--cream); margin-bottom: 1.5rem;" data-en="A complete vacant shell opportunity for organizations seeking a full building, custom build-out, and unlimited design possibilities in the heart of the government corridor." data-fr="Une opportunité de coque vide complète pour les organisations cherchant un immeuble complet, un aménagement personnalisé et des possibilités de conception illimitées.">A complete vacant shell opportunity for organizations seeking a full building, custom build-out, and unlimited design possibilities in the heart of the government corridor.</p>
+                <div class="property-191-grid">
+                    <div class="info-box">
+                        <h4 data-en="Total Space" data-fr="Espace Total">Total Space</h4>
+                        <p data-en="26,057 sq ft across 6 floors" data-fr="26 057 pi² sur 6 étages">26,057 sq ft across 6 floors</p>
                     </div>
-                    <div style="text-align: center; color: var(--gold-soft); margin-top: var(--spacing-md);">
-                        <div style="font-weight: 700; font-size: 1.2rem;" data-fr="26 057 pi²" data-en="26,057 sq ft">26 057 pi²</div>
-                        <div style="font-size: 0.9rem; margin-top: 0.5rem;" data-fr="Coque vierge pour aménagement" data-en="Vacant shell for custom build-out">Coque vierge pour aménagement</div>
+                    <div class="info-box">
+                        <h4 data-en="Condition" data-fr="État">Condition</h4>
+                        <p data-en="Vacant shell ready for custom configuration" data-fr="Coque vide prête pour configuration personnalisée">Vacant shell ready for custom configuration</p>
+                    </div>
+                    <div class="info-box">
+                        <h4 data-en="TI Allowance" data-fr="Allocation TI">TI Allowance</h4>
+                        <p data-en="$1.6M completed in 2018" data-fr="1,6 M$ complété en 2018">$1.6M completed in 2018</p>
+                    </div>
+                    <div class="info-box">
+                        <h4 data-en="Rate" data-fr="Taux">Rate</h4>
+                        <p data-en="$29/sq ft all-in ($15 base + $14 operating)" data-fr="29 $/pi² tout inclus (15 $ base + 14 $ exploitation)">$29/sq ft all-in</p>
+                    </div>
+                    <div class="info-box">
+                        <h4 data-en="Ideal For" data-fr="Idéal pour">Ideal For</h4>
+                        <p data-en="Large multi-floor organizations, consolidated operations" data-fr="Grandes organisations multi-étages, opérations consolidées">Large multi-floor organizations, consolidated operations</p>
+                    </div>
+                    <div class="info-box">
+                        <h4 data-en="Flexibility" data-fr="Flexibilité">Flexibility</h4>
+                        <p data-en="Design your ideal government corridor headquarters" data-fr="Concevez votre siège social de corridor gouvernemental idéal">Design your ideal government corridor headquarters</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Video Tours Section -->
-    <section class="video-tours">
-        <h3 data-fr="Visites Vidéo" data-en="Video Tours">Visites Vidéo</h3>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/gMwxZju5GSQ?start=22" title="179 Promenade du Portage — Chez Henri" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <section class="video-section">
+        <div class="container">
+            <h2 data-en="Virtual Tours" data-fr="Visites Virtuelles">Virtual Tours</h2>
+            <div class="video-grid">
+                <div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/gMwxZju5GSQ?start=22" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-label" data-en="179 Promenade du Portage - Chez Henri" data-fr="179 Promenade du Portage - Chez Henri">179 Promenade du Portage - Chez Henri</p>
                 </div>
-                <div class="video-label">179 Promenade du Portage — Chez Henri</div>
-            </div>
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/ohZlqQaiT7M?start=1" title="191 Promenade du Portage — Place des Explorateurs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                <div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ohZlqQaiT7M?start=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-label" data-en="191 Promenade du Portage - Place des Explorateurs" data-fr="191 Promenade du Portage - Place des Explorateurs">191 Promenade du Portage - Place des Explorateurs</p>
                 </div>
-                <div class="video-label">191 Promenade du Portage — Place des Explorateurs</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <h2 data-fr="Prenez Contact" data-en="Get In Touch">Prenez Contact</h2>
+    <div class="section-divider"></div>
 
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3 data-fr="Adresses" data-en="Addresses">Adresses</h3>
-                    <p data-fr="179 Promenade du Portage<br>Gatineau, QC J8X 2K6<br><br>191 Promenade du Portage<br>Gatineau, QC J8X 2K6" data-en="179 Promenade du Portage<br>Gatineau, QC J8X 2K6<br><br>191 Promenade du Portage<br>Gatineau, QC J8X 2K6">
-                        179 Promenade du Portage<br>Gatineau, QC J8X 2K6<br><br>191 Promenade du Portage<br>Gatineau, QC J8X 2K6
-                    </p>
+    <!-- Lease Terms Section -->
+    <section class="lease-terms" id="lease">
+        <div class="container">
+            <h2 data-en="Lease Terms" data-fr="Conditions de Location">Lease Terms</h2>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <h4 data-en="Base Rate" data-fr="Taux de Base">Base Rate</h4>
+                    <div class="term-value" data-en="$15" data-fr="15 $">$15</div>
+                    <p class="term-description" data-en="per sq ft annual" data-fr="par pi² annuel">per sq ft annual</p>
                 </div>
-
-                <div class="contact-item">
-                    <h3 data-fr="Téléphone" data-en="Phone">Téléphone</h3>
-                    <p>
-                        <a href="tel:+1-819-123-4567" style="color: var(--gold); text-decoration: none;">+1 (819) 123-4567</a>
-                    </p>
+                <div class="term-card">
+                    <h4 data-en="Operating Costs" data-fr="Frais d'Exploitation">Operating Costs</h4>
+                    <div class="term-value" data-en="$14" data-fr="14 $">$14</div>
+                    <p class="term-description" data-en="per sq ft annual" data-fr="par pi² annuel">per sq ft annual</p>
                 </div>
-
-                <div class="contact-item">
-                    <h3 data-fr="Courriel" data-en="Email">Courriel</h3>
-                    <p>
-                        <a href="mailto:info@capitalcorridor.com" style="color: var(--gold); text-decoration: none;">info@capitalcorridor.com</a>
-                    </p>
+                <div class="term-card">
+                    <h4 data-en="All-In Rate" data-fr="Taux Tout Inclus">All-In Rate</h4>
+                    <div class="term-value" data-en="$29" data-fr="29 $">$29</div>
+                    <p class="term-description" data-en="per sq ft annual" data-fr="par pi² annuel">per sq ft annual</p>
                 </div>
-
-                <div class="contact-item">
-                    <h3 data-fr="Horaires de Bureau" data-en="Business Hours">Horaires de Bureau</h3>
-                    <p data-fr="Lundi – Vendredi : 9h00 – 17h00<br>Samedi – Dimanche : Sur rendez-vous<br><br>Visites guidées disponibles sur demande." data-en="Monday – Friday: 9:00 AM – 5:00 PM<br>Saturday – Sunday: By appointment<br><br>Guided tours available by request.">
-                        Lundi – Vendredi : 9h00 – 17h00<br>Samedi – Dimanche : Sur rendez-vous<br><br>Visites guidées disponibles sur demande.
-                    </p>
+                <div class="term-card">
+                    <h4 data-en="Lease Term" data-fr="Durée du Bail">Lease Term</h4>
+                    <div class="term-value" data-en="3-10 years" data-fr="3-10 ans">3-10 years</div>
+                    <p class="term-description" data-en="Negotiable" data-fr="Négociable">Negotiable</p>
+                </div>
+                <div class="term-card">
+                    <h4 data-en="TI Allowance" data-fr="Allocation TI">TI Allowance</h4>
+                    <div class="term-value" data-en="Negotiable" data-fr="Négociable">Negotiable</div>
+                    <p class="term-description" data-en="Based on lease terms" data-fr="Basée sur les conditions du bail">Based on lease terms</p>
+                </div>
+                <div class="term-card">
+                    <h4 data-en="Co-Brokerage" data-fr="Co-Courtage">Co-Brokerage</h4>
+                    <div class="term-value" data-en="50/50" data-fr="50/50">50/50</div>
+                    <p class="term-description" data-en="Commission offered" data-fr="Commission offerte">Commission offered</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <form class="contact-form" id="contact-form">
-                <div class="form-group">
-                    <label for="name" data-fr="Nom" data-en="Name">Nom</label>
-                    <input type="text" id="name" name="name" required data-fr-placeholder="Votre nom complet" data-en-placeholder="Your full name" placeholder="Votre nom complet">
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 data-en="Get In Touch" data-fr="Nous Contacter">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h4 data-en="Address - Building 1" data-fr="Adresse - Immeuble 1">Address - Building 1</h4>
+                        <p>179 Promenade du Portage</p>
+                        <p>Gatineau, QC J8X 2K6</p>
+                        <p data-en="Canada" data-fr="Canada">Canada</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4 data-en="Address - Building 2" data-fr="Adresse - Immeuble 2">Address - Building 2</h4>
+                        <p>191 Promenade du Portage</p>
+                        <p>Gatineau, QC J8X 2K6</p>
+                        <p data-en="Canada" data-fr="Canada">Canada</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4 data-en="Contact" data-fr="Contact">Contact</h4>
+                        <p><a href="tel:613-691-9311">613-691-9311</a></p>
+                        <p><a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a></p>
+                        <p><a href="https://campuscorridor.ca" target="_blank">campuscorridor.ca</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4 data-en="Leasing Agent" data-fr="Agent de Location">Leasing Agent</h4>
+                        <p style="margin-bottom: 0.25rem; font-weight: 600;">Joseph Soares, MBA, Adm.A., PMP</p>
+                        <p data-en="IBPROM Corp." data-fr="IBPROM Corp.">IBPROM Corp.</p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="company" data-fr="Entreprise" data-en="Company">Entreprise</label>
-                    <input type="text" id="company" name="company" data-fr-placeholder="Nom de votre organisation" data-en-placeholder="Your organization name" placeholder="Nom de votre organisation">
-                </div>
+                <div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-en="Full Name" data-fr="Nom Complet">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="email" data-fr="Courriel" data-en="Email">Courriel</label>
-                    <input type="email" id="email" name="email" required data-fr-placeholder="votre@adresse.com" data-en-placeholder="your@email.com" placeholder="votre@adresse.com">
-                </div>
+                        <div class="form-group">
+                            <label for="company" data-en="Company" data-fr="Entreprise">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
 
-                <div class="form-group">
-                    <label for="phone" data-fr="Téléphone" data-en="Phone">Téléphone</label>
-                    <input type="tel" id="phone" name="phone" data-fr-placeholder="+1 (XXX) XXX-XXXX" data-en-placeholder="+1 (XXX) XXX-XXXX" placeholder="+1 (XXX) XXX-XXXX">
-                </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Email" data-fr="Email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="message" data-fr="Message" data-en="Message">Message</label>
-                    <textarea id="message" name="message" required data-fr-placeholder="Décrivez votre intérêt ou posez vos questions..." data-en-placeholder="Describe your interest or ask your questions..." placeholder="Décrivez votre intérêt ou posez vos questions..."></textarea>
-                </div>
+                        <div class="form-group">
+                            <label for="phone" data-en="Phone" data-fr="Téléphone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
 
-                <button type="submit" class="submit-btn" data-fr="Envoyer" data-en="Send">
-                    Envoyer
-                </button>
-            </form>
+                        <div class="form-group">
+                            <label for="interest" data-en="Interest" data-fr="Intérêt">Interest</label>
+                            <select id="interest" name="interest" required>
+                                <option value="" data-en="Select an option..." data-fr="Sélectionnez une option...">Select an option...</option>
+                                <option value="concorde" data-en="179 - Concorde Floor (5th)" data-fr="179 - Étage de la Concorde (5e)">179 - Concorde Floor (5th)</option>
+                                <option value="innovation" data-en="179 - Innovation Floor (3rd)" data-fr="179 - Étage Innovation (3e)">179 - Innovation Floor (3rd)</option>
+                                <option value="forum" data-en="179 - Forum Floor (2nd)" data-fr="179 - Étage du Forum (2e)">179 - Forum Floor (2nd)</option>
+                                <option value="191" data-en="191 - Full Building" data-fr="191 - Immeuble Complet">191 - Full Building</option>
+                                <option value="cobroker" data-en="Co-Brokerage Inquiry" data-fr="Demande de Co-Courtage">Co-Brokerage Inquiry</option>
+                                <option value="general" data-en="General Inquiry" data-fr="Demande Générale">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-fr="Message">Message</label>
+                            <textarea id="message" name="message"></textarea>
+                        </div>
+
+                        <button type="submit" class="button form-submit" data-en="Send Message" data-fr="Envoyer">Send Message</button>
+                        <div class="form-message" id="formMessage" data-en="Thank you for your interest! We'll be in touch shortly." data-fr="Merci de votre intérêt! Nous vous recontacterons bientôt.">Thank you for your interest! We'll be in touch shortly.</div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h3 data-fr="À Propos" data-en="About">À Propos</h3>
-                <p data-fr="Campus Corridor de la Capitale : deux propriétés commerciales premium au cœur du corridor gouvernemental le plus concentré du Canada. Idéal pour organisations requérant présence aux plus hauts niveaux de gouvernance." data-en="Capital Corridor Campus: two premium commercial properties at the heart of Canada's most concentrated government corridor. Ideal for organizations requiring presence at the highest levels of governance.">
-                    Campus Corridor de la Capitale : deux propriétés commerciales premium au cœur du corridor gouvernemental le plus concentré du Canada. Idéal pour organisations requérant présence aux plus hauts niveaux de gouvernance.
-                </p>
+            <div class="footer-column">
+                <h4 data-en="About CCC" data-fr="À propos de CCC">About CCC</h4>
+                <p data-en="Capital Corridor Campus is the premier commercial real estate destination in Gatineau's government corridor. Two exceptional properties offering premium office space, strategic location, and unparalleled access to federal, provincial, and municipal government." data-fr="Campus Corridor de la Capitale est la destination immobilière commerciale de premier plan dans le corridor gouvernemental de Gatineau. Deux propriétés exceptionnelles offrant des espaces de bureau premium, une localisation stratégique et un accès inégalé aux gouvernements fédéral, provincial et municipal.">Capital Corridor Campus is the premier commercial real estate destination in Gatineau's government corridor. Two exceptional properties offering premium office space, strategic location, and unparalleled access to federal, provincial, and municipal government.</p>
             </div>
 
-            <div class="footer-section">
-                <h3 data-fr="Navigation" data-en="Navigation">Navigation</h3>
-                <p>
-                    <a href="#properties" style="color: var(--gold); text-decoration: none;">
-                        <span data-fr="Propriétés" data-en="Properties">Propriétés</span>
-                    </a><br>
-                    <a href="#spaces" style="color: var(--gold); text-decoration: none;">
-                        <span data-fr="Espaces" data-en="Spaces">Espaces</span>
-                    </a><br>
-                    <a href="#location" style="color: var(--gold); text-decoration: none;">
-                        <span data-fr="Localisation" data-en="Location">Localisation</span>
-                    </a><br>
-                    <a href="#contact" style="color: var(--gold); text-decoration: none;">
-                        <span data-fr="Contact" data-en="Contact">Contact</span>
-                    </a>
-                </p>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h4>
+                <ul>
+                    <li><a href="#properties" data-en="Properties" data-fr="Propriétés">Properties</a></li>
+                    <li><a href="#spaces" data-en="Available Spaces" data-fr="Espaces Disponibles">Available Spaces</a></li>
+                    <li><a href="#location" data-en="Location" data-fr="Localisation">Location</a></li>
+                    <li><a href="#lease" data-en="Lease Terms" data-fr="Conditions de Location">Lease Terms</a></li>
+                    <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+                </ul>
             </div>
 
-            <div class="footer-section">
-                <h3 data-fr="Contact" data-en="Contact">Contact</h3>
-                <p>
-                    <a href="tel:+1-819-123-4567" style="color: var(--gold); text-decoration: none;">+1 (819) 123-4567</a><br>
-                    <a href="mailto:info@capitalcorridor.com" style="color: var(--gold); text-decoration: none;">info@capitalcorridor.com</a>
-                </p>
+            <div class="footer-column">
+                <h4 data-en="Contact Information" data-fr="Informations de Contact">Contact Information</h4>
+                <p><strong data-en="Phone:" data-fr="Téléphone:">Phone:</strong> <a href="tel:613-691-9311">613-691-9311</a></p>
+                <p><strong data-en="Email:" data-fr="Email:">Email:</strong> <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a></p>
+                <p><strong data-en="Website:" data-fr="Website:">Website:</strong> <a href="https://campuscorridor.ca" target="_blank">campuscorridor.ca</a></p>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem;"><strong>Joseph Soares, MBA, Adm.A., PMP</strong><br>IBPROM Corp.</p>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p data-fr="© 2026 Campus Corridor de la Capitale. Tous droits réservés. | Propriété intellectuelle protégée." data-en="© 2026 Capital Corridor Campus. All rights reserved. | Intellectual property protected.">
-                © 2026 Campus Corridor de la Capitale. Tous droits réservés. | Propriété intellectuelle protégée.
-            </p>
+        <div class="footer-credit">
+            <p data-en="© 2026 Capital Corridor Campus. All rights reserved." data-fr="© 2026 Campus Corridor de la Capitale. Tous droits réservés.">© 2026 Capital Corridor Campus. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Language toggle functionality
-        const frBtn = document.getElementById('fr-btn');
-        const enBtn = document.getElementById('en-btn');
-        let currentLang = 'fr';
+        // Language Toggle
+        let currentLang = 'en';
 
-        function setLanguage(lang) {
-            currentLang = lang;
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                currentLang = lang;
 
-            // Update button states
-            if (lang === 'fr') {
-                frBtn.classList.add('active');
-                enBtn.classList.remove('active');
-            } else {
-                frBtn.classList.remove('active');
-                enBtn.classList.add('active');
-            }
+                // Update active button
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
 
-            // Update all elements with data attributes
-            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-                const attr = el.getAttribute(`data-${lang}`);
-                if (attr) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = attr;
-                    } else if (el.getAttribute('href')) {
-                        // Skip links, they handle their own content via nested spans
+                // Update all bilingual elements
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    if (lang === 'en') {
+                        el.textContent = el.dataset.en;
                     } else {
-                        el.innerHTML = attr;
+                        el.textContent = el.dataset.fr;
                     }
+                });
+
+                // Update form labels and placeholders
+                updateFormLabels(lang);
+            });
+        });
+
+        function updateFormLabels(lang) {
+            const labels = {
+                en: {
+                    name: 'Full Name',
+                    company: 'Company',
+                    email: 'Email',
+                    phone: 'Phone',
+                    interest: 'Interest',
+                    message: 'Message'
+                },
+                fr: {
+                    name: 'Nom Complet',
+                    company: 'Entreprise',
+                    email: 'Email',
+                    phone: 'Téléphone',
+                    interest: 'Intérêt',
+                    message: 'Message'
+                }
+            };
+
+            Object.keys(labels[lang]).forEach(field => {
+                const input = document.getElementById(field);
+                if (input && input.previousElementSibling) {
+                    input.previousElementSibling.textContent = labels[lang][field];
                 }
             });
-
-            // Update page title
-            document.title = document.querySelector('title').getAttribute(`data-${lang}`);
         }
 
-        frBtn.addEventListener('click', () => setLanguage('fr'));
-        enBtn.addEventListener('click', () => setLanguage('en'));
-
-        // Hamburger menu toggle
+        // Hamburger Menu
         const hamburger = document.getElementById('hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileNav = document.getElementById('mobileNav');
+        const navLinks = document.querySelectorAll('.mobile-nav a');
 
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            mobileNav.classList.toggle('active');
         });
 
-        // Close hamburger menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
-                navLinks.style.display = 'none';
+                mobileNav.classList.remove('active');
             });
         });
 
-        // Form submission handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert(currentLang === 'fr'
-                ? 'Merci de votre message. Nous vous recontacterons très bientôt.'
-                : 'Thank you for your message. We will get back to you shortly.');
-            this.reset();
-        });
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('.properties, .spaces, .location, .property-191, .video-section, .lease-terms').forEach(section => {
+            section.classList.add('scroll-reveal');
+            observer.observe(section);
         });
 
-        // Initialize with French
-        setLanguage('fr');
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                interest: document.getElementById('interest').value,
+                message: document.getElementById('message').value
+            };
+
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
+
+            fetch('https://hook.us2.make.com/i1y9xmzsztflopi2r4dr1wdy5t7ha8g8', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                formMessage.style.display = 'block';
+                formMessage.textContent = currentLang === 'fr'
+                    ? 'Merci! Votre message a été envoyé. Nous vous contacterons sous peu.'
+                    : 'Thank you! Your message has been sent. We will contact you shortly.';
+                formMessage.style.background = 'rgba(39, 174, 96, 0.15)';
+                formMessage.style.color = '#27ae60';
+                this.reset();
+            })
+            .catch(error => {
+                formMessage.style.display = 'block';
+                formMessage.textContent = currentLang === 'fr'
+                    ? 'Erreur lors de l\'envoi. Veuillez appeler le 613-691-9311.'
+                    : 'Error sending message. Please call 613-691-9311.';
+                formMessage.style.background = 'rgba(231, 76, 60, 0.15)';
+                formMessage.style.color = '#e74c3c';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = currentLang === 'fr' ? 'Envoyer le message' : 'Send Message';
+                setTimeout(() => { formMessage.style.display = 'none'; }, 8000);
+            });
+        });
+
+        // Counter Animation for Stats
+        const stats = document.querySelectorAll('.stat-number');
+        let hasAnimated = false;
+
+        window.addEventListener('scroll', function() {
+            const statsBar = document.querySelector('.stats-bar');
+            if (statsBar && !hasAnimated) {
+                const rect = statsBar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    hasAnimated = true;
+                    // Animation already handled by CSS
+                }
+            }
+        });
+
+        // Smooth anchor scrolling already handled by CSS scroll-behavior
+        // Additional mobile menu close on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        });
     </script>
+
 </body>
 </html>
