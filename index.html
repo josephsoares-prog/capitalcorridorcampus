@@ -298,6 +298,8 @@
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
+            nav { padding: 0.6rem 1.2rem; }
+            .logo img { height: 36px; }
         }
 
         /* ─── Hero ─── */
@@ -348,6 +350,16 @@
             height: 140px;
             width: auto;
             filter: drop-shadow(0 0 40px rgba(198, 162, 90, 0.2));
+        }
+
+        @media (max-width: 700px) {
+            .hero-inner { padding: 2rem 1.2rem 2.5rem; }
+            .hero-logo { margin-bottom: 1.5rem; }
+            .hero-logo img { height: 100px; }
+            .hero h1 { margin-bottom: 1rem; }
+            .hero-tagline { margin-bottom: 1.2rem; letter-spacing: 0.1em; }
+            .hero-desc { font-size: 0.95rem; }
+            .hero-actions { flex-direction: column; gap: 0.8rem; }
         }
 
         .hero h1 {
