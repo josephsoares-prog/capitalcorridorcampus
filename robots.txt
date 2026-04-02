@@ -1,17 +1,12 @@
-# Capital Corridor Campus - robots.txt
-# Search engine crawler directives
-
 User-agent: *
+Allow: /
 Disallow: /strategy.html
 Disallow: /strategy/
-Allow: /
 
-# Specific search engines may be given different rules if needed
 User-agent: Googlebot
 Disallow: /strategy.html
 
 User-agent: Bingbot
 Disallow: /strategy.html
 
-# Sitemap reference (if applicable)
-# Sitemap: https://campuscorridor.ca/sitemap.xml
+Sitemap: https://campuscorridor.ca/sitemap.xml
