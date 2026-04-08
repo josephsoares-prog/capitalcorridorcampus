@@ -1377,6 +1377,7 @@
             <ul class="nav-links">
                 <li><a href="#properties" data-en="Properties" data-fr="Propriétés">Properties</a></li>
                 <li><a href="#spaces" data-en="Spaces" data-fr="Espaces">Spaces</a></li>
+                <li><a href="#virtual" data-en="Virtual Office" data-fr="Bureau virtuel">Virtual Office</a></li>
                 <li><a href="#location" data-en="Location" data-fr="Emplacement">Location</a></li>
                 <li><a href="#lease" data-en="Lease Terms" data-fr="Conditions">Lease Terms</a></li>
                 <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
@@ -1396,6 +1397,7 @@
         <div class="mobile-nav" id="mobileNav">
             <a href="#properties" data-en="Properties" data-fr="Propriétés">Properties</a>
             <a href="#spaces" data-en="Spaces" data-fr="Espaces">Spaces</a>
+            <a href="#virtual" data-en="Virtual Office" data-fr="Bureau virtuel">Virtual Office</a>
             <a href="#location" data-en="Location" data-fr="Emplacement">Location</a>
             <a href="#lease" data-en="Lease Terms" data-fr="Conditions">Lease Terms</a>
             <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
@@ -1720,7 +1722,7 @@
                         <span class="flex-feature" data-en="Printing & scanning" data-fr="Impression et numérisation">Printing & scanning</span>
                         <span class="flex-feature" data-en="Coffee & refreshments" data-fr="Café et rafraîchissements">Coffee & refreshments</span>
                     </div>
-                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver" data-stripe="flex-day-pass">Book Now</a>
                 </div>
 
                 <!-- Weekly -->
@@ -1735,7 +1737,7 @@
                         <span class="flex-feature" data-en="Business address" data-fr="Adresse d'affaires">Business address</span>
                         <span class="flex-feature" data-en="After-hours access" data-fr="Accès en dehors des heures">After-hours access</span>
                     </div>
-                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver" data-stripe="flex-weekly">Book Now</a>
                 </div>
 
                 <!-- Monthly (Most Popular) -->
@@ -1751,11 +1753,70 @@
                         <span class="flex-feature" data-en="24/7 access" data-fr="Accès 24/7">24/7 access</span>
                         <span class="flex-feature" data-en="Signage option" data-fr="Option d'affichage">Signage option</span>
                     </div>
-                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver" data-stripe="flex-monthly">Book Now</a>
                 </div>
             </div>
 
             <p class="flex-note reveal" data-en="Steps from Parliament Hill. Minutes from downtown Ottawa. All spaces include government-grade security and infrastructure." data-fr="À quelques pas de la Colline du Parlement. À quelques minutes du centre-ville d'Ottawa. Tous les espaces comprennent une sécurité et une infrastructure de calibre gouvernemental.">Steps from Parliament Hill. Minutes from downtown Ottawa. All spaces include government-grade security and infrastructure.</p>
+        </div>
+    </section>
+
+    <!-- ═══ Virtual Office ═══ -->
+    <section class="flex-section" id="virtual">
+        <div class="container">
+            <span class="label reveal" data-en="Virtual Office Solutions" data-fr="Solutions de bureau virtuel">Virtual Office Solutions</span>
+            <h2 class="reveal" data-en="Your Address in Canada's Government Corridor" data-fr="Votre adresse au cœur du corridor gouvernemental du Canada">Your Address in Canada's Government Corridor</h2>
+            <p style="font-size: 1.05rem; color: var(--gold); margin-bottom: 3rem; text-align: center;" class="reveal" data-en="A prestigious business address steps from Parliament Hill — without the overhead of a physical office." data-fr="Une adresse d'affaires prestigieuse à quelques pas de la Colline du Parlement — sans les frais d'un bureau physique.">A prestigious business address steps from Parliament Hill — without the overhead of a physical office.</p>
+            <div class="divider reveal"></div>
+
+            <div class="flex-pricing-grid">
+                <!-- Corridor Address -->
+                <div class="flex-card reveal" data-popular-en="">
+                    <h3 data-en="Corridor Address" data-fr="Adresse Corridor">Corridor Address</h3>
+                    <div class="price" data-en="$99" data-fr="99 $">$99</div>
+                    <span class="price-unit" data-en="/month" data-fr="/mois">/month</span>
+                    <div class="flex-features">
+                        <span class="flex-feature" data-en="Business address at 179 Promenade du Portage" data-fr="Adresse d'affaires au 179 Promenade du Portage">Business address at 179 Promenade du Portage</span>
+                        <span class="flex-feature" data-en="Mail handling — store & collect or forward" data-fr="Gestion du courrier — conservation ou réexpédition">Mail handling — store & collect or forward</span>
+                        <span class="flex-feature" data-en="Use of address on business cards & registrations" data-fr="Utilisation de l'adresse sur cartes et inscriptions">Use of address on business cards & registrations</span>
+                        <span class="flex-feature" data-en="Building directory listing" data-fr="Inscription au répertoire de l'immeuble">Building directory listing</span>
+                    </div>
+                    <a href="#contact" class="btn" data-en="Get Started" data-fr="Commencer" data-stripe="virtual-address">Get Started</a>
+                </div>
+
+                <!-- Corridor Office (Most Popular) -->
+                <div class="flex-card popular reveal reveal-delay-1" data-popular-en="Most Popular" data-popular-fr="Le plus populaire">
+                    <h3 data-en="Corridor Office" data-fr="Bureau Corridor">Corridor Office</h3>
+                    <div class="price" data-en="$199" data-fr="199 $">$199</div>
+                    <span class="price-unit" data-en="/month" data-fr="/mois">/month</span>
+                    <div class="flex-features">
+                        <span class="flex-feature" data-en="Everything in Corridor Address, plus:" data-fr="Tout ce qui est inclus dans Adresse Corridor, plus :">Everything in Corridor Address, plus:</span>
+                        <span class="flex-feature" data-en="Dedicated local phone number" data-fr="Numéro de téléphone local dédié">Dedicated local phone number</span>
+                        <span class="flex-feature" data-en="Professional call forwarding" data-fr="Renvoi d'appels professionnel">Professional call forwarding</span>
+                        <span class="flex-feature" data-en="2 days/month private office access" data-fr="2 jours/mois d'accès à un bureau privé">2 days/month private office access</span>
+                        <span class="flex-feature" data-en="Meeting room — 2 hours/month" data-fr="Salle de réunion — 2 heures/mois">Meeting room — 2 hours/month</span>
+                    </div>
+                    <a href="#contact" class="btn" data-en="Get Started" data-fr="Commencer" data-stripe="virtual-office">Get Started</a>
+                </div>
+
+                <!-- Corridor Executive -->
+                <div class="flex-card reveal reveal-delay-2" data-popular-en="">
+                    <h3 data-en="Corridor Executive" data-fr="Exécutif Corridor">Corridor Executive</h3>
+                    <div class="price" data-en="$349" data-fr="349 $">$349</div>
+                    <span class="price-unit" data-en="/month" data-fr="/mois">/month</span>
+                    <div class="flex-features">
+                        <span class="flex-feature" data-en="Everything in Corridor Office, plus:" data-fr="Tout ce qui est inclus dans Bureau Corridor, plus :">Everything in Corridor Office, plus:</span>
+                        <span class="flex-feature" data-en="5 days/month private office access" data-fr="5 jours/mois d'accès à un bureau privé">5 days/month private office access</span>
+                        <span class="flex-feature" data-en="Meeting room — 8 hours/month" data-fr="Salle de réunion — 8 heures/mois">Meeting room — 8 hours/month</span>
+                        <span class="flex-feature" data-en="After-hours building access" data-fr="Accès à l'immeuble en dehors des heures">After-hours building access</span>
+                        <span class="flex-feature" data-en="Lobby signage" data-fr="Affichage dans le hall d'entrée">Lobby signage</span>
+                        <span class="flex-feature" data-en="Priority booking" data-fr="Réservation prioritaire">Priority booking</span>
+                    </div>
+                    <a href="#contact" class="btn" data-en="Get Started" data-fr="Commencer" data-stripe="virtual-executive">Get Started</a>
+                </div>
+            </div>
+
+            <p class="flex-note reveal" data-en="All virtual office plans include a 179 Promenade du Portage, Gatineau QC business address — steps from Parliament Hill, the Supreme Court, and major federal departments." data-fr="Tous les forfaits de bureau virtuel incluent une adresse d'affaires au 179 Promenade du Portage, Gatineau QC — à quelques pas de la Colline du Parlement, de la Cour suprême et des principaux ministères fédéraux.">All virtual office plans include a 179 Promenade du Portage, Gatineau QC business address — steps from Parliament Hill, the Supreme Court, and major federal departments.</p>
         </div>
     </section>
 
@@ -2011,6 +2072,7 @@
                 <ul>
                     <li><a href="#properties" data-en="Properties" data-fr="Propriétés">Properties</a></li>
                     <li><a href="#spaces" data-en="Available Spaces" data-fr="Espaces disponibles">Available Spaces</a></li>
+                    <li><a href="#virtual" data-en="Virtual Office" data-fr="Bureau virtuel">Virtual Office</a></li>
                     <li><a href="#location" data-en="Location" data-fr="Emplacement">Location</a></li>
                     <li><a href="#lease" data-en="Lease Terms" data-fr="Conditions">Lease Terms</a></li>
                     <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
