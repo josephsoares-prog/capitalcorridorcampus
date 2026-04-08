@@ -612,6 +612,86 @@
             display: block;
         }
 
+        /* ─── Gallery Carousel ─── */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: var(--dark-card);
+        }
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(198, 162, 90, 0.15);
+            color: var(--gold);
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            border: 1px solid rgba(198, 162, 90, 0.3);
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(198, 162, 90, 0.25);
+            border-color: rgba(198, 162, 90, 0.6);
+        }
+
+        .carousel-prev { left: 12px; }
+        .carousel-next { right: 12px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(198, 162, 90, 0.3);
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            border: 1px solid rgba(198, 162, 90, 0.5);
+        }
+
+        .carousel-dot.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            width: 24px;
+            border-radius: 4px;
+        }
+
         .property-card-body {
             padding: 2rem;
         }
@@ -817,6 +897,122 @@
             max-width: 800px;
             margin: 0 auto;
             font-style: italic;
+        }
+
+        /* ─── Flex Space Section ─── */
+        .flex-section { background: var(--dark); }
+
+        .flex-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .flex-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            transition: all 0.5s var(--ease);
+            position: relative;
+        }
+
+        .flex-card.popular {
+            border-color: var(--gold);
+            border-width: 2px;
+            padding: 2.5rem 2rem;
+        }
+
+        .flex-card.popular::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.35rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .flex-card.popular[data-en]::before {
+            content: attr(data-popular-en);
+        }
+
+        .flex-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 24px 80px rgba(198, 162, 90, 0.08);
+        }
+
+        .flex-card.popular:hover {
+            border-color: var(--gold);
+            box-shadow: 0 24px 80px rgba(198, 162, 90, 0.15);
+        }
+
+        .flex-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: var(--cream);
+        }
+
+        .flex-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .flex-card .price-unit {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .flex-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(198, 162, 90, 0.15);
+        }
+
+        .flex-feature {
+            font-size: 0.9rem;
+            color: var(--text);
+            padding-left: 0;
+        }
+
+        .flex-feature::before {
+            content: '✓ ';
+            color: var(--gold);
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .flex-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .flex-note {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(198, 162, 90, 0.15);
+            margin-top: 2rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1000px) {
+            .flex-pricing-grid { grid-template-columns: 1fr; }
         }
 
         /* ─── Location ─── */
@@ -1261,7 +1457,36 @@
             <div class="property-grid">
                 <!-- 179 -->
                 <div class="property-card reveal">
-                    <img src="179_exterior.jpg" alt="179 Promenade du Portage — Chez Henri" class="property-card-img">
+                    <div class="carousel-container" data-carousel="179">
+                        <div class="carousel-slide active">
+                            <img src="179_exterior.jpg" alt="179 Promenade du Portage — Chez Henri exterior" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/179/CCC_179_exterior_elevated.jpg" alt="179 Promenade du Portage — elevated view" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/179/CCC_179_exterior_street.jpg" alt="179 Promenade du Portage — street level view" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/179/CCC_179_exterior_angle.jpg" alt="179 Promenade du Portage — angle view" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/179/CCC_179_entrance_plaza.jpg" alt="179 Promenade du Portage — entrance and plaza" />
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="carouselPrev('179')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="carousel-nav carousel-next" onclick="carouselNext('179')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="carouselGoTo('179', 0)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('179', 1)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('179', 2)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('179', 3)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('179', 4)"></span>
+                        </div>
+                    </div>
                     <div class="property-card-body">
                         <h3 data-en="Chez Henri" data-fr="Chez Henri">Chez Henri</h3>
                         <p class="property-address">179 Promenade du Portage</p>
@@ -1294,7 +1519,36 @@
 
                 <!-- 191 -->
                 <div class="property-card reveal reveal-delay-1">
-                    <img src="191_exterior.jpg" alt="191 Promenade du Portage — Place des Explorateurs" class="property-card-img">
+                    <div class="carousel-container" data-carousel="191">
+                        <div class="carousel-slide active">
+                            <img src="191_exterior.jpg" alt="191 Promenade du Portage — Place des Explorateurs exterior" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/191/CCC_191_exterior_mural.jpg" alt="191 Promenade du Portage — mural view" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/191/CCC_191_aerial_skyline.jpg" alt="191 Promenade du Portage — aerial skyline view" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/191/CCC_191_entrance_front.jpg" alt="191 Promenade du Portage — entrance front" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/191/CCC_191_exterior_rear.jpg" alt="191 Promenade du Portage — exterior rear with flag" />
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="carouselPrev('191')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="carousel-nav carousel-next" onclick="carouselNext('191')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="carouselGoTo('191', 0)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('191', 1)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('191', 2)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('191', 3)"></span>
+                            <span class="carousel-dot" onclick="carouselGoTo('191', 4)"></span>
+                        </div>
+                    </div>
                     <div class="property-card-body">
                         <h3 data-en="Place des Explorateurs" data-fr="Place des Explorateurs">Place des Explorateurs</h3>
                         <p class="property-address">191 Promenade du Portage</p>
@@ -1442,6 +1696,66 @@
     <section class="quote-section">
         <div class="container">
             <p class="quote-text reveal" data-en="&ldquo;The must-have address to influence and participate at the highest level of Canadian governance.&rdquo;" data-fr="&laquo; L'adresse incontournable pour influencer et participer au plus haut niveau de la gouvernance canadienne. &raquo;">&ldquo;The must-have address to influence and participate at the highest level of Canadian governance.&rdquo;</p>
+        </div>
+    </section>
+
+    <!-- ═══ Flex Space ═══ -->
+    <section class="flex-section" id="flex">
+        <div class="container">
+            <span class="label reveal" data-en="Flex Space Offerings" data-fr="Offres d'espace flex">Flex Space Offerings</span>
+            <h2 class="reveal" data-en="Flex Space" data-fr="Espace Flex">Flex Space</h2>
+            <p style="font-size: 1.05rem; color: var(--gold); margin-bottom: 3rem; text-align: center;" class="reveal" data-en="Work on your terms" data-fr="Travaillez à vos conditions">Work on your terms</p>
+            <div class="divider reveal"></div>
+
+            <div class="flex-pricing-grid">
+                <!-- Day Pass -->
+                <div class="flex-card reveal" data-popular-en="">
+                    <h3 data-en="Day Pass" data-fr="Passe journalière">Day Pass</h3>
+                    <div class="price" data-en="$75" data-fr="75 $">$75</div>
+                    <span class="price-unit" data-en="/day" data-fr="/jour">/day</span>
+                    <div class="flex-features">
+                        <span class="flex-feature" data-en="Private office or hot desk" data-fr="Bureau privé ou poste partagé">Private office or hot desk</span>
+                        <span class="flex-feature" data-en="High-speed WiFi" data-fr="WiFi haute vitesse">High-speed WiFi</span>
+                        <span class="flex-feature" data-en="Meeting room access (1 hr)" data-fr="Accès salle de réunion (1 h)">Meeting room access (1 hr)</span>
+                        <span class="flex-feature" data-en="Printing & scanning" data-fr="Impression et numérisation">Printing & scanning</span>
+                        <span class="flex-feature" data-en="Coffee & refreshments" data-fr="Café et rafraîchissements">Coffee & refreshments</span>
+                    </div>
+                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                </div>
+
+                <!-- Weekly -->
+                <div class="flex-card reveal reveal-delay-1" data-popular-en="">
+                    <h3 data-en="Weekly" data-fr="Hebdomadaire">Weekly</h3>
+                    <div class="price" data-en="$299" data-fr="299 $">$299</div>
+                    <span class="price-unit" data-en="/week" data-fr="/semaine">/week</span>
+                    <div class="flex-features">
+                        <span class="flex-feature" data-en="All from Day Pass, plus:" data-fr="Tout ce du Passe journalière, plus :">All from Day Pass, plus:</span>
+                        <span class="flex-feature" data-en="Dedicated desk" data-fr="Bureau attitré">Dedicated desk</span>
+                        <span class="flex-feature" data-en="Meeting room access (5 hrs)" data-fr="Accès salle de réunion (5 h)">Meeting room access (5 hrs)</span>
+                        <span class="flex-feature" data-en="Business address" data-fr="Adresse d'affaires">Business address</span>
+                        <span class="flex-feature" data-en="After-hours access" data-fr="Accès en dehors des heures">After-hours access</span>
+                    </div>
+                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                </div>
+
+                <!-- Monthly (Most Popular) -->
+                <div class="flex-card popular reveal reveal-delay-2" data-popular-en="Most Popular" data-popular-fr="Le plus populaire">
+                    <h3 data-en="Monthly" data-fr="Mensuel">Monthly</h3>
+                    <div class="price" data-en="$899" data-fr="899 $">$899</div>
+                    <span class="price-unit" data-en="/month" data-fr="/mois">/month</span>
+                    <div class="flex-features">
+                        <span class="flex-feature" data-en="All from Weekly, plus:" data-fr="Tout ce de l'Hebdomadaire, plus :">All from Weekly, plus:</span>
+                        <span class="flex-feature" data-en="Private office" data-fr="Bureau privé">Private office</span>
+                        <span class="flex-feature" data-en="Unlimited meeting room" data-fr="Salle de réunion illimitée">Unlimited meeting room</span>
+                        <span class="flex-feature" data-en="Mail handling" data-fr="Gestion du courrier">Mail handling</span>
+                        <span class="flex-feature" data-en="24/7 access" data-fr="Accès 24/7">24/7 access</span>
+                        <span class="flex-feature" data-en="Signage option" data-fr="Option d'affichage">Signage option</span>
+                    </div>
+                    <a href="#contact" class="btn" data-en="Book Now" data-fr="Réserver">Book Now</a>
+                </div>
+            </div>
+
+            <p class="flex-note reveal" data-en="Steps from Parliament Hill. Minutes from downtown Ottawa. All spaces include government-grade security and infrastructure." data-fr="À quelques pas de la Colline du Parlement. À quelques minutes du centre-ville d'Ottawa. Tous les espaces comprennent une sécurité et une infrastructure de calibre gouvernemental.">Steps from Parliament Hill. Minutes from downtown Ottawa. All spaces include government-grade security and infrastructure.</p>
         </div>
     </section>
 
@@ -1837,6 +2151,76 @@
                 hamburger.classList.remove('active');
                 mobileNav.classList.remove('active');
             }
+        });
+
+        // ─── Gallery Carousel ───
+        const carousels = {};
+
+        function initCarousels() {
+            document.querySelectorAll('[data-carousel]').forEach(container => {
+                const id = container.dataset.carousel;
+                carousels[id] = { current: 0, slides: container.querySelectorAll('.carousel-slide'), dots: container.querySelectorAll('.carousel-dot') };
+            });
+        }
+
+        function carouselNext(id) {
+            if (!carousels[id]) return;
+            const carousel = carousels[id];
+            carousel.current = (carousel.current + 1) % carousel.slides.length;
+            updateCarousel(id);
+        }
+
+        function carouselPrev(id) {
+            if (!carousels[id]) return;
+            const carousel = carousels[id];
+            carousel.current = (carousel.current - 1 + carousel.slides.length) % carousel.slides.length;
+            updateCarousel(id);
+        }
+
+        function carouselGoTo(id, index) {
+            if (!carousels[id] || index < 0 || index >= carousels[id].slides.length) return;
+            carousels[id].current = index;
+            updateCarousel(id);
+        }
+
+        function updateCarousel(id) {
+            const carousel = carousels[id];
+            carousel.slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === carousel.current);
+            });
+            carousel.dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === carousel.current);
+            });
+        }
+
+        // Initialize carousels on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousels);
+        } else {
+            initCarousels();
+        }
+
+        // Touch/swipe support for mobile carousels
+        document.querySelectorAll('[data-carousel]').forEach(container => {
+            let startX = 0;
+            let isDragging = false;
+
+            container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            });
+
+            container.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const endX = e.changedTouches[0].clientX;
+                const id = container.dataset.carousel;
+                if (startX - endX > 50) {
+                    carouselNext(id);
+                } else if (endX - startX > 50) {
+                    carouselPrev(id);
+                }
+            });
         });
     </script>
 </body>
