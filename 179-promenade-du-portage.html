@@ -1488,17 +1488,8 @@
                 body: JSON.stringify(formData)
             })
             .then(response => {
-                // GA4 conversion tracking
-                gtag('event', 'generate_lead', {
-                    event_category: 'Contact',
-                    event_label: formData.interest,
-                    value: 1
-                });
-                formMessage.style.display = 'block';
-                formMessage.textContent = 'Thank you! Your message has been sent. We will contact you shortly.';
-                formMessage.style.borderLeftColor = '#27ae60';
-                formMessage.style.color = '#27ae60';
-                this.reset();
+                // Redirect to thank-you page (GA4 conversion fires there)
+                window.location.href = 'thank-you.html';
             })
             .catch(error => {
                 formMessage.style.display = 'block';

@@ -883,7 +883,7 @@
                         <li class="pricing-feature">Use address on business cards & marketing</li>
                         <li class="pricing-feature">Directory listing</li>
                     </ul>
-                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire</button>
+                    <a class="btn btn-outline" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=soares%40ibprom.com&item_name=Corridor+Address+-+Virtual+Office+%28Monthly%29&amount=99.00&currency_code=CAD&return=https%3A%2F%2Fcampuscorridor.ca%2Fthank-you.html&cancel_return=https%3A%2F%2Fcampuscorridor.ca%2Fvirtual-office.html" target="_blank" rel="noopener">Get Started — $99/mo</a>
                 </div>
 
                 <!-- Corridor Office (Featured) -->
@@ -898,7 +898,7 @@
                         <li class="pricing-feature">2 days private office access per month</li>
                         <li class="pricing-feature">2 hours meeting room per month</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+                    <a class="btn btn-primary" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=soares%40ibprom.com&item_name=Corridor+Office+-+Virtual+Office+%28Monthly%29&amount=199.00&currency_code=CAD&return=https%3A%2F%2Fcampuscorridor.ca%2Fthank-you.html&cancel_return=https%3A%2F%2Fcampuscorridor.ca%2Fvirtual-office.html" target="_blank" rel="noopener">Get Started — $199/mo</a>
                 </div>
 
                 <!-- Corridor Executive -->
@@ -913,7 +913,7 @@
                         <li class="pricing-feature">After-hours building access</li>
                         <li class="pricing-feature">Custom lobby signage</li>
                     </ul>
-                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire</button>
+                    <a class="btn btn-outline" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=soares%40ibprom.com&item_name=Corridor+Executive+-+Virtual+Office+%28Monthly%29&amount=349.00&currency_code=CAD&return=https%3A%2F%2Fcampuscorridor.ca%2Fthank-you.html&cancel_return=https%3A%2F%2Fcampuscorridor.ca%2Fvirtual-office.html" target="_blank" rel="noopener">Get Started — $349/mo</a>
                 </div>
             </div>
 
@@ -1240,18 +1240,8 @@
                     body: JSON.stringify(formData)
                 });
 
-                // Send GA4 event
-                if (window.gtag) {
-                    window.gtag('event', 'form_submission', {
-                        'event_category': 'engagement',
-                        'event_label': 'virtual_office_inquiry',
-                        'value': formData.package
-                    });
-                }
-
-                // Show success message
-                alert('Thank you! Your inquiry has been sent. We'll be in touch within 24 hours.');
-                document.getElementById('contactForm').reset();
+                // Redirect to thank-you page (GA4 conversion fires there)
+                window.location.href = 'thank-you.html';
             } catch (error) {
                 console.error('Form submission error:', error);
                 alert('There was an issue sending your form. Please try again or call 613-691-9311.');

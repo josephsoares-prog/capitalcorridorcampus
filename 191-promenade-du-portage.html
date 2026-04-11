@@ -996,25 +996,9 @@
         });
 
         if (response.ok) {
-          // Track in GA4
-          gtag('event', 'form_submission', {
-            'form_name': 'property_inquiry',
-            'form_location': '191_promenade_du_portage',
-            'organization': data.organization,
-            'interest': data.interest
-          });
-
-          // Show success message
-          const submitBtn = contactForm.querySelector('.submit-btn');
-          const originalText = submitBtn.textContent;
-          submitBtn.textContent = 'Thank you! We\'ll be in touch.';
-          submitBtn.disabled = true;
-
-          setTimeout(() => {
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          }, 3000);
+          // Redirect to thank-you page (GA4 conversion fires there)
+          window.location.href = 'thank-you.html';
+          return;
         }
       } catch (error) {
         console.error('Form submission error:', error);
