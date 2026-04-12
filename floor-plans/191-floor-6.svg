@@ -1,0 +1,94 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #F5F3EE; }
+      .label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #F5F3EE; }
+      .legend-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; fill: #F5F3EE; }
+      .space-fill { fill: #F5F3EE; opacity: 0.1; }
+      .outline { stroke: #C6A25A; stroke-width: 2; fill: none; }
+      .core { stroke: #C6A25A; stroke-width: 2; fill: none; }
+      .wall { stroke: #C6A25A; stroke-width: 3; fill: none; }
+      .highlight { stroke: #C6A25A; stroke-width: 2.5; stroke-dasharray: 4,4; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A0F1A"/>
+
+  <!-- Title Bar -->
+  <rect width="800" height="50" fill="#1B3154"/>
+  <text x="20" y="32" class="title">191 Promenade du Portage — Floor 6 (Top)</text>
+  <text x="600" y="32" class="title" text-anchor="end">~4,300 sq ft</text>
+
+  <!-- Floor Outline -->
+  <rect x="60" y="80" width="680" height="350" class="wall"/>
+
+  <!-- Main Open Flexible Space (large center area) -->
+  <rect x="120" y="100" width="600" height="250" class="space-fill"/>
+  <rect x="120" y="100" width="600" height="250" class="highlight"/>
+  <text x="420" y="180" class="label" text-anchor="middle">Fully Flexible/Configurable Space</text>
+  <text x="420" y="195" class="label" text-anchor="middle">(Event, Training, Innovation Hub)</text>
+
+  <!-- Elevator/Stair Core -->
+  <g>
+    <rect x="350" y="170" width="100" height="90" class="core"/>
+    <text x="375" y="205" class="label" text-anchor="middle">Elevator</text>
+    <text x="425" y="205" class="label" text-anchor="middle">Stairs</text>
+  </g>
+
+  <!-- Washrooms -->
+  <rect x="280" y="170" width="60" height="90" class="space-fill"/>
+  <rect x="280" y="170" width="60" height="90" class="outline"/>
+  <text x="310" y="220" class="label" text-anchor="middle">Washrooms</text>
+
+  <!-- Left Flex Zone -->
+  <rect x="60" y="100" width="60" height="250" class="space-fill"/>
+  <rect x="60" y="100" width="60" height="250" class="outline"/>
+  <text x="90" y="225" class="label" text-anchor="middle" transform="rotate(-90 90 225)">Flex Zone</text>
+
+  <!-- Right Flex Zone -->
+  <rect x="740" y="100" width="0" height="250" class="space-fill"/>
+  <rect x="740" y="100" width="0" height="250" class="outline"/>
+
+  <!-- Kitchenette/Refreshment (bottom left) -->
+  <rect x="60" y="360" width="100" height="70" class="space-fill"/>
+  <rect x="60" y="360" width="100" height="70" class="outline"/>
+  <text x="110" y="395" class="label" text-anchor="middle">Kitchenette</text>
+
+  <!-- Accessible Washroom (bottom center-left) -->
+  <rect x="170" y="360" width="80" height="70" class="space-fill"/>
+  <rect x="170" y="360" width="80" height="70" class="outline"/>
+  <text x="210" y="395" class="label" text-anchor="middle">Accessible</text>
+
+  <!-- Storage/Tech Room (bottom center) -->
+  <rect x="260" y="360" width="100" height="70" class="space-fill"/>
+  <rect x="260" y="360" width="100" height="70" class="outline"/>
+  <text x="310" y="395" class="label" text-anchor="middle">Storage/Tech</text>
+
+  <!-- AV/Control Room (bottom center-right) -->
+  <rect x="370" y="360" width="100" height="70" class="space-fill"/>
+  <rect x="370" y="360" width="100" height="70" class="outline"/>
+  <text x="420" y="395" class="label" text-anchor="middle">AV/Control</text>
+
+  <!-- Break Room (bottom right) -->
+  <rect x="480" y="360" width="120" height="70" class="space-fill"/>
+  <rect x="480" y="360" width="120" height="70" class="outline"/>
+  <text x="540" y="395" class="label" text-anchor="middle">Break Room</text>
+
+  <!-- Storage (far right) -->
+  <rect x="610" y="360" width="130" height="70" class="space-fill"/>
+  <rect x="610" y="360" width="130" height="70" class="outline"/>
+  <text x="675" y="395" class="label" text-anchor="middle">Storage</text>
+
+  <!-- Legend -->
+  <g>
+    <rect x="20" y="450" width="760" height="40" fill="none" stroke="#C6A25A" stroke-width="1"/>
+    <text x="30" y="468" class="legend-label">LEGEND:</text>
+    <rect x="120" y="454" width="12" height="12" class="space-fill" stroke="#C6A25A" stroke-width="0.5"/>
+    <text x="138" y="463" class="legend-label">Configurable Space</text>
+    <line x1="310" y1="460" x2="325" y2="460" stroke="#C6A25A" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <text x="335" y="463" class="legend-label">Premium Flexible Zone</text>
+    <rect x="540" y="454" width="12" height="12" fill="none" stroke="#C6A25A" stroke-width="2"/>
+    <text x="558" y="463" class="legend-label">Core (Elevator/Stairs)</text>
+  </g>
+</svg>

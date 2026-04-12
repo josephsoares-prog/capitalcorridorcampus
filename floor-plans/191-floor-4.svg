@@ -1,0 +1,115 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #F5F3EE; }
+      .label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #F5F3EE; }
+      .legend-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; fill: #F5F3EE; }
+      .space-fill { fill: #F5F3EE; opacity: 0.1; }
+      .outline { stroke: #C6A25A; stroke-width: 2; fill: none; }
+      .core { stroke: #C6A25A; stroke-width: 2; fill: none; }
+      .wall { stroke: #C6A25A; stroke-width: 3; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0A0F1A"/>
+
+  <!-- Title Bar -->
+  <rect width="800" height="50" fill="#1B3154"/>
+  <text x="20" y="32" class="title">191 Promenade du Portage — Floor 4</text>
+  <text x="600" y="32" class="title" text-anchor="end">~4,300 sq ft</text>
+
+  <!-- Floor Outline -->
+  <rect x="60" y="80" width="680" height="350" class="wall"/>
+
+  <!-- Corridor -->
+  <rect x="160" y="100" width="560" height="60" class="space-fill"/>
+  <rect x="160" y="100" width="560" height="60" class="outline"/>
+  <text x="440" y="135" class="label" text-anchor="middle">Main Corridor</text>
+
+  <!-- Elevator/Stair Core -->
+  <g>
+    <rect x="350" y="170" width="100" height="90" class="core"/>
+    <text x="375" y="205" class="label" text-anchor="middle">Elevator</text>
+    <text x="425" y="205" class="label" text-anchor="middle">Stairs</text>
+  </g>
+
+  <!-- Washrooms -->
+  <rect x="280" y="170" width="60" height="90" class="space-fill"/>
+  <rect x="280" y="170" width="60" height="90" class="outline"/>
+  <text x="310" y="220" class="label" text-anchor="middle">Washrooms</text>
+
+  <!-- Private Office 1 (left, top) -->
+  <rect x="60" y="80" width="90" height="75" class="space-fill"/>
+  <rect x="60" y="80" width="90" height="75" class="outline"/>
+  <text x="105" y="123" class="label" text-anchor="middle">Office</text>
+
+  <!-- Private Office 2 (left, middle) -->
+  <rect x="60" y="165" width="90" height="75" class="space-fill"/>
+  <rect x="60" y="165" width="90" height="75" class="outline"/>
+  <text x="105" y="208" class="label" text-anchor="middle">Office</text>
+
+  <!-- Private Office 3 (left, bottom) -->
+  <rect x="60" y="250" width="90" height="80" class="space-fill"/>
+  <rect x="60" y="250" width="90" height="80" class="outline"/>
+  <text x="105" y="293" class="label" text-anchor="middle">Office</text>
+
+  <!-- Private Office 4 (left, far bottom) -->
+  <rect x="170" y="320" width="100" height="110" class="space-fill"/>
+  <rect x="170" y="320" width="100" height="110" class="outline"/>
+  <text x="220" y="375" class="label" text-anchor="middle">Office</text>
+
+  <!-- Private Office 5 (center-right, top) -->
+  <rect x="460" y="100" width="100" height="75" class="space-fill"/>
+  <rect x="460" y="100" width="100" height="75" class="outline"/>
+  <text x="510" y="143" class="label" text-anchor="middle">Office</text>
+
+  <!-- Private Office 6 (center-right, middle) -->
+  <rect x="460" y="185" width="100" height="75" class="space-fill"/>
+  <rect x="460" y="185" width="100" height="75" class="outline"/>
+  <text x="510" y="228" class="label" text-anchor="middle">Office</text>
+
+  <!-- Private Office 7 (right, top) -->
+  <rect x="570" y="100" width="170" height="75" class="space-fill"/>
+  <rect x="570" y="100" width="170" height="75" class="outline"/>
+  <text x="655" y="143" class="label" text-anchor="middle">Office Suite</text>
+
+  <!-- Private Office 8 (right, middle) -->
+  <rect x="570" y="185" width="170" height="75" class="space-fill"/>
+  <rect x="570" y="185" width="170" height="75" class="outline"/>
+  <text x="655" y="228" class="label" text-anchor="middle">Office Suite</text>
+
+  <!-- Meeting Room (bottom center) -->
+  <rect x="280" y="320" width="100" height="110" class="space-fill"/>
+  <rect x="280" y="320" width="100" height="110" class="outline"/>
+  <text x="330" y="375" class="label" text-anchor="middle">Meeting</text>
+  <text x="330" y="390" class="label" text-anchor="middle">Room</text>
+
+  <!-- Shared Support (lower center-right) -->
+  <rect x="390" y="320" width="100" height="110" class="space-fill"/>
+  <rect x="390" y="320" width="100" height="110" class="outline"/>
+  <text x="440" y="375" class="label" text-anchor="middle">Support/</text>
+  <text x="440" y="390" class="label" text-anchor="middle">Storage</text>
+
+  <!-- Break Room (lower right) -->
+  <rect x="500" y="270" width="110" height="160" class="space-fill"/>
+  <rect x="500" y="270" width="110" height="160" class="outline"/>
+  <text x="555" y="350" class="label" text-anchor="middle">Break Room</text>
+
+  <!-- Hallway Storage (far right) -->
+  <rect x="620" y="320" width="120" height="110" class="space-fill"/>
+  <rect x="620" y="320" width="120" height="110" class="outline"/>
+  <text x="680" y="375" class="label" text-anchor="middle">Storage</text>
+
+  <!-- Legend -->
+  <g>
+    <rect x="20" y="450" width="760" height="40" fill="none" stroke="#C6A25A" stroke-width="1"/>
+    <text x="30" y="468" class="legend-label">LEGEND:</text>
+    <rect x="120" y="454" width="12" height="12" class="space-fill" stroke="#C6A25A" stroke-width="0.5"/>
+    <text x="138" y="463" class="legend-label">Configurable Space</text>
+    <line x1="310" y1="460" x2="325" y2="460" stroke="#C6A25A" stroke-width="2"/>
+    <text x="335" y="463" class="legend-label">Building Boundary</text>
+    <rect x="540" y="454" width="12" height="12" fill="none" stroke="#C6A25A" stroke-width="2"/>
+    <text x="558" y="463" class="legend-label">Core (Elevator/Stairs)</text>
+  </g>
+</svg>

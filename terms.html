@@ -1,370 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3TWNPP48M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-L3TWNPP48M');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service for Capital Corridor Campus. Commercial real estate listing site. Effective April 9, 2026.">
+    <meta name="description" content="Terms of Service for Capital Corridor Campus, a premier commercial real estate leasing platform in Gatineau, Quebec.">
+    <meta name="keywords" content="terms of service, legal, capital corridor campus, commercial real estate">
+    <meta name="author" content="Capital Corridor Campus">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://campuscorridor.ca/terms.html">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <title>Terms of Service | Capital Corridor Campus</title>
+    
     <style>
         :root {
-            --navy: #0b1a2e;
-            --navy-mid: #0f2240;
-            --navy-light: #132d54;
-            --gold: #c9a84c;
-            --gold-light: #dfc07a;
-            --gold-muted: rgba(201, 168, 76, 0.12);
-            --cream: #f5f1eb;
-            --white: #ffffff;
-            --text-dark: #1a1a2e;
-            --text-mid: #4a4a5a;
-            --text-light: rgba(255,255,255,0.75);
-            --border-light: rgba(201, 168, 76, 0.2);
+            --gold: #C6A25A;
+            --dark: #0A0F1A;
+            --cream: #F5F3EE;
+            --border: rgba(198, 162, 90, 0.15);
+            --light-gray: #2A3040;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
+        
+        html, body {
+            height: 100%;
         }
-
+        
         body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text-dark);
-            background: var(--white);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--cream);
             line-height: 1.6;
         }
-
-        /* ===== HEADER ===== */
-        header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .header-nav {
+        
+        /* Navigation */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-light);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            background-color: var(--dark);
         }
-
-        .nav-brand {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--gold);
+        
+        .logo {
             text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-brand:hover {
-            color: var(--gold-light);
-        }
-
-        h1 {
             color: var(--cream);
-            font-size: 32px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-top: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
-
-        .subtitle {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-top: 10px;
-            letter-spacing: 0.3px;
+        
+        .logo:hover {
+            color: var(--gold);
         }
-
-        /* ===== CONTENT ===== */
+        
+        /* Main Container */
         main {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 20px;
-            background: var(--white);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 200px);
         }
-
-        section {
-            margin-bottom: 50px;
+        
+        .terms-header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2rem;
         }
-
-        h2 {
-            color: var(--navy);
-            font-size: 20px;
+        
+        .terms-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .effective-date {
+            font-size: 0.95rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            flex-grow: 1;
+        }
+        
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .terms-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        .terms-section h3 {
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
             font-weight: 600;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--gold-muted);
         }
-
-        h3 {
-            color: var(--navy-light);
-            font-size: 15px;
-            font-weight: 600;
-            margin-top: 25px;
-            margin-bottom: 10px;
+        
+        .terms-section p {
+            margin-bottom: 1rem;
+            color: var(--cream);
+            line-height: 1.8;
         }
-
-        p {
-            color: var(--text-mid);
-            font-size: 14px;
-            margin-bottom: 12px;
-            line-height: 1.7;
+        
+        .terms-section ul,
+        .terms-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
         }
-
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+        
+        .terms-section li {
+            margin-bottom: 0.75rem;
+            color: var(--cream);
+            line-height: 1.8;
         }
-
-        li {
-            color: var(--text-mid);
-            font-size: 14px;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        strong {
-            color: var(--navy);
-            font-weight: 600;
-        }
-
-        a {
+        
+        .terms-section a {
             color: var(--gold);
             text-decoration: none;
-            border-bottom: 1px solid var(--gold-muted);
+            transition: opacity 0.3s ease;
         }
-
-        a:hover {
-            color: var(--gold-light);
-            border-bottom-color: var(--gold-light);
+        
+        .terms-section a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
-
-        .effective-date {
-            background: var(--gold-muted);
+        
+        .highlight-box {
+            background-color: var(--light-gray);
             border-left: 3px solid var(--gold);
-            padding: 15px;
-            margin-bottom: 30px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
             border-radius: 2px;
-            font-size: 13px;
-            color: var(--text-dark);
         }
-
-        /* ===== FOOTER ===== */
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-            border-top: 2px solid var(--gold);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 13px;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            background-color: var(--dark);
+            margin-top: 3rem;
         }
-
+        
         .footer-content {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
+            text-align: center;
         }
-
+        
         .footer-links {
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
         }
-
+        
         .footer-links a {
-            color: var(--gold);
-            margin: 0 15px;
-            display: inline-block;
-            font-size: 13px;
+            color: var(--cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-
+        
         .footer-links a:hover {
-            color: var(--gold-light);
+            color: var(--gold);
         }
-
+        
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(245, 243, 238, 0.7);
+            margin-bottom: 1rem;
+        }
+        
         .footer-credit {
-            color: var(--text-light);
-            font-size: 12px;
-            margin-top: 15px;
-            border-top: 1px solid var(--border-light);
-            padding-top: 15px;
+            font-size: 0.8rem;
+            color: rgba(245, 243, 238, 0.6);
         }
-
+        
         .footer-credit a {
             color: var(--gold);
+            text-decoration: none;
         }
-
-        /* ===== RESPONSIVE ===== */
+        
+        .footer-credit a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 24px;
+            nav {
+                padding: 1rem;
             }
-
-            header {
-                padding: 30px 15px;
-            }
-
+            
             main {
-                padding: 40px 15px;
+                padding: 2rem 1.5rem;
             }
-
-            h2 {
-                font-size: 18px;
+            
+            .terms-header h1 {
+                font-size: 1.75rem;
             }
-
-            p, li {
-                font-size: 13px;
+            
+            .terms-section h2 {
+                font-size: 1.2rem;
             }
-
-            .footer-links a {
-                display: block;
-                margin: 8px 0;
+            
+            .footer-links {
+                gap: 0.75rem;
+                font-size: 0.85rem;
             }
-
-            .header-nav {
-                flex-direction: column;
-                padding-bottom: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 0.75rem;
             }
-
-            .nav-brand {
-                margin-bottom: 15px;
+            
+            .logo {
+                font-size: 1rem;
+            }
+            
+            main {
+                padding: 1.5rem 1rem;
+            }
+            
+            .terms-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.1rem;
+            }
+            
+            .highlight-box {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="header-nav">
-            <a href="/" class="nav-brand" data-en="Capital Corridor Campus" data-fr="Campus du Corridor Capital">Capital Corridor Campus</a>
-        </div>
-        <h1 data-en="Terms of Service" data-fr="Conditions de service">Terms of Service</h1>
-        <p class="subtitle" data-en="Website usage and commercial real estate disclaimer" data-fr="Utilisation du site Web et avertissement concernant l'immobilier commercial">Website usage and commercial real estate disclaimer</p>
-    </header>
-
-    <!-- MAIN CONTENT -->
+    <!-- Navigation -->
+    <nav>
+        <a href="https://campuscorridor.ca" class="logo">Capital Corridor Campus</a>
+    </nav>
+    
+    <!-- Main Content -->
     <main>
-        <div class="effective-date" data-en="Effective Date: April 9, 2026" data-fr="Date effective : 9 avril 2026">
-            <strong data-en="Effective Date:" data-fr="Date effective :">Effective Date:</strong> April 9, 2026
+        <div class="terms-header">
+            <h1>Terms of Service</h1>
+            <div class="effective-date">Effective Date: April 11, 2026</div>
         </div>
-
-        <section>
-            <h2 data-en="1. Acceptance of Terms" data-fr="1. Acceptation des conditions">1. Acceptance of Terms</h2>
-            <p data-en="By accessing and using Capital Corridor Campus (campuscorridor.ca), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use this website." data-fr="En accédant et en utilisant Capital Corridor Campus (campuscorridor.ca), vous acceptez d'être lié par ces conditions de service. Si vous n'acceptez pas ces conditions, n'utilisez pas ce site Web.">By accessing and using Capital Corridor Campus (campuscorridor.ca), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use this website.</p>
-        </section>
-
-        <section>
-            <h2 data-en="2. Disclaimer — Not an Offer to Lease" data-fr="2. Clause de non-responsabilité — Pas une offre de location">2. Disclaimer — Not an Offer to Lease</h2>
-            <p data-en="Capital Corridor Campus is a commercial real estate information and inquiry platform. The listings, descriptions, and property information provided on this website are:" data-fr="Capital Corridor Campus est une plateforme d'information immobilière commerciale et de demande. Les annonces, descriptions et informations sur les propriétés fournies sur ce site Web sont :">Capital Corridor Campus is a commercial real estate information and inquiry platform. The listings, descriptions, and property information provided on this website are:</p>
-            <ul>
-                <li data-en="For informational purposes only" data-fr="À titre informatif uniquement"><strong>For informational purposes only</strong></li>
-                <li data-en="NOT a binding offer to lease or sell" data-fr="PAS une offre contraignante de location ou de vente"><strong>NOT a binding offer</strong> to lease or sell</li>
-                <li data-en="Subject to change without notice" data-fr="Sujet à modification sans préavis">Subject to change without notice</li>
-                <li data-en="Not guaranteed to be current or complete" data-fr="Non garantis d'être actuels ou complets">Not guaranteed to be current or complete</li>
-            </ul>
-            <p data-en="Leasing transactions must be negotiated directly with Capital Corridor Campus and formalized through a binding lease agreement signed by authorized representatives." data-fr="Les transactions de location doivent être négociées directement avec Capital Corridor Campus et formalisées par un accord de location contraignant signé par des représentants autorisés.">Leasing transactions must be negotiated directly with Capital Corridor Campus and formalized through a binding lease agreement signed by authorized representatives.</p>
-        </section>
-
-        <section>
-            <h2 data-en="3. Property Information Accuracy" data-fr="3. Exactitude des informations sur les propriétés">3. Property Information Accuracy</h2>
-            <p data-en="While we endeavor to provide accurate information:" data-fr="Bien que nous nous efforcions de fournir des informations exactes :">While we endeavor to provide accurate information:</p>
-            <ul>
-                <li data-en="Property details (square footage, occupancy, rates, etc.) are approximate" data-fr="Les détails de la propriété (superficie, taux d'occupation, tarifs, etc.) sont approximatifs">Property details (square footage, occupancy, rates, etc.) are approximate</li>
-                <li data-en="Measurements and layouts should be verified independently" data-fr="Les mesures et dispositions doivent être vérifiées indépendamment">Measurements and layouts should be verified independently</li>
-                <li data-en="Zoning, compliance, and regulatory information should be confirmed with municipal authorities" data-fr="Les informations sur le zonage, la conformité et la réglementation doivent être confirmées auprès des autorités municipales">Zoning, compliance, and regulatory information should be confirmed with municipal authorities</li>
-                <li data-en="We are not responsible for errors or omissions in property data" data-fr="Nous ne sommes pas responsables des erreurs ou omissions dans les données sur les propriétés">We are not responsible for errors or omissions</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 data-en="4. User Conduct" data-fr="4. Conduite de l'utilisateur">4. User Conduct</h2>
-            <p data-en="You agree not to use this website to:" data-fr="Vous acceptez de ne pas utiliser ce site Web pour :">You agree not to use this website to:</p>
-            <ul>
-                <li data-en="Transmit false, misleading, or defamatory information" data-fr="Transmettre des informations fausses, trompeuses ou diffamatoires">Transmit false, misleading, or defamatory information</li>
-                <li data-en="Infringe on intellectual property or other legal rights" data-fr="Porter atteinte aux droits de propriété intellectuelle ou autres droits légaux">Infringe on intellectual property or other legal rights</li>
-                <li data-en="Harass, threaten, or abuse other users or staff" data-fr="Harceler, menacer ou abuser d'autres utilisateurs ou du personnel">Harass, threaten, or abuse other users or staff</li>
-                <li data-en="Attempt unauthorized access to systems or data" data-fr="Tentez d'accéder sans autorisation aux systèmes ou aux données">Attempt unauthorized access to systems or data</li>
-                <li data-en="Use automated tools to scrape, crawl, or harvest data without permission" data-fr="Utilisez des outils automatisés pour explorer, analyser ou collecter des données sans permission">Use automated tools to scrape or harvest data without permission</li>
-                <li data-en="Violate applicable laws or regulations" data-fr="Violer les lois ou réglementations applicables">Violate applicable laws or regulations</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 data-en="5. Intellectual Property" data-fr="5. Propriété intellectuelle">5. Intellectual Property</h2>
-            <p data-en="All content on Capital Corridor Campus — including text, graphics, logos, images, and software — is owned by IBPROM Corp. or its licensors and is protected by copyright and other intellectual property laws. You may view and print content for personal, non-commercial use only. Reproduction, modification, or distribution without written permission is prohibited." data-fr="Tout le contenu de Capital Corridor Campus — y compris le texte, les graphiques, les logos, les images et les logiciels — est la propriété d'IBPROM Corp. ou de ses concédants de licence et est protégé par les droits d'auteur et autres lois sur la propriété intellectuelle. Vous pouvez consulter et imprimer le contenu uniquement à usage personnel et non commercial. La reproduction, la modification ou la distribution sans autorisation écrite est interdite.">All content on Capital Corridor Campus — including text, graphics, logos, images, and software — is owned by IBPROM Corp. or its licensors and is protected by copyright and other intellectual property laws. You may view and print content for personal, non-commercial use only. Reproduction, modification, or distribution without written permission is prohibited.</p>
-        </section>
-
-        <section>
-            <h2 data-en="6. Third-Party Links" data-fr="6. Liens tiers">6. Third-Party Links</h2>
-            <p data-en="This website may contain links to third-party websites. We do not control, endorse, or assume responsibility for the content, accuracy, or practices of external sites. Use of third-party links is at your own risk. We recommend reviewing their terms and privacy policies." data-fr="Ce site Web peut contenir des liens vers des sites Web tiers. Nous ne contrôlons pas, n'approuvons pas et ne sommes pas responsables du contenu, de l'exactitude ou des pratiques des sites externes. L'utilisation des liens tiers est à vos propres risques. Nous vous recommandons de consulter leurs conditions et politiques de confidentialité.">This website may contain links to third-party websites. We do not control, endorse, or assume responsibility for the content, accuracy, or practices of external sites. Use of third-party links is at your own risk.</p>
-        </section>
-
-        <section>
-            <h2 data-en="7. Limitation of Liability" data-fr="7. Limitation de responsabilité">7. Limitation of Liability</h2>
-            <p data-en="TO THE FULLEST EXTENT PERMITTED BY LAW:" data-fr="DANS LA PLUS GRANDE MESURE PERMISE PAR LA LOI :">TO THE FULLEST EXTENT PERMITTED BY LAW:</p>
-            <ul>
-                <li data-en="Capital Corridor Campus is provided 'as is' without warranties of any kind" data-fr="Capital Corridor Campus est fourni « tel quel » sans garanties d'aucune sorte">Capital Corridor Campus is provided 'as is' without warranties</li>
-                <li data-en="We assume no liability for errors, inaccuracies, or omissions" data-fr="Nous n'assumons aucune responsabilité pour les erreurs, inexactitudes ou omissions">We assume no liability for errors, inaccuracies, or omissions</li>
-                <li data-en="We are not liable for any direct, indirect, incidental, or consequential damages arising from use of this website or reliance on its content" data-fr="Nous ne sommes pas responsables de tout dommage direct, indirect, accessoire ou consécutif résultant de l'utilisation de ce site Web ou de la confiance accordée à son contenu">We are not liable for any direct, indirect, incidental, or consequential damages</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 data-en="8. Indemnification" data-fr="8. Indemnisation">8. Indemnification</h2>
-            <p data-en="You agree to indemnify and hold harmless Capital Corridor Campus, IBPROM Corp., and their officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of this website or violation of these terms." data-fr="Vous acceptez d'indemniser et de dégager de toute responsabilité Capital Corridor Campus, IBPROM Corp., et leurs dirigeants, administrateurs, employés et agents de toute réclamation, dommage, perte ou dépense découlant de votre utilisation de ce site Web ou de la violation de ces conditions.">You agree to indemnify and hold harmless Capital Corridor Campus, IBPROM Corp., and their officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of this website or violation of these terms.</p>
-        </section>
-
-        <section>
-            <h2 data-en="9. Governing Law" data-fr="9. Loi applicable">9. Governing Law</h2>
-            <p data-en="These Terms of Service are governed by and construed in accordance with the laws of Quebec, Canada, without regard to conflicts of law principles. Both parties agree to submit to the exclusive jurisdiction of the courts of Quebec." data-fr="Ces conditions de service sont régies par et interprétées conformément aux lois du Québec, Canada, sans égard aux principes de conflit de lois. Les deux parties acceptent de se soumettre à la juridiction exclusive des tribunaux du Québec.">These Terms of Service are governed by and construed in accordance with the laws of Quebec, Canada, without regard to conflicts of law principles. Both parties agree to submit to the exclusive jurisdiction of the courts of Quebec.</p>
-        </section>
-
-        <section>
-            <h2 data-en="10. Severability" data-fr="10. Clause de sauvegarde">10. Severability</h2>
-            <p data-en="If any provision of these Terms is found to be invalid or unenforceable, that provision shall be modified to the minimum extent necessary to make it valid, and the remainder of the terms shall continue in full force and effect." data-fr="Si l'une des dispositions de ces conditions s'avère invalide ou inapplicable, cette disposition sera modifiée dans la mesure minimale nécessaire pour la rendre valide, et le reste des conditions restera en vigueur.">If any provision of these Terms is found to be invalid or unenforceable, that provision shall be modified to the minimum extent necessary to make it valid, and the remainder of the terms shall continue in full force and effect.</p>
-        </section>
-
-        <section>
-            <h2 data-en="11. Modifications to Terms" data-fr="11. Modifications des conditions">11. Modifications to Terms</h2>
-            <p data-en="Capital Corridor Campus reserves the right to modify these Terms at any time. Changes will be effective when posted on this page. Your continued use of the website constitutes acceptance of the updated terms." data-fr="Capital Corridor Campus se réserve le droit de modifier ces conditions à tout moment. Les modifications prendront effet lorsqu'elles seront affichées sur cette page. Votre utilisation continue du site Web constitue l'acceptation des conditions mises à jour.">Capital Corridor Campus reserves the right to modify these Terms at any time. Changes will be effective when posted on this page. Your continued use of the website constitutes acceptance of the updated terms.</p>
-        </section>
-
-        <section>
-            <h2 data-en="12. Contact Information" data-fr="12. Informations de contact">12. Contact Information</h2>
-            <p data-en="For questions about these Terms of Service or to report a violation:" data-fr="Pour toute question concernant ces conditions de service ou pour signaler une violation :">For questions about these Terms of Service or to report a violation:</p>
-            <ul>
-                <li data-en="Email: info@campuscorridor.ca" data-fr="E-mail : info@campuscorridor.ca"><strong>Email:</strong> <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a></li>
-                <li data-en="Phone: 613-691-9311" data-fr="Téléphone : 613-691-9311"><strong>Phone:</strong> 613-691-9311</li>
-                <li data-en="Address: 179 Promenade du Portage, Gatineau, QC" data-fr="Adresse : 179, Promenade du Portage, Gatineau, QC"><strong>Address:</strong> 179 Promenade du Portage, Gatineau, QC</li>
-            </ul>
-        </section>
+        
+        <div class="terms-content">
+            <!-- Section 1: Acceptance of Terms -->
+            <div class="terms-section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using the Capital Corridor Campus website (campuscorridor.ca), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use this site. Capital Corridor Campus reserves the right to update these terms at any time. Your continued use of the site following any changes constitutes your acceptance of the new terms.</p>
+            </div>
+            
+            <!-- Section 2: Use License -->
+            <div class="terms-section">
+                <h2>2. Use License</h2>
+                <p>Permission is granted to temporarily download one copy of the materials (information or software) on Capital Corridor Campus for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                <ul>
+                    <li>Modify or copy the materials</li>
+                    <li>Use the materials for any commercial purpose or for any public display (commercial or non-commercial)</li>
+                    <li>Attempt to decompile or reverse engineer any software contained on the site</li>
+                    <li>Remove any copyright or other proprietary notations from the materials</li>
+                    <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                    <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the website</li>
+                    <li>Obtain or attempt to obtain any materials or information through any means not intentionally made available through the website</li>
+                </ul>
+            </div>
+            
+            <!-- Section 3: Disclaimer of Warranties -->
+            <div class="terms-section">
+                <h2>3. Disclaimer of Warranties</h2>
+                <p>The materials on Capital Corridor Campus are provided "as is." Capital Corridor Campus makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                <p>Further, Capital Corridor Campus does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</p>
+            </div>
+            
+            <!-- Section 4: Limitations of Liability -->
+            <div class="terms-section">
+                <h2>4. Limitations of Liability</h2>
+                <p>In no event shall Capital Corridor Campus or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Capital Corridor Campus, even if Capital Corridor Campus or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+                <p>Because some jurisdictions do not allow limitations on implied warranties or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+            </div>
+            
+            <!-- Section 5: Accuracy of Materials -->
+            <div class="terms-section">
+                <h2>5. Accuracy of Materials</h2>
+                <p>The materials appearing on Capital Corridor Campus could include technical, typographical, or photographic errors. Capital Corridor Campus does not warrant that any of the materials on its website are accurate, complete, or current. Capital Corridor Campus may make changes to the materials contained on its website at any time without notice.</p>
+            </div>
+            
+            <!-- Section 6: Intellectual Property Rights -->
+            <div class="terms-section">
+                <h2>6. Intellectual Property Rights</h2>
+                <p>All content on Capital Corridor Campus, including text, graphics, logos, images, audio clips, and software, is the property of Capital Corridor Campus or its content suppliers and is protected by international copyright laws. The compilation, assembly, and arrangement of all content on Capital Corridor Campus is the exclusive property of Capital Corridor Campus and is protected by international copyright laws.</p>
+                <p>You may not reproduce, publish, transmit, distribute, display, modify, create derivative works from, or sell any content or materials from this website without the prior written permission of Capital Corridor Campus or the respective copyright holder.</p>
+            </div>
+            
+            <!-- Section 7: Links and Third-Party Content -->
+            <div class="terms-section">
+                <h2>7. Links and Third-Party Content</h2>
+                <p>Capital Corridor Campus has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Capital Corridor Campus of the site. Use of any such linked website is at the user's own risk.</p>
+                <p>If you believe that any content or material linked from this website infringes your rights, please contact us immediately.</p>
+            </div>
+            
+            <!-- Section 8: Modifications to Terms -->
+            <div class="terms-section">
+                <h2>8. Modifications to Terms</h2>
+                <p>Capital Corridor Campus may revise these Terms of Service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these Terms of Service.</p>
+            </div>
+            
+            <!-- Section 9: Indemnification -->
+            <div class="terms-section">
+                <h2>9. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless Capital Corridor Campus, its officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or resulting from your use of the website or your breach of these Terms of Service.</p>
+            </div>
+            
+            <!-- Section 10: User Content -->
+            <div class="terms-section">
+                <h2>10. User Content</h2>
+                <p>If you submit, post, display, or otherwise transmit content to Capital Corridor Campus, you hereby grant Capital Corridor Campus a non-exclusive, royalty-free, worldwide license to use, reproduce, modify, and display such content in connection with the website and Capital Corridor Campus's business.</p>
+                <p>You represent and warrant that you own or have the necessary rights to any content you submit and that the content does not violate any third-party rights or any applicable laws.</p>
+            </div>
+            
+            <!-- Section 11: Governing Law and Jurisdiction -->
+            <div class="terms-section">
+                <h2>11. Governing Law and Jurisdiction</h2>
+                <div class="highlight-box">
+                    <p><strong>These Terms of Service and all matters arising out of or relating to this website shall be governed by and construed in accordance with the laws of the Province of Ontario, Canada, without regard to its conflict of law provisions.</strong> Any disputes, claims, or legal proceedings related to this website or these Terms shall be subject to the exclusive jurisdiction of the Ontario courts.</p>
+                </div>
+            </div>
+            
+            <!-- Section 12: Severability -->
+            <div class="terms-section">
+                <h2>12. Severability</h2>
+                <p>If any provision of these Terms of Service is found to be invalid or unenforceable, that provision shall be severed, and the remaining provisions shall remain in full force and effect.</p>
+            </div>
+            
+            <!-- Section 13: Entire Agreement -->
+            <div class="terms-section">
+                <h2>13. Entire Agreement</h2>
+                <p>These Terms of Service constitute the entire agreement between you and Capital Corridor Campus regarding your use of the website and supersede all prior and contemporaneous agreements, whether written or oral.</p>
+            </div>
+            
+            <!-- Section 14: Contact Information -->
+            <div class="terms-section">
+                <h2>14. Contact Us</h2>
+                <p>If you have any questions, concerns, or inquiries regarding these Terms of Service or the website, please contact us:</p>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Capital Corridor Campus</strong><br>
+                        Managed by IBPROM Corp. (International Business Promotion Corp.)<br>
+                        179 Promenade du Portage<br>
+                        Gatineau, QC J8X 2K5<br>
+                        Canada<br>
+                        <br>
+                        Email: <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a><br>
+                        Phone: 613-691-9311
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
-
-    <!-- FOOTER -->
+    
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="/" data-en="Home" data-fr="Accueil">Home</a>
-                <a href="/privacy.html" data-en="Privacy" data-fr="Confidentialité">Privacy</a>
-                <a href="/terms.html" data-en="Terms" data-fr="Conditions">Terms</a>
-                <a href="/cookies.html" data-en="Cookies" data-fr="Cookies">Cookies</a>
+            <div class="footer-copyright">
+                © 2026 Capital Corridor Campus. All rights reserved. | 
+                <a href="https://campuscorridor.ca/terms.html">Terms of Service</a> | 
+                <a href="https://campuscorridor.ca/cookies.html">Cookies Policy</a>
             </div>
-            <p data-en="© 2026 Capital Corridor Campus · All rights reserved." data-fr="© 2026 Campus du Corridor Capital · Tous droits réservés.">© 2026 Capital Corridor Campus · All rights reserved.</p>
-            <div class="footer-credit" data-en="Strategy, design & technology by IBPROM Corp." data-fr="Stratégie, conception et technologie par IBPROM Corp.">
-                Strategy, design & technology by <a href="https://ibprom.com" target="_blank">IBPROM Corp.</a>
+            <div class="footer-credit">
+                Strategy, design & technology by <a href="https://josephsoares.com">International Business Promotion (IBPROM) Corp.</a>
             </div>
         </div>
     </footer>

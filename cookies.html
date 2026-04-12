@@ -1,445 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3TWNPP48M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-L3TWNPP48M');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cookie Policy for Capital Corridor Campus. Details on GA4 analytics and Google Fonts tracking. Effective April 9, 2026.">
-    <title>Cookie Policy | Capital Corridor Campus</title>
+    <meta name="description" content="Cookies Policy for Capital Corridor Campus. Information about how we use cookies and your privacy rights under Quebec Law 25.">
+    <meta name="theme-color" content="#0A0F1A">
+    <link rel="canonical" href="https://campuscorridor.ca/cookies.html">
+    
+    <title>Cookies Policy | Capital Corridor Campus</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --navy: #0b1a2e;
-            --navy-mid: #0f2240;
-            --navy-light: #132d54;
-            --gold: #c9a84c;
-            --gold-light: #dfc07a;
-            --gold-muted: rgba(201, 168, 76, 0.12);
-            --cream: #f5f1eb;
-            --white: #ffffff;
-            --text-dark: #1a1a2e;
-            --text-mid: #4a4a5a;
-            --text-light: rgba(255,255,255,0.75);
-            --border-light: rgba(201, 168, 76, 0.2);
+            --gold: #C6A25A;
+            --dark: #0A0F1A;
+            --cream: #F5F3EE;
+            --border: rgba(198, 162, 90, 0.15);
+            --text-light: #D4D0C8;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
         body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text-dark);
-            background: var(--white);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--cream);
             line-height: 1.6;
         }
-
-        /* ===== HEADER ===== */
-        header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--gold);
+        
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            margin-bottom: 3rem;
         }
-
-        .header-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
+        
+        nav .container {
+            max-width: 900px;
             margin: 0 auto;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-light);
+            padding: 0 1.5rem;
         }
-
-        .nav-brand {
-            font-size: 16px;
+        
+        nav a {
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--gold);
             text-decoration: none;
-            letter-spacing: 0.5px;
+            transition: opacity 0.3s ease;
         }
-
-        .nav-brand:hover {
-            color: var(--gold-light);
+        
+        nav a:hover {
+            opacity: 0.8;
         }
-
-        h1 {
-            color: var(--cream);
-            font-size: 32px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-top: 20px;
-        }
-
-        .subtitle {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-top: 10px;
-            letter-spacing: 0.3px;
-        }
-
-        /* ===== CONTENT ===== */
-        main {
+        
+        /* Main Container */
+        .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 20px;
-            background: var(--white);
+            padding: 0 1.5rem;
         }
-
+        
+        /* Hero / Title Section */
+        .policy-header {
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .effective-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Content Sections */
         section {
-            margin-bottom: 50px;
+            margin-bottom: 2.5rem;
         }
-
+        
         h2 {
-            color: var(--navy);
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--gold-muted);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
-
-        h3 {
-            color: var(--navy-light);
-            font-size: 15px;
-            font-weight: 600;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
+        
         p {
-            color: var(--text-mid);
-            font-size: 14px;
-            margin-bottom: 12px;
-            line-height: 1.7;
+            margin-bottom: 1rem;
+            color: var(--cream);
         }
-
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
         }
-
+        
         li {
-            color: var(--text-mid);
-            font-size: 14px;
-            margin-bottom: 8px;
-            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: var(--cream);
         }
-
-        strong {
-            color: var(--navy);
-            font-weight: 600;
-        }
-
+        
         a {
             color: var(--gold);
             text-decoration: none;
-            border-bottom: 1px solid var(--gold-muted);
+            transition: opacity 0.3s ease;
         }
-
+        
         a:hover {
-            color: var(--gold-light);
-            border-bottom-color: var(--gold-light);
+            opacity: 0.8;
+            text-decoration: underline;
         }
-
-        .effective-date {
-            background: var(--gold-muted);
+        
+        /* Callout Box */
+        .callout {
+            background-color: rgba(198, 162, 90, 0.05);
             border-left: 3px solid var(--gold);
-            padding: 15px;
-            margin-bottom: 30px;
-            border-radius: 2px;
-            font-size: 13px;
-            color: var(--text-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
         }
-
-        /* ===== TABLES ===== */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 13px;
+        
+        .callout p {
+            margin-bottom: 0;
         }
-
-        th, td {
-            border: 1px solid var(--border-light);
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background: var(--gold-muted);
-            color: var(--navy);
-            font-weight: 600;
-        }
-
-        tr:nth-child(even) {
-            background: rgba(201, 168, 76, 0.05);
-        }
-
-        /* ===== FOOTER ===== */
+        
+        /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-            border-top: 2px solid var(--gold);
-            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+            margin-top: 4rem;
             text-align: center;
             color: var(--text-light);
-            font-size: 13px;
+            font-size: 0.9rem;
         }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        
         .footer-links {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
-
+        
         .footer-links a {
-            color: var(--gold);
-            margin: 0 15px;
+            margin: 0 1rem;
             display: inline-block;
-            font-size: 13px;
         }
-
-        .footer-links a:hover {
-            color: var(--gold-light);
-        }
-
+        
         .footer-credit {
-            color: var(--text-light);
-            font-size: 12px;
-            margin-top: 15px;
-            border-top: 1px solid var(--border-light);
-            padding-top: 15px;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
         }
-
-        .footer-credit a {
-            color: var(--gold);
-        }
-
-        /* ===== RESPONSIVE ===== */
+        
+        /* Responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 24px;
+                font-size: 2rem;
             }
-
-            header {
-                padding: 30px 15px;
-            }
-
-            main {
-                padding: 40px 15px;
-            }
-
+            
             h2 {
-                font-size: 18px;
+                font-size: 1.3rem;
             }
-
-            p, li {
-                font-size: 13px;
+            
+            .container {
+                padding: 0 1rem;
             }
-
-            table {
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 8px;
-            }
-
-            .footer-links a {
-                display: block;
-                margin: 8px 0;
-            }
-
-            .header-nav {
-                flex-direction: column;
-                padding-bottom: 20px;
-            }
-
-            .nav-brand {
-                margin-bottom: 15px;
+            
+            nav {
+                margin-bottom: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="header-nav">
-            <a href="/" class="nav-brand" data-en="Capital Corridor Campus" data-fr="Campus du Corridor Capital">Capital Corridor Campus</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="https://campuscorridor.ca">Capital Corridor Campus</a>
         </div>
-        <h1 data-en="Cookie Policy" data-fr="Politique sur les cookies">Cookie Policy</h1>
-        <p class="subtitle" data-en="How we use cookies and tracking technologies" data-fr="Comment nous utilisons les cookies et les technologies de suivi">How we use cookies and tracking technologies</p>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main>
-        <div class="effective-date" data-en="Effective Date: April 9, 2026" data-fr="Date effective : 9 avril 2026">
-            <strong data-en="Effective Date:" data-fr="Date effective :">Effective Date:</strong> April 9, 2026
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <div class="policy-header">
+            <h1>Cookies Policy</h1>
+            <p class="effective-date">Effective Date: April 11, 2026</p>
         </div>
-
+        
+        <!-- Introduction -->
         <section>
-            <h2 data-en="1. What Are Cookies?" data-fr="1. Que sont les cookies ?">1. What Are Cookies?</h2>
-            <p data-en="Cookies are small text files stored on your device (computer, tablet, or smartphone) when you visit a website. They help websites remember information about your visit and improve your user experience." data-fr="Les cookies sont de petits fichiers texte stockés sur votre appareil (ordinateur, tablette ou téléphone mobile) lorsque vous visitez un site Web. Ils aident les sites Web à mémoriser les informations de votre visite et à améliorer votre expérience utilisateur.">Cookies are small text files stored on your device when you visit a website. They help websites remember information about your visit and improve your user experience.</p>
+            <h2>What Are Cookies?</h2>
+            <p>Cookies are small text files stored on your device when you visit a website. They help websites function, remember your preferences, and understand how users interact with the site. Cookies can be either "session cookies" (deleted when you close your browser) or "persistent cookies" (stored for a longer period).</p>
+            <p>Capital Corridor Campus respects your privacy. This policy explains what cookies we use, why we use them, and how you can control them.</p>
         </section>
-
+        
+        <!-- What Cookies We Use -->
         <section>
-            <h2 data-en="2. Cookies We Use" data-fr="2. Cookies que nous utilisons">2. Cookies We Use</h2>
-            <p data-en="Capital Corridor Campus uses the following types of cookies:" data-fr="Capital Corridor Campus utilise les types de cookies suivants :">Capital Corridor Campus uses the following types of cookies:</p>
-
-            <h3 data-en="Google Analytics 4 (GA4) Cookies" data-fr="Cookies Google Analytics 4 (GA4)">Google Analytics 4 (GA4) Cookies</h3>
-            <p data-en="We use Google Analytics 4 to analyze website traffic and user behavior. GA4 sets cookies to:" data-fr="Nous utilisons Google Analytics 4 pour analyser le trafic du site Web et le comportement des utilisateurs. GA4 définit des cookies pour :">We use Google Analytics 4 to analyze website traffic and user behavior. GA4 sets cookies to:</p>
+            <h2>What Cookies Does Capital Corridor Campus Use?</h2>
+            <p>Capital Corridor Campus is a static website hosted on GitHub Pages. We do not operate login systems, e-commerce functionality, or user accounts. Our cookie footprint is minimal:</p>
+            
+            <h3 style="font-size: 1.2rem; color: var(--cream); margin: 1.5rem 0 1rem 0; font-weight: 500;">Essential Cookies</h3>
+            <p>We do not set essential cookies ourselves. However, GitHub Pages (our hosting provider) may set minimal technical cookies required for site security and performance. These are necessary for the site to function properly.</p>
+            
+            <h3 style="font-size: 1.2rem; color: var(--cream); margin: 1.5rem 0 1rem 0; font-weight: 500;">No Tracking Cookies</h3>
+            <p>Capital Corridor Campus does not use advertising cookies, analytics cookies, or behavioral tracking. We do not build user profiles or track your activity across the web.</p>
+        </section>
+        
+        <!-- Third-Party Cookies -->
+        <section>
+            <h2>Third-Party Cookies and External Services</h2>
+            <p>Our site uses the following external services, which may set cookies on your device:</p>
+            
             <ul>
-                <li data-en="Track unique visitors across sessions" data-fr="Suivre les visiteurs uniques entre les sessions">Track unique visitors across sessions</li>
-                <li data-en="Record page views and user interactions" data-fr="Enregistrer les pages consultées et les interactions des utilisateurs">Record page views and user interactions</li>
-                <li data-en="Measure engagement and conversion events" data-fr="Mesurer l'engagement et les événements de conversion">Measure engagement and conversion events</li>
-                <li data-en="Improve website functionality based on usage patterns" data-fr="Améliorer la fonctionnalité du site Web en fonction des modèles d'utilisation">Improve website functionality based on usage patterns</li>
+                <li><strong>Google Fonts:</strong> We import fonts from Google Fonts for typography. Google Fonts may store a cookie to remember your font preferences. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+                <li><strong>GitHub Pages:</strong> Our hosting provider. GitHub may set minimal cookies for security and performance. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub Privacy Statement</a></li>
             </ul>
-            <p data-en="GA4 Cookie ID: G-L3TWNPP48M" data-fr="ID de cookie GA4 : G-L3TWNPP48M"><strong>GA4 Measurement ID:</strong> G-L3TWNPP48M</p>
-
-            <h3 data-en="Google Fonts" data-fr="Google Fonts">Google Fonts</h3>
-            <p data-en="We use Google Fonts to deliver typeface assets. Google may store cookies or other identifiers in connection with font delivery. For details, see:" data-fr="Nous utilisons Google Fonts pour fournir des assets de police. Google peut stocker des cookies ou d'autres identifiants en connection avec la livraison des polices. Pour plus de détails, consultez :">We use Google Fonts to deliver typeface assets. For details, see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+            
+            <p style="margin-top: 1.5rem;"><strong>Note:</strong> Capital Corridor Campus does not currently use Google Analytics or other third-party analytics services. If we add analytics in the future, we will update this policy and obtain your consent in compliance with Quebec Law 25.</p>
         </section>
-
+        
+        <!-- How to Manage Cookies -->
         <section>
-            <h2 data-en="3. Cookie Table" data-fr="3. Tableau des cookies">3. Cookie Table</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th data-en="Cookie Name" data-fr="Nom du cookie">Cookie Name</th>
-                        <th data-en="Provider" data-fr="Fournisseur">Provider</th>
-                        <th data-en="Purpose" data-fr="Objectif">Purpose</th>
-                        <th data-en="Duration" data-fr="Durée">Duration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>_ga</td>
-                        <td>Google Analytics</td>
-                        <td data-en="User identification, session tracking" data-fr="Identification de l'utilisateur, suivi de session">User identification, session tracking</td>
-                        <td data-en="2 years" data-fr="2 ans">2 years</td>
-                    </tr>
-                    <tr>
-                        <td>_ga_[measurement-id]</td>
-                        <td>Google Analytics</td>
-                        <td data-en="Campaign tracking and engagement metrics" data-fr="Suivi des campagnes et mesures d'engagement">Campaign tracking, engagement metrics</td>
-                        <td data-en="2 years" data-fr="2 ans">2 years</td>
-                    </tr>
-                    <tr>
-                        <td>_gid</td>
-                        <td>Google Analytics</td>
-                        <td data-en="Session identification" data-fr="Identification de session">Session identification</td>
-                        <td data-en="24 hours" data-fr="24 heures">24 hours</td>
-                    </tr>
-                    <tr>
-                        <td>_gat</td>
-                        <td>Google Analytics</td>
-                        <td data-en="Rate limiting requests to Google" data-fr="Limitation de débit des demandes à Google">Rate limiting requests</td>
-                        <td data-en="1 minute" data-fr="1 minute">1 minute</td>
-                    </tr>
-                    <tr>
-                        <td>CONSENT</td>
-                        <td>Google</td>
-                        <td data-en="Cookie consent status" data-fr="Statut du consentement des cookies">Consent status</td>
-                        <td data-en="2 years" data-fr="2 ans">2 years</td>
-                    </tr>
-                    <tr>
-                        <td>Google Fonts</td>
-                        <td>Google</td>
-                        <td data-en="Font asset delivery and optimization" data-fr="Livraison et optimisation des assets de police">Font delivery & optimization</td>
-                        <td data-en="Varies" data-fr="Varie">Varies</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2 data-en="4. Third-Party Cookies" data-fr="4. Cookies tiers">4. Third-Party Cookies</h2>
-            <p data-en="Google Analytics and Google Fonts are third-party services. These vendors may use cookies to:" data-fr="Google Analytics et Google Fonts sont des services tiers. Ces fournisseurs peuvent utiliser des cookies pour :">Google Analytics and Google Fonts are third-party services. These vendors may use cookies to:</p>
+            <h2>How to Manage Cookies</h2>
+            <p>You can control and manage cookies through your web browser settings. Most browsers allow you to:</p>
             <ul>
-                <li data-en="Deliver analytics and insights" data-fr="Fournir l'analyse et les informations">Deliver analytics and insights</li>
-                <li data-en="Improve their services and products" data-fr="Améliorer leurs services et produits">Improve their services and products</li>
-                <li data-en="Detect fraudulent activity" data-fr="Détecter l'activité frauduleuse">Detect fraudulent activity</li>
+                <li>View what cookies are stored on your device</li>
+                <li>Delete cookies individually or in bulk</li>
+                <li>Block cookies from specific websites</li>
+                <li>Enable "Do Not Track" signals (though not all sites honor these)</li>
             </ul>
-            <p data-en="We do not have control over third-party cookies. For more information, review:" data-fr="Nous n'avons pas le contrôle sur les cookies tiers. Pour plus d'informations, consultez :">For more information, review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
-        </section>
-
-        <section>
-            <h2 data-en="5. Managing Cookies" data-fr="5. Gestion des cookies">5. Managing Cookies</h2>
-            <p data-en="You can control and delete cookies through your browser settings. Most browsers allow you to:" data-fr="Vous pouvez contrôler et supprimer les cookies via les paramètres de votre navigateur. La plupart des navigateurs vous permettent de :">You can control and delete cookies through your browser settings. Most browsers allow you to:</p>
+            
+            <p><strong>Browser Instructions:</strong></p>
             <ul>
-                <li data-en="Block all cookies" data-fr="Bloquer tous les cookies">Block all cookies</li>
-                <li data-en="Allow specific cookies while blocking others" data-fr="Autoriser des cookies spécifiques tout en bloquant d'autres">Allow specific cookies while blocking others</li>
-                <li data-en="Clear cookies periodically" data-fr="Effacer les cookies périodiquement">Clear cookies periodically</li>
-                <li data-en="Receive notifications when a cookie is set" data-fr="Recevoir des notifications lorsqu'un cookie est défini">Receive notifications when a cookie is set</li>
+                <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+                <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank">Mozilla Firefox</a></li>
+                <li><a href="https://support.apple.com/en-us/HT201265" target="_blank">Apple Safari</a></li>
+                <li><a href="https://support.microsoft.com/en-us/microsoft-edge/manage-cookies-in-microsoft-edge" target="_blank">Microsoft Edge</a></li>
             </ul>
-            <p data-en="Please note: Disabling cookies may affect website functionality and your user experience." data-fr="Veuillez noter : La désactivation des cookies peut affecter la fonctionnalité du site Web et votre expérience utilisateur."><strong>Note:</strong> Disabling cookies may affect website functionality.</p>
+            
+            <div class="callout">
+                <p><strong>Note:</strong> Disabling all cookies may affect your ability to view certain website features. Essential cookies are required for the site to work properly.</p>
+            </div>
         </section>
-
+        
+        <!-- Quebec Law 25 Compliance -->
         <section>
-            <h2 data-en="6. Browser Cookie Settings" data-fr="6. Paramètres des cookies du navigateur">6. Browser Cookie Settings</h2>
-            <p data-en="Learn how to manage cookies in popular browsers:" data-fr="Découvrez comment gérer les cookies dans les navigateurs populaires :">Learn how to manage cookies in popular browsers:</p>
+            <h2>Quebec Law 25 Compliance</h2>
+            <p>Capital Corridor Campus complies with <strong>Law 25</strong> (Quebec's updated privacy law), which strengthens data protection rights and requires transparency about how personal information is collected and used.</p>
+            
+            <p>Key principles guiding our cookie practice:</p>
             <ul>
-                <li data-en="Chrome: https://support.google.com/chrome/answer/95647" data-fr="Chrome : https://support.google.com/chrome/answer/95647"><a href="https://support.google.com/chrome/answer/95647" target="_blank">Chrome</a></li>
-                <li data-en="Firefox: https://support.mozilla.org/kb/cookies" data-fr="Firefox : https://support.mozilla.org/kb/cookies"><a href="https://support.mozilla.org/kb/cookies" target="_blank">Firefox</a></li>
-                <li data-en="Safari: https://support.apple.com/guide/safari/manage-cookies" data-fr="Safari : https://support.apple.com/guide/safari/manage-cookies"><a href="https://support.apple.com/guide/safari/manage-cookies" target="_blank">Safari</a></li>
-                <li data-en="Edge: https://support.microsoft.com/edge/answer/4468242" data-fr="Edge : https://support.microsoft.com/edge/answer/4468242"><a href="https://support.microsoft.com/edge/answer/4468242" target="_blank">Edge</a></li>
+                <li><strong>Transparency:</strong> We clearly disclose what cookies we use and why.</li>
+                <li><strong>Minimal Collection:</strong> We collect only the data necessary to operate the website.</li>
+                <li><strong>Your Control:</strong> You can manage cookies directly through your browser.</li>
+                <li><strong>No Tracking:</strong> We do not engage in behavioral or cross-site tracking.</li>
+                <li><strong>No Sale:</strong> We do not sell or share your data with third parties.</li>
             </ul>
+            
+            <p>If Capital Corridor Campus adds services in the future that require consent (such as analytics), we will update this policy and obtain your explicit consent before implementing them.</p>
         </section>
-
+        
+        <!-- Changes to This Policy -->
         <section>
-            <h2 data-en="7. Your Rights" data-fr="7. Vos droits">7. Your Rights</h2>
-            <p data-en="Depending on your location, you may have rights regarding cookies:" data-fr="Selon votre localisation, vous pouvez avoir des droits concernant les cookies :">Depending on your location, you may have rights regarding cookies:</p>
-            <ul>
-                <li data-en="GDPR (EU): Right to consent, access, and withdraw consent" data-fr="RGPD (UE) : Droit de consentir, d'accéder et de retirer son consentement">GDPR (EU): Right to consent, access, and withdraw consent</li>
-                <li data-en="CASL (Canada): Right to withdraw consent for marketing cookies" data-fr="CASL (Canada) : Droit de retirer le consentement pour les cookies de marketing">CASL (Canada): Right to withdraw consent for marketing cookies</li>
-                <li data-en="CCPA (California): Right to opt-out of data sales and tracking" data-fr="CCPA (Californie) : Droit de refuser la vente de données et le suivi">CCPA (California): Right to opt-out of data sales and tracking</li>
+            <h2>Changes to This Policy</h2>
+            <p>Capital Corridor Campus may update this Cookies Policy from time to time to reflect changes in our practices or applicable laws. We will post any significant changes on this page with an updated effective date.</p>
+            <p>Your continued use of the website after changes are posted constitutes your acceptance of the updated policy.</p>
+        </section>
+        
+        <!-- Contact Information -->
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have questions about this Cookies Policy or our privacy practices, please contact us:</p>
+            
+            <ul style="list-style: none; margin: 1.5rem 0;">
+                <li><strong>Capital Corridor Campus</strong></li>
+                <li>Managed by IBPROM Corp.</li>
+                <li>179 Promenade du Portage</li>
+                <li>Gatineau, QC J8X 2K5, Canada</li>
+                <li style="margin-top: 0.75rem;">
+                    <strong>Email:</strong> <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a>
+                </li>
+                <li>
+                    <strong>Phone:</strong> <a href="tel:613-691-9311">613-691-9311</a>
+                </li>
             </ul>
-        </section>
-
-        <section>
-            <h2 data-en="8. Contact Us" data-fr="8. Nous contacter">8. Contact Us</h2>
-            <p data-en="If you have questions about our use of cookies or how to manage them:" data-fr="Si vous avez des questions sur notre utilisation des cookies ou comment les gérer :">If you have questions about our use of cookies or how to manage them:</p>
-            <ul>
-                <li data-en="Email: info@campuscorridor.ca" data-fr="E-mail : info@campuscorridor.ca"><strong>Email:</strong> <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a></li>
-                <li data-en="Phone: 613-691-9311" data-fr="Téléphone : 613-691-9311"><strong>Phone:</strong> 613-691-9311</li>
-                <li data-en="Address: 179 Promenade du Portage, Gatineau, QC" data-fr="Adresse : 179, Promenade du Portage, Gatineau, QC"><strong>Address:</strong> 179 Promenade du Portage, Gatineau, QC</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 data-en="9. Changes to This Policy" data-fr="9. Modifications apportées à cette politique">9. Changes to This Policy</h2>
-            <p data-en="We may update this Cookie Policy to reflect changes in our practices or for other operational, legal, or regulatory reasons. Changes will be effective when posted on this page." data-fr="Nous pouvons mettre à jour cette politique sur les cookies pour refléter les changements dans nos pratiques ou pour d'autres raisons opérationnelles, juridiques ou réglementaires. Les modifications seront effectives lorsqu'elles seront affichées sur cette page.">We may update this Cookie Policy to reflect changes in our practices or for other operational, legal, or regulatory reasons. Changes will be effective when posted on this page.</p>
         </section>
     </main>
-
-    <!-- FOOTER -->
+    
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
+        <div class="container">
             <div class="footer-links">
-                <a href="/" data-en="Home" data-fr="Accueil">Home</a>
-                <a href="/privacy.html" data-en="Privacy" data-fr="Confidentialité">Privacy</a>
-                <a href="/terms.html" data-en="Terms" data-fr="Conditions">Terms</a>
-                <a href="/cookies.html" data-en="Cookies" data-fr="Cookies">Cookies</a>
+                <span>&copy; 2026 Capital Corridor Campus. All rights reserved.</span>
+                <span style="margin: 0 0.5rem;">|</span>
+                <a href="https://campuscorridor.ca/terms.html">Terms of Service</a>
+                <span style="margin: 0 0.5rem;">|</span>
+                <a href="https://campuscorridor.ca/cookies.html">Cookies Policy</a>
             </div>
-            <p data-en="© 2026 Capital Corridor Campus · All rights reserved." data-fr="© 2026 Campus du Corridor Capital · Tous droits réservés.">© 2026 Capital Corridor Campus · All rights reserved.</p>
-            <div class="footer-credit" data-en="Strategy, design & technology by IBPROM Corp." data-fr="Stratégie, conception et technologie par IBPROM Corp.">
-                Strategy, design & technology by <a href="https://ibprom.com" target="_blank">IBPROM Corp.</a>
+            <div class="footer-credit">
+                <p>Strategy, design &amp; technology by International Business Promotion (IBPROM) Corp.</p>
             </div>
         </div>
     </footer>
