@@ -801,7 +801,21 @@
     <!-- ═══ Scripts ═══ -->
     <script>
         // ─── Language Toggle ───
-        let currentLang = 'en';
+        let currentLang = new URLSearchParams(window.location.search).get('lang') === 'fr' ? 'fr' : 'en';
+
+        // Apply language on load if FR
+        if (currentLang === 'fr') {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.lang-btn[data-lang="fr"]').classList.add('active');
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const val = el.dataset.fr;
+                if (el.tagName === 'IMG') { el.src = val; }
+                else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = val; }
+                else { el.innerHTML = val; }
+            });
+            document.documentElement.lang = 'fr';
+            document.querySelectorAll('a[href="blog/"], a[href="blog/index.html"]').forEach(a => { a.href = 'blog/?lang=fr'; });
+        }
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', function() {
@@ -825,6 +839,11 @@
 
                 // Update html lang attribute
                 document.documentElement.lang = lang;
+
+                // Update blog links to pass language parameter
+                document.querySelectorAll('a[href="blog/"], a[href="blog/index.html"]').forEach(a => {
+                    a.href = lang === 'fr' ? 'blog/?lang=fr' : 'blog/';
+                });
             });
         });
 

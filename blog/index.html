@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — Capital Corridor Campus</title>
-    <meta name="description" content="Insights on commercial real estate, professional workspace, and government-adjacent business in Ottawa-Gatineau NCR.">
-    <meta property="og:title" content="Blog — Capital Corridor Campus">
+    <title data-en="Insights — Capital Corridor Campus" data-fr="Perspectives — Campus du Corridor de la Capitale">Insights — Capital Corridor Campus</title>
+    <meta name="description" data-en="Insights on commercial real estate, professional workspace, and government-adjacent business in Ottawa-Gatineau NCR." data-fr="Perspectives sur l'immobilier commercial, les espaces professionnels et les affaires liées au gouvernement dans la RCN d'Ottawa-Gatineau.">
+    <meta property="og:title" data-en="Insights — Capital Corridor Campus" data-fr="Perspectives — Campus du Corridor de la Capitale">
     <meta property="og:description" content="Expert articles on government-adjacent professional workspace and commercial real estate.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://campuscorridor.ca/blog/">
@@ -63,9 +63,19 @@
             padding: 1rem 2rem; max-width: 1240px; margin: 0 auto;
         }
         .logo img { height: 38px; }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: var(--text); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
         .nav-links a:hover { color: var(--cream); }
+
+        /* Language Toggle */
+        .lang-toggle { display: flex; gap: 0.25rem; margin-left: 1rem; }
+        .lang-btn {
+            background: transparent; border: 1px solid var(--border); color: var(--muted);
+            padding: 0.25rem 0.6rem; font-size: 0.7rem; font-weight: 600; cursor: pointer;
+            letter-spacing: 0.05em; transition: all 0.3s;
+        }
+        .lang-btn:hover { border-color: var(--gold); color: var(--cream); }
+        .lang-btn.active { background: var(--gold); color: var(--dark); border-color: var(--gold); }
 
         /* Blog Container */
         .blog-container {
@@ -128,224 +138,328 @@
     <header>
         <nav>
             <a href="../" class="logo">
-                <img src="../Logos/web/CCC_Logo_EN_200px.png" alt="Capital Corridor Campus">
+                <img src="../Logos/web/CCC_Logo_EN_200px.png" alt="Capital Corridor Campus" id="navLogo" data-en="../Logos/web/CCC_Logo_EN_200px.png" data-fr="../Logos/web/CCC_Logo_FR_200px.png">
             </a>
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
-                <li><a href="index.html">Blog</a></li>
-                <li><a href="../#contact">Contact</a></li>
+                <li><a href="../" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="index.html" data-en="Insights" data-fr="Perspectives">Insights</a></li>
+                <li><a href="../#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li>
+                    <div class="lang-toggle">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <div class="blog-container">
         <div class="blog-header">
-            <h1 class="blog-title">Capital Corridor Campus Blog</h1>
-            <p class="blog-subtitle">Insights on commercial real estate, professional workspace, and government-adjacent business in the National Capital Region.</p>
+            <h1 class="blog-title" data-en="Insights" data-fr="Perspectives">Insights</h1>
+            <p class="blog-subtitle" data-en="Expert perspectives on commercial real estate, professional workspace, and government-adjacent business in the National Capital Region." data-fr="Perspectives d'experts sur l'immobilier commercial, les espaces professionnels et les affaires liées au gouvernement dans la Région de la capitale nationale.">Expert perspectives on commercial real estate, professional workspace, and government-adjacent business in the National Capital Region.</p>
         </div>
 
         <div class="article-grid">
-        <a href="tax-implications-virtual-office-quebec.html" class="article-card" data-pubdate="2026-05-08">
+
+        <!-- === ENGLISH ARTICLES === -->
+
+        <a href="tax-implications-virtual-office-quebec.html" class="article-card" data-pubdate="2026-05-08" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Business Guide</div>
                 <h3 class="article-title">Tax Implications of Virtual Office Expenses in Quebec</h3>
                 <div class="article-date">May 08, 2026</div>
             </div>
         </a>
-        <a href="parking-downtown-gatineau-guide.html" class="article-card" data-pubdate="2026-05-07">
-            <div class="article-card-content">
-                <div class="article-meta">Location/Emplacement</div>
-                <h3 class="article-title">Guide du stationnement et des transports : Accès au 179, promenade du Portage</h3>
-                <div class="article-date">07 May 2026</div>
-            </div>
-        </a>
-        <a href="govtech-startup-federal-credibility.html" class="article-card" data-pubdate="2026-05-06">
+        <a href="govtech-startup-federal-credibility.html" class="article-card" data-pubdate="2026-05-06" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Tenant Stories</div>
                 <h3 class="article-title">How a GovTech Startup Used a Professional Address to Win Federal Contracts</h3>
                 <div class="article-date">May 06, 2026</div>
             </div>
         </a>
-        <a href="hvac-temperature-regulation-comfort.html" class="article-card" data-pubdate="2026-05-05">
-            <div class="article-card-content">
-                <div class="article-meta">Buildings</div>
-                <h3 class="article-title">Les systèmes CVC et le confort thermique : Pourquoi la régulation de la température compte</h3>
-                <div class="article-date">05 May 2026</div>
-            </div>
-        </a>
-        <a href="virtual-office-adoption-surge-2019-2023.html" class="article-card" data-pubdate="2026-05-04">
+        <a href="virtual-office-adoption-surge-2019-2023.html" class="article-card" data-pubdate="2026-05-04" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Market Analysis</div>
                 <h3 class="article-title">The Rise of Virtual Offices: 340% Growth in Canada 2019-2023</h3>
                 <div class="article-date">May 04, 2026</div>
             </div>
         </a>
-        <a href="roi-professional-address-government-clients.html" class="article-card" data-pubdate="2026-05-01">
+        <a href="roi-professional-address-government-clients.html" class="article-card" data-pubdate="2026-05-01" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Business Guide</div>
                 <h3 class="article-title">The ROI of a Professional Business Address for Government-Adjacent Work</h3>
                 <div class="article-date">May 01, 2026</div>
             </div>
         </a>
-        <a href="dining-lunch-restaurants-walking-distance.html" class="article-card" data-pubdate="2026-04-30">
-            <div class="article-card-content">
-                <div class="article-meta">Location/Emplacement</div>
-                <h3 class="article-title">Options de restaurant et de déjeuner à distance de marche du 179, promenade du Portage</h3>
-                <div class="article-date">30 April 2026</div>
-            </div>
-        </a>
-        <a href="management-consultant-corridor-address-case-study.html" class="article-card" data-pubdate="2026-04-29">
+        <a href="management-consultant-corridor-address-case-study.html" class="article-card" data-pubdate="2026-04-29" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Tenant Stories</div>
                 <h3 class="article-title">From Home Office to Prestigious Address: A Consultant's ROI</h3>
                 <div class="article-date">April 29, 2026</div>
             </div>
         </a>
-        <a href="leed-gold-air-quality-productivity.html" class="article-card" data-pubdate="2026-04-28">
-            <div class="article-card-content">
-                <div class="article-meta">Buildings</div>
-                <h3 class="article-title">La certification LEED Or : Comment les normes de bâtiment affectent votre productivité</h3>
-                <div class="article-date">28 April 2026</div>
-            </div>
-        </a>
-        <a href="pspc-consolidation-commercial-opportunity.html" class="article-card" data-pubdate="2026-04-27">
+        <a href="pspc-consolidation-commercial-opportunity.html" class="article-card" data-pubdate="2026-04-27" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Market Analysis</div>
                 <h3 class="article-title">How PSPC Consolidation Created Opportunity in the Government Corridor</h3>
                 <div class="article-date">April 27, 2026</div>
             </div>
         </a>
-        <a href="virtual-office-vs-coworking-vs-lease.html" class="article-card" data-pubdate="2026-04-24">
+        <a href="virtual-office-vs-coworking-vs-lease.html" class="article-card" data-pubdate="2026-04-24" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Business Guide</div>
                 <h3 class="article-title">Virtual Office vs. Coworking vs. Traditional Lease: The Cost Comparison</h3>
                 <div class="article-date">April 24, 2026</div>
             </div>
         </a>
-        <a href="191-floor-plans-flexible-office-space.html" class="article-card" data-pubdate="2026-04-23">
-            <div class="article-card-content">
-                <div class="article-meta">Buildings</div>
-                <h3 class="article-title">Les plans d'étage et la configuration des espaces au 191, promenade du Portage</h3>
-                <div class="article-date">23 April 2026</div>
-            </div>
-        </a>
-        <a href="constituency-office-professional-address.html" class="article-card" data-pubdate="2026-04-22">
+        <a href="constituency-office-professional-address.html" class="article-card" data-pubdate="2026-04-22" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Tenant Stories</div>
                 <h3 class="article-title">Why Federal Constituency Offices Choose 179 Promenade du Portage</h3>
                 <div class="article-date">April 22, 2026</div>
             </div>
         </a>
-        <a href="191-promenade-portage-history.html" class="article-card" data-pubdate="2026-04-21">
-            <div class="article-card-content">
-                <div class="article-meta">Buildings</div>
-                <h3 class="article-title">L'histoire du 191, promenade du Portage : De Vieux-Hull au bureau certifié moderne</h3>
-                <div class="article-date">21 April 2026</div>
-            </div>
-        </a>
-        <a href="federal-hybrid-mandate-gatineau.html" class="article-card" data-pubdate="2026-04-20">
+        <a href="federal-hybrid-mandate-gatineau.html" class="article-card" data-pubdate="2026-04-20" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Market Analysis</div>
                 <h3 class="article-title">The Federal Three-Day Mandate: Reshaping Commercial Real Estate</h3>
                 <div class="article-date">April 20, 2026</div>
             </div>
         </a>
-        <a href="register-consulting-firm-virtual-office-quebec.html" class="article-card" data-pubdate="2026-04-17">
+        <a href="register-consulting-firm-virtual-office-quebec.html" class="article-card" data-pubdate="2026-04-17" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Business Guide</div>
                 <h3 class="article-title">How to Register a Consulting Firm in Quebec Using a Virtual Office</h3>
                 <div class="article-date">April 17, 2026</div>
             </div>
         </a>
-        <a href="90-secondes-place-du-portage.html" class="article-card" data-pubdate="2026-04-16">
-            <div class="article-card-content">
-                <div class="article-meta">Location/Emplacement</div>
-                <h3 class="article-title">90 secondes à Place du Portage : Pourquoi l'emplacement stratégique compte</h3>
-                <div class="article-date">16 April 2026</div>
-            </div>
-        </a>
-        <a href="day-in-the-life-179.html" class="article-card" data-pubdate="2026-04-15">
+        <a href="day-in-the-life-179.html" class="article-card" data-pubdate="2026-04-15" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Tenant Stories</div>
                 <h3 class="article-title">A Day in the Life: Working at 179 Promenade du Portage</h3>
                 <div class="article-date">April 15, 2026</div>
             </div>
         </a>
-        <a href="leed-or-chez-henri.html" class="article-card" data-pubdate="2026-04-14">
-            <div class="article-card-content">
-                <div class="article-meta">Buildings</div>
-                <h3 class="article-title">La certification LEED Or au 179, promenade du Portage : Ce que cela signifie</h3>
-                <div class="article-date">14 April 2026</div>
-            </div>
-        </a>
-        <a href="covid-changed-commercial-real-estate.html" class="article-card" data-pubdate="2026-04-13">
+        <a href="covid-changed-commercial-real-estate.html" class="article-card" data-pubdate="2026-04-13" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Market Analysis</div>
                 <h3 class="article-title">COVID-19 Fundamentally Restructured Commercial Real Estate</h3>
                 <div class="article-date">April 13, 2026</div>
             </div>
         </a>
-        <a href="bureau-virtuel-lancement.html" class="article-card" data-pubdate="2026-04-08">
-            <div class="article-card-content">
-                <div class="article-meta">Annonce / Announcement</div>
-                <h3 class="article-title">Lancement des forfaits de bureau virtuel au Capital Corridor Campus</h3>
-                <div class="article-date">08 April 2026</div>
-            </div>
-        </a>
-        <a href="the-address-matters.html" class="article-card" data-pubdate="2026-04-08">
+        <a href="the-address-matters.html" class="article-card" data-pubdate="2026-04-08" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Strategy</div>
                 <h3 class="article-title">The Address Matters: Why Your Business Location Is Your First Pitch to Federal Clients</h3>
                 <div class="article-date">April 08, 2026</div>
             </div>
         </a>
-        <a href="frais-generaux-vs-presence-virtuelle.html" class="article-card" data-pubdate="2026-04-08">
-            <div class="article-card-content">
-                <div class="article-meta">Analyse / Analysis</div>
-                <h3 class="article-title">Frais généraux de bureau vs présence virtuelle : la vraie comparaison des coûts</h3>
-                <div class="article-date">08 April 2026</div>
-            </div>
-        </a>
-        <a href="built-for-government-adjacent-professionals.html" class="article-card" data-pubdate="2026-04-08">
+        <a href="built-for-government-adjacent-professionals.html" class="article-card" data-pubdate="2026-04-08" data-lang="en">
             <div class="article-card-content">
                 <div class="article-meta">Guide</div>
                 <h3 class="article-title">Built for Government-Adjacent Professionals: Who Capital Corridor Campus Serves</h3>
                 <div class="article-date">April 08, 2026</div>
             </div>
         </a>
-        <a href="salle-reunion-place-du-portage.html" class="article-card" data-pubdate="2026-04-08">
+
+        <!-- === FRENCH ARTICLES === -->
+
+        <a href="parking-downtown-gatineau-guide.html" class="article-card" data-pubdate="2026-05-07" data-lang="fr">
             <div class="article-card-content">
-                <div class="article-meta">Emplacement / Location</div>
-                <h3 class="article-title">Votre salle de réunion est à 200 m de Place du Portage</h3>
-                <div class="article-date">08 April 2026</div>
+                <div class="article-meta">Emplacement</div>
+                <h3 class="article-title">Guide du stationnement et des transports : Acc&egrave;s au 179, promenade du Portage</h3>
+                <div class="article-date">07 mai 2026</div>
             </div>
         </a>
+        <a href="hvac-temperature-regulation-comfort.html" class="article-card" data-pubdate="2026-05-05" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Immeubles</div>
+                <h3 class="article-title">Les syst&egrave;mes CVC et le confort thermique : Pourquoi la r&eacute;gulation de la temp&eacute;rature compte</h3>
+                <div class="article-date">05 mai 2026</div>
+            </div>
+        </a>
+        <a href="dining-lunch-restaurants-walking-distance.html" class="article-card" data-pubdate="2026-04-30" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Emplacement</div>
+                <h3 class="article-title">Options de restaurant et de d&eacute;jeuner &agrave; distance de marche du 179, promenade du Portage</h3>
+                <div class="article-date">30 avril 2026</div>
+            </div>
+        </a>
+        <a href="leed-gold-air-quality-productivity.html" class="article-card" data-pubdate="2026-04-28" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Immeubles</div>
+                <h3 class="article-title">La certification LEED Or : Comment les normes de b&acirc;timent affectent votre productivit&eacute;</h3>
+                <div class="article-date">28 avril 2026</div>
+            </div>
+        </a>
+        <a href="191-floor-plans-flexible-office-space.html" class="article-card" data-pubdate="2026-04-23" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Immeubles</div>
+                <h3 class="article-title">Les plans d'&eacute;tage et la configuration des espaces au 191, promenade du Portage</h3>
+                <div class="article-date">23 avril 2026</div>
+            </div>
+        </a>
+        <a href="191-promenade-portage-history.html" class="article-card" data-pubdate="2026-04-21" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Immeubles</div>
+                <h3 class="article-title">L'histoire du 191, promenade du Portage : De Vieux-Hull au bureau certifi&eacute; moderne</h3>
+                <div class="article-date">21 avril 2026</div>
+            </div>
+        </a>
+        <a href="90-secondes-place-du-portage.html" class="article-card" data-pubdate="2026-04-16" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Emplacement</div>
+                <h3 class="article-title">90 secondes &agrave; Place du Portage : Pourquoi l'emplacement strat&eacute;gique compte</h3>
+                <div class="article-date">16 avril 2026</div>
+            </div>
+        </a>
+        <a href="leed-or-chez-henri.html" class="article-card" data-pubdate="2026-04-14" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Immeubles</div>
+                <h3 class="article-title">La certification LEED Or au 179, promenade du Portage : Ce que cela signifie</h3>
+                <div class="article-date">14 avril 2026</div>
+            </div>
+        </a>
+        <a href="bureau-virtuel-lancement.html" class="article-card" data-pubdate="2026-04-08" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Annonce</div>
+                <h3 class="article-title">Lancement des forfaits de bureau virtuel au Capital Corridor Campus</h3>
+                <div class="article-date">08 avril 2026</div>
+            </div>
+        </a>
+        <a href="frais-generaux-vs-presence-virtuelle.html" class="article-card" data-pubdate="2026-04-08" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Analyse</div>
+                <h3 class="article-title">Frais g&eacute;n&eacute;raux de bureau vs pr&eacute;sence virtuelle : la vraie comparaison des co&ucirc;ts</h3>
+                <div class="article-date">08 avril 2026</div>
+            </div>
+        </a>
+        <a href="salle-reunion-place-du-portage.html" class="article-card" data-pubdate="2026-04-08" data-lang="fr">
+            <div class="article-card-content">
+                <div class="article-meta">Emplacement</div>
+                <h3 class="article-title">Votre salle de r&eacute;union est &agrave; 200 m de Place du Portage</h3>
+                <div class="article-date">08 avril 2026</div>
+            </div>
+        </a>
+
         </div>
     </div>
 
     <footer>
         <p>&copy; 2026 Capital Corridor Campus. 179 Promenade du Portage, Gatineau, QC J8X 3Z9</p>
-        <p><a href="../#contact">Contact</a> • <a href="../privacy.html">Privacy</a> • <a href="../terms.html">Terms</a></p>
+        <p><a href="../#contact">Contact</a> &bull; <a href="../privacy.html">Privacy</a> &bull; <a href="../terms.html">Terms</a></p>
         <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Strategy, design &amp; technology by <a href="https://ibprom.com" target="_blank" rel="noopener" style="color: var(--gold);">International Business Promotion (IBPROM) Corp.</a></p>
     </footer>
 
-    <!-- Date-Gating JavaScript -->
     <script>
-        (function() {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
+    (function() {
+        /* --- Language Detection --- */
+        var params = new URLSearchParams(window.location.search);
+        var currentLang = params.get('lang') === 'fr' ? 'fr' : 'en';
 
-            const cards = document.querySelectorAll('.article-card');
-            cards.forEach(card => {
-                const pubdate = card.getAttribute('data-pubdate');
+        /* --- Apply Language to Toggle Buttons --- */
+        var langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(function(btn) {
+            if (btn.getAttribute('data-lang') === currentLang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        /* --- Apply Language to Nav + Header Text --- */
+        function applyLang(lang) {
+            document.querySelectorAll('[data-en]').forEach(function(el) {
+                var val = el.getAttribute('data-' + lang);
+                if (!val) return;
+                if (el.tagName === 'IMG') {
+                    el.src = val;
+                } else if (el.tagName === 'META') {
+                    el.setAttribute('content', val);
+                } else if (el.tagName === 'TITLE') {
+                    document.title = val;
+                } else {
+                    el.innerHTML = val;
+                }
+            });
+        }
+        applyLang(currentLang);
+
+        /* --- Filter Articles by Language --- */
+        function filterArticles(lang) {
+            var cards = document.querySelectorAll('.article-card');
+            cards.forEach(function(card) {
+                var cardLang = card.getAttribute('data-lang');
+                if (cardLang && cardLang !== lang) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                }
+            });
+        }
+
+        /* --- Date-Gating: Hide Future Articles --- */
+        function dategate() {
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            document.querySelectorAll('.article-card').forEach(function(card) {
+                var pubdate = card.getAttribute('data-pubdate');
                 if (pubdate) {
-                    const articleDate = new Date(pubdate);
+                    var articleDate = new Date(pubdate);
                     if (articleDate > today) {
                         card.classList.add('hidden');
                     }
                 }
             });
-        })();
+        }
+
+        /* --- Sort Cards: Newest First Within Each Visible Set --- */
+        function sortCards() {
+            var grid = document.querySelector('.article-grid');
+            var cards = Array.from(grid.querySelectorAll('.article-card'));
+            cards.sort(function(a, b) {
+                var da = new Date(a.getAttribute('data-pubdate') || '2020-01-01');
+                var db = new Date(b.getAttribute('data-pubdate') || '2020-01-01');
+                return db - da;
+            });
+            cards.forEach(function(card) { grid.appendChild(card); });
+        }
+
+        sortCards();
+        filterArticles(currentLang);
+        dategate();
+
+        /* --- Language Toggle Click Handler --- */
+        langBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var lang = this.getAttribute('data-lang');
+                currentLang = lang;
+
+                langBtns.forEach(function(b) { b.classList.remove('active'); });
+                this.classList.add('active');
+
+                // Update URL without reload
+                var url = new URL(window.location);
+                if (lang === 'fr') {
+                    url.searchParams.set('lang', 'fr');
+                } else {
+                    url.searchParams.delete('lang');
+                }
+                window.history.replaceState({}, '', url);
+
+                // Re-apply language, filter, and dategate
+                applyLang(lang);
+
+                // First remove language-based hidden, then re-filter
+                document.querySelectorAll('.article-card').forEach(function(card) {
+                    card.classList.remove('hidden');
+                });
+                filterArticles(lang);
+                dategate();
+            });
+        });
+    })();
     </script>
 
 </body>
