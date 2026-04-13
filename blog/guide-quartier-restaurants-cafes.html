@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorez les restaurants, cafés et lieux de rencontre à proximité du 179 et 191 Promenade du Portage à Gatineau. Un guide pratique pour les professionnels qui travaillent dans nos espaces.">
+
+    <meta property="og:title" content="Guide du quartier — restaurants et cafés à distance de marche">
+    <meta property="og:description" content="Explorez les restaurants, cafés et lieux de rencontre à proximité du 179 et 191 Promenade du Portage à Gatineau. Un guide pratique pour les professionnels qui travaillent dans nos espaces.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://campuscorridor.ca/blog/guide-quartier-restaurants-cafes.html">
+    <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png">
+    <meta property="article:published_time" content="2026-04-30T08:00:00Z">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://campuscorridor.ca/blog/guide-quartier-restaurants-cafes.html">
+
+    <title>Guide du quartier — restaurants et cafés à distance de marche | Capital Corridor Campus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #C6A25A;
+            --gold-light: #D4B876;
+            --gold-dim: rgba(198,162,90,0.12);
+            --dark: #0A0F1A;
+            --cream: #F5F3EE;
+            --text: #C9C5BD;
+            --muted: #7A7568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0C1A2E;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-date {
+            color: var(--gold);
+        }
+
+        .article-pillar {
+            color: var(--muted);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--cream);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text);
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: var(--gold);
+            margin: 40px 0;
+        }
+
+        .article-body {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+        }
+
+        .article-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--cream);
+        }
+
+        .article-body table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .article-body th, .article-body td {
+            border: 1px solid var(--gold);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .article-body th {
+            background-color: var(--gold-dim);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background-color: var(--gold-dim);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin: 30px 0;
+            font-size: 15px;
+        }
+
+        .highlight-box strong {
+            color: var(--gold);
+        }
+
+        .cta-section {
+            background-color: #0C1A2E;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+            border: 1px solid var(--gold-dim);
+        }
+
+        .cta-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--cream);
+        }
+
+        .cta-section p {
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold-light);
+        }
+
+        .phone {
+            display: block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        footer {
+            background-color: #0C1A2E;
+            border-top: 1px solid var(--gold-dim);
+            padding: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3TWNPP48M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3TWNPP48M');
+    </script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Guide du quartier — restaurants et cafés à distance de marche",
+        "description": "Explorez les restaurants, cafés et lieux de rencontre à proximité du 179 et 191 Promenade du Portage à Gatineau. Un guide pratique pour les professionnels qui travaillent dans nos espaces.",
+        "image": "https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png",
+        "datePublished": "2026-04-30T08:00:00Z",
+        "author": {
+            "@type": "Organization",
+            "name": "Capital Corridor Campus",
+            "url": "https://campuscorridor.ca"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://campuscorridor.ca/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://campuscorridor.ca/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Guide du quartier — restaurants et cafés à distance de marche",
+                "item": "https://campuscorridor.ca/blog/guide-quartier-restaurants-cafes.html"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../Logos/web/CCC_Logo_FR_200px.png" alt="Capital Corridor Campus" class="logo">
+        <nav>
+                <a href="#">Propriétés</a>
+                <a href="#">Espaces</a>
+                <a href="/blog/">Perspectives</a>
+                <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+<a href="/">Accueil</a> / <a href="/blog/">Perspectives</a> / <span>Guide du quartier</span>        </div>
+
+        <a href="/blog/" class="back-link">← Back to Insights</a>
+
+        <article>
+            <div class="article-meta">
+                <span class="article-date">30 avril 2026</span>
+                <span class="article-pillar">Emplacement</span>
+            </div>
+
+            <h1>Guide du quartier — restaurants et cafés à distance de marche</h1>
+
+            <div class="subtitle">Découvrez les saveurs et les espaces de travail alternatifs autour du 179 et 191 Promenade du Portage</div>
+
+            <div class="divider"></div>
+
+            <div class="article-body">
+
+<h2>Le centre-ville de Gatineau : un quartier vivant</h2>
+<p>Le 179 et 191 Promenade du Portage ne sont pas isolés dans un campus d'affaires stérile. Vous êtes au cœur du centre-ville de Gatineau, à proximité immédiate de restaurants, cafés, et espaces de rencontre qui font la vie urbaine. À pied, en moins de dix minutes, vous accédez à une vie professionnelle et sociale riche.</p>
+<p>Pour les consultants, les entrepreneurs, et les équipes en réunion, cette proximité change tout. Vous pouvez tenir une déjeuner-réunion cinq minutes après avoir quitté votre bureau. Vous pouvez prendre un café entre deux appels sans vous éloigner du cœur du quartier.</p>
+
+<h2>Cafés de travail et espaces collaboratifs</h2>
+<p><strong>Bridgehead Coffee (Rue de la Vallée, à 150m):</strong> Le café incontournable du centre-ville. Excellente connexion Wi-Fi, ambiance de travail, et baristas qui connaissent votre commande après deux visites. Parfait pour les réunions informelles ou le travail en solo le matin.</p>
+<p><strong>Bines and Wines (Rue Eddy, à 300m):</strong> Espace plus détente, avec coin lounge et table de reunion informelle. À midi, c'est l'endroit où les équipes discutent des stratégies sur un verre. Le service alimentaire est excellent.</p>
+<p><strong>The Soap Kitchen (Rue de la Vallée, à 200m):</strong> Petit café artisanal, très fréquenté par les travailleurs autonomes. Calme, bien éclairé, avec tables de travail. C'est votre deuxième bureau sans engagement de loyer.</p>
+
+<div class="highlight-box">
+<p><strong>Astuce de productivité :</strong> Changeant d'environnement de travail deux à trois fois par semaine—alternant entre votre bureau au 179 Promenade du Portage et les cafés du quartier—augmente votre créativité et réduit la fatigue mentale liée à la monotonie de l'espace.</p>
+</div>
+
+<h2>Restaurants pour déjeuners d'affaires et réunions clients</h2>
+<p><strong>Navarre Restaurant (Rue Édouard-de-Montpetit, à 400m):</strong> Cuisine française et belge sophistiquée. C'est le restaurant pour impressionner les clients de haut niveau. Réservation essentielle. Service attentif, cave à vin réputée.</p>
+<p><strong>Tarboosh (Rue de la Vallée, à 250m):</strong> Cuisine du Moyen-Orient, très appréciée des équipes locales. Portions généreuses, prix accessibles, ambiance chaleureuse. Parfait pour les déjeuners informels ou les réunions d'équipe détendues.</p>
+<p><strong>Zenzero (Rue Champlain, à 350m):</strong> Cuisine asiatique contemporaine. Menus créatifs, service rapide (important quand vous êtes en pause de travail). Excellentes options pour les régimes particuliers.</p>
+<p><strong>Karv (Rue de la Vallée, à 280m):</strong> Steak house canadien avec vue sur le ciel de la région. Ambiance professionnelle, parfait pour les réunions client formelles. Les poutines maison sont légendaires.</p>
+
+<h2>Espace et communauté</h2>
+<p>Ce qui distingue le centre-ville de Gatineau, c'est qu'il n'est pas un quartier dédié uniquement aux travailleurs de bureau. C'est un quartier où les habitants vivent, mangent, créent, et se rencontrent. Cela signifie une diversité de restaurants, de styles culinaires, et de niveaux de prix qui répond à tous les besoins.</p>
+<p>Quand vous travaillez au 179 ou 191 Promenade du Portage, vous n'êtes pas enfermés dans une tour isolée. Vous êtes intégrés dans la vie du quartier. C'est cela qui crée une expérience de travail vraiment professionnelle et humaine à la fois.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="cta-section">
+                <h3>Contactez-nous</h3>
+                <p>Ready to establish your professional presence in the heart of Gatineau?</p>
+                <a href="#contact" class="cta-button">Contactez-nous</a>
+                <span class="phone">Phone: 613-691-9311</span>
+            </div>
+        </article>
+    </div>
+
+            <footer>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem 1rem;">
+            <div style="margin-bottom: 1rem;">
+                <a href="/terms.html" style="color: var(--gold, #C6A25A); text-decoration: none; font-size: 0.8rem;">Terms of Use</a>
+                <span style="color: #7A7568; margin: 0 0.5rem;">|</span>
+                <a href="/privacy.html" style="color: var(--gold, #C6A25A); text-decoration: none; font-size: 0.8rem;">Privacy Policy</a>
+                <span style="color: #7A7568; margin: 0 0.5rem;">|</span>
+                <a href="/cookies.html" style="color: var(--gold, #C6A25A); text-decoration: none; font-size: 0.8rem;">Cookies Policy</a>
+            </div>
+            <p>&copy; 2026 Capital Corridor Campus. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Strategy, design &amp; technology by <a href="https://ibprom.com" style="color: var(--gold, #C6A25A);">International Business Promotion (IBPROM) Corp.</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Street-level commercial space in Gatineau's premier government corridor. 1,200 sq ft, $4,800/month all-inclusive. Ideal for salon, wellness, retail, or professional services.">
+    <meta name="keywords" content="commercial real estate, Gatineau, office space, street-level retail, Promenade du Portage">
+    <meta property="og:title" content="Ground Floor Commercial Space — Campus Corridor">
+    <meta property="og:description" content="1,200 sq ft street-level space at 179 Promenade du Portage, Gatineau. Perfect for salon, wellness, or professional services.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_500px.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Ground Floor Commercial Space | Campus Corridor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #0A0F1A;
+            --dark-card: #111827;
+            --dark-elevated: #1A2236;
+            --gold: #C6A25A;
+            --gold-light: #D4B876;
+            --cream: #F5F3EE;
+            --text: #C9C5BD;
+            --muted: #7A7568;
+            --accent: #8B7355;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(198, 162, 90, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-top: 80px;
+            padding: 2rem;
+            background-color: var(--dark-card);
+            border-bottom: 1px solid rgba(198, 162, 90, 0.1);
+        }
+
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+            list-style: none;
+        }
+
+        .breadcrumb-list li::after {
+            content: '/';
+            margin-left: 0.5rem;
+            color: var(--muted);
+        }
+
+        .breadcrumb-list li:last-child::after {
+            content: '';
+        }
+
+        .breadcrumb-list a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-list a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-card) 0%, var(--dark-elevated) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-address {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-address {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--dark);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid rgba(198, 162, 90, 0.1);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--dark-card);
+            border: 1px solid rgba(198, 162, 90, 0.2);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background-color: var(--dark-elevated);
+            border-color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-detail {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 1rem;
+        }
+
+        .description-text {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--dark-card);
+            border: 1px solid rgba(198, 162, 90, 0.15);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background-color: var(--dark-elevated);
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Tenant Profiles */
+        .tenant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tenant-card {
+            background: linear-gradient(135deg, var(--dark-elevated) 0%, var(--dark-card) 100%);
+            border: 1px solid rgba(198, 162, 90, 0.2);
+            padding: 2rem;
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .tenant-card:hover {
+            border-left-color: var(--gold-light);
+            transform: translateX(4px);
+        }
+
+        .tenant-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tenant-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .tenant-description {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Location Info */
+        .location-info {
+            background-color: var(--dark-card);
+            border: 1px solid rgba(198, 162, 90, 0.15);
+            padding: 2rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .location-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .location-stat {
+            text-align: center;
+        }
+
+        .location-stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .location-stat-label {
+            font-size: 0.85rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--dark-card) 0%, var(--dark-elevated) 100%);
+            border-top: 1px solid rgba(198, 162, 90, 0.15);
+            border-bottom: 1px solid rgba(198, 162, 90, 0.15);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-person {
+            background-color: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border: 1px solid rgba(198, 162, 90, 0.1);
+            border-radius: 4px;
+        }
+
+        .contact-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-method a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gold);
+            background-color: transparent;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background-color: var(--gold);
+            color: var(--dark);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-card);
+            border-top: 1px solid rgba(198, 162, 90, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 30px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .footer-text {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .features-grid,
+            .tenant-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-highlight {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Bilingual Support */
+        [lang="fr"] {
+            display: none;
+        }
+
+        body.fr [lang="en"] {
+            display: none;
+        }
+
+        body.fr [lang="fr"] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="Logos/web/CCC_Logo_EN_500px.png" alt="Campus Corridor">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#properties">Properties</a></li>
+                <li><a href="/virtual-office.html">Virtual Office</a></li>
+                <li><a href="/blog/">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="breadcrumb-container">
+            <ul class="breadcrumb-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#properties">Properties</a></li>
+                <li><span lang="en">Ground Floor</span><span lang="fr">Rez-de-chaussée</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 lang="en">Ground Floor — Street-Level Commercial Space</h1>
+            <h1 lang="fr" style="display: none;">Rez-de-chaussée — Espace Commercial en Vitrine</h1>
+            <div class="hero-address">179 Promenade du Portage, Gatineau, QC J8X 2K6</div>
+            <p class="hero-subtitle" lang="en">Perfect for Salon, Spa, Wellness, Professional Services & Retail</p>
+            <p class="hero-subtitle" lang="fr" style="display: none;">Idéal pour Salon, Spa, Bien-être, Services Professionnels et Commerce de Détail</p>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section style="background-color: var(--dark-card); padding: 3rem 2rem; border-bottom: 1px solid rgba(198, 162, 90, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--cream); text-align: center; margin-bottom: 2rem;">The Space</h2>
+            <!-- Featured Image -->
+            <div style="margin-bottom: 1.5rem; overflow: hidden; border: 1px solid rgba(198, 162, 90, 0.2);">
+                <img id="featured-img" src="images/ground-floor/IMG_1822.JPG" alt="Reception area with exposed stone wall and modern finishes" style="width: 100%; height: 500px; object-fit: cover; display: block; cursor: pointer;" onclick="this.style.height = this.style.height === '500px' ? 'auto' : '500px'">
+            </div>
+            <!-- Thumbnail Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem;">
+                <img src="images/ground-floor/IMG_1822.JPG" alt="Reception counter with stone accent wall" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid var(--gold); opacity: 1; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1821.JPG" alt="Styling stations with mirrors and green LED accents" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1819.JPG" alt="Full salon floor with styling chairs" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1816.JPG" alt="Professional wash stations with Goldwell equipment" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1820.JPG" alt="Waiting area with electric fireplace and leather seating" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1817.JPG" alt="Open floor space with natural light" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1815.JPG" alt="Full kitchenette with stainless steel appliances" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1813.JPG" alt="Professional pedicure station" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1825.JPG" alt="Entrance area with mounted display" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1811.JPG" alt="Interior view through glass partition" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+                <img src="images/ground-floor/IMG_1814.JPG" alt="Private office area with glass desk" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s;" onclick="document.getElementById('featured-img').src=this.src; document.querySelectorAll('[data-thumb]').forEach(t=>{t.style.border='2px solid transparent';t.style.opacity='0.6'}); this.style.border='2px solid var(--gold)'; this.style.opacity='1';" data-thumb>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label" lang="en">Square Footage</div>
+                    <div class="stat-label" lang="fr" style="display: none;">Superficie</div>
+                    <div class="stat-value">1,200</div>
+                    <div class="stat-detail" lang="en">sq ft</div>
+                    <div class="stat-detail" lang="fr" style="display: none;">pi² ca</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" lang="en">Monthly Rent</div>
+                    <div class="stat-label" lang="fr" style="display: none;">Loyer Mensuel</div>
+                    <div class="stat-value">$4,800</div>
+                    <div class="stat-detail" lang="en">All-inclusive</div>
+                    <div class="stat-detail" lang="fr" style="display: none;">Tout compris</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" lang="en">Availability</div>
+                    <div class="stat-label" lang="fr" style="display: none;">Disponibilité</div>
+                    <div class="stat-value" style="font-size: 1.5rem;">Immediate</div>
+                    <div class="stat-detail" lang="en">Ready to occupy</div>
+                    <div class="stat-detail" lang="fr" style="display: none;">Prêt à occuper</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" lang="en">Positioning</div>
+                    <div class="stat-label" lang="fr" style="display: none;">Positionnement</div>
+                    <div class="stat-value" style="font-size: 1.5rem;">Street-Level</div>
+                    <div class="stat-detail" lang="en">Prime visibility</div>
+                    <div class="stat-detail" lang="fr" style="display: none;">Visibilité optimale</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Description -->
+        <section class="section">
+            <p class="description-text" lang="en">
+                This exceptional street-level commercial space represents a unique opportunity in Gatineau's most vibrant business corridor. With the federal government workforce returning to the office and foot traffic recovering on Promenade du Portage, this is the strategic moment for service-oriented businesses to establish their presence. The space arrives turnkey from its previous salon operation, substantially reducing build-out costs and timeline to market. Located steps away from Place du Portage—home to 10,000+ federal employees—this property captures premium walk-in traffic and clientele density unmatched elsewhere in the region.
+            </p>
+            <p class="description-text" lang="fr" style="display: none;">
+                Cet espace commercial en vitrine exceptionnel représente une opportunité unique dans le corridor commercial le plus dynamique de Gatineau. Avec le retour de la main-d'œuvre fédérale au bureau et la récupération du trafic piétonnier sur la Promenade du Portage, c'est le moment stratégique pour que les entreprises de services établissent leur présence. L'espace est clé en main de son ancienne exploitation en salon, réduisant considérablement les coûts d'aménagement et le délai de commercialisation. Situé à quelques pas de la Place du Portage—qui abrite plus de 10 000 employés fédéraux—cette propriété capte un trafic piétonnier de premier choix et une densité de clientèle sans égal dans la région.
+            </p>
+        </section>
+
+        <!-- Key Features -->
+        <section class="section">
+            <h2 class="section-title" lang="en">Key Features</h2>
+            <h2 class="section-title" lang="fr" style="display: none;">Caractéristiques principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title" lang="en">Turnkey Ready</h3>
+                    <h3 class="feature-title" lang="fr" style="display: none;">Clé en Main</h3>
+                    <p class="feature-description" lang="en">Previously operated as a high-end salon with buildout already complete. Minimal additional investment required to customize for your business model.</p>
+                    <p class="feature-description" lang="fr" style="display: none;">Exploitation antérieure comme salon haut de gamme avec aménagement déjà réalisé. Investissement supplémentaire minimal requis pour adapter à votre modèle commercial.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title" lang="en">Street Presence</h3>
+                    <h3 class="feature-title" lang="fr" style="display: none;">Présence en Vitrine</h3>
+                    <p class="feature-description" lang="en">Premium visibility on Promenade du Portage with expansive windows. Build brand awareness through foot traffic and window displays.</p>
+                    <p class="feature-description" lang="fr" style="display: none;">Visibilité premium sur la Promenade du Portage avec grandes vitrines. Augmentez la notoriété de votre marque par le trafic piétonnier et les étalages.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title" lang="en">All-Inclusive Rent</h3>
+                    <h3 class="feature-title" lang="fr" style="display: none;">Loyer Tout Compris</h3>
+                    <p class="feature-description" lang="en">$4,800/month covers heat, cooling, building services, and utilities. Predictable costs with no surprise increases during your lease term.</p>
+                    <p class="feature-description" lang="fr" style="display: none;">4 800 $/mois incluent le chauffage, la climatisation, les services d'immeuble et les services publics. Coûts prévisibles sans augmentations surprises pendant votre bail.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title" lang="en">Bilingual Corridor</h3>
+                    <h3 class="feature-title" lang="fr" style="display: none;">Corridor Bilingue</h3>
+                    <p class="feature-description" lang="en">Positioned in Gatineau's bilingual business hub where French and English clientele flow seamlessly. Serve both markets from one prestigious address.</p>
+                    <p class="feature-description" lang="fr" style="display: none;">Positionné dans le centre commercial bilingue de Gatineau où la clientèle française et anglaise circule sans interruption. Servir les deux marchés depuis une adresse prestigieuse.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title" lang="en">LEED Gold Building</h3>
+                    <h3 class="feature-title" lang="fr" style="display: none;">Immeuble LEED Or</h3>
+                    <p class="feature-description" lang="en">Part of a certified sustainable property. Appeal to environmentally conscious clients and demonstrate corporate responsibility.</p>
+                    <p class="feature-description" lang="fr" style="display: none;">Partie d'une propriété certifiée durable. Attirer la clientèle consciente de l'environnement et démontrer la responsabilité corporative.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title" lang="en">Premium Location</h3>
+                    <h3 class="feature-title" lang="fr" style="display: none;">Emplacement Premium</h3>
+                    <p class="feature-description" lang="en">10-minute walk to Place du Portage. Direct access to the largest concentration of government employees in the region. Unmatched client density.</p>
+                    <p class="feature-description" lang="fr" style="display: none;">10 minutes à pied de la Place du Portage. Accès direct à la plus grande concentration d'employés gouvernementaux de la région. Densité de clientèle incomparable.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ideal Tenant Profiles -->
+        <section class="section">
+            <h2 class="section-title" lang="en">Ideal Tenant Profiles</h2>
+            <h2 class="section-title" lang="fr" style="display: none;">Profils de Locataires Idéaux</h2>
+            <div class="tenant-grid">
+                <div class="tenant-card">
+                    <div class="tenant-icon">💆</div>
+                    <h3 class="tenant-name" lang="en">Salon, Spa & Wellness</h3>
+                    <h3 class="tenant-name" lang="fr" style="display: none;">Salon, Spa et Bien-être</h3>
+                    <p class="tenant-description" lang="en">The space's previous salon buildout makes this ideal for hair, aesthetics, massage, or wellness practitioners. Turnkey environment reduces startup burden.</p>
+                    <p class="tenant-description" lang="fr" style="display: none;">L'aménagement antérieur du salon rend cela idéal pour les praticiens des cheveux, cosmétiques, massage ou bien-être. L'environnement clé en main réduit le fardeau de démarrage.</p>
+                </div>
+                <div class="tenant-card">
+                    <div class="tenant-icon">🏥</div>
+                    <h3 class="tenant-name" lang="en">Professional Services</h3>
+                    <h3 class="tenant-name" lang="fr" style="display: none;">Services Professionnels</h3>
+                    <p class="tenant-description" lang="en">Law, accounting, consulting, and medical practitioners benefit from proximity to government employee clientele and professional building environment.</p>
+                    <p class="tenant-description" lang="fr" style="display: none;">Les praticiens du droit, comptabilité, conseil et médecine bénéficient de la proximité de la clientèle des employés gouvernementaux et de l'environnement bâti professionnel.</p>
+                </div>
+                <div class="tenant-card">
+                    <div class="tenant-icon">🎓</div>
+                    <h3 class="tenant-name" lang="en">Academy & Education</h3>
+                    <h3 class="tenant-name" lang="fr" style="display: none;">Académie et Éducation</h3>
+                    <p class="tenant-description" lang="en">Language training, professional development, music, art, or fitness academies capitalize on dense foot traffic and government employee demographic.</p>
+                    <p class="tenant-description" lang="fr" style="display: none;">Les académies de formation linguistique, développement professionnel, musique, art ou fitness capitalisent sur le trafic piétonnier dense et la démographie des employés gouvernementaux.</p>
+                </div>
+                <div class="tenant-card">
+                    <div class="tenant-icon">☕</div>
+                    <h3 class="tenant-name" lang="en">Retail & Café</h3>
+                    <h3 class="tenant-name" lang="fr" style="display: none;">Commerce de Détail et Café</h3>
+                    <p class="tenant-description" lang="en">Specialty retail, boutique coffee, artisan goods, or quick-service dining thrive on high-traffic pedestrian corridors like Promenade du Portage.</p>
+                    <p class="tenant-description" lang="fr" style="display: none;">La vente spécialisée, le café de boutique, les produits artisanaux ou la restauration rapide prospèrent sur les couloirs piétonniers à fort trafic comme la Promenade du Portage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Context -->
+        <section class="section">
+            <h2 class="section-title" lang="en">Strategic Location</h2>
+            <h2 class="section-title" lang="fr" style="display: none;">Localisation Stratégique</h2>
+            <div class="location-info">
+                <p lang="en">179 Promenade du Portage sits in Gatineau's premier government corridor—the epicenter of federal employment and economic activity in the National Capital Region. This location offers unparalleled access to affluent, educated, and stable clientele.</p>
+                <p lang="fr" style="display: none;">Le 179 Promenade du Portage se trouve dans le corridor gouvernemental premier de Gatineau—l'épicentre de l'emploi fédéral et de l'activité économique dans la région de la Capitale-Nationale. Cet emplacement offre un accès sans égal à une clientèle aisée, instruite et stable.</p>
+                <div class="location-highlight">
+                    <div class="location-stat">
+                        <div class="location-stat-value">10 min</div>
+                        <div class="location-stat-label" lang="en">Walk to Place du Portage</div>
+                        <div class="location-stat-label" lang="fr" style="display: none;">Marche vers Place du Portage</div>
+                    </div>
+                    <div class="location-stat">
+                        <div class="location-stat-value">10,000+</div>
+                        <div class="location-stat-label" lang="en">Federal Employees Nearby</div>
+                        <div class="location-stat-label" lang="fr" style="display: none;">Employés Fédéraux à Proximité</div>
+                    </div>
+                    <div class="location-stat">
+                        <div class="location-stat-value">6 min</div>
+                        <div class="location-stat-label" lang="en">To Parliament Hill</div>
+                        <div class="location-stat-label" lang="fr" style="display: none;">Vers la Colline du Parlement</div>
+                    </div>
+                    <div class="location-stat">
+                        <div class="location-stat-value">2</div>
+                        <div class="location-stat-label" lang="en">Official Languages</div>
+                        <div class="location-stat-label" lang="fr" style="display: none;">Langues Officielles</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title" lang="en">Schedule Your Viewing</h2>
+            <h2 class="section-title" lang="fr" style="display: none;">Planifiez Votre Visite</h2>
+            <div class="contact-grid">
+                <div class="contact-person">
+                    <div class="contact-name">Joseph Soares, MBA, PMP, Adm.A.</div>
+                    <div class="contact-title" lang="en">Administrator</div>
+                    <div class="contact-title" lang="fr" style="display: none;">Administrateur</div>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span lang="en">📧 Email:</span>
+                            <span lang="fr" style="display: none;">📧 Courriel :</span>
+                            <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a>
+                        </div>
+                        <div class="contact-method">
+                            <span lang="en">📞 Phone:</span>
+                            <span lang="fr" style="display: none;">📞 Téléphone :</span>
+                            <a href="tel:+16136919311">613-691-9311</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-person">
+                    <div class="contact-name" lang="en">Campus Corridor</div>
+                    <div class="contact-name" lang="fr" style="display: none;">Campus Corridor</div>
+                    <div class="contact-title" lang="en">Commercial Real Estate</div>
+                    <div class="contact-title" lang="fr" style="display: none;">Immobilier Commercial</div>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span lang="en">🌐 Web:</span>
+                            <span lang="fr" style="display: none;">🌐 Web :</span>
+                            <a href="https://campuscorridor.ca">campuscorridor.ca</a>
+                        </div>
+                        <div class="contact-method">
+                            <span lang="en">📧 Email:</span>
+                            <span lang="fr" style="display: none;">📧 Courriel :</span>
+                            <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Row 1: Four-column info grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2.5rem;">
+                <div>
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem;">Capital Corridor Campus</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.6;">179 Promenade du Portage, Gatineau, QC<br>J8X 2K5</p>
+                </div>
+                <div>
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem;">Contact</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;"><a href="tel:+16136919311" style="color: var(--text); text-decoration: none;">613-691-9311</a></p>
+                    <p style="font-size: 0.85rem;"><a href="mailto:info@campuscorridor.ca" style="color: var(--text); text-decoration: none;">info@campuscorridor.ca</a></p>
+                </div>
+                <div>
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem;">Services</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;"><a href="/#properties" style="color: var(--text); text-decoration: none;">Properties</a></p>
+                    <p style="font-size: 0.85rem;"><a href="/flex-space.html" style="color: var(--text); text-decoration: none;">Flex Space</a></p>
+                    <p style="font-size: 0.85rem;"><a href="/virtual-office.html" style="color: var(--text); text-decoration: none;">Virtual Office</a></p>
+                </div>
+                <div>
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem;">Resources</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;"><a href="/blog/" style="color: var(--text); text-decoration: none;">Insights</a></p>
+                    <p style="font-size: 0.85rem;"><a href="https://youtube.com" style="color: var(--text); text-decoration: none;">YouTube Tours</a></p>
+                    <p style="font-size: 0.85rem;"><a href="https://ibprom.com" style="color: var(--text); text-decoration: none;">IBPROM Corp</a></p>
+                </div>
+            </div>
+            <!-- Divider -->
+            <div style="border-top: 1px solid rgba(198, 162, 90, 0.15); padding-top: 1.5rem;">
+                <!-- Line 1: Legal links -->
+                <div class="footer-links" style="margin-bottom: 0.75rem;">
+                    <a href="/terms-of-use.html">Terms of Use</a>
+                    <span style="color: var(--muted);">|</span>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <span style="color: var(--muted);">|</span>
+                    <a href="/cookie-policy.html">Cookies Policy</a>
+                </div>
+                <!-- Line 2: Copyright -->
+                <p style="font-size: 0.8rem; margin-bottom: 0.5rem;">&copy; 2026 Capital Corridor Campus. All rights reserved.</p>
+                <!-- Line 3: IBPROM attribution -->
+                <p style="font-size: 0.75rem; color: var(--muted);">Strategy, design &amp; technology by <a href="https://ibprom.com" style="color: var(--gold); text-decoration: none;">International Business Promotion (IBPROM) Corp</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CommercialProperty",
+        "name": "Ground Floor Commercial Space — Campus Corridor",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "179 Promenade du Portage",
+            "addressLocality": "Gatineau",
+            "addressRegion": "QC",
+            "postalCode": "J8X 2K6",
+            "addressCountry": "CA"
+        },
+        "description": "Street-level commercial space, 1,200 sq ft, $4,800/month all-inclusive. Turnkey from salon operation. Ideal for salon, spa, wellness, professional services, or retail.",
+        "floorArea": {
+            "@type": "QuantitativeValue",
+            "value": "1200",
+            "unitCode": "FT2"
+        },
+        "priceRange": "$4800/month",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "price": "4800",
+            "pricePeriod": "P1M"
+        },
+        "availabilityStarts": "2026-04-13",
+        "businessFunction": "RetailLocation",
+        "contact": {
+            "@type": "Organization",
+            "name": "Campus Corridor",
+            "url": "https://campuscorridor.ca",
+            "telephone": "+1-613-691-9311",
+            "email": "info@campuscorridor.ca"
+        },
+        "image": "https://campuscorridor.ca/Logos/web/CCC_Logo_EN_500px.png",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "45.4449",
+            "longitude": "-75.7045"
+        }
+    }
+    </script>
+</body>
+</html>

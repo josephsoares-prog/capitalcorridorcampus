@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engagement envers l'accessibilité physique, numérique et communicationnelle pour tous les utilisateurs.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://campuscorridor.ca/blog/accessibilite-universelle.html">
+    <meta property="og:title" content="Accessibilité universelle — comment nos immeubles servent tous les professionnels">
+    <meta property="og:description" content="Engagement envers l'accessibilité physique, numérique et communicationnelle pour tous les utilisateurs.">
+    <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://campuscorridor.ca/blog/accessibilite-universelle.html">
+    <meta property="twitter:title" content="Accessibilité universelle — comment nos immeubles servent tous les professionnels">
+    <meta property="twitter:description" content="Engagement envers l'accessibilité physique, numérique et communicationnelle pour tous les utilisateurs.">
+    <meta property="twitter:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png">
+
+    <!-- Article metadata -->
+    <meta property="article:published_time" content="2026-05-12T00:00:00Z">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://campuscorridor.ca/blog/accessibilite-universelle.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../Logos/favicon/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <title>Accessibilité universelle — comment nos immeubles servent tous les professionnels | Capital Corridor Campus</title>
+
+    <style>
+
+    :root {
+
+    --gold: #C6A25A;
+    --gold-light: #D4B876;
+    --gold-dim: rgba(198,162,90,0.12);
+    --dark: #0A0F1A;
+    --cream: #F5F3EE;
+    --text: #C9C5BD;
+    --muted: #7A7568;
+
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: var(--dark);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        border-bottom: 1px solid var(--gold);
+        z-index: 1000;
+        padding: 1rem 2rem;
+    }
+
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
+        width: auto;
+    }
+
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        margin-left: 2rem;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: var(--gold);
+    }
+
+    main {
+        padding-top: 80px;
+    }
+
+    .breadcrumb {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding: 0 2rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+    }
+
+    .breadcrumb a {
+        color: var(--gold);
+        text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
+    .article-container {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem;
+    }
+
+    .back-link {
+        display: inline-block;
+        color: var(--gold);
+        text-decoration: none;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    .article-meta {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-meta .pillar {
+        color: var(--gold);
+        font-weight: 600;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: var(--cream);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        color: var(--text);
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        padding-left: 1.5rem;
+        border-left: 3px solid var(--gold);
+    }
+
+    .divider {
+        height: 1px;
+        background: var(--gold-dim);
+        margin: 3rem 0;
+    }
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        color: var(--cream);
+        margin: 2.5rem 0 1rem;
+    }
+
+    h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        color: var(--gold-light);
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    p {
+        margin-bottom: 1.25rem;
+        color: var(--text);
+    }
+
+    .highlight-box {
+        background: var(--gold-dim);
+        border-left: 4px solid var(--gold);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 2px;
+    }
+
+    .highlight-box p {
+        margin-bottom: 0.5rem;
+    }
+
+    .highlight-box p:last-child {
+        margin-bottom: 0;
+    }
+
+    .cta-section {
+        background: var(--gold-dim);
+        border-top: 1px solid var(--gold);
+        border-bottom: 1px solid var(--gold);
+        padding: 3rem 2rem;
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .cta-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--dark);
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 2px;
+        margin-bottom: 1.5rem;
+        transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+        background: var(--gold-light);
+    }
+
+    .cta-phone {
+        color: var(--text);
+        font-size: 0.95rem;
+    }
+
+    footer {
+        background: var(--dark);
+        border-top: 1px solid var(--gold);
+        text-align: center;
+        padding: 2rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 4rem;
+    }
+
+    footer a {
+        color: var(--gold);
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    </style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3TWNPP48M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3TWNPP48M');
+    </script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Accessibilité universelle — comment nos immeubles servent tous les professionnels",
+        "description": "Engagement envers l'accessibilité physique, numérique et communicationnelle pour tous les utilisateurs.",
+        "image": "https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png",
+        "datePublished": "2026-05-12T00:00:00Z",
+        "author": {
+            "@type": "Organization",
+            "name": "Capital Corridor Campus",
+            "url": "https://campuscorridor.ca"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Capital Corridor Campus",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://campuscorridor.ca/index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blogue",
+                "item": "https://campuscorridor.ca/blog/index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Accessibilité universelle — comment nos immeubles servent tous les professionnels",
+                "item": "https://campuscorridor.ca/blog/accessibilite-universelle.html"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="../Logos/web/CCC_Logo_FR_200px.png" alt="Capital Corridor Campus">
+            </div>
+            <nav>
+
+        <a href="../../index.html#properties">Propriétés</a>
+        <a href="../../index.html#spaces">Espaces</a>
+        <a href="../../perspectives.html">Perspectives</a>
+        <a href="../../index.html#contact">Contact</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../../index.html">Accueil</a>
+            / <a href="index.html">Blogue</a>
+            / Accessibilité universelle — comment nos immeubles servent tous les professionnels
+        </div>
+
+        <article class="article-container">
+            <a href="index.html" class="back-link">← Retour aux perspectives</a>
+
+            <div class="article-meta">
+                <span>12 mai 2026</span>
+                <span> · </span>
+                <span class="pillar">Bâtiments</span>
+            </div>
+
+            <h1>Accessibilité universelle — comment nos immeubles servent tous les professionnels</h1>
+
+            <div class="subtitle">Engagement envers l'accessibilité physique, numérique et communicationnelle pour tous les utilisateurs.</div>
+
+            <div class="divider"></div>
+
+            
+            <h2>Accessibilité physique: ascenseurs, rampes et mobilité</h2>
+            <p>Le 179 et le 191 Promenade du Portage ont été conçus et rénovés selon les normes actuelles d'accessibilité universelle du Québec. Chaque bâtiment est équipé d'ascenseurs à grande capacité (3 500 livres, 14–16 places) avec boutons tactiles abaissés et annonces audio des étages. Les ascenseurs s'ouvrent assez largement pour accommoder les fauteuils roulants avec manœuvrabilité facile.</p>
+            <p>L'entrée principale et l'accès aux parkings incluent des rampes d'accès conforme à la norme du Code de bâtiment du Québec (pente maximum 1:12). Les portes d'entrée sont à ouverture automatique ou à manœuvre légère, et les seils sont éliminés ou minimisés pour assurer une transition fluide.</p>
+
+            <h2>Accessibilité des salles de toilettes et des installations sanitaires</h2>
+            <p>Les toilettes accessibles sont situées à chaque étage, conçues pour accommoder les personnes en fauteuil roulant. L'aménagement inclut des barres d'appui stabiles, des éviers abaissés, et un espace de manœuvre suffisant (1,5 m de diamètre minimum). Les toilettes des femmes et des hommes offrent des cabines de toilette accessibles.</p>
+            <p>Les toilettes familles/mixtes — appréciées par les parents avec enfants et les personnes qui require assistance — sont situées aux étages clés (rez-de-chaussée, étages de locataires importants). Celles-ci offrent un espace privatisé pour les changements de vêtements ou de soins médicaux.</p>
+
+            <div class="highlight-box">
+                <p><strong>Norme québécoise:</strong> Les immeubles commerciaux doivent assurer au minimum une toilette accessible par 25 utilisateurs. Le 179 et le 191 surpassent cette exigence avec un ratio de 1 toilette accessible pour chaque 15–18 utilisateurs. C'est un avantage concret pour les équipes qui comprennent des personnes avec des besoins d'accessibilité variés.</p>
+            </div>
+
+            <h2>Signalisation, éclairage et orientation</h2>
+            <p>La signalisation en braille et en gros caractères est conforme à la norme Loi sur l'accessibilité pour les personnes handicapées du Québec (LAPHO). Les portes des salles clé (escaliers, toilettes, sorties de secours) sont marquées en contraste blanc/bleu foncé pour une lisibilité maximale.</p>
+            <p>L'éclairage dans les couloirs et les espaces communs est suffisant pour réduire les zones d'ombre — une considération essentielle pour les personnes avec vision réduite ou malvoyance. Les escaliers disposent de rampes d'appui et de marqueurs de nez de marche pour une sécurité accrue.</p>
+
+            <h2>Audibilité et communications accessibles</h2>
+            <p>Les ascenseurs disposent d'annonces audio des étages. Les systèmes d'alarme incendie combinent signaux auditifs et visuels (lumières de stroboscope). En situation d'urgence, les personnes sourdes ou malentendantes reçoivent une alerte visuelle équivalente.</p>
+            <p>Pour les réunions et les présentations dans les salles de conférence, des services d'interprétation ASL (American Sign Language) et LSQ (Langue des signes québécoise) peuvent être arrangés sur demande. Les salles de conférence du 179 et du 191 sont équipées pour accueillir des télédisposition vidéo pour l'interprétation à distance.</p>
+
+            <h2>Parkings accessibles et mobilité externe</h2>
+            <p>Les places de stationnement réservées aux personnes handicapées sont situées près des entrées principales et surligées selon les normes (bleu et blanc). L'espace au côté d'une place est suffisant (1,5 m) pour permettre l'installation d'une rampe de fauteuil roulant ou la sortie assistée d'un véhicule.</p>
+            <p>Les routes d'accès au 179 et au 191 depuis le stationnement incluent des trottoirs plats, bien éclairés, et des passages pour piétons clairs. La proximité du réseau STO (arrêts à moins de 500 m) et des installations de vélo offre des alternatives de mobilité accessible pour les personnes qui ne peuvent pas conduire.</p>
+
+            <h2>Accessibilité numérique et services de support</h2>
+            <p>Les suites proposent un accès WiFi à haute vitesse et des espaces adaptés pour le télétravail. Pour les professionnels avec des besoins technologiques spécialisés (écran grossissant, logiciel de reconnaissance vocale, etc.), les équipes du 179 et du 191 accommodent l'installation sans frais supplémentaires.</p>
+            <p>Un représentant d'accessibilité est disponible pour répondre aux questions ou signaler des améliorations. Notre engagement envers l'accessibilité est continu — nous invitions les locataires à partager leurs retours pour que nous puissions évoluer nos espaces en fonction des besoins réels de la communauté professionnelle que nous servons.</p>
+
+
+            <div class="cta-section">
+                <h3>Visitez nos espaces accessibles</h3>
+                <a href="../../index.html#contact" class="cta-button">Demander une visite</a>
+                <p class="cta-phone">613-691-9311</p>
+            </div>
+        </article>
+    </main>
+
+            <footer>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem 1rem;">
+            <div style="margin-bottom: 1rem;">
+                <a href="/terms.html" style="color: var(--gold, #C6A25A); text-decoration: none; font-size: 0.8rem;">Terms of Use</a>
+                <span style="color: #7A7568; margin: 0 0.5rem;">|</span>
+                <a href="/privacy.html" style="color: var(--gold, #C6A25A); text-decoration: none; font-size: 0.8rem;">Privacy Policy</a>
+                <span style="color: #7A7568; margin: 0 0.5rem;">|</span>
+                <a href="/cookies.html" style="color: var(--gold, #C6A25A); text-decoration: none; font-size: 0.8rem;">Cookies Policy</a>
+            </div>
+            <p>&copy; 2026 Capital Corridor Campus. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Strategy, design &amp; technology by <a href="https://ibprom.com" style="color: var(--gold, #C6A25A);">International Business Promotion (IBPROM) Corp.</a></p>
+        </div>
+    </footer>
+</body>
+</html>
