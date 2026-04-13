@@ -9,6 +9,9 @@ Thumbs.db
 *.xlsx
 *.pptx
 
+# Exception: docs/ folder PDFs are served to clients
+!docs/*.pdf
+
 # Original full-res photos (web versions in /web/ subfolder)
 images/ground-floor/*.JPG
 images/ground-floor/*.jpg
