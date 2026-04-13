@@ -78,6 +78,25 @@
         .card .expand-hint { font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; transition: opacity 0.2s; }
         .card.open .expand-hint { opacity: 0; }
 
+        /* Team Section */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+        .team-card { background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; text-align: center; transition: border-color 0.3s; }
+        .team-card:hover { border-color: var(--gold); }
+        .team-card.chair { border-color: var(--gold); background: linear-gradient(135deg, var(--dark-card), rgba(198,162,90,0.08)); }
+        .team-avatar { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; }
+        .team-avatar.gold-ring { border: 2px solid var(--gold); color: var(--gold); background: rgba(198,162,90,0.08); }
+        .team-avatar.blue-ring { border: 2px solid var(--blue); color: var(--blue); background: rgba(59,130,246,0.06); }
+        .team-card h4 { font-size: 0.95rem; color: var(--cream); font-weight: 600; margin-bottom: 0.2rem; }
+        .team-card .team-role { font-size: 0.78rem; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
+        .team-card .team-org { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+        .team-cred { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.4rem; margin: 0.15rem; border-radius: 2px; }
+        .cred-gold { background: rgba(198,162,90,0.15); color: var(--gold); }
+        .cred-green { background: var(--green-bg); color: var(--green); }
+        .cred-blue { background: var(--blue-bg); color: var(--blue); }
+        .team-subsection { margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+        .team-subsection h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--cream); font-weight: 500; }
+        .team-subsection p { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; }
+
         /* Timeline */
         .timeline { position: relative; padding-left: 2rem; }
         .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 2px; background: var(--border); }
@@ -565,6 +584,131 @@ function checkAuth(){
             <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>6. Tax &amp; Wealth Architecture</h4><p data-lang="en">Entity structuring and optimization</p><p data-lang="fr">Structuration et optimisation des entités</p></div>
             <div class="card"><span class="tag tag-active" data-lang="en">Active</span><span class="tag tag-active" data-lang="fr">Actif</span><h4>7. Foreign Capital Attraction</h4><p data-lang="en">International investor relations and structuring</p><p data-lang="fr">Relations avec les investisseurs internationaux et structuration</p></div>
             <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>8. Governance &amp; Entity Structure</h4><p data-lang="en">Corporate structure optimization</p><p data-lang="fr">Optimisation de la structure corporative</p></div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- YOUR TEAM -->
+    <div class="section">
+        <div class="section-head">
+            <span class="section-title" data-lang="en">Your Advisory Team</span>
+            <span class="section-title" data-lang="fr">Votre &eacute;quipe consultative</span>
+        </div>
+
+        <!-- Chair -->
+        <div class="team-subsection">
+            <h3 data-lang="en">Chair</h3>
+            <h3 data-lang="fr">Pr&eacute;sident</h3>
+        </div>
+        <div class="team-grid" style="max-width: 260px;">
+            <div class="team-card chair">
+                <div class="team-avatar gold-ring">ND</div>
+                <h4>Dr. Nader Dormani</h4>
+                <div class="team-role" data-lang="en">Chair, Capital Corridor Campus</div>
+                <div class="team-role" data-lang="fr">Pr&eacute;sident, Campus du Corridor de la Capitale</div>
+                <div class="team-org">9266569 Canada Inc.</div>
+            </div>
+        </div>
+
+        <!-- IBPROM Advisory Team -->
+        <div class="team-subsection">
+            <h3 data-lang="en">IBPROM Corp — Strategic Advisory</h3>
+            <h3 data-lang="fr">IBPROM Corp — Conseil strat&eacute;gique</h3>
+            <p data-lang="en">Multidisciplinary advisory team providing institutional-grade strategic counsel across all engagement modules.</p>
+            <p data-lang="fr">&Eacute;quipe consultative multidisciplinaire fournissant des conseils strat&eacute;giques de niveau institutionnel &agrave; travers tous les modules d'engagement.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar gold-ring">JS</div>
+                <h4>Joseph Soares</h4>
+                <div class="team-role" data-lang="en">President &amp; Chief Strategist</div>
+                <div class="team-role" data-lang="fr">Pr&eacute;sident &amp; Strat&egrave;ge en chef</div>
+                <div class="team-org">IBPROM Corp</div>
+                <span class="team-cred cred-gold">MBA</span>
+                <span class="team-cred cred-gold">PMP</span>
+                <span class="team-cred cred-gold">Adm.A.</span>
+                <span class="team-cred cred-gold">ACC</span>
+                <span class="team-cred cred-green">Secret Clearance</span>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">GA</div>
+                <h4>Gabriel Andino</h4>
+                <div class="team-role" data-lang="en">Economic Analyst</div>
+                <div class="team-role" data-lang="fr">Analyste &eacute;conomique</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">DC</div>
+                <h4>David Couturier</h4>
+                <div class="team-role" data-lang="en">Director, Strategic Communications</div>
+                <div class="team-role" data-lang="fr">Directeur, Communications strat&eacute;giques</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">MJ</div>
+                <h4>Martin Joanisse</h4>
+                <div class="team-role" data-lang="en">Director, Economic Development</div>
+                <div class="team-role" data-lang="fr">Directeur, D&eacute;veloppement &eacute;conomique</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">TC</div>
+                <h4>Thomas Cook</h4>
+                <div class="team-role" data-lang="en">Business Analyst</div>
+                <div class="team-role" data-lang="fr">Analyste d'affaires</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">AB</div>
+                <h4>Antoine Bennarous</h4>
+                <div class="team-role" data-lang="en">Business Analyst — Realty Development</div>
+                <div class="team-role" data-lang="fr">Analyste d'affaires — D&eacute;veloppement immobilier</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">GB</div>
+                <h4>Georganne Burke</h4>
+                <div class="team-role" data-lang="en">Director, Government Engagement</div>
+                <div class="team-role" data-lang="fr">Directrice, Engagement gouvernemental</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">MB</div>
+                <h4>Mark Buzan</h4>
+                <div class="team-role" data-lang="en">Director, Nonprofit Engagement</div>
+                <div class="team-role" data-lang="fr">Directeur, Engagement des organismes &agrave; but non lucratif</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar gold-ring">AG</div>
+                <h4>Andr&eacute; Gingras</h4>
+                <div class="team-role" data-lang="en">Senior Legal Counsel</div>
+                <div class="team-role" data-lang="fr">Conseiller juridique principal</div>
+                <div class="team-org">IBPROM Corp</div>
+            </div>
+        </div>
+
+        <!-- Dormani Property Team -->
+        <div class="team-subsection">
+            <h3 data-lang="en">Property Team — Dormani Group</h3>
+            <h3 data-lang="fr">&Eacute;quipe immobili&egrave;re — Groupe Dormani</h3>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar blue-ring">MR</div>
+                <h4>Mohamed Razi</h4>
+                <div class="team-role" data-lang="en">Property Management</div>
+                <div class="team-role" data-lang="fr">Gestion immobili&egrave;re</div>
+                <div class="team-org">Dormani Group</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar blue-ring">AV</div>
+                <h4>Alex Vachon</h4>
+                <div class="team-role" data-lang="en">Development &amp; Financial Analysis</div>
+                <div class="team-role" data-lang="fr">D&eacute;veloppement &amp; Analyse financi&egrave;re</div>
+                <div class="team-org">Dormani Group</div>
+            </div>
         </div>
     </div>
 
