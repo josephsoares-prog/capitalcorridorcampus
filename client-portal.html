@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Capital Corridor Campus — Advisory Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="Logos/favicon/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #0A0F1A; --dark-card: #111827; --dark-elevated: #1A2236;
+            --gold: #C6A25A; --gold-light: #D4B876;
+            --cream: #F5F3EE; --text: #C9C5BD; --muted: #7A7568;
+            --green: #22C55E; --green-bg: rgba(34,197,94,0.10);
+            --yellow: #EAB308; --yellow-bg: rgba(234,179,8,0.10);
+            --blue: #3B82F6; --blue-bg: rgba(59,130,246,0.10);
+            --border: rgba(198,162,90,0.15);
+        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; }
+
+        /* Header */
+        .site-header { background: var(--dark-card); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .logo-area { display: flex; align-items: center; gap: 1rem; }
+        .logo-area img { height: 40px; }
+        .logo-area h1 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); font-weight: 500; }
+        .lang-toggle { display: flex; gap: 0; border: 1px solid var(--border); overflow: hidden; }
+        .lang-btn { background: transparent; color: var(--muted); border: none; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em; }
+        .lang-btn.active { background: var(--gold); color: var(--dark); }
+
+        /* Dashboard Container */
+        .dashboard { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+        /* Welcome */
+        .welcome { margin-bottom: 2.5rem; }
+        .welcome h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--cream); font-weight: 500; margin-bottom: 0.5rem; }
+        .welcome p { color: var(--text); font-size: 0.95rem; max-width: 700px; }
+        .update-date { color: var(--gold); font-size: 0.8rem; font-weight: 600; margin-top: 0.75rem; }
+
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+        .stat { background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; text-align: center; }
+        .stat-num { font-size: 2.2rem; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .stat-num.gold { color: var(--gold); }
+        .stat-num.green { color: var(--green); }
+        .stat-num.blue { color: var(--blue); }
+        .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.4rem; }
+
+        /* Section */
+        .section { margin-bottom: 2.5rem; }
+        .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); font-weight: 500; }
+
+        /* Cards */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+        .card { background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; transition: border-color 0.3s; }
+        .card:hover { border-color: var(--gold); }
+        .card h4 { font-size: 0.95rem; color: var(--cream); font-weight: 600; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.75rem; }
+        .card .tag { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.15rem 0.5rem; border-radius: 2px; }
+        .tag-done { background: var(--green-bg); color: var(--green); }
+        .tag-active { background: var(--yellow-bg); color: var(--yellow); }
+        .tag-next { background: var(--blue-bg); color: var(--blue); }
+        .card .date { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; }
+        .card .link { color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 500; }
+        .card .link:hover { text-decoration: underline; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.5rem; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--gold); background: var(--dark); }
+        .timeline-item.done::before { background: var(--green); border-color: var(--green); }
+        .timeline-item h4 { font-size: 0.9rem; color: var(--cream); font-weight: 500; }
+        .timeline-item p { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+        .timeline-item .tl-date { font-size: 0.7rem; color: var(--gold); font-weight: 600; }
+
+        /* Properties */
+        .prop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+        .prop-card { background: var(--dark-card); border: 1px solid var(--border); overflow: hidden; }
+        .prop-card img { width: 100%; height: 160px; object-fit: cover; }
+        .prop-body { padding: 1rem; }
+        .prop-body h4 { font-size: 0.9rem; color: var(--cream); margin-bottom: 0.3rem; }
+        .prop-body p { font-size: 0.8rem; color: var(--muted); }
+        .prop-body .link { display: inline-block; margin-top: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.8rem; }
+
+        /* Footer */
+        .portal-footer { text-align: center; padding: 2rem; margin-top: 2rem; border-top: 1px solid var(--border); }
+        .portal-footer p { font-size: 0.8rem; color: var(--muted); }
+        .portal-footer .contact { color: var(--cream); font-weight: 500; margin-top: 0.5rem; }
+
+        /* Language visibility */
+        [data-lang="fr"] { display: none; }
+        body.fr [data-lang="en"] { display: none; }
+        body.fr [data-lang="fr"] { display: block; }
+        /* For inline spans */
+        span[data-lang="fr"] { display: none; }
+        body.fr span[data-lang="en"] { display: none; }
+        body.fr span[data-lang="fr"] { display: inline; }
+
+        @media (max-width: 768px) {
+            .dashboard { padding: 1rem; }
+            .welcome h2 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="site-header">
+    <div class="logo-area">
+        <h1>Capital Corridor Campus</h1>
+    </div>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+</div>
+
+<div class="dashboard">
+
+    <!-- WELCOME -->
+    <div class="welcome">
+        <h2 data-lang="en">Advisory Dashboard</h2>
+        <h2 data-lang="fr">Tableau de bord consultatif</h2>
+        <p data-lang="en">A transparent view of the strategic advisory work being delivered by IBPROM Corp for the Capital Corridor Campus portfolio. This dashboard is updated regularly to reflect completed deliverables, active initiatives, and upcoming priorities.</p>
+        <p data-lang="fr">Une vue transparente du travail de conseil stratégique livré par IBPROM Corp pour le portefeuille du Campus du Corridor de la Capitale. Ce tableau de bord est mis à jour régulièrement pour refléter les livrables complétés, les initiatives actives et les priorités à venir.</p>
+        <div class="update-date">
+            <span data-lang="en">Last updated: April 13, 2026</span>
+            <span data-lang="fr">Dernière mise à jour : 13 avril 2026</span>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-num green">12</div>
+            <div class="stat-label" data-lang="en">Deliverables Completed</div>
+            <div class="stat-label" data-lang="fr">Livrables complétés</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num gold">8</div>
+            <div class="stat-label" data-lang="en">Engagement Modules</div>
+            <div class="stat-label" data-lang="fr">Modules d'engagement</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num blue">4</div>
+            <div class="stat-label" data-lang="en">Properties Managed</div>
+            <div class="stat-label" data-lang="fr">Propriétés gérées</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num gold">96+</div>
+            <div class="stat-label" data-lang="en">Web Pages Published</div>
+            <div class="stat-label" data-lang="fr">Pages web publiées</div>
+        </div>
+    </div>
+
+    <!-- PROPERTIES OVERVIEW -->
+    <div class="section">
+        <div class="section-head">
+            <span class="section-title" data-lang="en">Properties Under Management</span>
+            <span class="section-title" data-lang="fr">Propriétés sous gestion</span>
+        </div>
+        <div class="prop-grid">
+            <div class="prop-card">
+                <div class="prop-body">
+                    <h4>179 Promenade du Portage — Chez Henri</h4>
+                    <p data-lang="en">LEED Gold certified. 5 floors. Ground floor salon/academy listing active. Virtual Office and Flex Space products live.</p>
+                    <p data-lang="fr">Certifié LEED Or. 5 étages. Inscription salon/académie du rez-de-chaussée active. Produits Bureau virtuel et Espace flexible en ligne.</p>
+                    <a href="https://campuscorridor.ca/179-promenade-du-portage.html" class="link" data-lang="en">View Property →</a>
+                    <a href="https://campuscorridor.ca/179-promenade-du-portage.html" class="link" data-lang="fr">Voir la propriété →</a>
+                </div>
+            </div>
+            <div class="prop-card">
+                <div class="prop-body">
+                    <h4>191 Promenade du Portage — Place des Explorateurs</h4>
+                    <p data-lang="en">6 floors. 26,057 sq ft. Government-configured full building opportunity. Floor plans in development.</p>
+                    <p data-lang="fr">6 étages. 26 057 pi². Opportunité d'immeuble complet configuré pour le gouvernement. Plans d'étage en développement.</p>
+                    <a href="https://campuscorridor.ca/191-promenade-du-portage.html" class="link" data-lang="en">View Property →</a>
+                    <a href="https://campuscorridor.ca/191-promenade-du-portage.html" class="link" data-lang="fr">Voir la propriété →</a>
+                </div>
+            </div>
+            <div class="prop-card">
+                <div class="prop-body">
+                    <h4 data-lang="en">La Cité Gatineau — Commercial Space</h4>
+                    <h4 data-lang="fr">La Cité Gatineau — Espace commercial</h4>
+                    <p data-lang="en">2nd floor commercial space. Phase 1 at 97% occupancy. Website listing in preparation.</p>
+                    <p data-lang="fr">Espace commercial au 2e étage. Phase 1 à 97 % d'occupation. Inscription sur le site web en préparation.</p>
+                </div>
+            </div>
+            <div class="prop-card">
+                <div class="prop-body">
+                    <h4 data-lang="en">Ground Floor — Salon &amp; Academy</h4>
+                    <h4 data-lang="fr">Rez-de-chaussée — Salon &amp; Académie</h4>
+                    <p data-lang="en">1,200 sq ft, fully equipped, move-in ready. $4,800/month. Active listing with photo gallery.</p>
+                    <p data-lang="fr">1 200 pi², entièrement équipé, prêt à emménager. 4 800 $/mois. Inscription active avec galerie photos.</p>
+                    <a href="https://campuscorridor.ca/179-ground-floor.html" class="link" data-lang="en">View Listing →</a>
+                    <a href="https://campuscorridor.ca/179-ground-floor.html" class="link" data-lang="fr">Voir l'inscription →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPLETED DELIVERABLES -->
+    <div class="section">
+        <div class="section-head">
+            <span class="section-title" data-lang="en">Completed Deliverables</span>
+            <span class="section-title" data-lang="fr">Livrables complétés</span>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">CCC Website — Full Deployment</h4>
+                <h4 data-lang="fr">Site web CCC — Déploiement complet</h4>
+                <p data-lang="en">Complete bilingual website with property pages, product offerings, 90+ blog articles, and standardized professional branding across all pages.</p>
+                <p data-lang="fr">Site web bilingue complet avec pages de propriétés, offres de produits, 90+ articles de blogue et image de marque professionnelle standardisée.</p>
+                <a href="https://campuscorridor.ca" class="link">campuscorridor.ca →</a>
+                <div class="date" data-lang="en">April 13, 2026</div>
+                <div class="date" data-lang="fr">13 avril 2026</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Ground Floor Commercial Listing</h4>
+                <h4 data-lang="fr">Inscription commerciale du rez-de-chaussée</h4>
+                <p data-lang="en">Professional listing page with interactive photo gallery, unit specifications, pricing, and direct inquiry form.</p>
+                <p data-lang="fr">Page d'inscription professionnelle avec galerie photo interactive, spécifications, tarification et formulaire de demande.</p>
+                <a href="https://campuscorridor.ca/179-ground-floor.html" class="link" data-lang="en">View Listing →</a>
+                <a href="https://campuscorridor.ca/179-ground-floor.html" class="link" data-lang="fr">Voir l'inscription →</a>
+                <div class="date" data-lang="en">April 13, 2026</div>
+                <div class="date" data-lang="fr">13 avril 2026</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Hybrid Salon-Academy Feasibility Analysis (EN &amp; FR)</h4>
+                <h4 data-lang="fr">Analyse de faisabilité Salon-Académie hybride (EN &amp; FR)</h4>
+                <p data-lang="en">Comprehensive financial and operational analysis of the ground floor hybrid salon-academy concept with market assessment.</p>
+                <p data-lang="fr">Analyse financière et opérationnelle complète du concept hybride salon-académie du rez-de-chaussée avec évaluation du marché.</p>
+                <div class="date" data-lang="en">April 11, 2026</div>
+                <div class="date" data-lang="fr">11 avril 2026</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Boston Pizza — Delivery Platform Analysis</h4>
+                <h4 data-lang="fr">Boston Pizza — Analyse des plateformes de livraison</h4>
+                <p data-lang="en">Performance assessment of Uber Eats, DoorDash, and SkipTheDishes with revenue gap identification and actionable recommendations.</p>
+                <p data-lang="fr">Évaluation de la performance d'Uber Eats, DoorDash et SkipTheDishes avec identification des écarts de revenus et recommandations concrètes.</p>
+                <div class="date" data-lang="en">April 12, 2026</div>
+                <div class="date" data-lang="fr">12 avril 2026</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Virtual Office — Product Launch</h4>
+                <h4 data-lang="fr">Bureau virtuel — Lancement de produit</h4>
+                <p data-lang="en">Three-tier product ($99/$249/$449 per month) with dedicated page, online payment links, and bilingual launch articles.</p>
+                <p data-lang="fr">Produit à trois niveaux (99 $/249 $/449 $ par mois) avec page dédiée, liens de paiement en ligne et articles de lancement bilingues.</p>
+                <a href="https://campuscorridor.ca/virtual-office.html" class="link" data-lang="en">View Product →</a>
+                <a href="https://campuscorridor.ca/virtual-office.html" class="link" data-lang="fr">Voir le produit →</a>
+                <div class="date" data-lang="en">April 13, 2026</div>
+                <div class="date" data-lang="fr">13 avril 2026</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Flex Space — Product Launch</h4>
+                <h4 data-lang="fr">Espace flexible — Lancement de produit</h4>
+                <p data-lang="en">Flexible workspace product ($49/day to $899/month) with dedicated page, payment links, and bilingual articles.</p>
+                <p data-lang="fr">Produit d'espace de travail flexible (49 $/jour à 899 $/mois) avec page dédiée, liens de paiement et articles bilingues.</p>
+                <a href="https://campuscorridor.ca/flex-space.html" class="link" data-lang="en">View Product →</a>
+                <a href="https://campuscorridor.ca/flex-space.html" class="link" data-lang="fr">Voir le produit →</a>
+                <div class="date" data-lang="en">April 13, 2026</div>
+                <div class="date" data-lang="fr">13 avril 2026</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">La Cité Phase II — Financial Assessment</h4>
+                <h4 data-lang="fr">La Cité Phase II — Évaluation financière</h4>
+                <p data-lang="en">Financial modeling for the proposed 305-unit residential tower development with CMHC loan analysis.</p>
+                <p data-lang="fr">Modélisation financière pour le projet de tour résidentielle de 305 unités avec analyse de prêt SCHL.</p>
+                <div class="date" data-lang="en">Previous sessions</div>
+                <div class="date" data-lang="fr">Sessions précédentes</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Foreign Investment — Due Diligence &amp; Strategy</h4>
+                <h4 data-lang="fr">Investissement étranger — Diligence raisonnable &amp; Stratégie</h4>
+                <p data-lang="en">Comprehensive investor evaluation, risk assessment, legal opinion obtained, and partnership structure analysis.</p>
+                <p data-lang="fr">Évaluation complète de l'investisseur, analyse des risques, opinion juridique obtenue et analyse de la structure de partenariat.</p>
+                <div class="date" data-lang="en">Previous sessions</div>
+                <div class="date" data-lang="fr">Sessions précédentes</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">CCC Strategic Engagement Overview</h4>
+                <h4 data-lang="fr">Aperçu de l'engagement stratégique CCC</h4>
+                <p data-lang="en">Eight-page umbrella document defining the modular engagement architecture with 8 independent advisory components.</p>
+                <p data-lang="fr">Document parapluie de huit pages définissant l'architecture d'engagement modulaire avec 8 composantes consultatives indépendantes.</p>
+                <div class="date" data-lang="en">Previous sessions</div>
+                <div class="date" data-lang="fr">Sessions précédentes</div>
+            </div>
+            <div class="card">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <h4 data-lang="en">Government Commercial Listing Submissions</h4>
+                <h4 data-lang="fr">Soumissions aux répertoires commerciaux gouvernementaux</h4>
+                <p data-lang="en">Properties submitted to Government of Canada, Province of Quebec, and Ville de Gatineau commercial listing platforms.</p>
+                <p data-lang="fr">Propriétés soumises aux plateformes de répertoires commerciaux du gouvernement du Canada, de la province de Québec et de la Ville de Gatineau.</p>
+                <div class="date" data-lang="en">Previous sessions</div>
+                <div class="date" data-lang="fr">Sessions précédentes</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACTIVE INITIATIVES -->
+    <div class="section">
+        <div class="section-head">
+            <span class="section-title" data-lang="en">Active Initiatives &amp; Next Steps</span>
+            <span class="section-title" data-lang="fr">Initiatives actives &amp; Prochaines étapes</span>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">In Progress</div>
+                <div class="tl-date" data-lang="fr">En cours</div>
+                <h4 data-lang="en">191 Promenade du Portage — Floor Plans</h4>
+                <h4 data-lang="fr">191, promenade du Portage — Plans d'étage</h4>
+                <p data-lang="en">Professional floor plans for all floors being designed for the website and marketing materials.</p>
+                <p data-lang="fr">Plans d'étage professionnels pour tous les niveaux en cours de conception pour le site web et les documents marketing.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">In Progress</div>
+                <div class="tl-date" data-lang="fr">En cours</div>
+                <h4 data-lang="en">La Cité Gatineau — Commercial Listing Development</h4>
+                <h4 data-lang="fr">La Cité Gatineau — Développement de l'inscription commerciale</h4>
+                <p data-lang="en">Adding the La Cité commercial space to the Capital Corridor Campus website as the portfolio expands to multiple locations.</p>
+                <p data-lang="fr">Ajout de l'espace commercial de La Cité au site web du Campus du Corridor de la Capitale alors que le portefeuille s'étend à plusieurs emplacements.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">In Progress</div>
+                <div class="tl-date" data-lang="fr">En cours</div>
+                <h4 data-lang="en">Google &amp; Bing Search Indexing</h4>
+                <h4 data-lang="fr">Indexation Google &amp; Bing</h4>
+                <p data-lang="en">Submitting updated sitemaps to search engines for all new property listings and product pages.</p>
+                <p data-lang="fr">Soumission des plans de site mis à jour aux moteurs de recherche pour toutes les nouvelles inscriptions et pages de produits.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">In Progress</div>
+                <div class="tl-date" data-lang="fr">En cours</div>
+                <h4 data-lang="en">Government Follow-Up — Quebec &amp; Gatineau</h4>
+                <h4 data-lang="fr">Suivi gouvernemental — Québec &amp; Gatineau</h4>
+                <p data-lang="en">Following up on commercial listing submissions to the Province of Quebec and Ville de Gatineau. Federal government has responded.</p>
+                <p data-lang="fr">Suivi des soumissions aux répertoires commerciaux de la province de Québec et de la Ville de Gatineau. Le gouvernement fédéral a répondu.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">Upcoming</div>
+                <div class="tl-date" data-lang="fr">À venir</div>
+                <h4 data-lang="en">Professional School Outreach — Academy Partnerships</h4>
+                <h4 data-lang="fr">Sensibilisation des écoles professionnelles — Partenariats académiques</h4>
+                <p data-lang="en">Targeted outreach to CEGEP, UQO, and other professional schools about the ground floor salon-academy partnership concept.</p>
+                <p data-lang="fr">Sensibilisation ciblée auprès du CÉGEP, de l'UQO et d'autres écoles professionnelles concernant le concept de partenariat salon-académie.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">Upcoming</div>
+                <div class="tl-date" data-lang="fr">À venir</div>
+                <h4 data-lang="en">Boston Pizza — Marketing &amp; Growth Strategy</h4>
+                <h4 data-lang="fr">Boston Pizza — Stratégie de marketing &amp; croissance</h4>
+                <p data-lang="en">Building on the delivery platform analysis with a comprehensive local marketing, promotions, and profitability growth plan.</p>
+                <p data-lang="fr">S'appuyant sur l'analyse des plateformes de livraison avec un plan complet de marketing local, de promotions et de croissance de la rentabilité.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">Upcoming</div>
+                <div class="tl-date" data-lang="fr">À venir</div>
+                <h4 data-lang="en">Virtual Office &amp; Flex Space — Marketing Activation</h4>
+                <h4 data-lang="fr">Bureau virtuel &amp; Espace flexible — Activation marketing</h4>
+                <p data-lang="en">Digital marketing campaigns targeting government contractors, consultants, and professionals in the National Capital Region.</p>
+                <p data-lang="fr">Campagnes de marketing numérique ciblant les entrepreneurs gouvernementaux, consultants et professionnels dans la Région de la capitale nationale.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-date" data-lang="en">Planned</div>
+                <div class="tl-date" data-lang="fr">Planifié</div>
+                <h4 data-lang="en">CCC Master Strategic Plan</h4>
+                <h4 data-lang="fr">Plan stratégique directeur CCC</h4>
+                <p data-lang="en">Comprehensive umbrella strategic plan for Capital Corridor Campus covering all properties, products, and growth trajectory.</p>
+                <p data-lang="fr">Plan stratégique parapluie complet pour le Campus du Corridor de la Capitale couvrant toutes les propriétés, produits et trajectoire de croissance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8 MODULES -->
+    <div class="section">
+        <div class="section-head">
+            <span class="section-title" data-lang="en">8-Component Engagement Architecture</span>
+            <span class="section-title" data-lang="fr">Architecture d'engagement à 8 composantes</span>
+        </div>
+        <p style="margin-bottom: 1.5rem; font-size: 0.85rem;" data-lang="en">Each component is independently scoped and deliverable. This modular architecture allows for phased engagement aligned with priorities and budget.</p>
+        <p style="margin-bottom: 1.5rem; font-size: 0.85rem;" data-lang="fr">Chaque composante est définie et livrable de manière indépendante. Cette architecture modulaire permet un engagement progressif aligné sur les priorités et le budget.</p>
+        <div class="card-grid">
+            <div class="card"><span class="tag tag-done" data-lang="en">Delivered</span><span class="tag tag-done" data-lang="fr">Livré</span><h4>1. Salon-Academy</h4><p data-lang="en">Feasibility analysis, listing, and partnership development</p><p data-lang="fr">Analyse de faisabilité, inscription et développement de partenariats</p></div>
+            <div class="card"><span class="tag tag-done" data-lang="en">MVP Live</span><span class="tag tag-done" data-lang="fr">MVP en ligne</span><h4>2. Virtual Office &amp; Flex Space</h4><p data-lang="en">Products deployed with payment infrastructure</p><p data-lang="fr">Produits déployés avec infrastructure de paiement</p></div>
+            <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>3. Innovation Lab (OBNL)</h4><p data-lang="en">Non-profit innovation hub concept</p><p data-lang="fr">Concept de centre d'innovation à but non lucratif</p></div>
+            <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>4. Leadership Training</h4><p data-lang="en">Executive education and development</p><p data-lang="fr">Formation et développement des dirigeants</p></div>
+            <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>5. Government Funding</h4><p data-lang="en">Grant identification and application strategy</p><p data-lang="fr">Identification de subventions et stratégie de demande</p></div>
+            <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>6. Tax &amp; Wealth Architecture</h4><p data-lang="en">Entity structuring and optimization</p><p data-lang="fr">Structuration et optimisation des entités</p></div>
+            <div class="card"><span class="tag tag-active" data-lang="en">Active</span><span class="tag tag-active" data-lang="fr">Actif</span><h4>7. Foreign Capital Attraction</h4><p data-lang="en">International investor relations and structuring</p><p data-lang="fr">Relations avec les investisseurs internationaux et structuration</p></div>
+            <div class="card"><span class="tag tag-next" data-lang="en">Planned</span><span class="tag tag-next" data-lang="fr">Planifié</span><h4>8. Governance &amp; Entity Structure</h4><p data-lang="en">Corporate structure optimization</p><p data-lang="fr">Optimisation de la structure corporative</p></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="portal-footer">
+    <p data-lang="en">This dashboard is maintained by IBPROM Corp as part of our commitment to transparent advisory engagement.</p>
+    <p data-lang="fr">Ce tableau de bord est maintenu par IBPROM Corp dans le cadre de notre engagement envers un mandat consultatif transparent.</p>
+    <p class="contact">Joseph Soares, MBA, AdmA, PMP, ACC — 873-455-3667 — j@josephsoares.com</p>
+    <p style="margin-top: 1rem; font-size: 0.7rem; color: rgba(255,255,255,0.4);">&copy; 2026 IBPROM Corp. All rights reserved. | Strategy, design &amp; technology by International Business Promotion (IBPROM) Corp.</p>
+</div>
+
+<script>
+function setLang(lang) {
+    document.body.className = lang === 'fr' ? 'fr' : '';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+    });
+    document.documentElement.lang = lang;
+}
+</script>
+
+</body>
+</html>
