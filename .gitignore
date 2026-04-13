@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Office documents (not web content)
+*.docx
+*.pdf
+*.tmp
+*.xlsx
+*.pptx
+
+# Original full-res photos (web versions in /web/ subfolder)
+images/ground-floor/*.JPG
+images/ground-floor/*.jpg
+!images/ground-floor/web/
+
+# Editor files
+*.swp
+*.swo
+*~
