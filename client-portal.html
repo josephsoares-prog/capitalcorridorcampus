@@ -66,6 +66,17 @@
         .card .date { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; }
         .card .link { color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 500; }
         .card .link:hover { text-decoration: underline; }
+        .card { cursor: pointer; }
+        .card .doc-drawer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .card.open .doc-drawer { max-height: 500px; }
+        .doc-list { list-style: none; padding: 0; margin: 0.75rem 0 0; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+        .doc-list li { margin-bottom: 0.5rem; }
+        .doc-list li a { color: var(--gold); text-decoration: none; font-size: 0.78rem; font-weight: 500; display: flex; align-items: center; gap: 0.4rem; }
+        .doc-list li a:hover { text-decoration: underline; color: var(--gold-light); }
+        .doc-list li a::before { content: '📄'; font-size: 0.7rem; }
+        .doc-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+        .card .expand-hint { font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; transition: opacity 0.2s; }
+        .card.open .expand-hint { opacity: 0; }
 
         /* Timeline */
         .timeline { position: relative; padding-left: 2rem; }
@@ -237,113 +248,229 @@ function checkAuth(){
             <span class="section-title" data-lang="fr">Livrables complétés</span>
         </div>
         <div class="card-grid">
-            <div class="card">
+
+            <!-- CCC Website -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
                 <h4 data-lang="en">CCC Website — Full Deployment</h4>
-                <h4 data-lang="fr">Site web CCC — Déploiement complet</h4>
-                <p data-lang="en">Complete bilingual website with property pages, product offerings, 90+ blog articles, and standardized professional branding across all pages.</p>
-                <p data-lang="fr">Site web bilingue complet avec pages de propriétés, offres de produits, 90+ articles de blogue et image de marque professionnelle standardisée.</p>
-                <a href="https://campuscorridor.ca" class="link">campuscorridor.ca →</a>
+                <h4 data-lang="fr">Site web CCC — D&eacute;ploiement complet</h4>
+                <p data-lang="en">Complete bilingual website with property pages, product offerings, 90+ blog articles, and standardized professional branding.</p>
+                <p data-lang="fr">Site web bilingue complet avec pages de propri&eacute;t&eacute;s, offres de produits, 90+ articles de blogue et image de marque professionnelle.</p>
                 <div class="date" data-lang="en">April 13, 2026</div>
                 <div class="date" data-lang="fr">13 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <div class="doc-label" data-lang="en">Live Pages</div>
+                    <div class="doc-label" data-lang="fr">Pages en ligne</div>
+                    <ul class="doc-list">
+                        <li><a href="https://campuscorridor.ca" target="_blank" onclick="event.stopPropagation()">campuscorridor.ca — Main Website</a></li>
+                        <li><a href="https://campuscorridor.ca/blog/" target="_blank" onclick="event.stopPropagation()">Insights &amp; Articles (90+)</a></li>
+                    </ul>
+                    <div class="doc-label" data-lang="en">Documents</div>
+                    <div class="doc-label" data-lang="fr">Documents</div>
+                    <ul class="doc-list">
+                        <li><a href="docs/CCC_Property_FactSheet_EN.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Property Fact Sheet (English)</a></li>
+                        <li><a href="docs/CCC_Property_FactSheet_FR.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Fiche descriptive des propri&eacute;t&eacute;s (Fran&ccedil;ais)</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Ground Floor Listing -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
                 <h4 data-lang="en">Ground Floor Commercial Listing</h4>
-                <h4 data-lang="fr">Inscription commerciale du rez-de-chaussée</h4>
-                <p data-lang="en">Professional listing page with interactive photo gallery, unit specifications, pricing, and direct inquiry form.</p>
-                <p data-lang="fr">Page d'inscription professionnelle avec galerie photo interactive, spécifications, tarification et formulaire de demande.</p>
-                <a href="https://campuscorridor.ca/179-ground-floor.html" class="link" data-lang="en">View Listing →</a>
-                <a href="https://campuscorridor.ca/179-ground-floor.html" class="link" data-lang="fr">Voir l'inscription →</a>
+                <h4 data-lang="fr">Inscription commerciale du rez-de-chauss&eacute;e</h4>
+                <p data-lang="en">Professional listing page with interactive photo gallery, unit specifications ($4,800/mo), and direct inquiry form.</p>
+                <p data-lang="fr">Page d'inscription professionnelle avec galerie photo interactive, sp&eacute;cifications (4 800 $/mois) et formulaire de demande.</p>
                 <div class="date" data-lang="en">April 13, 2026</div>
                 <div class="date" data-lang="fr">13 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <ul class="doc-list">
+                        <li><a href="https://campuscorridor.ca/179-ground-floor.html" target="_blank" onclick="event.stopPropagation()" data-lang="en">View Live Listing</a></li>
+                        <li><a href="https://campuscorridor.ca/179-ground-floor.html" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Voir l'inscription</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Salon-Academy Analysis -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
-                <h4 data-lang="en">Hybrid Salon-Academy Feasibility Analysis (EN &amp; FR)</h4>
-                <h4 data-lang="fr">Analyse de faisabilité Salon-Académie hybride (EN &amp; FR)</h4>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
+                <h4 data-lang="en">Hybrid Salon-Academy Feasibility Analysis</h4>
+                <h4 data-lang="fr">Analyse de faisabilit&eacute; Salon-Acad&eacute;mie hybride</h4>
                 <p data-lang="en">Comprehensive financial and operational analysis of the ground floor hybrid salon-academy concept with market assessment.</p>
-                <p data-lang="fr">Analyse financière et opérationnelle complète du concept hybride salon-académie du rez-de-chaussée avec évaluation du marché.</p>
+                <p data-lang="fr">Analyse financi&egrave;re et op&eacute;rationnelle compl&egrave;te du concept hybride salon-acad&eacute;mie du rez-de-chauss&eacute;e.</p>
                 <div class="date" data-lang="en">April 11, 2026</div>
                 <div class="date" data-lang="fr">11 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <div class="doc-label" data-lang="en">Analysis Reports</div>
+                    <div class="doc-label" data-lang="fr">Rapports d'analyse</div>
+                    <ul class="doc-list">
+                        <li><a href="docs/Hybrid_Salon_Academy_Analysis_EN_2026-04-11.pdf" target="_blank" onclick="event.stopPropagation()">Salon-Academy Analysis (English)</a></li>
+                        <li><a href="docs/Analyse_Salon_Academie_Hybride_FR_2026-04-11.pdf" target="_blank" onclick="event.stopPropagation()">Analyse Salon-Acad&eacute;mie (Fran&ccedil;ais)</a></li>
+                        <li><a href="docs/CCC_Proposition_Salon_Ecole_2026-04.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Salon &amp; School Partnership Proposition</a></li>
+                        <li><a href="docs/CCC_Proposition_Salon_Ecole_2026-04.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Proposition de partenariat Salon &amp; &Eacute;cole</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Boston Pizza -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
                 <h4 data-lang="en">Boston Pizza — Delivery Platform Analysis</h4>
                 <h4 data-lang="fr">Boston Pizza — Analyse des plateformes de livraison</h4>
-                <p data-lang="en">Performance assessment of Uber Eats, DoorDash, and SkipTheDishes with revenue gap identification and actionable recommendations.</p>
-                <p data-lang="fr">Évaluation de la performance d'Uber Eats, DoorDash et SkipTheDishes avec identification des écarts de revenus et recommandations concrètes.</p>
+                <p data-lang="en">Performance assessment of Uber Eats, DoorDash, and SkipTheDishes with $80K-$100K/month revenue gap identification.</p>
+                <p data-lang="fr">&Eacute;valuation de la performance d'Uber Eats, DoorDash et SkipTheDishes avec identification d'un &eacute;cart de revenus de 80K-100K $/mois.</p>
                 <div class="date" data-lang="en">April 12, 2026</div>
                 <div class="date" data-lang="fr">12 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <ul class="doc-list">
+                        <li><a href="docs/Diamandis_Delivery_Briefing_2026-04-12.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Delivery Platform Briefing</a></li>
+                        <li><a href="docs/Diamandis_Delivery_Briefing_2026-04-12.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Note sur les plateformes de livraison</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Virtual Office -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
                 <h4 data-lang="en">Virtual Office — Product Launch</h4>
                 <h4 data-lang="fr">Bureau virtuel — Lancement de produit</h4>
-                <p data-lang="en">Three-tier product ($99/$249/$449 per month) with dedicated page, online payment links, and bilingual launch articles.</p>
-                <p data-lang="fr">Produit à trois niveaux (99 $/249 $/449 $ par mois) avec page dédiée, liens de paiement en ligne et articles de lancement bilingues.</p>
-                <a href="https://campuscorridor.ca/virtual-office.html" class="link" data-lang="en">View Product →</a>
-                <a href="https://campuscorridor.ca/virtual-office.html" class="link" data-lang="fr">Voir le produit →</a>
+                <p data-lang="en">Three-tier product ($99/$249/$449 per month) with dedicated page, online payment, and bilingual articles.</p>
+                <p data-lang="fr">Produit &agrave; trois niveaux (99 $/249 $/449 $ par mois) avec page d&eacute;di&eacute;e, paiement en ligne et articles bilingues.</p>
                 <div class="date" data-lang="en">April 13, 2026</div>
                 <div class="date" data-lang="fr">13 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <ul class="doc-list">
+                        <li><a href="https://campuscorridor.ca/virtual-office.html" target="_blank" onclick="event.stopPropagation()" data-lang="en">View Product Page</a></li>
+                        <li><a href="https://campuscorridor.ca/virtual-office.html" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Voir la page produit</a></li>
+                        <li><a href="https://campuscorridor.ca/blog/virtual-office-prestigious-address-parliament-hill.html" target="_blank" onclick="event.stopPropagation()" data-lang="en">Launch Article (EN)</a></li>
+                        <li><a href="https://campuscorridor.ca/blog/bureau-virtuel-adresse-prestigieuse-colline-parlement.html" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Article de lancement (FR)</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Flex Space -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
                 <h4 data-lang="en">Flex Space — Product Launch</h4>
                 <h4 data-lang="fr">Espace flexible — Lancement de produit</h4>
                 <p data-lang="en">Flexible workspace product ($49/day to $899/month) with dedicated page, payment links, and bilingual articles.</p>
-                <p data-lang="fr">Produit d'espace de travail flexible (49 $/jour à 899 $/mois) avec page dédiée, liens de paiement et articles bilingues.</p>
-                <a href="https://campuscorridor.ca/flex-space.html" class="link" data-lang="en">View Product →</a>
-                <a href="https://campuscorridor.ca/flex-space.html" class="link" data-lang="fr">Voir le produit →</a>
+                <p data-lang="fr">Produit d'espace de travail flexible (49 $/jour &agrave; 899 $/mois) avec page d&eacute;di&eacute;e, liens de paiement et articles bilingues.</p>
                 <div class="date" data-lang="en">April 13, 2026</div>
                 <div class="date" data-lang="fr">13 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <ul class="doc-list">
+                        <li><a href="https://campuscorridor.ca/flex-space.html" target="_blank" onclick="event.stopPropagation()" data-lang="en">View Product Page</a></li>
+                        <li><a href="https://campuscorridor.ca/flex-space.html" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Voir la page produit</a></li>
+                        <li><a href="https://campuscorridor.ca/blog/flex-space-workspace-government-corridor.html" target="_blank" onclick="event.stopPropagation()" data-lang="en">Launch Article (EN)</a></li>
+                        <li><a href="https://campuscorridor.ca/blog/espace-flexible-corridor-gouvernemental.html" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Article de lancement (FR)</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Öztürk Holding Due Diligence -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
-                <h4 data-lang="en">La Cité Phase II — Financial Assessment</h4>
-                <h4 data-lang="fr">La Cité Phase II — Évaluation financière</h4>
-                <p data-lang="en">Financial modeling for the proposed 305-unit residential tower development with CMHC loan analysis.</p>
-                <p data-lang="fr">Modélisation financière pour le projet de tour résidentielle de 305 unités avec analyse de prêt SCHL.</p>
-                <div class="date" data-lang="en">Previous sessions</div>
-                <div class="date" data-lang="fr">Sessions précédentes</div>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
+                <h4 data-lang="en">&Ouml;zt&uuml;rk Holding (&Ouml;ZH) — Due Diligence &amp; Counter-Strategy</h4>
+                <h4 data-lang="fr">&Ouml;zt&uuml;rk Holding (&Ouml;ZH) — Diligence raisonnable &amp; Contre-strat&eacute;gie</h4>
+                <p data-lang="en">8-document package review. Article-by-article analysis of PIP, EPC, and EPC+Financing proposals. 8 critical provisions identified for rejection. Counter-proposal structure drafted.</p>
+                <p data-lang="fr">Revue du dossier de 8 documents. Analyse article par article des propositions PIP, EPC et EPC+Financement. 8 dispositions critiques identifi&eacute;es pour rejet. Structure de contre-proposition r&eacute;dig&eacute;e.</p>
+                <div class="date" data-lang="en">April 9, 2026</div>
+                <div class="date" data-lang="fr">9 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <div class="doc-label" data-lang="en">Assessment &amp; Strategy</div>
+                    <div class="doc-label" data-lang="fr">&Eacute;valuation &amp; Strat&eacute;gie</div>
+                    <ul class="doc-list">
+                        <li><a href="docs/Preliminary_Assessment_LaCite_Phase2.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Preliminary Assessment — &Ouml;ZH Joint Venture Proposal</a></li>
+                        <li><a href="docs/Preliminary_Assessment_LaCite_Phase2.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">&Eacute;valuation pr&eacute;liminaire — Proposition de coentreprise &Ouml;ZH</a></li>
+                        <li><a href="docs/Clause_by_Clause_Rationale_OZH.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Clause-by-Clause Rationale</a></li>
+                        <li><a href="docs/Clause_by_Clause_Rationale_OZH.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Justification clause par clause</a></li>
+                        <li><a href="docs/DRAFT_Response_Letter_OZH.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Draft Response Letter to &Ouml;ZH</a></li>
+                        <li><a href="docs/DRAFT_Response_Letter_OZH.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Projet de lettre de r&eacute;ponse &agrave; &Ouml;ZH</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Strategic Engagement Overview -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
-                <h4 data-lang="en">Foreign Investment — Due Diligence &amp; Strategy</h4>
-                <h4 data-lang="fr">Investissement étranger — Diligence raisonnable &amp; Stratégie</h4>
-                <p data-lang="en">Comprehensive investor evaluation, risk assessment, legal opinion obtained, and partnership structure analysis.</p>
-                <p data-lang="fr">Évaluation complète de l'investisseur, analyse des risques, opinion juridique obtenue et analyse de la structure de partenariat.</p>
-                <div class="date" data-lang="en">Previous sessions</div>
-                <div class="date" data-lang="fr">Sessions précédentes</div>
-            </div>
-            <div class="card">
-                <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
                 <h4 data-lang="en">CCC Strategic Engagement Overview</h4>
-                <h4 data-lang="fr">Aperçu de l'engagement stratégique CCC</h4>
+                <h4 data-lang="fr">Aper&ccedil;u de l'engagement strat&eacute;gique CCC</h4>
                 <p data-lang="en">Eight-page umbrella document defining the modular engagement architecture with 8 independent advisory components.</p>
-                <p data-lang="fr">Document parapluie de huit pages définissant l'architecture d'engagement modulaire avec 8 composantes consultatives indépendantes.</p>
+                <p data-lang="fr">Document parapluie de huit pages d&eacute;finissant l'architecture d'engagement modulaire avec 8 composantes consultatives ind&eacute;pendantes.</p>
                 <div class="date" data-lang="en">Previous sessions</div>
-                <div class="date" data-lang="fr">Sessions précédentes</div>
+                <div class="date" data-lang="fr">Sessions pr&eacute;c&eacute;dentes</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <ul class="doc-list">
+                        <li><a href="docs/CCC_Strategic_Engagement_Overview_2026-04.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Strategic Engagement Overview (PDF)</a></li>
+                        <li><a href="docs/CCC_Strategic_Engagement_Overview_2026-04.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Aper&ccedil;u de l'engagement strat&eacute;gique (PDF)</a></li>
+                        <li><a href="docs/CCC_Partner_Opportunity_2026-04.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Partner Opportunity Brief</a></li>
+                        <li><a href="docs/CCC_Partner_Opportunity_2026-04.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Note d'opportunit&eacute; pour partenaires</a></li>
+                        <li><a href="docs/IBPROM_Consulting_Proposal_Dormani_2026-04-11.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">IBPROM Consulting Proposal</a></li>
+                        <li><a href="docs/IBPROM_Proposition_Services_Conseils_Dormani_2026-04-11.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Proposition de services-conseils IBPROM</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
+
+            <!-- Meeting Package & Strategic Memo -->
+            <div class="card" onclick="this.classList.toggle('open')">
                 <span class="tag tag-done" data-lang="en">Delivered</span>
-                <span class="tag tag-done" data-lang="fr">Livré</span>
-                <h4 data-lang="en">Government Commercial Listing Submissions</h4>
-                <h4 data-lang="fr">Soumissions aux répertoires commerciaux gouvernementaux</h4>
-                <p data-lang="en">Properties submitted to Government of Canada, Province of Quebec, and Ville de Gatineau commercial listing platforms.</p>
-                <p data-lang="fr">Propriétés soumises aux plateformes de répertoires commerciaux du gouvernement du Canada, de la province de Québec et de la Ville de Gatineau.</p>
-                <div class="date" data-lang="en">Previous sessions</div>
-                <div class="date" data-lang="fr">Sessions précédentes</div>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
+                <h4 data-lang="en">Strategic Advisory — Meeting Package &amp; Memo</h4>
+                <h4 data-lang="fr">Conseil strat&eacute;gique — Dossier de r&eacute;union &amp; M&eacute;mo</h4>
+                <p data-lang="en">Comprehensive meeting preparation package and strategic considerations memorandum for advisory engagement.</p>
+                <p data-lang="fr">Dossier pr&eacute;paratoire complet et m&eacute;morandum de consid&eacute;rations strat&eacute;giques pour l'engagement consultatif.</p>
+                <div class="date" data-lang="en">April 10-11, 2026</div>
+                <div class="date" data-lang="fr">10-11 avril 2026</div>
+                <div class="expand-hint" data-lang="en">&#9654; Click to view documents</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Cliquez pour voir les documents</div>
+                <div class="doc-drawer">
+                    <ul class="doc-list">
+                        <li><a href="docs/Dormani_Meeting_Package_2026-04-10.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Meeting Preparation Package</a></li>
+                        <li><a href="docs/Dormani_Meeting_Package_2026-04-10.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">Dossier pr&eacute;paratoire de r&eacute;union</a></li>
+                        <li><a href="docs/Dormani_Strategic_Considerations_Memo_2026-04-11.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="en">Strategic Considerations Memorandum</a></li>
+                        <li><a href="docs/Dormani_Strategic_Considerations_Memo_2026-04-11.pdf" target="_blank" onclick="event.stopPropagation()" data-lang="fr">M&eacute;morandum de consid&eacute;rations strat&eacute;giques</a></li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- Government Submissions -->
+            <div class="card" onclick="this.classList.toggle('open')">
+                <span class="tag tag-done" data-lang="en">Delivered</span>
+                <span class="tag tag-done" data-lang="fr">Livr&eacute;</span>
+                <h4 data-lang="en">Government Commercial Listing Submissions</h4>
+                <h4 data-lang="fr">Soumissions aux r&eacute;pertoires commerciaux gouvernementaux</h4>
+                <p data-lang="en">Properties submitted to Government of Canada, Province of Quebec, and Ville de Gatineau. Federal government has responded.</p>
+                <p data-lang="fr">Propri&eacute;t&eacute;s soumises au gouvernement du Canada, &agrave; la province de Qu&eacute;bec et &agrave; la Ville de Gatineau. Le gouvernement f&eacute;d&eacute;ral a r&eacute;pondu.</p>
+                <div class="date" data-lang="en">Previous sessions</div>
+                <div class="date" data-lang="fr">Sessions pr&eacute;c&eacute;dentes</div>
+                <div class="expand-hint" data-lang="en">&#9654; No documents — email submissions</div>
+                <div class="expand-hint" data-lang="fr">&#9654; Aucun document — soumissions par courriel</div>
+            </div>
+
         </div>
     </div>
 
