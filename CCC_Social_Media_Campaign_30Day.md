@@ -1007,7 +1007,7 @@ For YouTube Shorts / YouTube channel:
 - [ ] Profile photo: CCC logo (SVG, 1080x1080px)
 - [ ] Bio: "Premium workspace. Steps from Parliament Hill. Federal-grade. Open 24/7. Book a tour: link.com"
 - [ ] Link in bio: campuscorridor.ca or Calendly booking link
-- [ ] Contact button: Email (info@campuscorridor.ca) + Phone (613-691-9311)
+- [ ] Contact button: Email (info@campuscorridor.ca) + Phone (873-455-3667)
 
 **Optimization (30 minutes):**
 - [ ] Category: Office Space / Coworking Space

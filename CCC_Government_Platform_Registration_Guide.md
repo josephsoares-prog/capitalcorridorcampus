@@ -13,7 +13,7 @@
 | Registered Office | 1 Rideau Street, Suite 700, Ottawa ON K1N 8S7 |
 | Contact Name | Joseph Soares |
 | Email | info@campuscorridor.ca (or j@josephsoares.com) |
-| Phone | 613-691-9311 |
+| Phone | 873-455-3667 |
 | Website | campuscorridor.ca |
 | Industry | Commercial real estate leasing / Property management |
 
@@ -108,7 +108,7 @@
     - Add: **Gatineau, Quebec** and **Ottawa, Ontario** (NCR coverage)
 21. **Contacts tab:**
     - Email: j@josephsoares.com
-    - Phone: 613-691-9311
+    - Phone: 873-455-3667
 22. **Save all sections**
 
 **You're done.** PBN arrives in 5–7 days. Once active, you can respond to any federal "Call for Offers to Lease" that appears on CanadaBuys.
@@ -133,7 +133,7 @@
    - Address: 1 Rideau Street, Suite 700, Ottawa ON K1N 8S7
    - Contact: Joseph Soares
    - Email: j@josephsoares.com
-   - Phone: 613-691-9311
+   - Phone: 873-455-3667
 5. **Create your user credentials:**
    - User code: Choose something neutral (don't use your name — SEAO recommends a neutral code). Example: **ibprom2026**
    - Password: 8–14 characters, must include at least 2 non-letter characters
@@ -179,7 +179,7 @@
    - Address: 1 Rideau Street, Suite 700, Ottawa ON K1N 8S7
    - Province: Ontario
    - Postal code: K1N 8S7
-   - Phone: 613-691-9311
+   - Phone: 873-455-3667
    - Contact name: Joseph Soares
    - Email: j@josephsoares.com
    - Industry sector: **Real Estate / Property Management**

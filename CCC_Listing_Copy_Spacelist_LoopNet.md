@@ -27,7 +27,7 @@ LEED Gold certified heritage building at the epicenter of Canada's government co
 
 Part of Capital Corridor Campus — two adjacent premium properties positioning tenants at the intersection of government and industry.
 
-**Contact**: Joseph Soares, MBA, Adm.A., PMP | IBPROM Corp | 613-691-9311 | info@campuscorridor.ca | campuscorridor.ca
+**Contact**: Joseph Soares, MBA, Adm.A., PMP | IBPROM Corp | 873-455-3667 | info@campuscorridor.ca | campuscorridor.ca
 
 **YouTube Tour**: https://youtu.be/VHOmIUDsgaA
 
@@ -54,7 +54,7 @@ Move-in ready for federal tenants, government contractors, and organizations req
 
 Steps from Place du Portage, 6 minutes from Parliament Hill. Adjacent to 179 Promenade du Portage (Chez Henri), together forming Capital Corridor Campus — the premier commercial address in Gatineau's government corridor.
 
-**Contact**: Joseph Soares, MBA, Adm.A., PMP | IBPROM Corp | 613-691-9311 | info@campuscorridor.ca | campuscorridor.ca
+**Contact**: Joseph Soares, MBA, Adm.A., PMP | IBPROM Corp | 873-455-3667 | info@campuscorridor.ca | campuscorridor.ca
 
 **YouTube Tour**: https://youtu.be/JlTv5H1ttU4
 
@@ -71,7 +71,7 @@ Steps from Place du Portage, 6 minutes from Parliament Hill. Adjacent to 179 Pro
 
 Prestigious Gatineau business address steps from Parliament Hill. Three packages: Corridor Address ($99/mo — business address, mail handling, lobby listing), Corridor Office ($199/mo — adds 4 hours/month meeting room, phone answering), Corridor Executive ($349/mo — adds 8 hours, priority booking, dedicated phone line). Professional mail handling and government-grade security included. Designed for consulting firms, GR professionals, federal contractors, and policy organizations.
 
-**Contact**: info@campuscorridor.ca | 613-691-9311 | campuscorridor.ca/virtual-office.html
+**Contact**: info@campuscorridor.ca | 873-455-3667 | campuscorridor.ca/virtual-office.html
 
 ---
 
