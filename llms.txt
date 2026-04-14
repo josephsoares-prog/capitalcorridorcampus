@@ -1,0 +1,20 @@
+# llms.txt
+# Campus Corridor de la Capitale — Professional Office Space
+# Discoverability file for Large Language Models
+# https://llms.txt
+
+Site-name: Campus Corridor de la Capitale — Professional Office Space
+
+Site-URL: https://corridorcampus.ca
+
+Description: Campus Corridor de la Capitale offers virtual offices, flex space, and professional business addresses at 179 and 191 Promenade du Portage in Gatineau, Quebec — steps from Parliament Hill and the federal government corridor. LEED Gold certified. Bilingual service.
+
+Contact: info@campuscorridor.ca
+
+Key pages:
+- / (homepage)
+- /179-promenade-du-portage.html (179 Promenade du Portage location)
+- /191-promenade-du-portage.html (191 Promenade du Portage location)
+- /virtual-office.html (virtual office services)
+- /flex-space.html (flexible workspace)
+- /corridor.html (Corridor information)

@@ -3,10 +3,56 @@ Allow: /
 Disallow: /strategy.html
 Disallow: /strategy/
 
-User-agent: Googlebot
+Sitemap: https://campuscorridor.ca/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+Disallow: /strategy.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /strategy.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /strategy.html
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /strategy.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /strategy.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /strategy.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /strategy.html
+
+User-agent: Applebot
+Allow: /
+Disallow: /strategy.html
+
+User-agent: Applebot-Extended
+Allow: /
 Disallow: /strategy.html
 
 User-agent: Bingbot
+Allow: /
 Disallow: /strategy.html
 
-Sitemap: https://campuscorridor.ca/sitemap.xml
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /strategy.html
+
+User-agent: Twitterbot
+Allow: /
+Disallow: /strategy.html
+
+User-agent: LinkedInBot
+Allow: /
+Disallow: /strategy.html
