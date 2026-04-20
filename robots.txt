@@ -1,58 +1,93 @@
+# Capital Corridor Campus — Crawler directives
+# Last updated: 2026-04-20
+
+# Default: open to all crawlers (search and AI)
 User-agent: *
 Allow: /
 Disallow: /strategy.html
 Disallow: /strategy/
+Disallow: /command-centre.html
+Disallow: /thank-you.html
 
-Sitemap: https://campuscorridor.ca/sitemap.xml
+# Search engine crawlers — explicit
+User-agent: Googlebot
+Disallow: /strategy.html
+Disallow: /command-centre.html
 
+User-agent: Bingbot
+Disallow: /strategy.html
+Disallow: /command-centre.html
+
+User-agent: DuckDuckBot
+Disallow: /strategy.html
+Disallow: /command-centre.html
+
+# AI / LLM crawlers — explicitly ALLOWED
+# Capital Corridor Campus wants to be cited in AI-generated answers.
 User-agent: GPTBot
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /strategy.html
+Disallow: /command-centre.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /strategy.html
+Disallow: /command-centre.html
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
 
 User-agent: Claude-Web
 Allow: /
 Disallow: /strategy.html
-
-User-agent: Google-Extended
-Allow: /
-Disallow: /strategy.html
-
-User-agent: CCBot
-Allow: /
-Disallow: /strategy.html
+Disallow: /command-centre.html
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /strategy.html
+Disallow: /command-centre.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /strategy.html
+Disallow: /command-centre.html
 
 User-agent: Applebot
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
 
-User-agent: Bingbot
+User-agent: Meta-ExternalAgent
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
 
-User-agent: facebookexternalhit
+User-agent: CCBot
 Allow: /
 Disallow: /strategy.html
+Disallow: /command-centre.html
 
-User-agent: Twitterbot
-Allow: /
-Disallow: /strategy.html
-
-User-agent: LinkedInBot
-Allow: /
-Disallow: /strategy.html
+# Sitemaps
+Sitemap: https://campuscorridor.ca/sitemap.xml

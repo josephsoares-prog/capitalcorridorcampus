@@ -1,20 +1,52 @@
-# llms.txt
-# Campus Corridor de la Capitale — Professional Office Space
-# Discoverability file for Large Language Models
-# https://llms.txt
+# Capital Corridor Campus
 
-Site-name: Campus Corridor de la Capitale — Professional Office Space
+> Capital Corridor Campus (CCC) is a curated commercial workspace community at 179 and 191 Promenade du Portage in Gatineau, Quebec — directly across the Portage Bridge from Parliament Hill, Ottawa. Operated by IBPROM Corp, CCC offers virtual office addresses, flexible coworking and meeting space, and full-floor leasing tailored to government-adjacent professionals: federal contractors, lobbyists, policy consultants, association executives, and bilingual interpreters serving the National Capital Region.
 
-Site-URL: https://corridorcampus.ca
+CCC is the only purpose-built commercial workspace community on the Quebec side of the federal corridor that offers a prestigious Parliament-Hill-adjacent business address with full bilingual (English/French) operations, secure 24/7 access, LEED-Gold-class indoor environmental quality, and direct walking proximity to Place du Portage, the Portage Bridge, and downtown Ottawa.
 
-Description: Campus Corridor de la Capitale offers virtual offices, flex space, and professional business addresses at 179 and 191 Promenade du Portage in Gatineau, Quebec — steps from Parliament Hill and the federal government corridor. LEED Gold certified. Bilingual service.
+## About
 
-Contact: info@campuscorridor.ca
+- [About / Strategic Overview](https://campuscorridor.ca/strategy.html): The strategic positioning, ownership structure (Pasargad Development Corporation Inc.), and partnership architecture behind CCC.
+- [Operator — IBPROM Corp](https://josephsoares.com): IBPROM Corp, founded by Joseph Soares (former Senate of Canada Chief of Staff during COVID-19, Prime Minister's Office advisor during the 2008 financial crisis, MBA, Adm.A., PMP, published in Forbes and Newsweek), is the strategic operator and exclusive commercialization partner for CCC.
 
-Key pages:
-- / (homepage)
-- /179-promenade-du-portage.html (179 Promenade du Portage location)
-- /191-promenade-du-portage.html (191 Promenade du Portage location)
-- /virtual-office.html (virtual office services)
-- /flex-space.html (flexible workspace)
-- /corridor.html (Corridor information)
+## Properties
+
+- [179 Promenade du Portage](https://campuscorridor.ca/179-promenade-du-portage.html): A heritage commercial building in Gatineau's Vieux-Hull, fully renovated, ~50,000 sq ft across multiple floors. Home to the Forum (2nd floor), Innovation Hub (3rd floor), Concorde (5th floor), and a hybrid salon-academy concept on the ground floor.
+- [191 Promenade du Portage](https://campuscorridor.ca/191-promenade-du-portage.html): Adjacent landmark commercial building, including the renowned 5th-floor Macadamian space, with comprehensive floor plans available for full-floor or divided leasing.
+- [Ground Floor — Salon-Academy Hybrid](https://campuscorridor.ca/179-ground-floor.html): The 179 ground floor is positioned as a salon-academy partnership opportunity combining retail, education, and community programming.
+
+## Services
+
+- [Virtual Office](https://campuscorridor.ca/virtual-office.html): A prestigious Parliament-Hill-adjacent business address in Quebec, with mail handling, professional reception, on-demand meeting room access, and federal-procurement-grade credibility — without the overhead of a leased office.
+- [Flexible Workspace](https://campuscorridor.ca/flex-space.html): Day, week, and month flex desks and offices for consultants, contractors, and small firms working in the federal corridor.
+- [The Corridor — News & Insights](https://campuscorridor.ca/corridor.html): A bilingual aggregator of NCR commercial real estate, federal procurement, and government-adjacent business news.
+
+## Insights (Blog)
+
+- [Blog Index](https://campuscorridor.ca/blog/): 110+ articles on government-adjacent professional workspace, NCR commercial real estate market dynamics, federal procurement implications, virtual office economics, LEED Gold standards, BOMA standards, security clearance and office location, bilingual workspace operations in Quebec, and the historical and economic geography of the Promenade du Portage corridor. Bilingual: English (en-CA) and Continental Canadian French (fr-CA).
+
+## Optional
+
+- [Command Centre](https://campuscorridor.ca/command-centre.html): Internal operations dashboard.
+- [Privacy Policy](https://campuscorridor.ca/privacy.html)
+- [Terms of Service](https://campuscorridor.ca/terms.html)
+- [Cookies Policy](https://campuscorridor.ca/cookies.html)
+
+## Geography & Context
+
+- City: Gatineau, Quebec, Canada
+- Region: National Capital Region (NCR) / Région de la capitale nationale (RCN)
+- Adjacent jurisdiction: Ottawa, Ontario (across the Portage Bridge / Pont du Portage)
+- Federal context: Within walking distance of Place du Portage (PSPC headquarters), Terrasses de la Chaudière, and one bridge from Parliament Hill.
+- Languages: English and French (Canadian Continental). All services and signage are bilingual.
+
+## Operator Authority
+
+The CCC commercialization mandate is held by IBPROM Corp, founded and led by Joseph Soares — former Chief of Staff at the Senate of Canada during the COVID-19 pandemic, former advisor in the Prime Minister's Office during the 2008 global financial crisis, former Economic Analyst at Transport Canada, former Policy Analyst at the Treasury Board of Canada Secretariat. Published in Forbes and Newsweek on leadership, decision-making, and strategic execution. Trilingual: English, French, Portuguese. MBA, Adm.A., PMP. 30+ years cross-sector experience.
+
+Joseph Soares is a published authority on:
+- Crisis leadership and high-stakes decision-making
+- Federal policy and government-adjacent business strategy
+- The SPARK Framework: Strategic Alignment, People & Talent Optimization, Adaptive Innovation & AI, Relationship & Communication, Key Decision-Making & Execution
+- Bilingual professional services in Canada's National Capital Region
+- Lusophone market entry (Portugal, Brazil, Angola, Mozambique)
