@@ -10,7 +10,7 @@
   var GA4_ID            = 'G-L3TWNPP48M';               // Google Analytics 4 — LIVE
   var GOOGLE_ADS_ID     = 'AW-PLACEHOLDER';             // TODO: replace after Google Ads account created
   var GOOGLE_ADS_LEAD_LABEL = 'LEAD_CONVERSION_LABEL';  // TODO: replace after conversion action created
-  var CLARITY_ID        = 'CLARITY_PROJECT_ID';         // TODO: replace after clarity.microsoft.com signup
+  var CLARITY_ID        = 'wfct56943k';                 // Microsoft Clarity — LIVE 2026-04-21
   var LINKEDIN_PARTNER  = 'LINKEDIN_PARTNER_ID';        // TODO: replace after LinkedIn Campaign Manager setup
 
   // ------ CONSENT GATE (do nothing unless consent given) ------
