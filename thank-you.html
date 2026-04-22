@@ -14,13 +14,51 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-L3TWNPP48M');
-        // Fire conversion event on page load — this is the confirmed submission
-        gtag('event', 'generate_lead', {
-            event_category: 'Contact',
-            event_label: 'form_submission_confirmed',
-            value: 1
-        });
-        if(typeof window.cccFireLeadConversion==="function"){ window.cccFireLeadConversion(); }
+
+        // Detect entry mode: Stripe purchase (?tier=...&plan=NNN) vs contact-form lead
+        (function(){
+            var q = new URLSearchParams(window.location.search);
+            var tier = q.get('tier');
+            var plan = parseFloat(q.get('plan')) || 0;
+            var tierLabel = ({
+                'essentials': 'Adresse Corridor',
+                'professional': 'Bureau Corridor',
+                'cabinet':     'Cabinet Corridor'
+            })[tier] || null;
+
+            if (tier && plan > 0) {
+                // Stripe purchase path — fire GA4 purchase event with tier + value
+                gtag('event', 'purchase', {
+                    transaction_id: 'stripe_' + Date.now(),
+                    value: plan,
+                    currency: 'CAD',
+                    items: [{
+                        item_id: tier,
+                        item_name: tierLabel,
+                        item_category: 'Virtual Office Subscription',
+                        price: plan,
+                        quantity: 1
+                    }]
+                });
+                // Also fire Google Ads purchase conversion (when cccFireLeadConversion is upgraded, it can route on path)
+                if (typeof window.cccFirePurchaseConversion === 'function') {
+                    window.cccFirePurchaseConversion(plan, 'CAD');
+                } else if (typeof window.cccFireLeadConversion === 'function') {
+                    window.cccFireLeadConversion();
+                }
+            } else {
+                // Contact form path — fire generate_lead as before
+                gtag('event', 'generate_lead', {
+                    event_category: 'Contact',
+                    event_label: 'form_submission_confirmed',
+                    value: 1,
+                    currency: 'CAD'
+                });
+                if (typeof window.cccFireLeadConversion === 'function') {
+                    window.cccFireLeadConversion();
+                }
+            }
+        })();
     </script>
     <link rel="icon" type="image/x-icon" href="Logos/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="Logos/favicon/favicon_32x32.png">
