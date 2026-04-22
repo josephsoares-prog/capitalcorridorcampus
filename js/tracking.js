@@ -13,6 +13,7 @@
   var GOOGLE_ADS_PURCHASE_LABEL = '4WnaCK_Bt6AcEPqU1btD'; // Subscribe (Purchase) conversion
   var CLARITY_ID        = 'wfct56943k';                 // Microsoft Clarity — LIVE 2026-04-21
   var LINKEDIN_PARTNER  = 'LINKEDIN_PARTNER_ID';        // TODO: replace after LinkedIn Campaign Manager setup
+  var META_PIXEL_ID     = '1465033893811581';           // Meta Pixel (shared w/ josephsoares.com — unified retargeting) — LIVE 2026-04-21
 
   // ------ CONSENT GATE (do nothing unless consent given) ------
   function hasConsent(category){
@@ -130,6 +131,20 @@
     })(window.lintrk);
   }
 
+  function loadMetaPixel(){
+    if(!META_PIXEL_ID || META_PIXEL_ID === 'META_PIXEL_ID') return;
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq) return; n=f.fbq=function(){n.callMethod ?
+        n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
+      if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+      n.queue=[]; t=b.createElement(e); t.async=!0;
+      t.src=v; s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+
   function loadGoogleAds(){
     if(!GOOGLE_ADS_ID || GOOGLE_ADS_ID === 'AW-PLACEHOLDER') return;
     var s = document.createElement('script');
@@ -151,13 +166,14 @@
     if(hasConsent('marketing')){
       loadLinkedInInsight();
       loadGoogleAds();
+      loadMetaPixel();
     }
   });
 
   // Listen for consent change (when user accepts via Klaro banner)
   window.addEventListener('klaro:consent-change', function(){
     if(hasConsent('analytics')) loadMicrosoftClarity();
-    if(hasConsent('marketing')){ loadLinkedInInsight(); loadGoogleAds(); }
+    if(hasConsent('marketing')){ loadLinkedInInsight(); loadGoogleAds(); loadMetaPixel(); }
   });
 
   // ------ AD CONVERSION HELPERS (used on /thank-you.html) ------
@@ -172,6 +188,9 @@
     }
     if(typeof window.lintrk === 'function'){
       window.lintrk('track', { conversion_id: 0 }); // update when LinkedIn conversion created
+    }
+    if(typeof window.fbq === 'function'){
+      window.fbq('track', 'Lead', { value: 200.0, currency: 'CAD' });
     }
   };
 
@@ -189,6 +208,9 @@
     }
     if(typeof window.lintrk === 'function'){
       window.lintrk('track', { conversion_id: 0 }); // update when LinkedIn purchase conversion created
+    }
+    if(typeof window.fbq === 'function'){
+      window.fbq('track', 'Subscribe', { value: value, currency: currency, predicted_ltv: value * 12 });
     }
   };
 
