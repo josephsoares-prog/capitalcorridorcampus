@@ -8,8 +8,9 @@
 
   // ------ TOKENS (replace placeholders when accounts are created) ------
   var GA4_ID            = 'G-L3TWNPP48M';               // Google Analytics 4 — LIVE
-  var GOOGLE_ADS_ID     = 'AW-PLACEHOLDER';             // TODO: replace after Google Ads account created
-  var GOOGLE_ADS_LEAD_LABEL = 'LEAD_CONVERSION_LABEL';  // TODO: replace after conversion action created
+  var GOOGLE_ADS_ID            = 'AW-18110302842';        // Google Ads — LIVE 2026-04-21
+  var GOOGLE_ADS_LEAD_LABEL    = '4Zl8CLLBt6AcEPqU1btD';  // Lead — Contact Form conversion
+  var GOOGLE_ADS_PURCHASE_LABEL = '4WnaCK_Bt6AcEPqU1btD'; // Subscribe (Purchase) conversion
   var CLARITY_ID        = 'wfct56943k';                 // Microsoft Clarity — LIVE 2026-04-21
   var LINKEDIN_PARTNER  = 'LINKEDIN_PARTNER_ID';        // TODO: replace after LinkedIn Campaign Manager setup
 
@@ -159,17 +160,35 @@
     if(hasConsent('marketing')){ loadLinkedInInsight(); loadGoogleAds(); }
   });
 
-  // Expose a helper for ad conversion firing (used on thank-you.html)
+  // ------ AD CONVERSION HELPERS (used on /thank-you.html) ------
+  // Lead path: contact form submission — fires when /thank-you.html loads with no ?tier= param
   window.cccFireLeadConversion = function(){
-    if(typeof window.gtag === 'function' && GOOGLE_ADS_ID && GOOGLE_ADS_ID !== 'AW-PLACEHOLDER'){
+    if(typeof window.gtag === 'function' && GOOGLE_ADS_ID && GOOGLE_ADS_ID.indexOf('AW-') === 0){
       window.gtag('event', 'conversion', {
         'send_to': GOOGLE_ADS_ID + '/' + GOOGLE_ADS_LEAD_LABEL,
-        'value': 1.0,
+        'value': 200.0,
         'currency': 'CAD'
       });
     }
     if(typeof window.lintrk === 'function'){
       window.lintrk('track', { conversion_id: 0 }); // update when LinkedIn conversion created
+    }
+  };
+
+  // Purchase path: Stripe checkout complete — fires when /thank-you.html loads with ?tier=... param
+  window.cccFirePurchaseConversion = function(value, currency){
+    value = value || 199;
+    currency = currency || 'CAD';
+    if(typeof window.gtag === 'function' && GOOGLE_ADS_ID && GOOGLE_ADS_ID.indexOf('AW-') === 0){
+      window.gtag('event', 'conversion', {
+        'send_to': GOOGLE_ADS_ID + '/' + GOOGLE_ADS_PURCHASE_LABEL,
+        'value': value,
+        'currency': currency,
+        'transaction_id': 'stripe_' + Date.now()
+      });
+    }
+    if(typeof window.lintrk === 'function'){
+      window.lintrk('track', { conversion_id: 0 }); // update when LinkedIn purchase conversion created
     }
   };
 
