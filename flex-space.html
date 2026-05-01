@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Flex Office Space in Gatineau — Day Pass from $75 | Capital Corridor Campus</title>
-    <meta name="description" content="Flexible coworking and day office space in Gatineau at 179 Promenade du Portage. Day passes from $75, weekly from $299, monthly from $899. Government-grade security. Parliament Hill location.">
-    <meta name="keywords" content="coworking Gatineau, flex office space Ottawa-Gatineau, hot desk Promenade du Portage, day office near Parliament Hill, flexible workspace Canada">
-    <meta property="og:title" content="Flex Office Space in Gatineau — Day Pass from $75 | Capital Corridor Campus">
-    <meta property="og:description" content="Flexible coworking spaces starting at $75/day. Government-grade security, high-speed WiFi, professional meeting rooms at 179 Promenade du Portage, Gatineau.">
+    <title data-fr="Espace flexible à Gatineau — Forfait journalier dès 75 $ | Campus du Corridor de la Capitale" data-en="Flex Office Space in Gatineau — Day Pass from $75 | Capital Corridor Campus">Espace flexible à Gatineau — Forfait journalier dès 75 $ | Campus du Corridor de la Capitale</title>
+    <meta name="description" content="Espace de cotravail et bureau journalier flexible à Gatineau, au 179, promenade du Portage. Forfaits journaliers dès 75 $, hebdomadaires dès 299 $, mensuels dès 899 $. Sécurité de calibre gouvernemental. À proximité de la Colline du Parlement." data-fr="Espace de cotravail et bureau journalier flexible à Gatineau, au 179, promenade du Portage. Forfaits journaliers dès 75 $, hebdomadaires dès 299 $, mensuels dès 899 $. Sécurité de calibre gouvernemental. À proximité de la Colline du Parlement." data-en="Flexible coworking and day office space in Gatineau at 179 Promenade du Portage. Day passes from $75, weekly from $299, monthly from $899. Government-grade security. Parliament Hill location.">
+    <meta name="keywords" content="cotravail Gatineau, espace flexible Ottawa-Gatineau, poste de travail Promenade du Portage, bureau journalier Colline du Parlement, espace de travail flexible Canada">
+    <meta property="og:title" content="Espace flexible à Gatineau — Forfait journalier dès 75 $ | Campus du Corridor de la Capitale">
+    <meta property="og:description" content="Espaces de cotravail flexibles à partir de 75 $/jour. Sécurité de calibre gouvernemental, WiFi haute vitesse, salles de réunion professionnelles au 179, promenade du Portage, Gatineau.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://campuscorridor.ca/flex-space.html">
     <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_200px.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Flex Office Space in Gatineau — Day Pass from $75">
-    <meta name="twitter:description" content="Flexible coworking and day office space in Canada's government corridor. Starting at $75/day.">
+    <meta name="twitter:title" content="Espace flexible à Gatineau — Forfait journalier dès 75 $">
+    <meta name="twitter:description" content="Espace de cotravail et bureau journalier flexible au cœur du corridor gouvernemental canadien. À partir de 75 $/jour.">
     <link rel="canonical" href="https://campuscorridor.ca/flex-space.html">
+    <link rel="alternate" hreflang="fr" href="https://campuscorridor.ca/flex-space.html">
+    <link rel="alternate" hreflang="en" href="https://campuscorridor.ca/flex-space.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/flex-space.html">
     <link rel="icon" type="image/x-icon" href="Logos/favicon/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -313,6 +316,40 @@
 
         .nav-links a:hover {
             color: var(--gold);
+        }
+
+        /* Language Toggle */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--dark-card, #161C2D);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover { color: var(--gold); }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark);
         }
 
         /* Breadcrumbs */
@@ -825,28 +862,34 @@ document.head.appendChild(o)}initApollo();</script>
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="/">Properties</a></li>
-                <li><a href="/flex-space.html">Flex Space</a></li>
-                <li><a href="/virtual-office.html">Virtual Office</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/" data-fr="Propriétés" data-en="Properties">Properties</a></li>
+                <li><a href="/flex-space.html" data-fr="Espace flexible" data-en="Flex Space">Flex Space</a></li>
+                <li><a href="/virtual-office.html" data-fr="Bureau virtuel" data-en="Virtual Office">Virtual Office</a></li>
+                <li><a href="/blog/" data-fr="Perspectives" data-en="Blog">Blog</a></li>
+                <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
-        <a href="/">Home</a> > Flex Office Space
+        <a href="/" data-fr="Accueil" data-en="Home">Home</a> > <span data-fr="Espace flexible" data-en="Flex Office Space">Flex Office Space</span>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Flex Office Space That Moves With You</h1>
-            <p class="hero-subtitle">Day passes, weekly desk, or dedicated private office — no long-term commitment required.</p>
-            <p>Work where Canadian leaders work. Located steps from Parliament Hill on Promenade du Portage in Canada's Government Corridor. Government-grade security. High-speed infrastructure. Professional on-demand meeting rooms.</p>
-            <p>Perfect for visiting consultants, federal contractors, teams testing the NCR market, or firms needing overflow capacity.</p>
-            <a href="#pricing" class="cta-button">View Pricing</a>
+            <h1 data-fr="Un espace de bureau flexible qui suit votre rythme" data-en="Flex Office Space That Moves With You">Flex Office Space That Moves With You</h1>
+            <p class="hero-subtitle" data-fr="Forfait journalier, poste hebdomadaire ou bureau privé dédié — sans engagement à long terme." data-en="Day passes, weekly desk, or dedicated private office — no long-term commitment required.">Day passes, weekly desk, or dedicated private office — no long-term commitment required.</p>
+            <p data-fr="Travaillez là où travaillent les dirigeants canadiens. Situé à quelques pas de la Colline du Parlement, sur la promenade du Portage, au cœur du corridor gouvernemental du Canada. Sécurité de calibre gouvernemental. Infrastructure à haute vitesse. Salles de réunion professionnelles sur demande." data-en="Work where Canadian leaders work. Located steps from Parliament Hill on Promenade du Portage in Canada's Government Corridor. Government-grade security. High-speed infrastructure. Professional on-demand meeting rooms.">Work where Canadian leaders work. Located steps from Parliament Hill on Promenade du Portage in Canada's Government Corridor. Government-grade security. High-speed infrastructure. Professional on-demand meeting rooms.</p>
+            <p data-fr="Idéal pour les consultants en mission, les entrepreneurs fédéraux, les équipes qui sondent le marché de la RCN ou les firmes ayant des besoins de capacité d'appoint." data-en="Perfect for visiting consultants, federal contractors, teams testing the NCR market, or firms needing overflow capacity.">Perfect for visiting consultants, federal contractors, teams testing the NCR market, or firms needing overflow capacity.</p>
+            <a href="#pricing" class="cta-button" data-fr="Voir les tarifs" data-en="View Pricing">View Pricing</a>
         </div>
     </section>
 
@@ -854,265 +897,265 @@ document.head.appendChild(o)}initApollo();</script>
     <div class="container">
         <!-- Pricing Section -->
         <section id="pricing" class="section">
-            <h2>Three Packages. Zero Commitment.</h2>
-            <p style="max-width: 700px; margin-bottom: var(--spacing-lg);">Choose the plan that fits your needs. Upgrade anytime. No cancellation fees.</p>
+            <h2 data-fr="Trois forfaits. Aucun engagement." data-en="Three Packages. Zero Commitment.">Three Packages. Zero Commitment.</h2>
+            <p style="max-width: 700px; margin-bottom: var(--spacing-lg);" data-fr="Choisissez le forfait qui répond à vos besoins. Changez de forfait en tout temps. Aucuns frais d'annulation." data-en="Choose the plan that fits your needs. Upgrade anytime. No cancellation fees.">Choose the plan that fits your needs. Upgrade anytime. No cancellation fees.</p>
 
             <div class="pricing-cards">
                 <!-- Day Pass -->
                 <div class="pricing-card">
-                    <h3>Day Pass</h3>
-                    <div class="price">$75<span class="price-period">/day</span></div>
-                    <p style="color: var(--muted); font-size: 0.9rem;">Perfect for single visits and project work.</p>
+                    <h3 data-fr="Forfait journalier" data-en="Day Pass">Day Pass</h3>
+                    <div class="price" data-fr="75 $<span class='price-period'>/jour</span>" data-en="$75<span class='price-period'>/day</span>">$75<span class="price-period">/day</span></div>
+                    <p style="color: var(--muted); font-size: 0.9rem;" data-fr="Idéal pour les visites ponctuelles et les travaux de projet." data-en="Perfect for single visits and project work.">Perfect for single visits and project work.</p>
                     <ul class="pricing-features">
-                        <li>Private office or hot desk</li>
-                        <li>High-speed WiFi</li>
-                        <li>Meeting room access (1 hr)</li>
-                        <li>Printing services</li>
-                        <li>Complimentary coffee</li>
-                        <li>Government-grade security</li>
+                        <li data-fr="Bureau privé ou poste de travail partagé" data-en="Private office or hot desk">Private office or hot desk</li>
+                        <li data-fr="WiFi haute vitesse" data-en="High-speed WiFi">High-speed WiFi</li>
+                        <li data-fr="Accès salle de réunion (1 h)" data-en="Meeting room access (1 hr)">Meeting room access (1 hr)</li>
+                        <li data-fr="Services d'impression" data-en="Printing services">Printing services</li>
+                        <li data-fr="Café gracieusement offert" data-en="Complimentary coffee">Complimentary coffee</li>
+                        <li data-fr="Sécurité de calibre gouvernemental" data-en="Government-grade security">Government-grade security</li>
                     </ul>
-                    <a href="https://www.paypal.com/ncp/payment/2S2635J4JYYAC" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;">Get Started — $75</a>
+                    <a href="https://www.paypal.com/ncp/payment/2S2635J4JYYAC" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;" data-fr="Commencer — 75 $" data-en="Get Started — $75">Get Started — $75</a>
                 </div>
 
                 <!-- Weekly Package -->
                 <div class="pricing-card">
-                    <h3>Weekly</h3>
-                    <div class="price">$299<span class="price-period">/week</span></div>
-                    <p style="color: var(--muted); font-size: 0.9rem;">Ideal for part-time and ongoing projects.</p>
+                    <h3 data-fr="Forfait hebdomadaire" data-en="Weekly">Weekly</h3>
+                    <div class="price" data-fr="299 $<span class='price-period'>/semaine</span>" data-en="$299<span class='price-period'>/week</span>">$299<span class="price-period">/week</span></div>
+                    <p style="color: var(--muted); font-size: 0.9rem;" data-fr="Idéal pour les mandats à temps partiel et les projets en continu." data-en="Ideal for part-time and ongoing projects.">Ideal for part-time and ongoing projects.</p>
                     <ul class="pricing-features">
-                        <li>Everything in Day Pass, plus:</li>
-                        <li>Dedicated desk</li>
-                        <li>Meeting room access (5 hrs)</li>
-                        <li>Business address use</li>
-                        <li>After-hours access</li>
-                        <li>Flexible renewal</li>
+                        <li data-fr="Tout ce qui est inclus dans le forfait journalier, plus :" data-en="Everything in Day Pass, plus:">Everything in Day Pass, plus:</li>
+                        <li data-fr="Poste de travail dédié" data-en="Dedicated desk">Dedicated desk</li>
+                        <li data-fr="Accès salle de réunion (5 h)" data-en="Meeting room access (5 hrs)">Meeting room access (5 hrs)</li>
+                        <li data-fr="Utilisation de l'adresse d'affaires" data-en="Business address use">Business address use</li>
+                        <li data-fr="Accès en dehors des heures d'ouverture" data-en="After-hours access">After-hours access</li>
+                        <li data-fr="Renouvellement flexible" data-en="Flexible renewal">Flexible renewal</li>
                     </ul>
-                    <a href="https://www.paypal.com/ncp/payment/4NULEY4DKAAHQ" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;">Select Plan — $299/wk</a>
+                    <a href="https://www.paypal.com/ncp/payment/4NULEY4DKAAHQ" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;" data-fr="Choisir ce forfait — 299 $/sem." data-en="Select Plan — $299/wk">Select Plan — $299/wk</a>
                 </div>
 
                 <!-- Monthly Membership -->
                 <div class="pricing-card">
-                    <h3>Monthly</h3>
-                    <div class="price">$899<span class="price-period">/month</span></div>
-                    <p style="color: var(--muted); font-size: 0.9rem;">Full-featured workspace for teams and organizations.</p>
+                    <h3 data-fr="Forfait mensuel" data-en="Monthly">Monthly</h3>
+                    <div class="price" data-fr="899 $<span class='price-period'>/mois</span>" data-en="$899<span class='price-period'>/month</span>">$899<span class="price-period">/month</span></div>
+                    <p style="color: var(--muted); font-size: 0.9rem;" data-fr="Espace de travail complet pour les équipes et les organisations." data-en="Full-featured workspace for teams and organizations.">Full-featured workspace for teams and organizations.</p>
                     <ul class="pricing-features">
-                        <li>Everything in Weekly, plus:</li>
-                        <li>Private office</li>
-                        <li>Unlimited meeting room access</li>
-                        <li>Mail handling & management</li>
-                        <li>24/7 access</li>
-                        <li>Optional signage</li>
+                        <li data-fr="Tout ce qui est inclus dans le forfait hebdomadaire, plus :" data-en="Everything in Weekly, plus:">Everything in Weekly, plus:</li>
+                        <li data-fr="Bureau privé" data-en="Private office">Private office</li>
+                        <li data-fr="Accès illimité aux salles de réunion" data-en="Unlimited meeting room access">Unlimited meeting room access</li>
+                        <li data-fr="Gestion et tri du courrier" data-en="Mail handling & management">Mail handling & management</li>
+                        <li data-fr="Accès 24 heures sur 24, 7 jours sur 7" data-en="24/7 access">24/7 access</li>
+                        <li data-fr="Affichage en option" data-en="Optional signage">Optional signage</li>
                     </ul>
-                    <a href="https://www.paypal.com/ncp/payment/JSC6N2VWL8B9L" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;">Become a Member — $899/mo</a>
+                    <a href="https://www.paypal.com/ncp/payment/JSC6N2VWL8B9L" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;" data-fr="Devenir membre — 899 $/mois" data-en="Become a Member — $899/mo">Become a Member — $899/mo</a>
                 </div>
             </div>
 
-            <p style="text-align: center; margin-top: var(--spacing-xl); color: var(--muted); font-size: 0.95rem;">All spaces include government-grade security and infrastructure. VAT may apply. Contact us for volume pricing.</p>
+            <p style="text-align: center; margin-top: var(--spacing-xl); color: var(--muted); font-size: 0.95rem;" data-fr="Tous les espaces incluent une sécurité et une infrastructure de calibre gouvernemental. Les taxes peuvent s'appliquer. Communiquez avec nous pour les tarifs de groupe." data-en="All spaces include government-grade security and infrastructure. VAT may apply. Contact us for volume pricing.">All spaces include government-grade security and infrastructure. VAT may apply. Contact us for volume pricing.</p>
         </section>
 
         <!-- What's Included -->
         <section class="section">
-            <h2>What's Included in Every Plan</h2>
-            <p style="max-width: 700px; margin-bottom: var(--spacing-lg);">Industry-leading amenities and security standards. Work from a space designed for government-adjacent professionals.</p>
+            <h2 data-fr="Ce qui est inclus dans chaque forfait" data-en="What's Included in Every Plan">What's Included in Every Plan</h2>
+            <p style="max-width: 700px; margin-bottom: var(--spacing-lg);" data-fr="Des commodités et des normes de sécurité parmi les meilleures de l'industrie. Un espace conçu pour les professionnels qui œuvrent en proximité du gouvernement." data-en="Industry-leading amenities and security standards. Work from a space designed for government-adjacent professionals.">Industry-leading amenities and security standards. Work from a space designed for government-adjacent professionals.</p>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <h4>Government-Grade Security</h4>
-                    <p>24/7 surveillance, controlled access, secure key card systems, and visitor management protocols meet federal office space standards.</p>
+                    <h4 data-fr="Sécurité de calibre gouvernemental" data-en="Government-Grade Security">Government-Grade Security</h4>
+                    <p data-fr="Surveillance 24 heures sur 24, accès contrôlé, systèmes de carte d'accès sécurisés et protocoles de gestion des visiteurs conformes aux normes des espaces de bureaux fédéraux." data-en="24/7 surveillance, controlled access, secure key card systems, and visitor management protocols meet federal office space standards.">24/7 surveillance, controlled access, secure key card systems, and visitor management protocols meet federal office space standards.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>High-Speed Internet</h4>
-                    <p>Multi-gigabit fiber connectivity. Dedicated bandwidth options available for larger teams. Redundant systems ensure zero downtime.</p>
+                    <h4 data-fr="Internet haute vitesse" data-en="High-Speed Internet">High-Speed Internet</h4>
+                    <p data-fr="Connectivité par fibre optique multi-gigabit. Options de bande passante dédiée pour les équipes plus grandes. Systèmes redondants pour zéro temps d'arrêt." data-en="Multi-gigabit fiber connectivity. Dedicated bandwidth options available for larger teams. Redundant systems ensure zero downtime.">Multi-gigabit fiber connectivity. Dedicated bandwidth options available for larger teams. Redundant systems ensure zero downtime.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>LEED Gold Building</h4>
-                    <p>179 Promenade du Portage is LEED Gold certified. Energy-efficient climate control, air quality monitoring, and sustainable infrastructure.</p>
+                    <h4 data-fr="Bâtiment certifié LEED Or" data-en="LEED Gold Building">LEED Gold Building</h4>
+                    <p data-fr="Le 179, promenade du Portage est certifié LEED Or. Climatisation écoénergétique, surveillance de la qualité de l'air et infrastructure durable." data-en="179 Promenade du Portage is LEED Gold certified. Energy-efficient climate control, air quality monitoring, and sustainable infrastructure.">179 Promenade du Portage is LEED Gold certified. Energy-efficient climate control, air quality monitoring, and sustainable infrastructure.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>Professional Meeting Rooms</h4>
-                    <p>Fully equipped video conferencing, dual monitors, whiteboarding surfaces, and AV systems. Book on-demand or reserved slots.</p>
+                    <h4 data-fr="Salles de réunion professionnelles" data-en="Professional Meeting Rooms">Professional Meeting Rooms</h4>
+                    <p data-fr="Équipement complet de visioconférence, doubles écrans, surfaces de tableaux blancs et systèmes audiovisuels. Réservation sur demande ou créneaux fixes." data-en="Fully equipped video conferencing, dual monitors, whiteboarding surfaces, and AV systems. Book on-demand or reserved slots.">Fully equipped video conferencing, dual monitors, whiteboarding surfaces, and AV systems. Book on-demand or reserved slots.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>Printing & Document Services</h4>
-                    <p>Full-color printing, copying, scanning, and binding. Supplies provided. Rush orders and large batch jobs available.</p>
+                    <h4 data-fr="Services d'impression et de documents" data-en="Printing & Document Services">Printing & Document Services</h4>
+                    <p data-fr="Impression couleur, photocopie, numérisation et reliure. Fournitures incluses. Service rapide et impressions en lots de grand volume offerts." data-en="Full-color printing, copying, scanning, and binding. Supplies provided. Rush orders and large batch jobs available.">Full-color printing, copying, scanning, and binding. Supplies provided. Rush orders and large batch jobs available.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>Coffee & Refreshments</h4>
-                    <p>Complimentary premium coffee, tea, and water. Refrigerated break rooms. Catering options available for meetings.</p>
+                    <h4 data-fr="Café et rafraîchissements" data-en="Coffee & Refreshments">Coffee & Refreshments</h4>
+                    <p data-fr="Café haut de gamme, thé et eau gracieusement offerts. Salles à manger réfrigérées. Service traiteur disponible pour vos réunions." data-en="Complimentary premium coffee, tea, and water. Refrigerated break rooms. Catering options available for meetings.">Complimentary premium coffee, tea, and water. Refrigerated break rooms. Catering options available for meetings.</p>
                 </div>
             </div>
         </section>
 
         <!-- Ideal For -->
         <section class="section">
-            <h2>Who Uses Flex Space at Capital Corridor Campus</h2>
-            <p style="max-width: 700px; margin-bottom: var(--spacing-lg);">From independent consultants to teams of 10+, our flexible workspace serves professionals who value location, security, and infrastructure.</p>
+            <h2 data-fr="Qui utilise l'espace flexible au Campus du Corridor de la Capitale" data-en="Who Uses Flex Space at Capital Corridor Campus">Who Uses Flex Space at Capital Corridor Campus</h2>
+            <p style="max-width: 700px; margin-bottom: var(--spacing-lg);" data-fr="Du consultant indépendant aux équipes de 10 personnes et plus, notre espace de travail flexible accueille les professionnels qui valorisent l'emplacement, la sécurité et l'infrastructure." data-en="From independent consultants to teams of 10+, our flexible workspace serves professionals who value location, security, and infrastructure.">From independent consultants to teams of 10+, our flexible workspace serves professionals who value location, security, and infrastructure.</p>
 
             <div class="ideal-for">
                 <div class="ideal-for-item">
-                    <h4>Visiting Consultants</h4>
-                    <p>Government relations advisors, policy consultants, and strategic advisors working on short-term engagements in the National Capital Region.</p>
+                    <h4 data-fr="Consultants en mission" data-en="Visiting Consultants">Visiting Consultants</h4>
+                    <p data-fr="Conseillers en relations gouvernementales, consultants en politiques publiques et conseillers stratégiques en mission de courte durée dans la région de la capitale nationale." data-en="Government relations advisors, policy consultants, and strategic advisors working on short-term engagements in the National Capital Region.">Government relations advisors, policy consultants, and strategic advisors working on short-term engagements in the National Capital Region.</p>
                 </div>
                 <div class="ideal-for-item">
-                    <h4>Federal Contractors</h4>
-                    <p>Project-based firms requiring office presence near Parliament Hill and government clients. Dedicated workspace with government-grade security.</p>
+                    <h4 data-fr="Entrepreneurs fédéraux" data-en="Federal Contractors">Federal Contractors</h4>
+                    <p data-fr="Firmes par projet ayant besoin d'une présence physique près de la Colline du Parlement et de leurs clients gouvernementaux. Espace de travail dédié avec sécurité de calibre gouvernemental." data-en="Project-based firms requiring office presence near Parliament Hill and government clients. Dedicated workspace with government-grade security.">Project-based firms requiring office presence near Parliament Hill and government clients. Dedicated workspace with government-grade security.</p>
                 </div>
                 <div class="ideal-for-item">
-                    <h4>Market Testers</h4>
-                    <p>Companies piloting operations in the NCR. Low-cost entry point with no lease risk. Scale up or move on with zero commitment.</p>
+                    <h4 data-fr="Entreprises qui sondent le marché" data-en="Market Testers">Market Testers</h4>
+                    <p data-fr="Entreprises qui pilotent leurs opérations dans la RCN. Point d'entrée à faible coût, sans risque locatif. Augmentez le rythme ou repartez, sans engagement." data-en="Companies piloting operations in the NCR. Low-cost entry point with no lease risk. Scale up or move on with zero commitment.">Companies piloting operations in the NCR. Low-cost entry point with no lease risk. Scale up or move on with zero commitment.</p>
                 </div>
                 <div class="ideal-for-item">
-                    <h4>Overflow & Pop-Up Teams</h4>
-                    <p>Organizations with temporary staffing needs or seasonal projects. Book spaces on-demand without administrative overhead.</p>
+                    <h4 data-fr="Équipes d'appoint et projets ponctuels" data-en="Overflow & Pop-Up Teams">Overflow & Pop-Up Teams</h4>
+                    <p data-fr="Organisations ayant des besoins ponctuels en personnel ou des projets saisonniers. Réservez les espaces sur demande, sans tracasserie administrative." data-en="Organizations with temporary staffing needs or seasonal projects. Book spaces on-demand without administrative overhead.">Organizations with temporary staffing needs or seasonal projects. Book spaces on-demand without administrative overhead.</p>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
         <section class="section">
-            <h2>Frequently Asked Questions</h2>
+            <h2 data-fr="Foire aux questions" data-en="Frequently Asked Questions">Frequently Asked Questions</h2>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is included in a Day Pass?</span>
+                    <span data-fr="Que comprend un forfait journalier ?" data-en="What is included in a Day Pass?">What is included in a Day Pass?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>A Day Pass includes access to a private office or hot desk, high-speed WiFi, 1 hour of meeting room access, printing services, and complimentary coffee. It's ideal for consultants making short visits to the National Capital Region or teams handling overflow work.</p>
+                    <p data-fr="Un forfait journalier comprend l'accès à un bureau privé ou à un poste de travail partagé, un WiFi haute vitesse, 1 heure d'accès aux salles de réunion, les services d'impression et un café gracieusement offert. C'est idéal pour les consultants en visite courte dans la région de la capitale nationale ou pour les équipes ayant des besoins ponctuels." data-en="A Day Pass includes access to a private office or hot desk, high-speed WiFi, 1 hour of meeting room access, printing services, and complimentary coffee. It's ideal for consultants making short visits to the National Capital Region or teams handling overflow work.">A Day Pass includes access to a private office or hot desk, high-speed WiFi, 1 hour of meeting room access, printing services, and complimentary coffee. It's ideal for consultants making short visits to the National Capital Region or teams handling overflow work.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I upgrade from a Day Pass to a longer commitment?</span>
+                    <span data-fr="Puis-je passer du forfait journalier à un engagement plus long ?" data-en="Can I upgrade from a Day Pass to a longer commitment?">Can I upgrade from a Day Pass to a longer commitment?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Absolutely. Day pass credits can be applied toward any weekly or monthly package. If you've used 3 day passes and decide to commit to a week, we'll credit the $225 toward your first weekly payment. Contact info@campuscorridor.ca to arrange an upgrade.</p>
+                    <p data-fr="Tout à fait. Les crédits de forfait journalier peuvent être appliqués à tout forfait hebdomadaire ou mensuel. Si vous avez utilisé 3 forfaits journaliers et décidez de vous engager pour une semaine, nous appliquerons le crédit de 225 $ à votre premier paiement hebdomadaire. Communiquez avec info@campuscorridor.ca pour organiser le changement." data-en="Absolutely. Day pass credits can be applied toward any weekly or monthly package. If you've used 3 day passes and decide to commit to a week, we'll credit the $225 toward your first weekly payment. Contact info@campuscorridor.ca to arrange an upgrade.">Absolutely. Day pass credits can be applied toward any weekly or monthly package. If you've used 3 day passes and decide to commit to a week, we'll credit the $225 toward your first weekly payment. Contact info@campuscorridor.ca to arrange an upgrade.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Is 24/7 access available on the weekly plan?</span>
+                    <span data-fr="L'accès 24 heures sur 24 est-il offert avec le forfait hebdomadaire ?" data-en="Is 24/7 access available on the weekly plan?">Is 24/7 access available on the weekly plan?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>The Weekly package includes after-hours access until 10 PM and early-morning access starting at 6 AM. Full 24/7 access (including weekends and holidays) is available exclusively with the Monthly Membership plan.</p>
+                    <p data-fr="Le forfait hebdomadaire inclut un accès en soirée jusqu'à 22 h et le matin dès 6 h. L'accès 24 heures sur 24 (incluant les fins de semaine et jours fériés) est offert exclusivement avec le forfait mensuel." data-en="The Weekly package includes after-hours access until 10 PM and early-morning access starting at 6 AM. Full 24/7 access (including weekends and holidays) is available exclusively with the Monthly Membership plan.">The Weekly package includes after-hours access until 10 PM and early-morning access starting at 6 AM. Full 24/7 access (including weekends and holidays) is available exclusively with the Monthly Membership plan.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can my business use the address as a registered office?</span>
+                    <span data-fr="Mon entreprise peut-elle utiliser cette adresse comme siège social ?" data-en="Can my business use the address as a registered office?">Can my business use the address as a registered office?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes. Business address use (for mail and corporate registration) is included in both the Weekly and Monthly plans. Mail handling is limited in the Weekly plan (weekly pickup) and unlimited in the Monthly plan (daily management). Consult with your accountant regarding registration requirements in your jurisdiction.</p>
+                    <p data-fr="Oui. L'utilisation de l'adresse d'affaires (pour le courrier et l'immatriculation d'entreprise) est incluse dans les forfaits hebdomadaire et mensuel. La gestion du courrier est limitée dans le forfait hebdomadaire (cueillette hebdomadaire) et illimitée dans le forfait mensuel (gestion quotidienne). Consultez votre comptable pour connaître les exigences d'immatriculation applicables à votre juridiction." data-en="Yes. Business address use (for mail and corporate registration) is included in both the Weekly and Monthly plans. Mail handling is limited in the Weekly plan (weekly pickup) and unlimited in the Monthly plan (daily management). Consult with your accountant regarding registration requirements in your jurisdiction.">Yes. Business address use (for mail and corporate registration) is included in both the Weekly and Monthly plans. Mail handling is limited in the Weekly plan (weekly pickup) and unlimited in the Monthly plan (daily management). Consult with your accountant regarding registration requirements in your jurisdiction.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What are the security measures?</span>
+                    <span data-fr="Quelles sont les mesures de sécurité ?" data-en="What are the security measures?">What are the security measures?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>All spaces include government-grade security: 24/7 closed-circuit video surveillance, controlled access with key card systems, secure visitor management protocols, and on-site security presence. The building maintains the security standards required for federal government office space. Sensitive documents can be stored in secure lockable cabinets.</p>
+                    <p data-fr="Tous les espaces incluent une sécurité de calibre gouvernemental : surveillance vidéo en circuit fermé 24 heures sur 24, accès contrôlé par carte d'accès, protocoles sécurisés de gestion des visiteurs et présence d'agents de sécurité sur place. Le bâtiment maintient les normes de sécurité exigées pour les bureaux du gouvernement fédéral. Les documents sensibles peuvent être conservés dans des classeurs verrouillés." data-en="All spaces include government-grade security: 24/7 closed-circuit video surveillance, controlled access with key card systems, secure visitor management protocols, and on-site security presence. The building maintains the security standards required for federal government office space. Sensitive documents can be stored in secure lockable cabinets.">All spaces include government-grade security: 24/7 closed-circuit video surveillance, controlled access with key card systems, secure visitor management protocols, and on-site security presence. The building maintains the security standards required for federal government office space. Sensitive documents can be stored in secure lockable cabinets.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Are there restrictions on the types of work?</span>
+                    <span data-fr="Y a-t-il des restrictions sur le type de travail effectué ?" data-en="Are there restrictions on the types of work?">Are there restrictions on the types of work?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Flex space is available for legitimate business purposes only. We welcome government contractors, consulting firms, policy organizations, legal advisors, NGOs, and technology companies. Activities that violate Canadian law or would damage our reputation with government partners are not permitted. Contact us to discuss your specific business model.</p>
+                    <p data-fr="L'espace flexible est offert exclusivement à des fins commerciales légitimes. Nous accueillons les entrepreneurs gouvernementaux, firmes de conseil, organisations en politiques publiques, conseillers juridiques, ONG et entreprises technologiques. Les activités contrevenant aux lois canadiennes ou susceptibles de nuire à notre réputation auprès de nos partenaires gouvernementaux ne sont pas autorisées. Communiquez avec nous pour discuter de votre modèle d'affaires." data-en="Flex space is available for legitimate business purposes only. We welcome government contractors, consulting firms, policy organizations, legal advisors, NGOs, and technology companies. Activities that violate Canadian law or would damage our reputation with government partners are not permitted. Contact us to discuss your specific business model.">Flex space is available for legitimate business purposes only. We welcome government contractors, consulting firms, policy organizations, legal advisors, NGOs, and technology companies. Activities that violate Canadian law or would damage our reputation with government partners are not permitted. Contact us to discuss your specific business model.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can I book meeting rooms in advance?</span>
+                    <span data-fr="Puis-je réserver les salles de réunion à l'avance ?" data-en="Can I book meeting rooms in advance?">Can I book meeting rooms in advance?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes. Weekly members receive 5 hours per week of meeting room access with advance booking available up to 2 weeks in advance. Monthly members have unlimited meeting room access with priority booking. Day pass holders can book up to 1 hour on the day of use, subject to availability.</p>
+                    <p data-fr="Oui. Les membres hebdomadaires bénéficient de 5 heures de salle de réunion par semaine, avec réservation possible jusqu'à 2 semaines à l'avance. Les membres mensuels disposent d'un accès illimité avec priorité de réservation. Les détenteurs de forfait journalier peuvent réserver jusqu'à 1 heure le jour même, sous réserve de disponibilité." data-en="Yes. Weekly members receive 5 hours per week of meeting room access with advance booking available up to 2 weeks in advance. Monthly members have unlimited meeting room access with priority booking. Day pass holders can book up to 1 hour on the day of use, subject to availability.">Yes. Weekly members receive 5 hours per week of meeting room access with advance booking available up to 2 weeks in advance. Monthly members have unlimited meeting room access with priority booking. Day pass holders can book up to 1 hour on the day of use, subject to availability.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What if I need to cancel?</span>
+                    <span data-fr="Et si je dois annuler ?" data-en="What if I need to cancel?">What if I need to cancel?</span>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Day passes are non-refundable once redeemed. Weekly packages can be cancelled with 1 week notice. Monthly memberships require 30 days notice for cancellation. No early-termination fees apply. Contact info@campuscorridor.ca to initiate cancellation.</p>
+                    <p data-fr="Les forfaits journaliers ne sont pas remboursables une fois utilisés. Les forfaits hebdomadaires peuvent être annulés avec un préavis d'une semaine. Les abonnements mensuels exigent un préavis de 30 jours. Aucuns frais de résiliation anticipée ne s'appliquent. Communiquez avec info@campuscorridor.ca pour entamer la procédure d'annulation." data-en="Day passes are non-refundable once redeemed. Weekly packages can be cancelled with 1 week notice. Monthly memberships require 30 days notice for cancellation. No early-termination fees apply. Contact info@campuscorridor.ca to initiate cancellation.">Day passes are non-refundable once redeemed. Weekly packages can be cancelled with 1 week notice. Monthly memberships require 30 days notice for cancellation. No early-termination fees apply. Contact info@campuscorridor.ca to initiate cancellation.</p>
                 </div>
             </div>
         </section>
 
         <!-- Related Pages -->
         <section class="section">
-            <h2>Explore More</h2>
+            <h2 data-fr="Explorer davantage" data-en="Explore More">Explore More</h2>
             <div class="related-pages">
-                <h4>Other Services at Capital Corridor Campus</h4>
+                <h4 data-fr="Autres services au Campus du Corridor de la Capitale" data-en="Other Services at Capital Corridor Campus">Other Services at Capital Corridor Campus</h4>
                 <div class="related-links">
-                    <a href="/virtual-office.html">Virtual Office Services</a>
-                    <a href="/">Properties & Full Floor Leases</a>
-                    <a href="/blog/">Blog & Resources</a>
+                    <a href="/virtual-office.html" data-fr="Services de bureau virtuel" data-en="Virtual Office Services">Virtual Office Services</a>
+                    <a href="/" data-fr="Propriétés et locations à l'étage complet" data-en="Properties & Full Floor Leases">Properties & Full Floor Leases</a>
+                    <a href="/blog/" data-fr="Perspectives et ressources" data-en="Blog & Resources">Blog & Resources</a>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <h2>Ready to Get Started?</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--spacing-xl);">Contact us to book a tour, discuss your specific needs, or arrange a custom package. We're here to make your workspace flexible.</p>
+            <h2 data-fr="Prêt à commencer ?" data-en="Ready to Get Started?">Ready to Get Started?</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--spacing-xl);" data-fr="Communiquez avec nous pour planifier une visite, discuter de vos besoins ou organiser un forfait sur mesure. Nous sommes là pour rendre votre espace de travail flexible." data-en="Contact us to book a tour, discuss your specific needs, or arrange a custom package. We're here to make your workspace flexible.">Contact us to book a tour, discuss your specific needs, or arrange a custom package. We're here to make your workspace flexible.</p>
 
             <form class="contact-form" id="flexForm">
                 <input type="hidden" name="source" value="flex-space-inquiry">
 
                 <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
+                    <label for="name" data-fr="Nom complet *" data-en="Full Name *">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom" data-fr="Votre nom" data-en="Your name">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="you@company.com">
+                    <label for="email" data-fr="Adresse courriel *" data-en="Email Address *">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="vous@entreprise.com" data-fr="vous@entreprise.com" data-en="you@company.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company" placeholder="Your organization">
+                    <label for="company" data-fr="Nom de l'entreprise" data-en="Company Name">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Votre organisation" data-fr="Votre organisation" data-en="Your organization">
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
+                    <label for="phone" data-fr="Numéro de téléphone" data-en="Phone Number">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="(613) 555-0123">
                 </div>
 
                 <div class="form-group">
-                    <label for="package">Which package interests you? *</label>
+                    <label for="package" data-fr="Quel forfait vous intéresse ? *" data-en="Which package interests you? *">Which package interests you? *</label>
                     <select id="package" name="package" required style="width: 100%; padding: var(--spacing-sm); background-color: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 4px; color: var(--cream); font-family: 'Inter', sans-serif; font-size: 0.95rem;">
-                        <option value="">Select a package...</option>
-                        <option value="day-pass">Day Pass ($75/day)</option>
-                        <option value="weekly">Weekly ($299/week)</option>
-                        <option value="monthly">Monthly ($899/month)</option>
-                        <option value="custom">Custom Quote</option>
+                        <option value="" data-fr="Sélectionnez un forfait..." data-en="Select a package...">Select a package...</option>
+                        <option value="day-pass" data-fr="Forfait journalier (75 $/jour)" data-en="Day Pass ($75/day)">Day Pass ($75/day)</option>
+                        <option value="weekly" data-fr="Hebdomadaire (299 $/semaine)" data-en="Weekly ($299/week)">Weekly ($299/week)</option>
+                        <option value="monthly" data-fr="Mensuel (899 $/mois)" data-en="Monthly ($899/month)">Monthly ($899/month)</option>
+                        <option value="custom" data-fr="Soumission sur mesure" data-en="Custom Quote">Custom Quote</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Tell us about your needs</label>
-                    <textarea id="message" name="message" placeholder="When do you need space? How many people? Any specific requirements?"></textarea>
+                    <label for="message" data-fr="Parlez-nous de vos besoins" data-en="Tell us about your needs">Tell us about your needs</label>
+                    <textarea id="message" name="message" placeholder="Quand avez-vous besoin de l'espace ? Combien de personnes ? Exigences particulières ?" data-fr="Quand avez-vous besoin de l'espace ? Combien de personnes ? Exigences particulières ?" data-en="When do you need space? How many people? Any specific requirements?"></textarea>
                 </div>
 
-                <button type="submit" class="form-submit">Send Inquiry</button>
+                <button type="submit" class="form-submit" data-fr="Envoyer la demande" data-en="Send Inquiry">Send Inquiry</button>
 
-                <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: var(--spacing-md);">Or call us directly: <a href="tel:+18734553667">873-455-3667</a></p>
+                <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: var(--spacing-md);" data-fr="Ou composez directement : <a href='tel:+18734553667'>873-455-3667</a>" data-en="Or call us directly: <a href='tel:+18734553667'>873-455-3667</a>">Or call us directly: <a href="tel:+18734553667">873-455-3667</a></p>
             </form>
         </section>
     </div>
@@ -1141,12 +1184,63 @@ document.head.appendChild(o)}initApollo();</script>
             </div>
         </div>
         <div class="footer-divider">
-            <p>&copy; 2026 Capital Corridor Campus. All rights reserved. | <a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html">Cookies Policy</a></p>
-            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Strategy, design &amp; technology by <a href="https://ibprom.com" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); text-decoration: none;">International Business Promotion (IBPROM) Corp.</a></p>
+            <p data-fr="&copy; 2026 Campus du Corridor de la Capitale. Tous droits réservés. | <a href='/terms.html'>Conditions d'utilisation</a> | <a href='/privacy.html'>Politique de confidentialité</a> | <a href='/cookies.html'>Politique de témoins</a>" data-en="&copy; 2026 Capital Corridor Campus. All rights reserved. | <a href='/terms.html'>Terms of Use</a> | <a href='/privacy.html'>Privacy Policy</a> | <a href='/cookies.html'>Cookies Policy</a>">&copy; 2026 Capital Corridor Campus. All rights reserved. | <a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html">Cookies Policy</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;" data-fr="Stratégie, conception et technologie par <a href='https://ibprom.com' target='_blank' rel='noopener' style='color: rgba(255,255,255,0.6); text-decoration: none;'>Société pour la promotion des affaires internationales (IBPROM) Corp.</a>" data-en="Strategy, design &amp; technology by <a href='https://ibprom.com' target='_blank' rel='noopener' style='color: rgba(255,255,255,0.6); text-decoration: none;'>International Business Promotion (IBPROM) Corp.</a>">Strategy, design &amp; technology by <a href="https://ibprom.com" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); text-decoration: none;">International Business Promotion (IBPROM) Corp.</a></p>
         </div>
     </footer>
 
     <script>
+        // ─── Language Toggle (FR-first; EN is opt-in via ?lang=en) ───
+        let currentLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'fr';
+
+        function propagateLangToLinks(lang) {
+            document.querySelectorAll('a[href]').forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href) return;
+                if (href.startsWith('http://') || href.startsWith('https://')) return;
+                if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+                if (href.includes('lang=')) return;
+                if (lang === 'en') {
+                    a.href = href + (href.includes('?') ? '&' : '?') + 'lang=en';
+                }
+            });
+        }
+
+        if (currentLang === 'fr') {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            const frBtn = document.querySelector('.lang-btn[data-lang="fr"]');
+            if (frBtn) frBtn.classList.add('active');
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const val = el.dataset.fr;
+                if (val === undefined) return;
+                if (el.tagName === 'IMG') { el.src = val; }
+                else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = val; }
+                else if (el.tagName === 'META') { el.setAttribute('content', val); }
+                else if (el.tagName === 'OPTION') { el.textContent = val; }
+                else { el.innerHTML = val; }
+            });
+            document.documentElement.lang = 'fr';
+        } else {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+            if (enBtn) enBtn.classList.add('active');
+            document.documentElement.lang = 'en';
+            propagateLangToLinks('en');
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                const url = new URL(window.location.href);
+                if (lang === 'en') {
+                    url.searchParams.set('lang', 'en');
+                } else {
+                    url.searchParams.delete('lang');
+                }
+                window.location.href = url.toString();
+            });
+        });
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
@@ -1186,14 +1280,23 @@ document.head.appendChild(o)}initApollo();</script>
             };
             const btn = this.querySelector('button[type="submit"]');
             btn.disabled = true;
-            btn.textContent = 'Sending...';
+            btn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
             fetch('https://hook.us2.make.com/i1y9xmzsstflopi2r4dr1wdy5t7ha8g8', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             })
-            .then(() => { window.location.href = 'thank-you.html'; })
-            .catch(() => { alert('Error sending. Please call 873-455-3667.'); btn.disabled = false; btn.textContent = 'Send Inquiry'; });
+            .then(() => {
+                const langParam = currentLang === 'en' ? '?lang=en' : '';
+                window.location.href = 'thank-you.html' + langParam;
+            })
+            .catch(() => {
+                alert(currentLang === 'fr'
+                    ? "Erreur lors de l'envoi. Veuillez composer le 873-455-3667."
+                    : 'Error sending. Please call 873-455-3667.');
+                btn.disabled = false;
+                btn.textContent = currentLang === 'fr' ? 'Envoyer la demande' : 'Send Inquiry';
+            });
         });
 
         // Track CTA button clicks

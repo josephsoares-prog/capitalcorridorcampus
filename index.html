@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,8 @@
     <meta name="twitter:title" content="Capital Corridor Campus — Premium Commercial Space">
     <meta name="twitter:description" content="Two premium commercial properties in Canada's government corridor. 179 & 191 Promenade du Portage, Gatineau QC.">
     <link rel="canonical" href="https://campuscorridor.ca/">
-    <link rel="alternate" hreflang="en" href="https://campuscorridor.ca/">
-    <link rel="alternate" hreflang="fr" href="https://campuscorridor.ca/?lang=fr">
+    <link rel="alternate" hreflang="fr" href="https://campuscorridor.ca/">
+    <link rel="alternate" hreflang="en" href="https://campuscorridor.ca/?lang=en">
     <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/">
     <!-- JSON-LD Structured Data for AI & Search Engines -->
     <script type="application/ld+json">
@@ -346,8 +346,8 @@ document.head.appendChild(o)}initApollo();</script>
 
             <div class="nav-right">
                 <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
                 </div>
                 <button class="hamburger" id="hamburger">
                     <span></span><span></span><span></span>
@@ -971,50 +971,62 @@ document.head.appendChild(o)}initApollo();</script>
 
     <!-- ═══ Scripts ═══ -->
     <script>
-        // ─── Language Toggle ───
-        let currentLang = new URLSearchParams(window.location.search).get('lang') === 'fr' ? 'fr' : 'en';
+        // ─── Language Toggle (FR-first; EN is opt-in via ?lang=en) ───
+        let currentLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'fr';
 
-        // Apply language on load if FR
+        function propagateLangToLinks(lang) {
+            document.querySelectorAll('a[href]').forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href) return;
+                if (href.startsWith('http://') || href.startsWith('https://')) return;
+                if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+                if (href.includes('lang=')) return;
+                if (lang === 'en') {
+                    a.href = href + (href.includes('?') ? '&' : '?') + 'lang=en';
+                }
+            });
+        }
+
+        function applyDataLangVisibility(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.classList.contains('lang-btn')) return;
+                el.style.display = (el.dataset.lang === lang) ? '' : 'none';
+            });
+        }
+
         if (currentLang === 'fr') {
+            // FR is default — swap all data-en elements to their data-fr value
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
             document.querySelector('.lang-btn[data-lang="fr"]').classList.add('active');
             document.querySelectorAll('[data-en]').forEach(el => {
                 const val = el.dataset.fr;
+                if (val === undefined) return;
                 if (el.tagName === 'IMG') { el.src = val; }
                 else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = val; }
                 else { el.innerHTML = val; }
             });
             document.documentElement.lang = 'fr';
-            document.querySelectorAll('a[href="blog/"], a[href="blog/index.html"]').forEach(a => { a.href = 'blog/?lang=fr'; });
+            applyDataLangVisibility('fr');
+        } else {
+            // EN explicitly requested
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
+            document.documentElement.lang = 'en';
+            applyDataLangVisibility('en');
+            propagateLangToLinks('en');
         }
 
+        // Toggle clicks → hard navigate so URL is source of truth
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const lang = this.dataset.lang;
-                currentLang = lang;
-
-                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-
-                // Update text elements
-                document.querySelectorAll('[data-en]').forEach(el => {
-                    const val = lang === 'en' ? el.dataset.en : el.dataset.fr;
-                    if (el.tagName === 'IMG') {
-                        el.src = val;
-                    } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = val;
-                    } else {
-                        el.innerHTML = val;
-                    }
-                });
-
-                // Update html lang attribute
-                document.documentElement.lang = lang;
-
-                // Update blog links to pass language parameter
-                document.querySelectorAll('a[href="blog/"], a[href="blog/index.html"]').forEach(a => {
-                    a.href = lang === 'fr' ? 'blog/?lang=fr' : 'blog/';
-                });
+                const url = new URL(window.location.href);
+                if (lang === 'en') {
+                    url.searchParams.set('lang', 'en');
+                } else {
+                    url.searchParams.delete('lang');
+                }
+                window.location.href = url.toString();
             });
         });
 
@@ -1075,8 +1087,8 @@ document.head.appendChild(o)}initApollo();</script>
                 body: JSON.stringify(formData)
             })
             .then(response => {
-                // Redirect to thank-you page (GA4 conversion fires there)
-                const langParam = currentLang === 'fr' ? '?lang=fr' : '';
+                // Redirect to thank-you page (FR is default, EN takes a param)
+                const langParam = currentLang === 'en' ? '?lang=en' : '';
                 window.location.href = 'thank-you.html' + langParam;
             })
             .catch(error => {

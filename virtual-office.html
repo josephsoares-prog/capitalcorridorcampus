@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Bureau virtuel à Gatineau — Adresse d'affaires prestigieuse | Capital Corridor Campus</title>
-    <meta name="description" content="Bureau virtuel au cœur du corridor fédéral Ottawa-Gatineau. Adresse d'affaires prestigieuse au 179 Promenade du Portage, gestion du courrier, salles de réunion. Dès 99 $/mois.">
-    <meta property="og:title" content="Bureau virtuel à Gatineau — Capital Corridor Campus">
-    <meta property="og:description" content="Professional business address near Parliament Hill. Three packages from $99–$349/month with mail, phone, and meeting room services.">
+    <title data-fr="Bureau virtuel à Gatineau — Adresse d'affaires prestigieuse | Campus du Corridor de la Capitale" data-en="Virtual Office in Gatineau — Prestigious Business Address | Capital Corridor Campus">Bureau virtuel à Gatineau — Adresse d'affaires prestigieuse | Campus du Corridor de la Capitale</title>
+    <meta name="description" content="Bureau virtuel au cœur du corridor fédéral Ottawa-Gatineau. Adresse d'affaires prestigieuse au 179, promenade du Portage, gestion du courrier, salles de réunion. Dès 99 $/mois." data-fr="Bureau virtuel au cœur du corridor fédéral Ottawa-Gatineau. Adresse d'affaires prestigieuse au 179, promenade du Portage, gestion du courrier, salles de réunion. Dès 99 $/mois." data-en="Virtual office in the heart of the Ottawa-Gatineau federal corridor. Prestigious business address at 179 Promenade du Portage, mail handling, meeting rooms. From $99/month.">
+    <meta property="og:title" content="Bureau virtuel à Gatineau — Campus du Corridor de la Capitale">
+    <meta property="og:description" content="Adresse d'affaires de prestige à proximité de la Colline du Parlement. Trois forfaits de 99 $ à 349 $/mois, courrier, téléphone et salles de réunion.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://campuscorridor.ca/virtual-office.html">
     <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_1000px.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Virtual Office Services in Gatineau">
-    <meta name="twitter:description" content="Professional business address near Parliament Hill, starting at $99/month.">
+    <meta name="twitter:title" content="Bureau virtuel à Gatineau">
+    <meta name="twitter:description" content="Adresse d'affaires de prestige à proximité de la Colline du Parlement, dès 99 $/mois.">
     <link rel="canonical" href="https://campuscorridor.ca/virtual-office.html">
+    <link rel="alternate" hreflang="fr" href="https://campuscorridor.ca/virtual-office.html">
+    <link rel="alternate" hreflang="en" href="https://campuscorridor.ca/virtual-office.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/virtual-office.html">
     <link rel="icon" href="Logos/favicon/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -277,6 +280,44 @@
             color: var(--dark);
         }
 
+        /* ─── Language Toggle ─── */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s var(--ease);
+        }
+
+        .lang-btn:hover { color: var(--gold); }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        html[lang="en"] .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+        }
+
         /* ─── Header & Navigation ─── */
         header {
             position: fixed;
@@ -466,7 +507,7 @@
         }
 
         .pricing-card.featured::before {
-            content: 'MOST POPULAR';
+            content: 'LE PLUS POPULAIRE';
             position: absolute;
             top: -12px;
             left: 50%;
@@ -877,33 +918,39 @@ document.head.appendChild(o)}initApollo();</script>
                 <img src="Logos/web/CCC_Logo_EN_200px.png" alt="Capital Corridor Campus Logo">
             </a>
             <ul class="nav-links">
-                <li><a href="/">Properties</a></li>
-                <li><a href="/flex-space.html">Flex Space</a></li>
-                <li><a href="#" class="text-gold">Virtual Office</a></li>
-                <li><a href="blog/">Insights</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/" data-fr="Propriétés" data-en="Properties">Properties</a></li>
+                <li><a href="/flex-space.html" data-fr="Espace flexible" data-en="Flex Space">Flex Space</a></li>
+                <li><a href="#" class="text-gold" data-fr="Bureau virtuel" data-en="Virtual Office">Virtual Office</a></li>
+                <li><a href="blog/" data-fr="Perspectives" data-en="Insights">Insights</a></li>
+                <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
         </nav>
     </header>
 
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="breadcrumbs-content">
-            <a href="/">Home</a> / <span>Virtual Office</span>
+            <a href="/" data-fr="Accueil" data-en="Home">Home</a> / <span data-fr="Bureau virtuel" data-en="Virtual Office">Virtual Office</span>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>A Prestigious Business Address</h1>
-            <div class="hero-subheading">Without the overhead of a physical office</div>
-            <p class="hero-description">
+            <h1 data-fr="Une adresse d'affaires de prestige" data-en="A Prestigious Business Address">A Prestigious Business Address</h1>
+            <div class="hero-subheading" data-fr="Sans les frais fixes d'un bureau physique" data-en="Without the overhead of a physical office">Without the overhead of a physical office</div>
+            <p class="hero-description" data-fr="Établissez votre présence professionnelle à quelques pas de la Colline du Parlement, avec une adresse d'affaires de prestige à Gatineau. Trois forfaits conçus pour les firmes de conseil, les professionnels en relations gouvernementales, les entrepreneurs fédéraux et les instituts de politiques publiques." data-en="Establish your professional presence steps from Parliament Hill with a prestigious Gatineau business address. Three packages designed for consulting firms, government relations professionals, federal contractors, and policy institutes.">
                 Establish your professional presence steps from Parliament Hill with a prestigious Gatineau business address. Three packages designed for consulting firms, government relations professionals, federal contractors, and policy institutes.
             </p>
             <div class="hero-actions">
-                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
-                <a href="#pricing" class="btn btn-outline">View Pricing</a>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" data-fr="Commencer" data-en="Get Started">Get Started</button>
+                <a href="#pricing" class="btn btn-outline" data-fr="Voir les tarifs" data-en="View Pricing">View Pricing</a>
             </div>
         </div>
     </section>
@@ -911,59 +958,56 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2>Three Packages to Scale With You</h2>
-            <p class="pricing-subtitle">All services include professional mail handling and government-grade security</p>
+            <h2 data-fr="Trois forfaits qui évoluent avec vous" data-en="Three Packages to Scale With You">Three Packages to Scale With You</h2>
+            <p class="pricing-subtitle" data-fr="Tous les services incluent la gestion professionnelle du courrier et une sécurité de calibre gouvernemental" data-en="All services include professional mail handling and government-grade security">All services include professional mail handling and government-grade security</p>
 
             <div class="pricing-grid">
-                <!-- Corridor Address -->
+                <!-- Adresse Corridor -->
                 <div class="pricing-card">
-                    <div class="pricing-name">Adresse Corridor</div>
-                    <div class="pricing-name-en" style="color:var(--muted);font-size:0.8rem;margin-top:-0.3rem;margin-bottom:0.5rem;">Corridor Address</div>
-                    <div class="pricing-price">$99</div>
-                    <div class="pricing-period">per month, month-to-month</div>
+                    <div class="pricing-name" data-fr="Adresse Corridor" data-en="Corridor Address">Adresse Corridor</div>
+                    <div class="pricing-price" data-fr="99 $" data-en="$99">$99</div>
+                    <div class="pricing-period" data-fr="par mois, sans engagement" data-en="per month, month-to-month">per month, month-to-month</div>
                     <ul class="pricing-features">
-                        <li class="pricing-feature">Prestigious business address at 179 Promenade du Portage</li>
-                        <li class="pricing-feature">Professional mail handling & forwarding</li>
-                        <li class="pricing-feature">Use address on business cards & marketing</li>
-                        <li class="pricing-feature">Directory listing</li>
+                        <li class="pricing-feature" data-fr="Adresse d'affaires de prestige au 179, promenade du Portage" data-en="Prestigious business address at 179 Promenade du Portage">Prestigious business address at 179 Promenade du Portage</li>
+                        <li class="pricing-feature" data-fr="Gestion et réacheminement professionnel du courrier" data-en="Professional mail handling & forwarding">Professional mail handling & forwarding</li>
+                        <li class="pricing-feature" data-fr="Utilisation de l'adresse sur cartes professionnelles et documents marketing" data-en="Use address on business cards & marketing">Use address on business cards & marketing</li>
+                        <li class="pricing-feature" data-fr="Inscription au répertoire" data-en="Directory listing">Directory listing</li>
                     </ul>
-                    <a class="btn btn-outline" href="https://buy.stripe.com/3cI00lejqfzvbMM4hdbbG00" target="_blank" rel="noopener">Commencer — Adresse Corridor ($99/mois)</a>
+                    <a class="btn btn-outline" href="https://buy.stripe.com/3cI00lejqfzvbMM4hdbbG00" target="_blank" rel="noopener" data-fr="Commencer — Adresse Corridor (99 $/mois)" data-en="Get Started — Corridor Address ($99/mo)">Commencer — Adresse Corridor (99 $/mois)</a>
                 </div>
 
-                <!-- Corridor Office (Featured) -->
+                <!-- Bureau Corridor (Featured) -->
                 <div class="pricing-card featured">
-                    <div class="pricing-name">Bureau Corridor</div>
-                    <div class="pricing-name-en" style="color:var(--muted);font-size:0.8rem;margin-top:-0.3rem;margin-bottom:0.5rem;">Corridor Office</div>
-                    <div class="pricing-price">$199</div>
-                    <div class="pricing-period">per month, month-to-month</div>
+                    <div class="pricing-name" data-fr="Bureau Corridor" data-en="Corridor Office">Bureau Corridor</div>
+                    <div class="pricing-price" data-fr="199 $" data-en="$199">$199</div>
+                    <div class="pricing-period" data-fr="par mois, sans engagement" data-en="per month, month-to-month">per month, month-to-month</div>
                     <ul class="pricing-features">
-                        <li class="pricing-feature">Everything in Adresse Corridor</li>
-                        <li class="pricing-feature">Dedicated phone line</li>
-                        <li class="pricing-feature">Intelligent call forwarding</li>
-                        <li class="pricing-feature">2 days private office access per month</li>
-                        <li class="pricing-feature">2 hours meeting room per month</li>
+                        <li class="pricing-feature" data-fr="Tout ce qui est inclus dans Adresse Corridor" data-en="Everything in Adresse Corridor">Everything in Adresse Corridor</li>
+                        <li class="pricing-feature" data-fr="Ligne téléphonique dédiée" data-en="Dedicated phone line">Dedicated phone line</li>
+                        <li class="pricing-feature" data-fr="Réacheminement intelligent des appels" data-en="Intelligent call forwarding">Intelligent call forwarding</li>
+                        <li class="pricing-feature" data-fr="2 journées d'accès au bureau privé par mois" data-en="2 days private office access per month">2 days private office access per month</li>
+                        <li class="pricing-feature" data-fr="2 heures de salle de réunion par mois" data-en="2 hours meeting room per month">2 hours meeting room per month</li>
                     </ul>
-                    <a class="btn btn-primary" href="https://buy.stripe.com/fZudRbgrydrnbMM5lhbbG01" target="_blank" rel="noopener">Commencer — Bureau Corridor ($199/mois)</a>
+                    <a class="btn btn-primary" href="https://buy.stripe.com/fZudRbgrydrnbMM5lhbbG01" target="_blank" rel="noopener" data-fr="Commencer — Bureau Corridor (199 $/mois)" data-en="Get Started — Corridor Office ($199/mo)">Commencer — Bureau Corridor (199 $/mois)</a>
                 </div>
 
-                <!-- Corridor Executive -->
+                <!-- Cabinet Corridor -->
                 <div class="pricing-card">
-                    <div class="pricing-name">Cabinet Corridor</div>
-                    <div class="pricing-name-en" style="color:var(--muted);font-size:0.8rem;margin-top:-0.3rem;margin-bottom:0.5rem;">Corridor Executive</div>
-                    <div class="pricing-price">$349</div>
-                    <div class="pricing-period">per month, month-to-month</div>
+                    <div class="pricing-name" data-fr="Cabinet Corridor" data-en="Corridor Executive">Cabinet Corridor</div>
+                    <div class="pricing-price" data-fr="349 $" data-en="$349">$349</div>
+                    <div class="pricing-period" data-fr="par mois, sans engagement" data-en="per month, month-to-month">per month, month-to-month</div>
                     <ul class="pricing-features">
-                        <li class="pricing-feature">Everything in Bureau Corridor</li>
-                        <li class="pricing-feature">5 days private office access per month</li>
-                        <li class="pricing-feature">8 hours meeting room access per month</li>
-                        <li class="pricing-feature">After-hours building access</li>
-                        <li class="pricing-feature">Custom lobby signage</li>
+                        <li class="pricing-feature" data-fr="Tout ce qui est inclus dans Bureau Corridor" data-en="Everything in Bureau Corridor">Everything in Bureau Corridor</li>
+                        <li class="pricing-feature" data-fr="5 journées d'accès au bureau privé par mois" data-en="5 days private office access per month">5 days private office access per month</li>
+                        <li class="pricing-feature" data-fr="8 heures de salle de réunion par mois" data-en="8 hours meeting room access per month">8 hours meeting room access per month</li>
+                        <li class="pricing-feature" data-fr="Accès au bâtiment en dehors des heures d'ouverture" data-en="After-hours building access">After-hours building access</li>
+                        <li class="pricing-feature" data-fr="Affichage personnalisé dans le hall d'entrée" data-en="Custom lobby signage">Custom lobby signage</li>
                     </ul>
-                    <a class="btn btn-outline" href="https://buy.stripe.com/dRm3cx5MU3QNbMM5lhbbG02" target="_blank" rel="noopener">Commencer — Cabinet Corridor ($349/mois)</a>
+                    <a class="btn btn-outline" href="https://buy.stripe.com/dRm3cx5MU3QNbMM5lhbbG02" target="_blank" rel="noopener" data-fr="Commencer — Cabinet Corridor (349 $/mois)" data-en="Get Started — Corridor Executive ($349/mo)">Commencer — Cabinet Corridor (349 $/mois)</a>
                 </div>
             </div>
 
-            <div class="text-center mt-3" style="color: var(--muted); font-size: 0.95rem;">
+            <div class="text-center mt-3" style="color: var(--muted); font-size: 0.95rem;" data-fr="Aucuns frais d'activation. Aucun engagement à long terme. Annulation avec préavis de 30 jours." data-en="No setup fees. No long-term commitment. Cancel with 30 days' notice.">
                 No setup fees. No long-term commitment. Cancel with 30 days' notice.
             </div>
         </div>
@@ -972,32 +1016,32 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- Who Benefits -->
     <section class="who-benefits section">
         <div class="container">
-            <h2>Who This Serves</h2>
+            <h2 data-fr="À qui s'adresse ce service" data-en="Who This Serves">Who This Serves</h2>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <h3>Government Relations Firms</h3>
-                    <p>Proximity to Parliament Hill and government decision-makers. A prestige address that signals institutional credibility to legislators and civil servants.</p>
+                    <h3 data-fr="Firmes de relations gouvernementales" data-en="Government Relations Firms">Government Relations Firms</h3>
+                    <p data-fr="Proximité de la Colline du Parlement et des décideurs gouvernementaux. Une adresse de prestige qui projette une crédibilité institutionnelle auprès des parlementaires et des fonctionnaires." data-en="Proximity to Parliament Hill and government decision-makers. A prestige address that signals institutional credibility to legislators and civil servants.">Proximity to Parliament Hill and government decision-makers. A prestige address that signals institutional credibility to legislators and civil servants.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>Consulting Firms</h3>
-                    <p>A professional address to list on proposals, contracts, and correspondence. Meet clients in a business environment without leasing your own space.</p>
+                    <h3 data-fr="Firmes de conseil" data-en="Consulting Firms">Consulting Firms</h3>
+                    <p data-fr="Une adresse professionnelle à inscrire sur vos propositions, contrats et correspondances. Rencontrez vos clients dans un environnement d'affaires sans louer vos propres locaux." data-en="A professional address to list on proposals, contracts, and correspondence. Meet clients in a business environment without leasing your own space.">A professional address to list on proposals, contracts, and correspondence. Meet clients in a business environment without leasing your own space.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>Federal Contractors</h3>
-                    <p>Show government clients you're embedded in the National Capital Region. Support pre-bid, during-contract, and post-award relationship management.</p>
+                    <h3 data-fr="Entrepreneurs fédéraux" data-en="Federal Contractors">Federal Contractors</h3>
+                    <p data-fr="Démontrez à vos clients gouvernementaux votre ancrage dans la région de la capitale nationale. Soutient la gestion des relations avant l'appel d'offres, pendant le contrat et après l'attribution." data-en="Show government clients you're embedded in the National Capital Region. Support pre-bid, during-contract, and post-award relationship management.">Show government clients you're embedded in the National Capital Region. Support pre-bid, during-contract, and post-award relationship management.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>Legal & Advisory Practices</h3>
-                    <p>Establish a presence in Canada's capital without the overhead. Dedicated phone lines and professional call handling for client-facing operations.</p>
+                    <h3 data-fr="Cabinets juridiques et de conseil" data-en="Legal & Advisory Practices">Legal & Advisory Practices</h3>
+                    <p data-fr="Établissez une présence dans la capitale du Canada sans en assumer les frais fixes. Lignes téléphoniques dédiées et traitement professionnel des appels pour vos opérations clients." data-en="Establish a presence in Canada's capital without the overhead. Dedicated phone lines and professional call handling for client-facing operations.">Establish a presence in Canada's capital without the overhead. Dedicated phone lines and professional call handling for client-facing operations.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>Policy Institutes & Think Tanks</h3>
-                    <p>A location that anchors your research and advocacy work in the center of Canadian policy-making.</p>
+                    <h3 data-fr="Instituts de politiques et groupes de réflexion" data-en="Policy Institutes & Think Tanks">Policy Institutes & Think Tanks</h3>
+                    <p data-fr="Un emplacement qui ancre vos travaux de recherche et de plaidoyer au cœur de l'élaboration des politiques canadiennes." data-en="A location that anchors your research and advocacy work in the center of Canadian policy-making.">A location that anchors your research and advocacy work in the center of Canadian policy-making.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>GovTech Startups & Constituency Offices</h3>
-                    <p>An accessible government-corridor address for early-stage ventures and representatives serving national constituents.</p>
+                    <h3 data-fr="Jeunes pousses en technologies gouvernementales et bureaux de circonscription" data-en="GovTech Startups & Constituency Offices">GovTech Startups & Constituency Offices</h3>
+                    <p data-fr="Une adresse accessible dans le corridor gouvernemental pour les entreprises en démarrage et les élus au service des électeurs de partout au pays." data-en="An accessible government-corridor address for early-stage ventures and representatives serving national constituents.">An accessible government-corridor address for early-stage ventures and representatives serving national constituents.</p>
                 </div>
             </div>
         </div>
@@ -1006,15 +1050,15 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- Why This Address -->
     <section class="why-address section">
         <div class="container">
-            <h2 class="text-center mb-3">Why 179 Promenade du Portage Matters</h2>
+            <h2 class="text-center mb-3" data-fr="Pourquoi le 179, promenade du Portage compte" data-en="Why 179 Promenade du Portage Matters">Why 179 Promenade du Portage Matters</h2>
 
             <div class="why-grid">
                 <div class="why-content">
-                    <h3>Location. Reputation. Access.</h3>
-                    <p style="margin-bottom: 2rem;">
+                    <h3 data-fr="Emplacement. Réputation. Accès." data-en="Location. Reputation. Access.">Location. Reputation. Access.</h3>
+                    <p style="margin-bottom: 2rem;" data-fr="Une adresse d'affaires n'est pas qu'une question de logistique — c'est un signal. Là où vous êtes situé en dit long à vos clients, partenaires et interlocuteurs gouvernementaux sur votre crédibilité institutionnelle." data-en="A business address is not just logistics—it's a signal. Where you sit tells your clients, partners, and government counterparts everything about your institutional credibility.">
                         A business address is not just logistics—it's a signal. Where you sit tells your clients, partners, and government counterparts everything about your institutional credibility.
                     </p>
-                    <p style="color: var(--muted);">
+                    <p style="color: var(--muted);" data-fr="Le 179, promenade du Portage est ce signal. Il dit que vous êtes proche du centre du gouvernement canadien, intégré à un écosystème professionnel et sérieux dans votre démarche." data-en="179 Promenade du Portage is that signal. It says you're close to the center of Canadian government, embedded in a professional ecosystem, and serious about the work you do.">
                         179 Promenade du Portage is that signal. It says you're close to the center of Canadian government, embedded in a professional ecosystem, and serious about the work you do.
                     </p>
                 </div>
@@ -1022,29 +1066,29 @@ document.head.appendChild(o)}initApollo();</script>
                     <div class="why-item">
                         <div class="why-number">1</div>
                         <div class="why-text">
-                            <h4>6 Minutes to Parliament Hill</h4>
-                            <p>Proximity that matters for government relations work, federal contracting, and policy-facing organizations.</p>
+                            <h4 data-fr="6 minutes de la Colline du Parlement" data-en="6 Minutes to Parliament Hill">6 Minutes to Parliament Hill</h4>
+                            <p data-fr="Une proximité qui compte pour les travaux de relations gouvernementales, les marchés fédéraux et les organisations en lien avec les politiques publiques." data-en="Proximity that matters for government relations work, federal contracting, and policy-facing organizations.">Proximity that matters for government relations work, federal contracting, and policy-facing organizations.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-number">2</div>
                         <div class="why-text">
-                            <h4>200m to Place du Portage</h4>
-                            <p>Home to 10,000+ federal employees. In the center of daily government traffic.</p>
+                            <h4 data-fr="À 200 m de la Place du Portage" data-en="200m to Place du Portage">200m to Place du Portage</h4>
+                            <p data-fr="Siège de plus de 10 000 employés fédéraux. Au cœur du trafic quotidien du gouvernement." data-en="Home to 10,000+ federal employees. In the center of daily government traffic.">Home to 10,000+ federal employees. In the center of daily government traffic.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-number">3</div>
                         <div class="why-text">
-                            <h4>Quebec Ministries & City Hall Within Walking Distance</h4>
-                            <p>Seamless access to provincial and municipal decision-makers for multi-level government engagement.</p>
+                            <h4 data-fr="Ministères du Québec et Hôtel de Ville à distance de marche" data-en="Quebec Ministries & City Hall Within Walking Distance">Quebec Ministries & City Hall Within Walking Distance</h4>
+                            <p data-fr="Accès direct aux décideurs provinciaux et municipaux pour vos démarches multipaliers." data-en="Seamless access to provincial and municipal decision-makers for multi-level government engagement.">Seamless access to provincial and municipal decision-makers for multi-level government engagement.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-number">4</div>
                         <div class="why-text">
-                            <h4>Museum of History & Cultural Institutions</h4>
-                            <p>An address anchored in Canada's institutional and cultural center, not a generic office park.</p>
+                            <h4 data-fr="Musée de l'histoire et institutions culturelles" data-en="Museum of History & Cultural Institutions">Museum of History & Cultural Institutions</h4>
+                            <p data-fr="Une adresse ancrée dans le cœur institutionnel et culturel du Canada, pas dans un parc de bureaux générique." data-en="An address anchored in Canada's institutional and cultural center, not a generic office park.">An address anchored in Canada's institutional and cultural center, not a generic office park.</p>
                         </div>
                     </div>
                 </div>
@@ -1055,86 +1099,86 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- FAQ Section -->
     <section class="faq section">
         <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
+            <h2 class="text-center" data-fr="Foire aux questions" data-en="Frequently Asked Questions">Frequently Asked Questions</h2>
 
             <div class="faq-container">
                 <div class="faq-item open">
                     <button class="faq-question">
-                        <span>What's included in the Corridor Address package?</span>
+                        <span data-fr="Que comprend le forfait Adresse Corridor ?" data-en="What's included in the Corridor Address package?">What's included in the Corridor Address package?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>The Adresse Corridor package ($99/month) includes a prestigious business address at 179 Promenade du Portage, professional mail handling and forwarding, use of the address on business cards and marketing materials, and directory listing.</p>
+                        <p data-fr="Le forfait Adresse Corridor (99 $/mois) comprend une adresse d'affaires de prestige au 179, promenade du Portage, la gestion et le réacheminement professionnel du courrier, l'utilisation de l'adresse sur vos cartes professionnelles et documents marketing, ainsi que l'inscription au répertoire." data-en="The Adresse Corridor package ($99/month) includes a prestigious business address at 179 Promenade du Portage, professional mail handling and forwarding, use of the address on business cards and marketing materials, and directory listing.">The Adresse Corridor package ($99/month) includes a prestigious business address at 179 Promenade du Portage, professional mail handling and forwarding, use of the address on business cards and marketing materials, and directory listing.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Can I use the address for business registration?</span>
+                        <span data-fr="Puis-je utiliser l'adresse pour immatriculer mon entreprise ?" data-en="Can I use the address for business registration?">Can I use the address for business registration?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes. The 179 Promenade du Portage address can be used for business registration, incorporation, and official documentation. It's a prestigious, government-adjacent location that enhances your professional standing with government counterparts and partners.</p>
+                        <p data-fr="Oui. L'adresse du 179, promenade du Portage peut servir à l'immatriculation d'entreprise, à la constitution en société et à votre documentation officielle. C'est un emplacement de prestige, adjacent au gouvernement, qui rehausse votre standing professionnel auprès de vos interlocuteurs gouvernementaux et partenaires." data-en="Yes. The 179 Promenade du Portage address can be used for business registration, incorporation, and official documentation. It's a prestigious, government-adjacent location that enhances your professional standing with government counterparts and partners.">Yes. The 179 Promenade du Portage address can be used for business registration, incorporation, and official documentation. It's a prestigious, government-adjacent location that enhances your professional standing with government counterparts and partners.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>What's the difference between Corridor Office and Corridor Executive?</span>
+                        <span data-fr="Quelle est la différence entre Bureau Corridor et Cabinet Corridor ?" data-en="What's the difference between Corridor Office and Corridor Executive?">What's the difference between Corridor Office and Corridor Executive?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Bureau Corridor ($199/month) includes a dedicated phone line, call forwarding, 2 days of private office use per month, and 2 hours of meeting room access. Cabinet Corridor ($349/month) adds 5 days of private office access, 8 hours of meeting room access, after-hours building access, and custom lobby signage with your company name.</p>
+                        <p data-fr="Bureau Corridor (199 $/mois) comprend une ligne téléphonique dédiée, le réacheminement des appels, 2 journées d'utilisation du bureau privé par mois et 2 heures d'accès aux salles de réunion. Cabinet Corridor (349 $/mois) ajoute 5 journées d'accès au bureau privé, 8 heures d'accès aux salles de réunion, l'accès au bâtiment en dehors des heures d'ouverture et un affichage personnalisé dans le hall d'entrée au nom de votre entreprise." data-en="Bureau Corridor ($199/month) includes a dedicated phone line, call forwarding, 2 days of private office use per month, and 2 hours of meeting room access. Cabinet Corridor ($349/month) adds 5 days of private office access, 8 hours of meeting room access, after-hours building access, and custom lobby signage with your company name.">Bureau Corridor ($199/month) includes a dedicated phone line, call forwarding, 2 days of private office use per month, and 2 hours of meeting room access. Cabinet Corridor ($349/month) adds 5 days of private office access, 8 hours of meeting room access, after-hours building access, and custom lobby signage with your company name.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>How close is Capital Corridor Campus to Parliament Hill?</span>
+                        <span data-fr="À quelle distance le Campus du Corridor de la Capitale se trouve-t-il de la Colline du Parlement ?" data-en="How close is Capital Corridor Campus to Parliament Hill?">How close is Capital Corridor Campus to Parliament Hill?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Capital Corridor Campus is a 6-minute drive from Parliament Hill and steps from Place du Portage, where 10,000+ federal employees work daily. Quebec provincial ministries, Gatineau City Hall, and the Museum of History are all within walking distance.</p>
+                        <p data-fr="Le Campus du Corridor de la Capitale se trouve à 6 minutes en voiture de la Colline du Parlement et à quelques pas de la Place du Portage, où plus de 10 000 employés fédéraux travaillent chaque jour. Les ministères du Québec, l'Hôtel de Ville de Gatineau et le Musée canadien de l'histoire sont tous à distance de marche." data-en="Capital Corridor Campus is a 6-minute drive from Parliament Hill and steps from Place du Portage, where 10,000+ federal employees work daily. Quebec provincial ministries, Gatineau City Hall, and the Museum of History are all within walking distance.">Capital Corridor Campus is a 6-minute drive from Parliament Hill and steps from Place du Portage, where 10,000+ federal employees work daily. Quebec provincial ministries, Gatineau City Hall, and the Museum of History are all within walking distance.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Do I need a long-term commitment?</span>
+                        <span data-fr="Faut-il s'engager à long terme ?" data-en="Do I need a long-term commitment?">Do I need a long-term commitment?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No. Virtual office packages are month-to-month with no minimum commitment required. You can upgrade, downgrade, or cancel at any time with 30 days' notice.</p>
+                        <p data-fr="Non. Les forfaits de bureau virtuel sont mensuels, sans engagement minimum. Vous pouvez changer de forfait à la hausse ou à la baisse, ou annuler en tout temps avec un préavis de 30 jours." data-en="No. Virtual office packages are month-to-month with no minimum commitment required. You can upgrade, downgrade, or cancel at any time with 30 days' notice.">No. Virtual office packages are month-to-month with no minimum commitment required. You can upgrade, downgrade, or cancel at any time with 30 days' notice.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Is there a setup fee?</span>
+                        <span data-fr="Y a-t-il des frais d'activation ?" data-en="Is there a setup fee?">Is there a setup fee?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No setup fees for any virtual office package. Your first month's service begins immediately upon sign-up. You can start using your address and receiving mail within 24 hours.</p>
+                        <p data-fr="Aucuns frais d'activation pour aucun forfait de bureau virtuel. Votre service débute dès l'inscription. Vous pouvez commencer à utiliser votre adresse et à recevoir votre courrier en moins de 24 heures." data-en="No setup fees for any virtual office package. Your first month's service begins immediately upon sign-up. You can start using your address and receiving mail within 24 hours.">No setup fees for any virtual office package. Your first month's service begins immediately upon sign-up. You can start using your address and receiving mail within 24 hours.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Can I add extra meeting room hours?</span>
+                        <span data-fr="Puis-je ajouter des heures de salle de réunion supplémentaires ?" data-en="Can I add extra meeting room hours?">Can I add extra meeting room hours?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes. Additional meeting room hours can be booked as needed at competitive rates. Contact info@campuscorridor.ca or call 873-455-3667 for pricing on supplemental room bookings.</p>
+                        <p data-fr="Oui. Des heures supplémentaires de salle de réunion peuvent être réservées au besoin à des tarifs concurrentiels. Communiquez avec info@campuscorridor.ca ou composez le 873-455-3667 pour connaître les tarifs des réservations supplémentaires." data-en="Yes. Additional meeting room hours can be booked as needed at competitive rates. Contact info@campuscorridor.ca or call 873-455-3667 for pricing on supplemental room bookings.">Yes. Additional meeting room hours can be booked as needed at competitive rates. Contact info@campuscorridor.ca or call 873-455-3667 for pricing on supplemental room bookings.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Is mail handling secure and confidential?</span>
+                        <span data-fr="La gestion du courrier est-elle sécuritaire et confidentielle ?" data-en="Is mail handling secure and confidential?">Is mail handling secure and confidential?</span>
                         <span class="faq-toggle">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes. All mail is handled with full confidentiality using government-grade security protocols. Mail is stored securely and can be forwarded to your preferred address, held for pickup, or scanned and emailed to you.</p>
+                        <p data-fr="Oui. Tout le courrier est traité en toute confidentialité selon des protocoles de sécurité de calibre gouvernemental. Le courrier est entreposé de façon sécuritaire et peut être réacheminé à l'adresse de votre choix, conservé pour cueillette, ou numérisé et transmis par courriel." data-en="Yes. All mail is handled with full confidentiality using government-grade security protocols. Mail is stored securely and can be forwarded to your preferred address, held for pickup, or scanned and emailed to you.">Yes. All mail is handled with full confidentiality using government-grade security protocols. Mail is stored securely and can be forwarded to your preferred address, held for pickup, or scanned and emailed to you.</p>
                     </div>
                 </div>
             </div>
@@ -1144,49 +1188,48 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- Contact Form Section -->
     <section class="contact-section section" id="contact">
         <div class="container">
-            <h2 class="text-center">Ready to Establish Your Presence?</h2>
-            <p class="text-center" style="color: var(--muted); margin-bottom: 2rem;">Fill out the form below or call us at 873-455-3667</p>
+            <h2 class="text-center" data-fr="Prêt à établir votre présence ?" data-en="Ready to Establish Your Presence?">Ready to Establish Your Presence?</h2>
+            <p class="text-center" style="color: var(--muted); margin-bottom: 2rem;" data-fr="Remplissez le formulaire ci-dessous ou composez le 873-455-3667" data-en="Fill out the form below or call us at 873-455-3667">Fill out the form below or call us at 873-455-3667</p>
 
             <div class="contact-wrapper">
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name" data-fr="Nom complet" data-en="Full Name">Full Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="company">Company Name</label>
+                        <label for="company" data-fr="Nom de l'entreprise" data-en="Company Name">Company Name</label>
                         <input type="text" id="company" name="company" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email" data-fr="Courriel" data-en="Email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone</label>
+                        <label for="phone" data-fr="Téléphone" data-en="Phone">Phone</label>
                         <input type="tel" id="phone" name="phone">
                     </div>
 
                     <div class="form-group">
-                        <label for="package">Interested Package</label>
+                        <label for="package" data-fr="Forfait souhaité" data-en="Interested Package">Interested Package</label>
                         <select id="package" name="package" style="width: 100%; padding: 0.8rem 1rem; background: var(--dark); border: 1px solid var(--border); color: var(--cream); border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 0.95rem;">
-                            <option value="">Select a package...</option>
-                            <option value="Adresse Corridor">Adresse Corridor / Corridor Address ($99/mo)</option>
-                            <option value="Bureau Corridor">Bureau Corridor / Corridor Office ($199/mo)</option>
-                            <option value="Cabinet Corridor">Cabinet Corridor / Corridor Executive ($349/mo)</option>
-                            <option value="Corridor Executive">Cabinet Corridor ($349/month)</option>
-                            <option value="Unsure">Not sure yet</option>
+                            <option value="" data-fr="Sélectionnez un forfait..." data-en="Select a package...">Select a package...</option>
+                            <option value="Adresse Corridor" data-fr="Adresse Corridor (99 $/mois)" data-en="Corridor Address ($99/mo)">Adresse Corridor / Corridor Address ($99/mo)</option>
+                            <option value="Bureau Corridor" data-fr="Bureau Corridor (199 $/mois)" data-en="Corridor Office ($199/mo)">Bureau Corridor / Corridor Office ($199/mo)</option>
+                            <option value="Cabinet Corridor" data-fr="Cabinet Corridor (349 $/mois)" data-en="Corridor Executive ($349/mo)">Cabinet Corridor / Corridor Executive ($349/mo)</option>
+                            <option value="Unsure" data-fr="Pas encore décidé" data-en="Not sure yet">Not sure yet</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Tell us about your needs</label>
-                        <textarea id="message" name="message" placeholder="What brought you here? What are you looking to accomplish?"></textarea>
+                        <label for="message" data-fr="Parlez-nous de vos besoins" data-en="Tell us about your needs">Tell us about your needs</label>
+                        <textarea id="message" name="message" placeholder="Qu'est-ce qui vous amène ? Que cherchez-vous à accomplir ?" data-fr="Qu'est-ce qui vous amène ? Que cherchez-vous à accomplir ?" data-en="What brought you here? What are you looking to accomplish?"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                    <button type="submit" class="btn btn-primary" data-fr="Envoyer la demande" data-en="Send Inquiry">Send Inquiry</button>
                 </form>
             </div>
         </div>
@@ -1195,11 +1238,11 @@ document.head.appendChild(o)}initApollo();</script>
     <!-- Related Links -->
     <section style="background: var(--dark-card); padding: 2rem;">
         <div class="container text-center">
-            <h3 style="margin-bottom: 1.5rem;">Explore More</h3>
+            <h3 style="margin-bottom: 1.5rem;" data-fr="Explorer davantage" data-en="Explore More">Explore More</h3>
             <p style="margin-bottom: 1.5rem;">
-                <a href="/flex-space.html" style="margin-right: 2rem;">Flex Space Options</a>
-                <a href="/" style="margin-right: 2rem;">Available Properties</a>
-                <a href="blog/the-address-matters.html">Why Your Address Matters</a>
+                <a href="/flex-space.html" style="margin-right: 2rem;" data-fr="Options d'espace flexible" data-en="Flex Space Options">Flex Space Options</a>
+                <a href="/" style="margin-right: 2rem;" data-fr="Propriétés disponibles" data-en="Available Properties">Available Properties</a>
+                <a href="blog/the-address-matters.html" data-fr="Pourquoi votre adresse compte" data-en="Why Your Address Matters">Why Your Address Matters</a>
             </p>
         </div>
     </section>
@@ -1209,35 +1252,96 @@ document.head.appendChild(o)}initApollo();</script>
         <div class="footer-content">
             <div class="footer-column">
                 <h4>Capital Corridor Campus</h4>
-                <p style="font-size: 0.9rem; margin: 0;">179 Promenade du Portage, Gatineau, QC J8X 2K5</p>
+                <p style="font-size: 0.9rem; margin: 0;" data-fr="179, promenade du Portage, Gatineau (Québec) J8X 2K5" data-en="179 Promenade du Portage, Gatineau, QC J8X 2K5">179 Promenade du Portage, Gatineau, QC J8X 2K5</p>
             </div>
             <div class="footer-column">
-                <h4>Contact</h4>
+                <h4 data-fr="Contact" data-en="Contact">Contact</h4>
                 <a href="tel:873-455-3667">873-455-3667</a>
                 <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a>
             </div>
             <div class="footer-column">
-                <h4>Services</h4>
-                <a href="/">Properties</a>
-                <a href="/flex-space.html">Flex Space</a>
-                <a href="/virtual-office.html">Virtual Office</a>
+                <h4 data-fr="Services" data-en="Services">Services</h4>
+                <a href="/" data-fr="Propriétés" data-en="Properties">Properties</a>
+                <a href="/flex-space.html" data-fr="Espace flexible" data-en="Flex Space">Flex Space</a>
+                <a href="/virtual-office.html" data-fr="Bureau virtuel" data-en="Virtual Office">Virtual Office</a>
             </div>
             <div class="footer-column">
-                <h4>Resources</h4>
-                <a href="blog/">Insights</a>
-                <a href="https://www.youtube.com/@CampusCorridor" target="_blank">YouTube Tours</a>
+                <h4 data-fr="Ressources" data-en="Resources">Resources</h4>
+                <a href="blog/" data-fr="Perspectives" data-en="Insights">Insights</a>
+                <a href="https://www.youtube.com/@CampusCorridor" target="_blank" data-fr="Visites YouTube" data-en="YouTube Tours">YouTube Tours</a>
                 <a href="https://josephsoares.com" target="_blank">IBPROM Corp</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Capital Corridor Campus. All rights reserved. | <a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html">Cookies Policy</a></p>
-            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Strategy, design &amp; technology by <a href="https://ibprom.com" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); text-decoration: none;">International Business Promotion (IBPROM) Corp.</a></p>
+            <p data-fr="&copy; 2026 Campus du Corridor de la Capitale. Tous droits réservés. | <a href='/terms.html'>Conditions d'utilisation</a> | <a href='/privacy.html'>Politique de confidentialité</a> | <a href='/cookies.html'>Politique de témoins</a>" data-en="&copy; 2026 Capital Corridor Campus. All rights reserved. | <a href='/terms.html'>Terms of Use</a> | <a href='/privacy.html'>Privacy Policy</a> | <a href='/cookies.html'>Cookies Policy</a>">&copy; 2026 Capital Corridor Campus. All rights reserved. | <a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html">Cookies Policy</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;" data-fr="Stratégie, conception et technologie par <a href='https://ibprom.com' target='_blank' rel='noopener' style='color: rgba(255,255,255,0.6); text-decoration: none;'>Société pour la promotion des affaires internationales (IBPROM) Corp.</a>" data-en="Strategy, design &amp; technology by <a href='https://ibprom.com' target='_blank' rel='noopener' style='color: rgba(255,255,255,0.6); text-decoration: none;'>International Business Promotion (IBPROM) Corp.</a>">Strategy, design &amp; technology by <a href="https://ibprom.com" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); text-decoration: none;">International Business Promotion (IBPROM) Corp.</a></p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
+        // ─── Language Toggle (FR-first; EN is opt-in via ?lang=en) ───
+        let currentLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'fr';
+
+        function propagateLangToLinks(lang) {
+            document.querySelectorAll('a[href]').forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href) return;
+                if (href.startsWith('http://') || href.startsWith('https://')) return;
+                if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+                if (href.includes('lang=')) return;
+                if (lang === 'en') {
+                    a.href = href + (href.includes('?') ? '&' : '?') + 'lang=en';
+                }
+            });
+        }
+
+        if (currentLang === 'fr') {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            const frBtn = document.querySelector('.lang-btn[data-lang="fr"]');
+            if (frBtn) frBtn.classList.add('active');
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const val = el.dataset.fr;
+                if (val === undefined) return;
+                if (el.tagName === 'IMG') { el.src = val; }
+                else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = val; }
+                else if (el.tagName === 'META') { el.setAttribute('content', val); }
+                else if (el.tagName === 'OPTION') { el.textContent = val; }
+                else { el.innerHTML = val; }
+            });
+            document.documentElement.lang = 'fr';
+        } else {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+            if (enBtn) enBtn.classList.add('active');
+            // Body content is FR by default; swap to EN via data-en
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const val = el.dataset.en;
+                if (val === undefined) return;
+                if (el.tagName === 'IMG') { el.src = val; }
+                else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = val; }
+                else if (el.tagName === 'META') { el.setAttribute('content', val); }
+                else if (el.tagName === 'OPTION') { el.textContent = val; }
+                else { el.innerHTML = val; }
+            });
+            document.documentElement.lang = 'en';
+            propagateLangToLinks('en');
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                const url = new URL(window.location.href);
+                if (lang === 'en') {
+                    url.searchParams.set('lang', 'en');
+                } else {
+                    url.searchParams.delete('lang');
+                }
+                window.location.href = url.toString();
+            });
+        });
+
         // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
@@ -1287,11 +1391,14 @@ document.head.appendChild(o)}initApollo();</script>
                     body: JSON.stringify(formData)
                 });
 
-                // Redirect to thank-you page (GA4 conversion fires there)
-                window.location.href = 'thank-you.html';
+                // Redirect to thank-you page (FR is default, EN takes a param)
+                const langParam = currentLang === 'en' ? '?lang=en' : '';
+                window.location.href = 'thank-you.html' + langParam;
             } catch (error) {
                 console.error('Form submission error:', error);
-                alert('There was an issue sending your form. Please try again or call 873-455-3667.');
+                alert(currentLang === 'fr'
+                    ? "Un problème est survenu lors de l'envoi du formulaire. Veuillez réessayer ou composer le 873-455-3667."
+                    : 'There was an issue sending your form. Please try again or call 873-455-3667.');
             }
         });
     </script>
