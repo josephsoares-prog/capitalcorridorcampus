@@ -12,7 +12,7 @@
   var GOOGLE_ADS_LEAD_LABEL    = '4Zl8CLLBt6AcEPqU1btD';  // Lead — Contact Form conversion
   var GOOGLE_ADS_PURCHASE_LABEL = '4WnaCK_Bt6AcEPqU1btD'; // Subscribe (Purchase) conversion
   var CLARITY_ID        = 'wfct56943k';                 // Microsoft Clarity — LIVE 2026-04-21
-  var LINKEDIN_PARTNER  = 'LINKEDIN_PARTNER_ID';        // TODO: replace after LinkedIn Campaign Manager setup
+  var LINKEDIN_PARTNER  = '9068314';                     // LinkedIn Insight Tag — LIVE 2026-05-01 (Campaign Manager account "Campus Corridor", ID 535871013)
   var META_PIXEL_ID     = '1465033893811581';           // Meta Pixel (shared w/ josephsoares.com — unified retargeting) — LIVE 2026-04-21
 
   // ------ CONSENT GATE (do nothing unless consent given) ------
