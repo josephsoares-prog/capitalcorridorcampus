@@ -64,3 +64,27 @@ window.klaroConfig = {
       title: 'Google Ads', cookies: [/^_gcl/,'IDE','DSID','NID','1P_JAR'] }
   ]
 };
+
+/* AUTO-INIT BRIDGE — fixes Klaro v0.7.x not picking up window.klaroConfig
+   when the config script is deferred AFTER klaro.js (the order on every page
+   in this site). Without this bridge, the consent banner never renders, and
+   every consent-gated tracker (Clarity, LinkedIn, Google Ads) stays dark.
+   This polls briefly for window.klaro and calls setup() the moment it's
+   available, then dispatches a klaro:consent-change event so tracking.js
+   loaders can subscribe to consent updates. Added 2026-05-07. */
+(function autoInitKlaro() {
+  function go() {
+    if (window.klaro && typeof window.klaro.setup === 'function') {
+      try {
+        window.klaro.setup(window.klaroConfig);
+      } catch (e) { /* already initialized — safe to ignore */ }
+    } else {
+      setTimeout(go, 80);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', go);
+  } else {
+    go();
+  }
+})();
