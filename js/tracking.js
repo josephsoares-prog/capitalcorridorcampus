@@ -157,24 +157,32 @@
     window.gtag('config', GOOGLE_ADS_ID);
   }
 
-  // Load on DOMContentLoaded, gated by consent
-  document.addEventListener('DOMContentLoaded', function(){
-    // analytics = Clarity + LinkedIn (consent category: 'analytics' and 'marketing')
-    if(hasConsent('analytics')){
-      loadMicrosoftClarity();
-    }
-    if(hasConsent('marketing')){
-      loadLinkedInInsight();
-      loadGoogleAds();
-      loadMetaPixel();
-    }
-  });
+  // Klaro stores per-service consent, not per-purpose. So hasConsent('clarity')
+  // checks the literal 'clarity' key in localStorage. Fixed 2026-05-07.
+  function loadConsentedTrackers(){
+    if(hasConsent('clarity'))    loadMicrosoftClarity();
+    if(hasConsent('linkedin'))   loadLinkedInInsight();
+    if(hasConsent('google-ads')) loadGoogleAds();
+    // Meta Pixel isn't in klaro-config services list yet — gate on 'linkedin'
+    // (same purpose:'marketing' bucket) until/unless it's added explicitly.
+    if(hasConsent('linkedin'))   loadMetaPixel();
+  }
 
-  // Listen for consent change (when user accepts via Klaro banner)
-  window.addEventListener('klaro:consent-change', function(){
-    if(hasConsent('analytics')) loadMicrosoftClarity();
-    if(hasConsent('marketing')){ loadLinkedInInsight(); loadGoogleAds(); loadMetaPixel(); }
-  });
+  // Load on DOMContentLoaded, gated by consent
+  document.addEventListener('DOMContentLoaded', loadConsentedTrackers);
+
+  // Listen for consent change (Klaro fires this on accept/decline/update)
+  window.addEventListener('klaro:consent-change', loadConsentedTrackers);
+  // Klaro v0.7.x also dispatches consent updates as a custom event; subscribe via
+  // the manager API for reliability.
+  if (window.klaro && typeof window.klaro.getManager === 'function') {
+    try {
+      var mgr = window.klaro.getManager(window.klaroConfig);
+      if (mgr && typeof mgr.watch === 'function') {
+        mgr.watch({ update: function(){ loadConsentedTrackers(); } });
+      }
+    } catch(e) {}
+  }
 
   // ------ AD CONVERSION HELPERS (used on /thank-you.html) ------
   // Lead path: contact form submission — fires when /thank-you.html loads with no ?tier= param
