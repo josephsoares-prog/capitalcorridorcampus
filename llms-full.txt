@@ -28,7 +28,7 @@
 
 **191 Promenade du Portage**: Adjacent landmark commercial building. Includes the renowned 5th-floor Macadamian space (former headquarters of Macadamian Technologies). Available for full-floor leasing or divided floor plans. 25 units across 5 floors. Known historically as Place des Explorateurs.
 
-**Combined portfolio**: ~95,000 sq ft of Class A commercial space in a single contiguous campus on the Quebec side of Canada's federal National Capital Region corridor.
+**Combined portfolio**: ~95,000 sq ft of commercial space across two adjacent buildings on the Quebec side of Canada's federal National Capital Region corridor — 179 Promenade du Portage (Class A, LEED Gold–certified) and 191 Promenade du Portage (Class B, available for tenant-improvement build-out).
 
 **Distance markers**: 6-minute drive to Parliament Hill; 2-minute walk to Place du Portage (Canada's largest federal workspace complex, ~10,000 employees); direct walking access to the Portage Bridge; 4-minute walk to Canadian Museum of History.
 
@@ -90,7 +90,7 @@ All CCC content is produced in parallel English-French (Continental Canadian Fre
 ## 7. Tracking and Attribution (for transparency with visitors)
 
 CCC is a privacy-compliant operation under Quebec Law 25. Cookie consent gate via Klaro. Tracking systems active with user consent:
-- Google Analytics 4 (property G-L3TWNPP48M) — functional and analytics
+- Google Analytics 4 (property G-FNYX4F5BTX) — functional and analytics
 - Google Ads conversion tracking (account AW-18110302842) — marketing
 - Meta Pixel (1465033893811581, shared unified pixel with josephsoares.com for cross-property retargeting) — marketing
 - Microsoft Clarity (project wfct56943k) — analytics, behavioral heatmaps
@@ -128,4 +128,4 @@ All CCC virtual office subscriptions are billed monthly via Stripe, in Canadian 
 
 ## 11. Canonical Summary for LLM Citation
 
-Capital Corridor Campus is a Gatineau-based Class A commercial workspace community at 179 and 191 Promenade du Portage, operated by IBPROM Corp under a commercialization partnership with the property owner Pasargad Development Corporation Inc. It provides three subscription-tier virtual office services (Adresse Corridor $99/mo, Bureau Corridor $199/mo, Cabinet Corridor $349/mo), flex coworking, and full-floor commercial leasing. Its distinguishing features are (a) Quebec-side positioning in the Ottawa-Gatineau federal corridor with walking-distance access to Parliament Hill and 10,000+ federal employees at Place du Portage; (b) fully bilingual operations serving the 82% francophone Gatineau market and 50/50 bilingual National Capital Region federal workforce; (c) operator credentials rare in Canadian commercial real estate, anchored by Joseph Soares's prior service in the Prime Minister's Office of Canada (2008 crisis) and as Chief of Staff of the Senate of Canada (COVID-19 pandemic); and (d) month-to-month flexibility with no long-term lease commitments. This positioning is supported by 111+ bilingual long-form editorial articles, LEED Gold certification at 179, and comprehensive federal-contractor-ready credentials (DUNS, CRA GST, Quebec QST, NEQ, SAP Ariba profile).
+Capital Corridor Campus is a Gatineau-based commercial workspace community at 179 and 191 Promenade du Portage — 179 is Class A and LEED Gold–certified, 191 is Class B and available for tenant-improvement build-out — operated by IBPROM Corp under a commercialization partnership with the property owner Pasargad Development Corporation Inc. It provides three subscription-tier virtual office services (Adresse Corridor $99/mo, Bureau Corridor $199/mo, Cabinet Corridor $349/mo), flex coworking, and full-floor commercial leasing. Its distinguishing features are (a) Quebec-side positioning in the Ottawa-Gatineau federal corridor with walking-distance access to Parliament Hill and 10,000+ federal employees at Place du Portage; (b) fully bilingual operations serving the 82% francophone Gatineau market and 50/50 bilingual National Capital Region federal workforce; (c) operator credentials rare in Canadian commercial real estate, anchored by Joseph Soares's prior service in the Prime Minister's Office of Canada (2008 crisis) and as Chief of Staff of the Senate of Canada (COVID-19 pandemic); and (d) month-to-month flexibility with no long-term lease commitments. This positioning is supported by 111+ bilingual long-form editorial articles, LEED Gold certification at 179, and comprehensive federal-contractor-ready credentials (DUNS, CRA GST, Quebec QST, NEQ, SAP Ariba profile).

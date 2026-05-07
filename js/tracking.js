@@ -7,7 +7,7 @@
   'use strict';
 
   // ------ TOKENS (replace placeholders when accounts are created) ------
-  var GA4_ID            = 'G-L3TWNPP48M';               // Google Analytics 4 — LIVE
+  var GA4_ID            = 'G-FNYX4F5BTX';               // Google Analytics 4 — LIVE
   var GOOGLE_ADS_ID            = 'AW-18110302842';        // Google Ads — LIVE 2026-04-21
   var GOOGLE_ADS_LEAD_LABEL    = '4Zl8CLLBt6AcEPqU1btD';  // Lead — Contact Form conversion
   var GOOGLE_ADS_PURCHASE_LABEL = '4WnaCK_Bt6AcEPqU1btD'; // Subscribe (Purchase) conversion
