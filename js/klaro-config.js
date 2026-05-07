@@ -74,13 +74,21 @@ window.klaroConfig = {
    loaders can subscribe to consent updates. Added 2026-05-07. */
 (function autoInitKlaro() {
   function go() {
-    if (window.klaro && typeof window.klaro.setup === 'function') {
-      try {
-        window.klaro.setup(window.klaroConfig);
-      } catch (e) { /* already initialized — safe to ignore */ }
-    } else {
-      setTimeout(go, 80);
+    if (!(window.klaro && typeof window.klaro.setup === 'function')) {
+      return setTimeout(go, 80);
     }
+    try { window.klaro.setup(window.klaroConfig); } catch (e) {}
+    // Show the banner if no consent has ever been recorded.
+    // Klaro's setup() does not auto-render when called post-load, so we force
+    // the modal to appear once on first visit. Subsequent visits with stored
+    // consent will be no-ops because show() doesn't re-prompt if consent
+    // already exists. Defensive: only call show() when localStorage is empty.
+    try {
+      var storedConsent = localStorage.getItem('klaro-consent');
+      if (!storedConsent && typeof window.klaro.show === 'function') {
+        window.klaro.show();
+      }
+    } catch (e) {}
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', go);
