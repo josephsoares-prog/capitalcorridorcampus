@@ -86,7 +86,10 @@ window.klaroConfig = {
     try {
       var storedConsent = localStorage.getItem('klaro-consent');
       if (!storedConsent && typeof window.klaro.show === 'function') {
-        window.klaro.show();
+        // Klaro v0.7.22: show() needs the config passed explicitly when
+        // called outside the library's own init path. Without the config
+        // arg the banner DOM is created but renders with zero height.
+        window.klaro.show(window.klaroConfig);
       }
     } catch (e) {}
   }
