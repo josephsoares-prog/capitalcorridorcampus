@@ -1385,11 +1385,12 @@ document.head.appendChild(o)}initApollo();</script>
 
             try {
                 // Send to Make.com webhook
-                await fetch('https://hook.us2.make.com/i1y9xmzsztflopi2r4dr1wdy5t7ha8g8', {
+                const __resp = await fetch('https://hook.us2.make.com/i1y9xmzsztflopi2r4dr1wdy5t7ha8g8', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
+                if(!__resp.ok) throw new Error('Submission failed: HTTP '+__resp.status);
 
                 // Redirect to thank-you page (FR is default, EN takes a param)
                 const langParam = currentLang === 'en' ? '?lang=en' : '';
