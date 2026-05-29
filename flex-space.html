@@ -1286,7 +1286,8 @@ document.head.appendChild(o)}initApollo();</script>
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             })
-            .then(() => {
+            .then(response => {
+                if(!response.ok) throw new Error('Submission failed: HTTP '+response.status);
                 const langParam = currentLang === 'en' ? '?lang=en' : '';
                 window.location.href = 'thank-you.html' + langParam;
             })
