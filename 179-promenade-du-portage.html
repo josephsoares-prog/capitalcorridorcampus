@@ -1698,6 +1698,7 @@ document.head.appendChild(o)}initApollo();</script>
                 body: JSON.stringify(formData)
             })
             .then(response => {
+                if(!response.ok) throw new Error('Submission failed: HTTP '+response.status);
                 // Redirect to thank-you page (GA4 conversion fires there)
                 window.location.href = 'thank-you.html';
             })
