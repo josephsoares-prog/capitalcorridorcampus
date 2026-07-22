@@ -1,0 +1,35 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Office documents (not web content)
+*.docx
+*.pdf
+*.tmp
+*.xlsx
+*.pptx
+
+# Exception: docs/ folder PDFs are served to clients
+!docs/*.pdf
+
+# Original full-res photos (web versions in /web/ subfolder)
+images/ground-floor/*.JPG
+images/ground-floor/*.jpg
+!images/ground-floor/web/
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Internal working documents — NEVER publish (GitHub Pages serves repo root)
+# Root-level markdown is internal by default; README is the sole exception.
+/*.md
+!/README.md
+CCC_RECORDS_OF_DECISION*
+*_Session_Prompt*
+AI_Discoverability_Action_Files/
+docs/
+floor-plans/
+*_FloorPlan.*
+*_Plan_Clean_*

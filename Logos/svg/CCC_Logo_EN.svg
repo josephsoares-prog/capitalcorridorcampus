@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 240" width="700" height="240">
+
+  <!-- Crescent C Symbol — three concentric open arcs forming a stylized C -->
+  <g transform="translate(80, 120)">
+    <!-- Outer arc (opens to the right) -->
+    <path d="M 30,-65 A 70,70 0 1,0 30,65" fill="none" stroke="#C6A25A" stroke-width="7" stroke-linecap="round"/>
+    <!-- Middle arc -->
+    <path d="M 22,-48 A 52,52 0 1,0 22,48" fill="none" stroke="#C6A25A" stroke-width="5.5" stroke-linecap="round"/>
+    <!-- Inner arc -->
+    <path d="M 14,-31 A 34,34 0 1,0 14,31" fill="none" stroke="#C6A25A" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Main Text — CAPITAL CORRIDOR CAMPUS stacked -->
+  <text x="195" y="68" font-family="'Helvetica Neue', 'Arial', sans-serif" font-weight="700" font-size="46" fill="#C6A25A" letter-spacing="5">CAPITAL</text>
+  <text x="195" y="120" font-family="'Helvetica Neue', 'Arial', sans-serif" font-weight="700" font-size="46" fill="#C6A25A" letter-spacing="5">CORRIDOR</text>
+  <text x="195" y="172" font-family="'Helvetica Neue', 'Arial', sans-serif" font-weight="700" font-size="46" fill="#C6A25A" letter-spacing="5">CAMPUS</text>
+
+  <!-- Divider line -->
+  <line x1="195" y1="188" x2="640" y2="188" stroke="#C6A25A" stroke-width="0.8" opacity="0.45"/>
+
+  <!-- Tagline -->
+  <text x="195" y="216" font-family="'Helvetica Neue', 'Arial', sans-serif" font-weight="400" font-size="13.5" fill="#C6A25A" letter-spacing="3.5" opacity="0.8">WHERE GOVERNMENT MEETS INNOVATION</text>
+
+</svg>

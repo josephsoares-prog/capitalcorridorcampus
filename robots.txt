@@ -1,0 +1,75 @@
+# Capital Corridor Campus — Crawler directives
+# Last updated: 2026-07-20
+
+# Default: open to all crawlers (search and AI)
+User-agent: *
+Allow: /
+Disallow: /command-centre.html
+Disallow: /thank-you.html
+
+# Search engine crawlers — explicit
+User-agent: Googlebot
+Disallow: /command-centre.html
+
+User-agent: Bingbot
+Disallow: /command-centre.html
+
+User-agent: DuckDuckBot
+Disallow: /command-centre.html
+
+# AI / LLM crawlers — explicitly ALLOWED
+# Capital Corridor Campus wants to be cited in AI-generated answers.
+User-agent: GPTBot
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: Applebot
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /command-centre.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /command-centre.html
+
+# Sitemaps
+Sitemap: https://campuscorridor.ca/sitemap.xml
