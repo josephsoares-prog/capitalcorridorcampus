@@ -163,6 +163,7 @@
     if(hasConsent('clarity'))    loadMicrosoftClarity();
     if(hasConsent('linkedin'))   loadLinkedInInsight();
     if(hasConsent('google-ads')) loadGoogleAds();
+    if(hasConsent('google-ads')) fireThankYouConversion();
     // Meta Pixel isn't in klaro-config services list yet — gate on 'linkedin'
     // (same purpose:'marketing' bucket) until/unless it's added explicitly.
     if(hasConsent('linkedin'))   loadMetaPixel();
@@ -182,6 +183,26 @@
         mgr.watch({ update: function(){ loadConsentedTrackers(); } });
       }
     } catch(e) {}
+  }
+
+  // ------ THANK-YOU CONVERSION TRIGGER (load-order fix, 2026-07-29) ------
+  // The inline <head> script on thank-you.html calls cccFireLeadConversion()
+  // before this deferred file has defined it, so the Google Ads conversion
+  // never fired. Fire it here instead — after loadGoogleAds() has run and the
+  // helpers below are defined — the moment google-ads consent is present
+  // (on load, or when Klaro consent changes). Guarded to fire once per load.
+  function fireThankYouConversion(){
+    if(!/thank-you/i.test(location.pathname)) return;
+    if(window.__cccConversionFired) return;
+    window.__cccConversionFired = true;
+    var q = new URLSearchParams(location.search);
+    var tier = q.get('tier');
+    var plan = parseFloat(q.get('plan')) || 0;
+    if(tier && plan > 0){
+      if(typeof window.cccFirePurchaseConversion === 'function') window.cccFirePurchaseConversion(plan, 'CAD');
+    } else {
+      if(typeof window.cccFireLeadConversion === 'function') window.cccFireLeadConversion();
+    }
   }
 
   // ------ AD CONVERSION HELPERS (used on /thank-you.html) ------
