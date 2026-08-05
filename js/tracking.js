@@ -181,8 +181,23 @@
   function loadConsentedTrackers(){
     if(hasConsent('clarity'))    loadMicrosoftClarity();
     if(hasConsent('linkedin'))   loadLinkedInInsight();
-    if(hasConsent('google-ads')) loadGoogleAds();
-    if(hasConsent('google-ads')) fireThankYouConversion();
+
+    // Google Ads: general remarketing/display tag stays consent-gated on
+    // every page, same as before — Quebec Law 25 / GDPR.
+    var adsConsent = hasConsent('google-ads');
+    var onThankYou = /thank-you/i.test(location.pathname);
+
+    // 2026-08-06 (Joseph decision — relax the gate): the Lead/Purchase
+    // conversion signal is scoped OFF the marketing consent requirement,
+    // but only on /thank-you.html. It only ever fires after a visitor has
+    // already voluntarily submitted the contact form or completed
+    // checkout, and it is a one-time first-party conversion count on that
+    // single confirmation page — not persistent cross-site remarketing.
+    // General Google Ads tracking on every other page remains fully
+    // gated behind explicit consent exactly as before.
+    if(adsConsent || onThankYou) loadGoogleAds();
+    if(adsConsent || onThankYou) fireThankYouConversion();
+
     // Meta Pixel isn't in klaro-config services list yet — gate on 'linkedin'
     // (same purpose:'marketing' bucket) until/unless it's added explicitly.
     if(hasConsent('linkedin'))   loadMetaPixel();
@@ -208,17 +223,15 @@
   // The inline <head> script on thank-you.html calls cccFireLeadConversion()
   // before this deferred file has defined it, so the Google Ads conversion
   // never fired. Fire it here instead — after loadGoogleAds() has run and the
-  // helpers below are defined — the moment google-ads consent is present
-  // (on load, or when Klaro consent changes). Guarded to fire once per load.
+  // helpers below are defined. Guarded to fire once per load.
   //
-  // NOTE (2026-08-05 growth-radar audit): this trigger — and the Google Ads
-  // pixel itself — only ever fires if the visitor has explicitly granted the
-  // 'google-ads' Klaro marketing consent (see klaro-config.js, default:false
-  // by design for Quebec Law 25 / GDPR). Zero recorded Ads conversions to date
-  // is fully explained by low session volume combined with this consent gate;
-  // it is not a separate bug. Left as-is pending Joseph's call on whether to
-  // relax the consent requirement for this specific first-party conversion
-  // signal — see project_ccc_website_zero_inquiry_flag.md.
+  // UPDATE (2026-08-06, Joseph decision — gate relaxed): prior to this date,
+  // this trigger and the Google Ads pixel only fired if the visitor had
+  // explicitly granted the 'google-ads' Klaro marketing consent, which fully
+  // explained zero recorded Ads conversions (see loadConsentedTrackers()
+  // above — the consent requirement is now scoped OFF specifically for
+  // /thank-you.html, so this fires on every real thank-you-page load
+  // regardless of consent). See project_ccc_website_zero_inquiry_flag.md.
   function fireThankYouConversion(){
     if(!/thank-you/i.test(location.pathname)) return;
     if(window.__cccConversionFired) return;
