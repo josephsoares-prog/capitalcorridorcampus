@@ -871,6 +871,10 @@ document.head.appendChild(o)}initApollo();</script>
 
                 <div class="contact-form-wrap reveal reveal-delay-1">
                     <form id="contactForm">
+                        <div class="form-group" style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="name" data-en="Full Name" data-fr="Nom complet">Nom complet</label>
                             <input type="text" id="name" name="name" required>
@@ -1088,13 +1092,20 @@ document.head.appendChild(o)}initApollo();</script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
+            // Honeypot: bots fill every field, including this hidden one. Silently drop.
+            const honeypot = document.getElementById('website');
+            if (honeypot && honeypot.value) {
+                return;
+            }
+
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 company: document.getElementById('company').value,
                 interest: document.getElementById('interest').value,
-                message: document.getElementById('message').value
+                message: document.getElementById('message').value,
+                ref: (typeof window.cccGetRef === 'function') ? window.cccGetRef() : null
             };
 
             const formMessage = document.getElementById('formMessage');
