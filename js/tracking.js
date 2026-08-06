@@ -11,6 +11,7 @@
   var GOOGLE_ADS_ID            = 'AW-18110302842';        // Google Ads — LIVE 2026-04-21
   var GOOGLE_ADS_LEAD_LABEL    = '4Zl8CLLBt6AcEPqU1btD';  // Lead — Contact Form conversion
   var GOOGLE_ADS_PURCHASE_LABEL = '4WnaCK_Bt6AcEPqU1btD'; // Subscribe (Purchase) conversion
+  var GOOGLE_ADS_PHONE_LABEL   = '';                      // Phone-call conversion — NOT YET CREATED (see cccFirePhoneConversion note below). Paste the label here once created; no other change needed to activate.
   var CLARITY_ID        = 'wfct56943k';                 // Microsoft Clarity — LIVE 2026-04-21
   var LINKEDIN_PARTNER  = '9068314';                     // LinkedIn Insight Tag — LIVE 2026-05-01 (Campaign Manager account "Campus Corridor", ID 535871013)
   var META_PIXEL_ID     = '1465033893811581';           // Meta Pixel (shared w/ josephsoares.com — unified retargeting) — LIVE 2026-04-21
@@ -63,6 +64,7 @@
         link_text: (a.textContent || '').trim().slice(0,80),
         page_path: location.pathname
       });
+      if(typeof window.cccFirePhoneConversion === 'function') window.cccFirePhoneConversion();
     } else if(href.indexOf('mailto:') === 0){
       trackEvent('email_click', {
         email_address: href.replace('mailto:','').split('?')[0],
@@ -194,7 +196,12 @@
     // checkout, and it is a one-time first-party conversion count on that
     // single confirmation page — not persistent cross-site remarketing.
     // General Google Ads tracking on every other page remains fully
-    // gated behind explicit consent exactly as before.
+    // gated behind explicit consent exactly as before. Phone-click
+    // conversion tracking (cccFirePhoneConversion) deliberately follows
+    // this SAME general-page rule, not the thank-you carve-out — a phone
+    // click can happen on any page, not just a post-conversion
+    // confirmation page, so it stays behind explicit consent unless
+    // Joseph decides otherwise.
     if(adsConsent || onThankYou) loadGoogleAds();
     if(adsConsent || onThankYou) fireThankYouConversion();
 
@@ -281,6 +288,30 @@
     }
     if(typeof window.fbq === 'function'){
       window.fbq('track', 'Subscribe', { value: value, currency: currency, predicted_ltv: value * 12 });
+    }
+  };
+
+  // Phone path: click-to-call intent on any tel: link, site-wide.
+  // NOT YET LIVE — GOOGLE_ADS_PHONE_LABEL is empty until the "Calls to a number
+  // on your website" conversion action is created in Google Ads (Tools & Settings
+  // > Conversions > + New conversion action > Phone calls > Calls to a number on
+  // your website). No tool available to this pipeline can create that resource —
+  // Google Ads conversion-action creation isn't exposed by Supermetrics or the
+  // connected Zapier/Make Google Ads integrations, only account-level read/report
+  // and a narrow set of campaign actions. It is a ~2-minute manual step. Once
+  // created, paste the label into GOOGLE_ADS_PHONE_LABEL above — this function
+  // activates with no other code change. Deliberately follows the same consent
+  // gate as general Ads tracking (see loadConsentedTrackers note above), not the
+  // /thank-you.html carve-out, since a phone click can happen on any page.
+  // Added 2026-08-06 — closes the "no phone-conversion tracking" gap flagged in
+  // growth-radar. GA4 has captured phone_click as a custom event since 2026-08-05
+  // regardless of this — this only adds the Google Ads side.
+  window.cccFirePhoneConversion = function(){
+    if(!GOOGLE_ADS_PHONE_LABEL) return; // no-op until the label above is set
+    if(typeof window.gtag === 'function' && GOOGLE_ADS_ID && GOOGLE_ADS_ID.indexOf('AW-') === 0){
+      window.gtag('event', 'conversion', {
+        'send_to': GOOGLE_ADS_ID + '/' + GOOGLE_ADS_PHONE_LABEL
+      });
     }
   };
 
