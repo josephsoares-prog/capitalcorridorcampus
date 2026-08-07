@@ -11,7 +11,7 @@
   var GOOGLE_ADS_ID            = 'AW-18110302842';        // Google Ads — LIVE 2026-04-21
   var GOOGLE_ADS_LEAD_LABEL    = '4Zl8CLLBt6AcEPqU1btD';  // Lead — Contact Form conversion
   var GOOGLE_ADS_PURCHASE_LABEL = '4WnaCK_Bt6AcEPqU1btD'; // Subscribe (Purchase) conversion
-  var GOOGLE_ADS_PHONE_LABEL   = '';                      // Phone-call conversion — NOT YET CREATED (see cccFirePhoneConversion note below). Paste the label here once created; no other change needed to activate.
+  var GOOGLE_ADS_PHONE_LABEL   = 'AythCLbOq90cEPqU1btD';  // Phone-call conversion ("Click to call", Calls from website visits) — LIVE 2026-08-07
   var CLARITY_ID        = 'wfct56943k';                 // Microsoft Clarity — LIVE 2026-04-21
   var LINKEDIN_PARTNER  = '9068314';                     // LinkedIn Insight Tag — LIVE 2026-05-01 (Campaign Manager account "Campus Corridor", ID 535871013)
   var META_PIXEL_ID     = '1465033893811581';           // Meta Pixel (shared w/ josephsoares.com — unified retargeting) — LIVE 2026-04-21
@@ -292,20 +292,13 @@
   };
 
   // Phone path: click-to-call intent on any tel: link, site-wide.
-  // NOT YET LIVE — GOOGLE_ADS_PHONE_LABEL is empty until the "Calls to a number
-  // on your website" conversion action is created in Google Ads (Tools & Settings
-  // > Conversions > + New conversion action > Phone calls > Calls to a number on
-  // your website). No tool available to this pipeline can create that resource —
-  // Google Ads conversion-action creation isn't exposed by Supermetrics or the
-  // connected Zapier/Make Google Ads integrations, only account-level read/report
-  // and a narrow set of campaign actions. It is a ~2-minute manual step. Once
-  // created, paste the label into GOOGLE_ADS_PHONE_LABEL above — this function
-  // activates with no other code change. Deliberately follows the same consent
-  // gate as general Ads tracking (see loadConsentedTrackers note above), not the
-  // /thank-you.html carve-out, since a phone click can happen on any page.
-  // Added 2026-08-06 — closes the "no phone-conversion tracking" gap flagged in
-  // growth-radar. GA4 has captured phone_click as a custom event since 2026-08-05
-  // regardless of this — this only adds the Google Ads side.
+  // LIVE 2026-08-07 — GOOGLE_ADS_PHONE_LABEL now holds the "Phone call lead"
+  // (Click to call / Calls from website visits) conversion label created in
+  // Google Ads (Tools & Settings > Conversions). Fires the same gtag conversion
+  // event pattern as the Lead/Purchase helpers above. Deliberately follows the
+  // same consent gate as general Ads tracking (see loadConsentedTrackers note
+  // above), not the /thank-you.html carve-out, since a phone click can happen
+  // on any page, not just a post-conversion confirmation page.
   window.cccFirePhoneConversion = function(){
     if(!GOOGLE_ADS_PHONE_LABEL) return; // no-op until the label above is set
     if(typeof window.gtag === 'function' && GOOGLE_ADS_ID && GOOGLE_ADS_ID.indexOf('AW-') === 0){
