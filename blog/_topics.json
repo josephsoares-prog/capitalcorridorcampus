@@ -5,8 +5,8 @@
     "committed_date": "2026-08-23",
     "purpose": "In-repo topic source so the scheduled publisher never depends on the Mac Drive mount. Update 'status' to 'published' as each entry goes live; never invent or reorder entries.",
     "total": 100,
-    "published_through_day": 88,
-    "remaining": 12
+    "published_through_day": 91,
+    "remaining": 9
   },
   "articles": [
     {
