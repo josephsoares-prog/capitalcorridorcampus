@@ -71,5 +71,7 @@ User-agent: CCBot
 Allow: /
 Disallow: /command-centre.html
 
+Disallow: /virtual-office.html
+
 # Sitemaps
 Sitemap: https://campuscorridor.ca/sitemap.xml
