@@ -35,6 +35,27 @@
     try{ return sessionStorage.getItem('ccc_ref') || null; }catch(e){ return null; }
   };
 
+  // ------ CONSENT MODE v2 BRIDGE ------
+  // The <head> snippet on every page sets all consent types to 'denied' before
+  // any Google tag loads. This pushes the 'update' once Klaro has an answer, so
+  // Google can (a) honour the visitor's choice and (b) model the conversions it
+  // is not allowed to observe. Replaces the 2026-08-06 thank-you.html carve-out,
+  // which could never work: the Ads tag never ran on the landing page, so the
+  // gclid was never stored and the conversion had nothing to attribute to.
+  function pushConsentUpdate(){
+    if(typeof window.gtag !== 'function') return;
+    var marketing = hasConsent('google-ads');
+    var analytics = hasConsent('ga4');
+    try{
+      window.gtag('consent', 'update', {
+        'ad_storage':          marketing ? 'granted' : 'denied',
+        'ad_user_data':        marketing ? 'granted' : 'denied',
+        'ad_personalization':  marketing ? 'granted' : 'denied',
+        'analytics_storage':   analytics ? 'granted' : 'denied'
+      });
+    }catch(e){}
+  }
+
   // ------ CONSENT GATE (do nothing unless consent given) ------
   function hasConsent(category){
     try{
@@ -184,26 +205,16 @@
     if(hasConsent('clarity'))    loadMicrosoftClarity();
     if(hasConsent('linkedin'))   loadLinkedInInsight();
 
-    // Google Ads: general remarketing/display tag stays consent-gated on
-    // every page, same as before — Quebec Law 25 / GDPR.
-    var adsConsent = hasConsent('google-ads');
-    var onThankYou = /thank-you/i.test(location.pathname);
-
-    // 2026-08-06 (Joseph decision — relax the gate): the Lead/Purchase
-    // conversion signal is scoped OFF the marketing consent requirement,
-    // but only on /thank-you.html. It only ever fires after a visitor has
-    // already voluntarily submitted the contact form or completed
-    // checkout, and it is a one-time first-party conversion count on that
-    // single confirmation page — not persistent cross-site remarketing.
-    // General Google Ads tracking on every other page remains fully
-    // gated behind explicit consent exactly as before. Phone-click
-    // conversion tracking (cccFirePhoneConversion) deliberately follows
-    // this SAME general-page rule, not the thank-you carve-out — a phone
-    // click can happen on any page, not just a post-conversion
-    // confirmation page, so it stays behind explicit consent unless
-    // Joseph decides otherwise.
-    if(adsConsent || onThankYou) loadGoogleAds();
-    if(adsConsent || onThankYou) fireThankYouConversion();
+    // 2026-08-25 (audit finding 4.2 — supersedes the 2026-08-06 carve-out):
+    // the Google Ads tag now loads on EVERY page unconditionally, because
+    // under Consent Mode v2 loading the tag is not the same as storing data.
+    // With ad_storage denied it writes no cookies and sends only a cookieless
+    // ping; url_passthrough carries the gclid forward in the URL. That is what
+    // makes a declined-cookies visitor attributable at all. Storage is governed
+    // by the consent state, not by whether the script is present.
+    loadGoogleAds();
+    pushConsentUpdate();
+    fireThankYouConversion();
 
     // Meta Pixel isn't in klaro-config services list yet — gate on 'linkedin'
     // (same purpose:'marketing' bucket) until/unless it's added explicitly.
@@ -247,7 +258,14 @@
     var tier = q.get('tier');
     var plan = parseFloat(q.get('plan')) || 0;
     if(tier && plan > 0){
-      if(typeof window.cccFirePurchaseConversion === 'function') window.cccFirePurchaseConversion(plan, 'CAD');
+      // Stable transaction id so Google can suppress duplicates on refresh.
+      // Prefer Stripe's checkout session id: set each payment link's success URL to
+      //   https://campuscorridor.ca/thank-you.html?tier=<tier>&plan=<n>&sid={CHECKOUT_SESSION_ID}
+      // Fall back to tier + UTC date, which still dedupes a same-day refresh.
+      var sid = q.get('sid');
+      var txn = sid ? ('stripe_' + sid)
+                    : ('stripe_' + tier + '_' + new Date().toISOString().slice(0,10));
+      if(typeof window.cccFirePurchaseConversion === 'function') window.cccFirePurchaseConversion(plan, 'CAD', txn);
     } else {
       if(typeof window.cccFireLeadConversion === 'function') window.cccFireLeadConversion();
     }
@@ -272,15 +290,16 @@
   };
 
   // Purchase path: Stripe checkout complete — fires when /thank-you.html loads with ?tier=... param
-  window.cccFirePurchaseConversion = function(value, currency){
+  window.cccFirePurchaseConversion = function(value, currency, transactionId){
     value = value || 199;
     currency = currency || 'CAD';
+    transactionId = transactionId || ('stripe_' + new Date().toISOString().slice(0,10));
     if(typeof window.gtag === 'function' && GOOGLE_ADS_ID && GOOGLE_ADS_ID.indexOf('AW-') === 0){
       window.gtag('event', 'conversion', {
         'send_to': GOOGLE_ADS_ID + '/' + GOOGLE_ADS_PURCHASE_LABEL,
         'value': value,
         'currency': currency,
-        'transaction_id': 'stripe_' + Date.now()
+        'transaction_id': transactionId
       });
     }
     if(typeof window.lintrk === 'function'){
@@ -292,6 +311,8 @@
   };
 
   // Phone path: click-to-call intent on any tel: link, site-wide.
+  // 2026-08-25: no longer suppressed when marketing consent is absent — the tag
+  // is always present now and Consent Mode governs storage (see loadConsentedTrackers).
   // LIVE 2026-08-07 — GOOGLE_ADS_PHONE_LABEL now holds the "Phone call lead"
   // (Click to call / Calls from website visits) conversion label created in
   // Google Ads (Tools & Settings > Conversions). Fires the same gtag conversion

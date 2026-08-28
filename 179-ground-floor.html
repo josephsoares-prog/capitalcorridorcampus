@@ -579,6 +579,8 @@
             display: none !important;
         }
 
+        /* revert (not block) so inline elements such as <span lang="fr">
+           keep their inline layout when French is selected. 2026-08-25 */
         body.fr [lang="fr"] {
             display: revert;
         }
@@ -627,17 +629,36 @@ document.head.appendChild(o)}initApollo();</script>
     <link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/179-ground-floor.html">
     <link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/179-ground-floor.html?lang=en">
     <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/179-ground-floor.html">
-    <!-- Google Consent Mode v2 — must run before any Google tag. Law 25 / GDPR: denied by default. -->
+    <!-- Google Consent Mode v2 — MUST run before any Google tag loads.
+         Quebec Law 25 / GDPR: every consent type denied by default.
+         url_passthrough keeps the gclid in the URL so an ad click can still be
+         attributed after a visitor declines cookies; ads_data_redaction strips
+         ad identifiers from tags while ad_storage is denied.
+         Added 2026-08-25 — audit finding 4.2 (gclid was never stored). -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag("consent","default",{"ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied",
-        "analytics_storage":"denied","functionality_storage":"granted","security_storage":"granted","wait_for_update":500});
-      gtag("set","url_passthrough",true);
-      gtag("set","ads_data_redaction",true);
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
     </script>
+    <!-- Google Analytics GA4 — added 2026-08-25; these pages loaded tracking.js
+         but had no gtag, so every event helper on them was a silent no-op. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNYX4F5BTX"></script>
-    <script>gtag("js", new Date()); gtag("config","G-FNYX4F5BTX");</script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FNYX4F5BTX');
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -1094,12 +1115,22 @@ document.head.appendChild(o)}initApollo();</script>
     }
     </script>
     <script>
+    // ─── Language selection (added 2026-08-25) ───
+    // This page carries a full French translation behind the `body.fr` CSS rule,
+    // but nothing ever added that class, so every French block on the page was
+    // permanently invisible and unreachable. The French-language search terms
+    // this page is advertised against (salon / local commercial) therefore landed
+    // on English copy. ?lang=fr now selects it.
     (function(){
       try{
         if(new URLSearchParams(location.search).get('lang') === 'fr'){
           document.body.classList.add('fr');
           document.documentElement.lang = 'fr';
-          document.querySelectorAll('[lang="fr"][style]').forEach(function(el){ el.style.removeProperty('display'); });
+          // The French blocks carry an inline style="display: none;" that beats
+          // any stylesheet rule without !important. Clear it element by element.
+          document.querySelectorAll('[lang="fr"][style]').forEach(function(el){
+            el.style.removeProperty('display');
+          });
         }
       }catch(e){}
     })();

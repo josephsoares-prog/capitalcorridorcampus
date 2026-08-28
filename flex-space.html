@@ -24,6 +24,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+        <!-- Google Consent Mode v2 — MUST run before any Google tag loads.
+         Quebec Law 25 / GDPR: every consent type denied by default.
+         url_passthrough keeps the gclid in the URL so an ad click can still be
+         attributed after a visitor declines cookies; ads_data_redaction strips
+         ad identifiers from tags while ad_storage is denied.
+         Added 2026-08-25 — audit finding 4.2 (gclid was never stored). -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNYX4F5BTX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -880,7 +901,7 @@ document.head.appendChild(o)}initApollo();</script>
             <ul class="nav-links">
                 <li><a href="/" data-fr="Propriétés" data-en="Properties">Propriétés</a></li>
                 <li><a href="/flex-space.html" data-fr="Espace flexible" data-en="Flex Space">Espace flexible</a></li>
-                <li><a href="/virtual-office.html" data-fr="Bureau virtuel" data-en="Virtual Office">Bureau virtuel</a></li>
+                <li><a href="/offices.html" data-fr="Bureaux" data-en="Offices">Bureaux</a></li>
                 <li><a href="/blog/" data-fr="Perspectives" data-en="Blog">Perspectives</a></li>
                 <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
@@ -1118,7 +1139,7 @@ document.head.appendChild(o)}initApollo();</script>
             <div class="related-pages">
                 <h4 data-fr="Autres services au Campus du Corridor de la Capitale" data-en="Other Services at Capital Corridor Campus">Autres services au Campus du Corridor de la Capitale</h4>
                 <div class="related-links">
-                    <a href="/virtual-office.html" data-fr="Services de bureau virtuel" data-en="Virtual Office Services">Services de bureau virtuel</a>
+                    <a href="/offices.html" data-fr="Services de bureau virtuel" data-en="Virtual Office Services">Services de bureau virtuel</a>
                     <a href="/" data-fr="Propriétés et locations à l'étage complet" data-en="Properties & Full Floor Leases">Propriétés et locations à l'étage complet</a>
                     <a href="/blog/" data-fr="Perspectives et ressources" data-en="Blog & Resources">Perspectives et ressources</a>
                 </div>
@@ -1189,7 +1210,7 @@ document.head.appendChild(o)}initApollo();</script>
                 <ul>
                     <li><a href="/">Properties</a></li>
                     <li><a href="/flex-space.html">Flex Space</a></li>
-                    <li><a href="/virtual-office.html">Virtual Office</a></li>
+                    <li><a href="/offices.html">Offices</a></li>
                     <li><a href="/blog/">Blog</a></li>
                 </ul>
             </div>
