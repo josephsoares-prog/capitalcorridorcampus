@@ -1,11 +1,12 @@
 # Capital Corridor Campus — Crawler directives
-# Last updated: 2026-07-20
+# Last updated: 2026-08-29
 
 # Default: open to all crawlers (search and AI)
 User-agent: *
 Allow: /
 Disallow: /command-centre.html
 Disallow: /thank-you.html
+Disallow: /_superseded_2026-08-28/
 
 # Search engine crawlers — explicit
 User-agent: Googlebot
@@ -71,7 +72,6 @@ User-agent: CCBot
 Allow: /
 Disallow: /command-centre.html
 
-Disallow: /virtual-office.html
 
 # Sitemaps
 Sitemap: https://campuscorridor.ca/sitemap.xml
