@@ -114,6 +114,26 @@
       color: var(--gold);
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
     /* Breadcrumbs */
     .breadcrumbs {
       max-width: 1200px;
@@ -525,11 +545,28 @@
       }
 
       nav ul {
-        gap: 1rem;
+        display: none;
       }
 
-      nav a {
-        font-size: 0.85rem;
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark-card);
+        border-bottom: 1px solid var(--accent);
+        z-index: 999;
+      }
+
+      .mobile-nav a {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .nav-container {
@@ -688,6 +725,19 @@ document.head.appendChild(o)}initApollo();</script>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a>
+      <a href="/#properties">Properties</a>
+      <a href="/#spaces">Spaces</a>
+      <a href="/offices.html">Offices</a>
+      <a href="/#location">Location</a>
+      <a href="/#lease">Lease Terms</a>
+      <a href="/blog/">Insights</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
@@ -1118,6 +1168,23 @@ document.head.appendChild(o)}initApollo();</script>
         alert('There was an issue submitting your request. Please try again or call 873-455-3667.');
       }
     });
+  </script>
+  <script>
+    (function () {
+      var hb = document.getElementById('hamburger');
+      var mn = document.getElementById('mobileNav');
+      if (!hb || !mn) return;
+      hb.addEventListener('click', function () {
+        var open = mn.classList.toggle('active');
+        hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mn.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          mn.classList.remove('active');
+          hb.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
   </script>
 </body>
 </html>
