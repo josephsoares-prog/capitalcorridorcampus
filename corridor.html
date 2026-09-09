@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Corridor | Political Intelligence for Decision-Makers</title>
-    <meta name="description" content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals.">
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Corridor | Political Intelligence for Decision-Makers</title>
+<meta content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals." name="description"/>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -30,10 +31,10 @@
       }
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --navy: #0b1a2e;
             --navy-mid: #0f2240;
@@ -61,38 +62,13 @@
         }
 
         /* ===== LANG SWITCHER ===== */
-        .lang-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 200;
-            background: #06101e;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 0 40px;
-            height: 32px;
-            border-bottom: 1px solid rgba(201, 168, 76, 0.08);
-        }
+        
 
-        .lang-bar button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.35);
-            padding: 6px 12px;
-            transition: color 0.3s;
-        }
+        
 
-        .lang-bar button:hover { color: var(--gold-light); }
-        .lang-bar button.active { color: var(--gold); }
-        .lang-bar .lang-sep { color: rgba(255,255,255,0.12); font-size: 11px; }
+        
+        
+        
 
         /* ===== NAV ===== */
         nav {
@@ -697,7 +673,7 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .lang-bar { padding: 0 20px; }
+            
             nav { padding: 0 20px; }
             .mobile-toggle { display: flex; }
 
@@ -735,30 +711,28 @@
             .btn-secondary { margin-left: 0; margin-top: 12px; }
         }
     </style>
-
-    <!-- CCC Tracking Stack (unified) -->
-    <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.min.css" />
-    <script defer src="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.js"></script>
-    <script defer src="/js/klaro-config.js"></script>
-    <script defer src="/js/tracking.js"></script>
-    <!-- /CCC Tracking Stack -->
-  <!-- Apollo.io website visitor tracking -->
-  <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+<!-- CCC Tracking Stack (unified) -->
+<link href="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.min.css" rel="stylesheet">
+<script defer="" src="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.js"></script>
+<script defer="" src="/js/klaro-config.js"></script>
+<script defer="" src="/js/tracking.js"></script>
+<!-- /CCC Tracking Stack -->
+<!-- Apollo.io website visitor tracking -->
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
 o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
 o.onload=function(){window.trackingFunctions.onLoad({appId:"69b933d5574de0002181290e"})},
 document.head.appendChild(o)}initApollo();</script>
+<link href="https://campuscorridor.ca/corridor.html" rel="canonical"/><link href="https://campuscorridor.ca/corridor.html" hreflang="en" rel="alternate"/><link href="https://campuscorridor.ca/corridor-fr.html" hreflang="fr-CA" rel="alternate"/><link href="https://campuscorridor.ca/corridor.html" hreflang="x-default" rel="alternate"/>
 
-    <link rel="canonical" href="https://campuscorridor.ca/corridor.html">
-    <link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/corridor.html">
-    <link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/corridor.html?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/corridor.html">
-    <!-- Google Consent Mode v2 — MUST run before any Google tag loads.
+
+
+<!-- Google Consent Mode v2 — MUST run before any Google tag loads.
          Quebec Law 25 / GDPR: every consent type denied by default.
          url_passthrough keeps the gclid in the URL so an ad click can still be
          attributed after a visitor declines cookies; ads_data_redaction strips
          ad identifiers from tags while ad_storage is denied.
          Added 2026-08-25 — audit finding 4.2 (gclid was never stored). -->
-    <script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('consent', 'default', {
@@ -773,270 +747,203 @@ document.head.appendChild(o)}initApollo();</script>
       gtag('set', 'url_passthrough', true);
       gtag('set', 'ads_data_redaction', true);
     </script>
-    <!-- Google Analytics GA4 — added 2026-08-25; these pages loaded tracking.js
+<!-- Google Analytics GA4 — added 2026-08-25; these pages loaded tracking.js
          but had no gtag, so every event helper on them was a silent no-op. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNYX4F5BTX"></script>
-    <script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FNYX4F5BTX"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-FNYX4F5BTX');
     </script>
-    <meta property="og:title" content="The Corridor | Political Intelligence for Decision-Makers">
-    <meta property="og:description" content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://campuscorridor.ca/corridor.html">
-    <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_1000px.png">
-    <meta property="og:locale" content="en_CA">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Corridor | Political Intelligence for Decision-Makers">
-    <meta name="twitter:description" content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals.">
-</head>
+<meta content="The Corridor | Political Intelligence for Decision-Makers" property="og:title"/>
+<meta content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://campuscorridor.ca/corridor.html" property="og:url"/>
+<meta content="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_1000px.png" property="og:image"/>
+<meta content="en_CA" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Corridor | Political Intelligence for Decision-Makers" name="twitter:title"/>
+<meta content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals." name="twitter:description"/>
+</link></head>
 <body>
+<!-- LANG BAR -->
 
-    <!-- LANG BAR -->
-    <div class="lang-bar">
-        <button class="active" onclick="setLang('en')">EN</button>
-        <span class="lang-sep">·</span>
-        <button onclick="setLang('fr')">FR</button>
-    </div>
-
-    <!-- NAV -->
-    <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="nav-name">Joseph <span>Soares</span></a>
-            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links">
-                <a href="index.html#who" data-fr="Pour qui ?">Who This Is For</a>
-                <a href="index.html#about" data-fr="À propos">About</a>
-                <a href="index.html#services" data-fr="Services">Services</a>
-                <a href="corridor.html" class="nav-active" data-fr="Le Corridor">The Corridor</a>
-                
-                <a href="https://calendar.app.google/pEyrPMvGY2TuEndcA" class="nav-cta" data-fr="Prendre rendez-vous">Book a Call</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-badge">
-                <div class="hero-badge-dot"></div>
-                <span class="hero-badge-text" data-fr="Veille politique pour décideurs">Political Intelligence for Decision-Makers</span>
-            </div>
-            <h1 data-fr="Le <em>Corridor</em>">The <em>Corridor</em></h1>
-            <p class="hero-sub" data-fr="Ce qui se passe à Québec, Ottawa, Washington et dans les capitales du monde — et pourquoi ça compte pour vos décisions.">What's happening in Quebec City, Ottawa, Washington, and capitals around the world — and why it matters to your next decision.</p>
-            <p class="hero-lang-note">By <span>Joseph Soares</span></p>
-        </div>
-    </section>
-
-    <!-- CONCEPT -->
-    <section class="concept">
-        <div class="concept-inner">
-            <div class="concept-text">
-                <h2 data-fr="Pourquoi <em>Le Corridor</em>">Why <em>The Corridor</em></h2>
-                <p data-fr="La politique façonne les marchés, les politiques publiques et les carrières. Les réglementations créent et détruisent des industries. Les élections déplacent des capitaux et redéfinissent les priorités. Pourtant, la plupart des décideurs lisent les nouvelles politiques comme des spectateurs — pas comme des opérateurs.">Politics shapes markets, public policy, and careers. Regulations create and destroy industries. Elections move capital and reset priorities. Yet most decision-makers read political news as spectators — not operators.</p>
-                <p data-fr="<strong>Le Corridor</strong> comble cette lacune. Chaque jour, je sélectionne ce qui compte et j'ajoute le contexte stratégique qu'on n'obtient qu'en ayant œuvré dans les couloirs du pouvoir."><strong>The Corridor</strong> closes that gap. Every day, I curate what matters and add the strategic context you only get from having worked inside the corridors of power.</p>
-                <p data-fr="Le nom est délibéré. C'est dans les corridors — pas dans les salles de réunion — que les véritables décisions se prennent. J'y ai été. Maintenant, je vous y donne accès.">The name is deliberate. It's in the corridors — not the boardrooms — where the real decisions get made. I've been there. Now I'm giving you access.</p>
-            </div>
-            <div class="concept-pillars">
-                <div class="pillar-card">
-                    <div class="pillar-icon" data-fr="Sélection">Curation</div>
-                    <div class="pillar-title" data-fr="Ce qui compte, sans le bruit">What matters, without the noise</div>
-                    <div class="pillar-desc" data-fr="Les gros titres sélectionnés pour leur pertinence stratégique, pas pour les clics. Sources canadiennes, américaines et internationales — affaires, gouvernement et politique.">Headlines selected for strategic relevance, not clicks. Canadian, American, and international sources — business, government, and politics.</div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon" data-fr="Commentaire">Commentary</div>
-                    <div class="pillar-title" data-fr="Contexte du terrain">Context from the inside</div>
-                    <div class="pillar-desc" data-fr="Analyse originale d'un ancien conseiller du Premier ministre du Canada et chef de cabinet au Sénat du Canada. Pas de la spéculation — de l'expérience.">Original analysis from a former advisor to the Prime Minister of Canada and Senate Chief of Staff. Not speculation — experience.</div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon" data-fr="Bilingue">Bilingual</div>
-                    <div class="pillar-title" data-fr="Anglais et français, natifs">English and French, native</div>
-                    <div class="pillar-desc" data-fr="Couverture complète dans les deux langues officielles. Le Canada est bilingue — votre veille politique devrait l'être aussi.">Full coverage in both official languages. Canada is bilingual — your political intelligence should be too.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LATEST COMMENTARY -->
-    <section class="commentary">
-        <div class="commentary-inner">
-            <div class="commentary-header">
-                <h2 data-fr="Derniers commentaires">Latest Commentary</h2>
-                <p data-fr="Analyse stratégique des nouvelles politiques qui touchent les décideurs">Strategic analysis of political news that affects decision-makers</p>
-            </div>
-
-            <!-- ENTRY 1 — April 4, 2026 -->
-            <div class="commentary-item">
-                <div class="commentary-meta">
-                    <span class="commentary-date" data-fr="4 avril 2026">April 4, 2026</span>
-                    <span class="commentary-tag" data-fr="Commerce">Trade</span>
-                    <span class="commentary-lang-tag">EN</span>
-                </div>
-                <div class="commentary-headline" data-fr="L'exemption ACEUM est reconduite indéfiniment. Ne confondez pas sursis et victoire.">USMCA Exemption Extended Indefinitely. Don't Mistake a Reprieve for a Victory.</div>
-                <div class="commentary-body" data-fr="Le 2 avril, Washington a prolongé indéfiniment l'exemption des droits de douane pour les biens conformes à l'ACEUM. Plus de 85 % du commerce canado-américain est désormais protégé. Mais l'acier, l'aluminium et l'automobile restent sous tarifs — et quatre sénateurs républicains viennent de voter avec les démocrates pour révoquer certains droits de douane sur le Canada. <strong>Ce que cela vous dit :</strong> les lignes de parti sont en train de se briser sur le commerce. Si vous opérez des deux côtés de la frontière, la fenêtre pour restructurer vos chaînes d'approvisionnement est maintenant ouverte — mais elle ne le restera pas longtemps. Les décideurs qui attendent la « clarté » ne font qu'attendre que quelqu'un d'autre décide pour eux.">
+<!-- NAV -->
+<nav>
+<div class="nav-inner">
+<a class="nav-name" href="index.html">Joseph <span>Soares</span></a>
+<button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="nav-links">
+<a href="index.html#who">Who This Is For</a>
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a class="nav-active" href="corridor.html">The Corridor</a>
+<a class="nav-cta" href="https://calendar.app.google/pEyrPMvGY2TuEndcA">Book a Call</a>
+</div>
+</div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-badge">
+<div class="hero-badge-dot"></div>
+<span class="hero-badge-text">Political Intelligence for Decision-Makers</span>
+</div>
+<h1>The <em>Corridor</em></h1>
+<p class="hero-sub">What's happening in Quebec City, Ottawa, Washington, and capitals around the world — and why it matters to your next decision.</p>
+<p class="hero-lang-note">By <span>Joseph Soares</span></p>
+</div>
+</section>
+<!-- CONCEPT -->
+<section class="concept">
+<div class="concept-inner">
+<div class="concept-text">
+<h2>Why <em>The Corridor</em></h2>
+<p>Politics shapes markets, public policy, and careers. Regulations create and destroy industries. Elections move capital and reset priorities. Yet most decision-makers read political news as spectators — not operators.</p>
+<p><strong>The Corridor</strong> closes that gap. Every day, I curate what matters and add the strategic context you only get from having worked inside the corridors of power.</p>
+<p>The name is deliberate. It's in the corridors — not the boardrooms — where the real decisions get made. I've been there. Now I'm giving you access.</p>
+</div>
+<div class="concept-pillars">
+<div class="pillar-card">
+<div class="pillar-icon">Curation</div>
+<div class="pillar-title">What matters, without the noise</div>
+<div class="pillar-desc">Headlines selected for strategic relevance, not clicks. Canadian, American, and international sources — business, government, and politics.</div>
+</div>
+<div class="pillar-card">
+<div class="pillar-icon">Commentary</div>
+<div class="pillar-title">Context from the inside</div>
+<div class="pillar-desc">Original analysis from a former advisor to the Prime Minister of Canada and Senate Chief of Staff. Not speculation — experience.</div>
+</div>
+<div class="pillar-card">
+<div class="pillar-icon">Bilingual</div>
+<div class="pillar-title">English and French, native</div>
+<div class="pillar-desc">Full coverage in both official languages. Canada is bilingual — your political intelligence should be too.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LATEST COMMENTARY -->
+<section class="commentary">
+<div class="commentary-inner">
+<div class="commentary-header">
+<h2>Latest Commentary</h2>
+<p>Strategic analysis of political news that affects decision-makers</p>
+</div>
+<!-- ENTRY 1 — April 4, 2026 -->
+<div class="commentary-item">
+<div class="commentary-meta">
+<span class="commentary-date">April 4, 2026</span>
+<span class="commentary-tag">Trade</span>
+<span class="commentary-lang-tag">EN</span>
+</div>
+<div class="commentary-headline">USMCA Exemption Extended Indefinitely. Don't Mistake a Reprieve for a Victory.</div>
+<div class="commentary-body">
                     On April 2, Washington extended the USMCA tariff exemption indefinitely. Over 85% of Canada-U.S. trade is now shielded. But steel, aluminum, and autos remain under tariffs — and four Republican senators just voted with Democrats to revoke some of Trump's tariffs on Canada. <strong>What this tells you:</strong> party lines are fracturing on trade. If you operate on both sides of the border, the window to restructure your supply chains is open now — but it won't stay open forever. Decision-makers waiting for "clarity" are just waiting for someone else to decide for them.
                 </div>
-                <div class="commentary-sig">— J. Soares</div>
-            </div>
-
-            <!-- ENTRY 2 — April 4, 2026 (FR) -->
-            <div class="commentary-item">
-                <div class="commentary-meta">
-                    <span class="commentary-date" data-fr="4 avril 2026">April 4, 2026</span>
-                    <span class="commentary-tag" data-fr="Québec">Quebec</span>
-                    <span class="commentary-lang-tag">FR</span>
-                </div>
-                <div class="commentary-headline">Course à la direction de la CAQ : Fréchette contre Drainville, et ce que ça signifie pour le Québec d'après-Legault</div>
-                <div class="commentary-body">
+<div class="commentary-sig">— J. Soares</div>
+</div>
+<!-- ENTRY 2 — April 4, 2026 (FR) -->
+<div class="commentary-item">
+<div class="commentary-meta">
+<span class="commentary-date">April 4, 2026</span>
+<span class="commentary-tag">Quebec</span>
+<span class="commentary-lang-tag">FR</span>
+</div>
+<div class="commentary-headline">Course à la direction de la CAQ : Fréchette contre Drainville, et ce que ça signifie pour le Québec d'après-Legault</div>
+<div class="commentary-body">
                     Le 12 avril, la CAQ choisit son prochain chef — et le prochain premier ministre du Québec. Christine Fréchette propose une approche plus axée sur le marché. Bernard Drainville mise sur la rigueur budgétaire. <strong>L'enjeu réel :</strong> avec un déficit de 9,9 milliards de dollars, une économie fragilisée par les tarifs américains et des élections générales dans six mois, le prochain chef hérite d'un mandat empoisonné. Les décideurs qui ont des intérêts au Québec — entreprises, investisseurs, ou acteurs du secteur public — doivent comprendre que le changement de garde ne sera pas cosmétique. Les priorités économiques du Québec sont sur le point de bouger. Positionnez-vous en conséquence.
                 </div>
-                <div class="commentary-sig">— J. Soares</div>
-            </div>
-
-            <!-- ENTRY 3 — April 3, 2026 -->
-            <div class="commentary-item">
-                <div class="commentary-meta">
-                    <span class="commentary-date" data-fr="3 avril 2026">April 3, 2026</span>
-                    <span class="commentary-tag" data-fr="Washington">Washington</span>
-                    <span class="commentary-lang-tag">EN</span>
-                </div>
-                <div class="commentary-headline" data-fr="Washington nomme les « barrières » canadiennes. Voici ce que cela signifie vraiment.">Washington Names Canadian "Barriers." Here's What It Actually Means.</div>
-                <div class="commentary-body" data-fr="Le rapport annuel du USTR vient de nommer les règles d'achat canadien, la tarification des médicaments et les contrôles sur le travail forcé comme des « obstacles au commerce ». Ce n'est pas un geste de bonne foi — c'est une liste de négociation. Chaque « barrière » est un levier que Washington utilisera dans les prochaines rondes. Si vous êtes en approvisionnement gouvernemental, en pharmaceutique, ou dans les chaînes d'approvisionnement transfrontalières, vous êtes déjà dans la mire.">
+<div class="commentary-sig">— J. Soares</div>
+</div>
+<!-- ENTRY 3 — April 3, 2026 -->
+<div class="commentary-item">
+<div class="commentary-meta">
+<span class="commentary-date">April 3, 2026</span>
+<span class="commentary-tag">Washington</span>
+<span class="commentary-lang-tag">EN</span>
+</div>
+<div class="commentary-headline">Washington Names Canadian "Barriers." Here's What It Actually Means.</div>
+<div class="commentary-body">
                     The USTR's annual report just named Buy Canadian rules, drug pricing, and forced-labor controls as trade "barriers." This isn't a good-faith observation — it's a negotiating ledger. Every "barrier" is a lever Washington will pull in the next round. If you're in government procurement, pharmaceuticals, or cross-border supply chains, you're already in the crosshairs. The question isn't whether these will be negotiated — it's what Canada will give up to keep what matters most.
                 </div>
-                <div class="commentary-sig">— J. Soares</div>
-            </div>
-
-            <!-- ENTRY 4 — April 2, 2026 -->
-            <div class="commentary-item">
-                <div class="commentary-meta">
-                    <span class="commentary-date" data-fr="2 avril 2026">April 2, 2026</span>
-                    <span class="commentary-tag" data-fr="Ottawa">Ottawa</span>
-                    <span class="commentary-lang-tag">EN</span>
-                </div>
-                <div class="commentary-headline" data-fr="Carney gouverne avec une marge d'un siège. Voici pourquoi ça compte pour tout le monde.">Carney Governs by One Seat. Here's Why That Matters for Everyone.</div>
-                <div class="commentary-body" data-fr="Après deux traversées de plancher de députés conservateurs, les libéraux de Mark Carney ne sont qu'à un siège de la majorité. Un seul vote peut faire tomber le gouvernement. <strong>Ce que cela signifie en pratique :</strong> chaque député d'opposition détient un pouvoir de négociation démesuré. Les projets de loi seront dilués, retardés ou abandonnés. Si vous comptez sur une politique fédérale — une subvention, un programme, un cadre réglementaire — pour avancer un projet, prévoyez des retards. Les gouvernements minoritaires ne gouvernent pas; ils survivent.">
+<div class="commentary-sig">— J. Soares</div>
+</div>
+<!-- ENTRY 4 — April 2, 2026 -->
+<div class="commentary-item">
+<div class="commentary-meta">
+<span class="commentary-date">April 2, 2026</span>
+<span class="commentary-tag">Ottawa</span>
+<span class="commentary-lang-tag">EN</span>
+</div>
+<div class="commentary-headline">Carney Governs by One Seat. Here's Why That Matters for Everyone.</div>
+<div class="commentary-body">
                     After two Conservative floor crossings, Mark Carney's Liberals sit one seat from majority. A single vote can topple the government. <strong>What this means in practice:</strong> every opposition MP holds outsized bargaining power. Bills will be watered down, delayed, or killed. If you're counting on federal policy — a grant, a program, a regulatory framework — to move a project forward, build in delays. Minority governments don't govern; they survive. Plan accordingly.
                 </div>
-                <div class="commentary-sig">— J. Soares</div>
-            </div>
-
-            <!-- ENTRY 5 — April 1, 2026 (FR) -->
-            <div class="commentary-item">
-                <div class="commentary-meta">
-                    <span class="commentary-date" data-fr="1 avril 2026">April 1, 2026</span>
-                    <span class="commentary-tag" data-fr="Fédéral-Provincial">Federal-Provincial</span>
-                    <span class="commentary-lang-tag">FR</span>
-                </div>
-                <div class="commentary-headline">L'entente Canada-Alberta rate son échéance. Ce n'est pas un détail technique — c'est un signal.</div>
-                <div class="commentary-body">
+<div class="commentary-sig">— J. Soares</div>
+</div>
+<!-- ENTRY 5 — April 1, 2026 (FR) -->
+<div class="commentary-item">
+<div class="commentary-meta">
+<span class="commentary-date">April 1, 2026</span>
+<span class="commentary-tag">Federal-Provincial</span>
+<span class="commentary-lang-tag">FR</span>
+</div>
+<div class="commentary-headline">L'entente Canada-Alberta rate son échéance. Ce n'est pas un détail technique — c'est un signal.</div>
+<div class="commentary-body">
                     Ottawa et l'Alberta devaient finaliser quatre accords au 1er avril. Deux sont conclus en principe : les émissions de méthane et la coopération en matière d'évaluation d'impact. Deux autres sont toujours en suspens. <strong>Quand Carney et Smith admettent tous deux que l'échéance ne sera pas respectée</strong>, ce n'est pas de la transparence — c'est un aveu de faiblesse des deux côtés. Les relations fédérales-provinciales sont le véritable champ de bataille de la politique canadienne en 2026. Ceux qui comprennent cette dynamique prendront de meilleures décisions que ceux qui se concentrent uniquement sur Ottawa.
                 </div>
-                <div class="commentary-sig">— J. Soares</div>
-            </div>
-        </div>
-    </section>
-
+<div class="commentary-sig">— J. Soares</div>
+</div>
+</div>
+</section>
 <!-- STAY INFORMED -->
-    <section class="launch-notice">
-        <div class="launch-notice-inner">
-            <h2 data-fr="Ne manquez rien">Don't Miss a Beat</h2>
-            <p data-fr="Le Corridor est publié quotidiennement. Suivez sur LinkedIn pour recevoir chaque analyse dans votre fil — ou prenez rendez-vous pour une conversation stratégique.">The Corridor publishes daily. Follow on LinkedIn to get every analysis in your feed — or book a call to take the conversation further.</p>
-            <a href="https://linkedin.com/in/soaresjoseph" class="btn-primary" data-fr="Suivre sur LinkedIn">Follow on LinkedIn</a>
-        </div>
-    </section>
-
-    <!-- ABOUT THE EDITOR -->
-    <section class="editor">
-        <div class="editor-inner">
-            <div class="editor-label" data-fr="L'éditeur">The Editor</div>
-            <h2 data-fr="Joseph Soares">Joseph Soares</h2>
-            <p data-fr="J'ai œuvré comme conseiller du Premier ministre du Canada pendant la crise financière de 2008. J'ai été Chef de cabinet au Sénat du Canada pendant la pandémie. Publié dans Forbes et Newsweek sur le leadership et la prise de décision. Je lis les nouvelles politiques comme un opérateur — parce que c'est ce que j'ai toujours été.">I served as an advisor to the Prime Minister of Canada during the 2008 financial crisis. Chief of Staff at the Senate of Canada during the pandemic. Published in Forbes and Newsweek on leadership and decision-making. I read political news as an operator — because that's what I've always been.</p>
-            <div class="editor-creds">
-                <span class="editor-cred" data-fr="Conseiller du Premier ministre">Advisor to the Prime Minister</span>
-                <span class="editor-cred" data-fr="Sénat du Canada">Senate of Canada</span>
-                <span class="editor-cred">Forbes</span>
-                <span class="editor-cred">Newsweek</span>
-                <span class="editor-cred">Administrateur</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-inner">
-            <h2 data-fr="Vous voulez la <em>conversation complète ?</em>">Want the <em>full conversation?</em></h2>
-            <p data-fr="Le Corridor vous donne le renseignement. Le conseil stratégique vous donne l'avantage. Si vous êtes prêt à passer de lecteur à décideur — parlons.">The Corridor gives you the intelligence. Strategic advisory gives you the edge. If you're ready to move from reader to decision-maker — let's talk.</p>
-            <a href="https://calendar.app.google/pEyrPMvGY2TuEndcA" class="btn-primary" data-fr="Prendre rendez-vous — 30 minutes">Book 30 Minutes</a>
-            <a href="index.html" class="btn-secondary" data-fr="En savoir plus sur le conseil stratégique">Learn About Advisory</a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-links">
-            <a href="index.html" data-fr="Accueil">Home</a>
-            <a href="mailto:j@josephsoares.com" data-fr="Courriel">Email</a>
-            <a href="https://linkedin.com/in/soaresjoseph">LinkedIn</a>
-            
-        </div>
-        <div class="footer-firm" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201, 168, 76, 0.2);">
-            <div style="margin-bottom: 0.75rem;"><a href="/terms.html" data-en="Terms of Use" data-fr="Conditions d'utilisation">Terms of Use</a> | <a href="/privacy.html" data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</a> | <a href="/cookies.html" data-en="Cookies Policy" data-fr="Politique de témoins">Cookies Policy</a></div>
-            <div style="margin-bottom: 0.75rem;"><span data-en="© 2026 Capital Corridor Campus. All rights reserved." data-fr="© 2026 Campus du Corridor de la Capitale. Tous droits réservés.">© 2026 Capital Corridor Campus. All rights reserved.</span></div>
-        </div>
-    </footer>
-
-    <script>
-        (function() {
-            let currentLang = 'en';
-            window.setLang = function(lang) {
-                currentLang = lang;
-                document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
-                document.querySelectorAll('.lang-bar button').forEach(btn => {
-                    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
-                });
-                document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-                    const translation = el.getAttribute('data-' + lang);
-                    if (translation) {
-                        el.innerHTML = translation;
-                    }
-                });
-                const titles = {
-                    en: 'The Corridor | Political Intelligence for Decision-Makers',
-                    fr: 'Le Corridor | Veille politique pour dirigeants d\'entreprise'
-                };
-                document.title = titles[lang] || titles.en;
-                const descriptions = {
-                    en: 'The Corridor — Bilingual political news and strategic commentary for decision-makers. By Joseph Soares.',
-                    fr: 'Le Corridor — Veille politique bilingue et commentaire stratégique pour décideurs. Par Joseph Soares.'
-                };
-                const metaDesc = document.querySelector('meta[name="description"]');
-                if (metaDesc) metaDesc.setAttribute('content', descriptions[lang] || descriptions.en);
-                try {
-                    localStorage.setItem('js-lang', lang);
-                } catch(e) {}
-            };
-            document.addEventListener('DOMContentLoaded', function() {
-                document.querySelectorAll('[data-fr]').forEach(el => {
-                    if (!el.hasAttribute('data-en')) {
-                        el.setAttribute('data-en', el.innerHTML);
-                    }
-                });
-                let savedLang = null;
-                try {
-                    savedLang = localStorage.getItem('js-lang');
-                } catch(e) {}
-                if (savedLang && ['en', 'fr'].includes(savedLang)) {
-                    setLang(savedLang);
-                }
-            });
-        })();
-    </script>
-</body>
+<section class="launch-notice">
+<div class="launch-notice-inner">
+<h2>Don't Miss a Beat</h2>
+<p>The Corridor publishes daily. Follow on LinkedIn to get every analysis in your feed — or book a call to take the conversation further.</p>
+<a class="btn-primary" href="https://linkedin.com/in/soaresjoseph">Follow on LinkedIn</a>
+</div>
+</section>
+<!-- ABOUT THE EDITOR -->
+<section class="editor">
+<div class="editor-inner">
+<div class="editor-label">The Editor</div>
+<h2>Joseph Soares</h2>
+<p>I served as an advisor to the Prime Minister of Canada during the 2008 financial crisis. Chief of Staff at the Senate of Canada during the pandemic. Published in Forbes and Newsweek on leadership and decision-making. I read political news as an operator — because that's what I've always been.</p>
+<div class="editor-creds">
+<span class="editor-cred">Advisor to the Prime Minister</span>
+<span class="editor-cred">Senate of Canada</span>
+<span class="editor-cred">Forbes</span>
+<span class="editor-cred">Newsweek</span>
+<span class="editor-cred">Administrateur</span>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta">
+<div class="cta-inner">
+<h2>Want the <em>full conversation?</em></h2>
+<p>The Corridor gives you the intelligence. Strategic advisory gives you the edge. If you're ready to move from reader to decision-maker — let's talk.</p>
+<a class="btn-primary" href="https://calendar.app.google/pEyrPMvGY2TuEndcA">Book 30 Minutes</a>
+<a class="btn-secondary" href="index.html">Learn About Advisory</a>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="mailto:j@josephsoares.com">Email</a>
+<a href="https://linkedin.com/in/soaresjoseph">LinkedIn</a>
+</div>
+<div class="footer-firm" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201, 168, 76, 0.2);">
+<div style="margin-bottom: 0.75rem;"><a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html">Cookies Policy</a></div>
+<div style="margin-bottom: 0.75rem;"><span>© 2026 Capital Corridor Campus. All rights reserved.</span></div>
+</div>
+</footer>
+<script defer="" src="/js/lang-toggle.js"></script></body>
 </html>
