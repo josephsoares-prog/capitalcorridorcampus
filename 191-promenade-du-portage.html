@@ -666,9 +666,11 @@ o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+
 o.onload=function(){window.trackingFunctions.onLoad({appId:"69b933d5574de0002181290e"})},
 document.head.appendChild(o)}initApollo();</script>
 
-    <link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/191-promenade-du-portage.html">
-    <link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/191-promenade-du-portage.html?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/191-promenade-du-portage.html">
+    <!-- hreflang removed 2026-09-09: this page has essentially no real French version
+         (1 stray data-en/fr pair found, not a real translation) — the previous
+         fr-CA/?lang=en block wrongly told search engines a French version existed at
+         this URL. Restore hreflang once a real -fr.html sibling exists, per the
+         unified bilingual SOP. -->
     <meta property="og:locale" content="en_CA">
 </head>
 <body>
