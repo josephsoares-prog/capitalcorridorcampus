@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, nofollow" name="robots"/>
+<title>Merci — Campus du Corridor de la Capitale</title>
+<meta content="Your inquiry has been received. We will contact you within one business day." name="description"/>
+<link href="https://campuscorridor.ca/thank-you-fr.html" rel="canonical"/><link href="https://campuscorridor.ca/thank-you.html" hreflang="en" rel="alternate"/><link href="https://campuscorridor.ca/thank-you-fr.html" hreflang="fr-CA" rel="alternate"/><link href="https://campuscorridor.ca/thank-you.html" hreflang="x-default" rel="alternate"/>
+<!-- Google Analytics GA4 -->
+<!-- Google Consent Mode v2 — MUST run before any Google tag loads.
+         Quebec Law 25 / GDPR: every consent type denied by default.
+         url_passthrough keeps the gclid in the URL so an ad click can still be
+         attributed after a visitor declines cookies; ads_data_redaction strips
+         ad identifiers from tags while ad_storage is denied.
+         Added 2026-08-25 — audit finding 4.2 (gclid was never stored). -->
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
+    </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FNYX4F5BTX"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FNYX4F5BTX');
+
+        // Detect entry mode: Stripe purchase (?tier=...&plan=NNN) vs contact-form lead
+        (function(){
+            var q = new URLSearchParams(window.location.search);
+            var tier = q.get('tier');
+            var plan = parseFloat(q.get('plan')) || 0;
+            var tierLabel = ({
+                'essentials': 'Adresse Corridor',
+                'professional': 'Bureau Corridor',
+                'cabinet':     'Cabinet Corridor'
+            })[tier] || null;
+
+            if (tier && plan > 0) {
+                // Stripe purchase path — fire GA4 purchase event with tier + value
+                // Stable id so a refresh cannot book a second purchase.
+                // Stripe success URL should carry &sid={CHECKOUT_SESSION_ID}.
+                var sid = q.get('sid');
+                var txn = sid ? ('stripe_' + sid)
+                              : ('stripe_' + tier + '_' + new Date().toISOString().slice(0,10));
+                gtag('event', 'purchase', {
+                    transaction_id: txn,
+                    value: plan,
+                    currency: 'CAD',
+                    items: [{
+                        item_id: tier,
+                        item_name: tierLabel,
+                        item_category: 'Office',
+                        price: plan,
+                        quantity: 1
+                    }]
+                });
+                // Also fire Google Ads purchase conversion (when cccFireLeadConversion is upgraded, it can route on path)
+                if (typeof window.cccFirePurchaseConversion === 'function') {
+                    window.cccFirePurchaseConversion(plan, 'CAD', txn);
+                } else if (typeof window.cccFireLeadConversion === 'function') {
+                    window.cccFireLeadConversion();
+                }
+            } else {
+                // Contact form path — fire generate_lead as before
+                gtag('event', 'generate_lead', {
+                    event_category: 'Contact',
+                    event_label: 'form_submission_confirmed',
+                    value: 1,
+                    currency: 'CAD'
+                });
+                if (typeof window.cccFireLeadConversion === 'function') {
+                    window.cccFireLeadConversion();
+                }
+            }
+        })();
+    </script>
+<link href="Logos/favicon/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="Logos/favicon/favicon_32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="Logos/favicon/favicon_16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="Logos/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+        .thankyou-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: var(--dark);
+            text-align: center;
+        }
+        .thankyou-card {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .thankyou-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(199, 163, 98, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+        .thankyou-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .thankyou-card h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .thankyou-card .lead {
+            font-size: 1.15rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .next-steps {
+            text-align: left;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(199, 163, 98, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .next-steps h3 {
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            align-items: flex-start;
+        }
+        .step:last-child { margin-bottom: 0; }
+        .step-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-text {
+            color: var(--cream);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding-top: 4px;
+        }
+        .step-text strong {
+            color: var(--gold);
+        }
+        .thankyou-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .thankyou-actions .btn {
+            min-width: 200px;
+        }
+        .direct-line {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(199, 163, 98, 0.15);
+            color: rgba(245, 241, 235, 0.6);
+            font-size: 0.9rem;
+        }
+        .direct-line a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .direct-line a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<!-- CCC Tracking Stack (unified) -->
+<link href="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.min.css" rel="stylesheet">
+<script defer="" src="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.js"></script>
+<script defer="" src="/js/klaro-config.js"></script>
+<script defer="" src="/js/tracking.js"></script>
+<!-- /CCC Tracking Stack -->
+<!-- Apollo.io website visitor tracking -->
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"69b933d5574de0002181290e"})},
+document.head.appendChild(o)}initApollo();</script>
+</link></head>
+<body>
+<!-- ═══ Header ═══ -->
+<header class="scrolled" id="header">
+<nav>
+<a class="logo" href="/index-fr.html">
+<img alt="Capital Corridor Campus" height="63" id="navLogo" src="Logos/web/CCC_Logo_FR_200px.webp" width="200"/>
+</a>
+<ul class="nav-links">
+<li><a href="/#properties">Propriétés</a></li>
+<li><a href="/#spaces">Espaces</a></li>
+<li><a href="offices-fr.html">Bureaux</a></li>
+<li><a href="/#location">Emplacement</a></li>
+<li><a href="/#lease">Conditions</a></li>
+<li><a href="blog/">Perspectives</a></li>
+<li><a href="/#contact">Contact</a></li>
+</ul>
+<div class="nav-right">
+<div class="lang-toggle">
+
+
+</div>
+<button aria-label="Menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="/#properties">Propriétés</a>
+<a href="/#spaces">Espaces</a>
+<a href="offices-fr.html">Bureaux</a>
+<a href="/#location">Emplacement</a>
+<a href="/#lease">Conditions</a>
+<a href="blog/">Perspectives</a>
+<a href="/#contact">Contact</a>
+</div>
+</header>
+<!-- ═══ Thank You Content ═══ -->
+<section class="thankyou-section">
+<div class="thankyou-card">
+<div class="thankyou-icon">
+<svg viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+</div>
+<h1>Votre demande a été reçue</h1>
+<p class="lead">Merci de votre intérêt pour le Campus du Corridor de la Capitale.</p>
+<div class="next-steps">
+<h3>Prochaines étapes</h3>
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-text"><strong>Sous 1 jour ouvrable</strong> — Notre équipe examinera personnellement votre demande et communiquera avec vous par téléphone ou courriel.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-text"><strong>Information sur mesure</strong> — Vous recevrez des détails adaptés à vos besoins, notamment les plans d'étage, la disponibilité et les conditions de bail.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-text"><strong>Visite privée</strong> — Planifiez une visite en personne du 179 et du 191 Promenade du Portage à votre convenance.</div>
+</div>
+</div>
+<div class="thankyou-actions">
+<a class="btn" href="/index-fr.html">Retour à l'accueil</a>
+<a class="btn btn-outline" href="tel:873-455-3667">Appeler 873-455-3667</a>
+</div>
+<div class="direct-line">
+<p>Vous préférez parler directement? Appelez le <a href="tel:873-455-3667">873-455-3667</a> ou écrivez à <a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a></p>
+</div>
+</div>
+</section>
+<!-- ═══ Footer ═══ -->
+<footer>
+<div class="footer-grid">
+<div class="footer-col">
+<h4>À propos</h4>
+<p>Campus du Corridor de la Capitale est la destination immobilière commerciale de premier plan dans le corridor gouvernemental de Gatineau. Deux propriétés exceptionnelles offrant des espaces de bureaux de prestige, un emplacement stratégique et un accès inégalé aux gouvernements fédéral, provincial et municipal.</p>
+</div>
+<div class="footer-col">
+<h4>Liens rapides</h4>
+<ul>
+<li><a href="/#properties">Propriétés</a></li>
+<li><a href="/#spaces">Espaces disponibles</a></li>
+<li><a href="/#location">Emplacement</a></li>
+<li><a href="/#lease">Conditions</a></li>
+<li><a href="/#contact">Contact</a></li>
+<li><a href="blog/">Perspectives</a></li>
+<li><a href="https://www.youtube.com/@CampusCorridor" target="_blank">Chaîne YouTube</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<p><a href="tel:873-455-3667">873-455-3667</a></p>
+<p><a href="mailto:info@campuscorridor.ca">info@campuscorridor.ca</a></p>
+<p><a href="https://campuscorridor.ca" target="_blank">campuscorridor.ca</a></p>
+<p style="margin-top: 1.2rem; color: var(--cream); font-weight: 600;">Joseph Soares, Administrateur</p>
+<p style="font-size: 0.85rem;">Capital Corridor Campus</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p><span>© 2026 Campus du Corridor de la Capitale. Tous droits réservés.</span> | <a href="/terms.html">Conditions d'utilisation</a> | <a href="/privacy-fr.html">Privacy Policy</a> | <a href="/cookies.html">Politique de témoins</a></p>
+</div>
+</footer>
+<!-- ═══ Scripts ═══ -->
+<script defer="" src="/js/lang-toggle.js"></script></body>
+</html>
