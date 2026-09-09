@@ -278,9 +278,11 @@ o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+
 o.onload=function(){window.trackingFunctions.onLoad({appId:"69b933d5574de0002181290e"})},
 document.head.appendChild(o)}initApollo();</script>
 
-    <link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/terms.html">
-    <link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/terms.html?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/terms.html">
+    <!-- hreflang removed 2026-09-09: this page has no real French version (0 bilingual
+         elements found) — the previous fr-CA/?lang=en block wrongly told search engines
+         a French version existed at this URL. This is also a legal page (terms of use)
+         under a Quebec-facing bilingual SOP — flagged for priority French translation,
+         see claude/bilingual-sop-unified-2026-09.md Phase 2 notes. -->
     <!-- Google Consent Mode v2 — MUST run before any Google tag loads.
          Quebec Law 25 / GDPR: every consent type denied by default.
          url_passthrough keeps the gclid in the URL so an ad click can still be
