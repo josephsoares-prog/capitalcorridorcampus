@@ -987,7 +987,10 @@
       "language": "EN",
       "title": "From ByWard Market to Portage — Why This Consultant Switched",
       "slug": "byward-market-to-portage",
-      "status": "pending"
+      "status": "published",
+      "published_date": "2026-09-13",
+      "published_as": "From ByWard Market to Portage — What Actually Changes",
+      "published_as_note": "Calendar title implied a named client switching providers. Retitled to an analytical comparison to avoid presenting an invented client story as a testimonial. Slug unchanged."
     },
     {
       "day": 99,
@@ -997,7 +1000,8 @@
       "language": "FR",
       "title": "Promenade du Portage — l'artère du corridor gouvernemental",
       "slug": "promenade-portage-artere-principale",
-      "status": "pending"
+      "status": "published",
+      "published_date": "2026-09-13"
     },
     {
       "day": 100,
@@ -1007,7 +1011,8 @@
       "language": "EN",
       "title": "The 12-Month Plan — Professional Presence from Zero",
       "slug": "12-month-plan-professional-presence",
-      "status": "pending"
+      "status": "published",
+      "published_date": "2026-09-13"
     }
   ]
 }
