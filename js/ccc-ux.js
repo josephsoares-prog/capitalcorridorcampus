@@ -214,10 +214,22 @@
     nav.appendChild(a);
   }
 
+  /* Site-wide offer card (js/ccc-promo.js). Loaded here so every page gets it
+     without a per-page script tag. Added 2026-09-16. */
+  function loadPromo() {
+    if (document.getElementById("ccc-promo-js")) return;
+    var s = document.createElement("script");
+    s.id = "ccc-promo-js";
+    s.src = "/js/ccc-promo.js?v=20260916";
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
   function run() {
     css();
     mountLanguageLink();
     wrapWideTables();
+    loadPromo();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
