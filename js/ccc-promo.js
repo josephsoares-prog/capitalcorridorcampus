@@ -29,9 +29,9 @@
     en: {
       tag: "Limited-time offer",
       title: "3 months free rent",
-      body: "Starting or growing a business? New tenants at 179 and 191 Promenade du Portage in Gatineau get their first three months rent-free.",
-      cta: "See available spaces",
-      href: "/?lang=en&ref=promo-3mois#properties",
+      body: "Street-level commercial space at 179 Promenade du Portage, Gatineau: about 1,200 sq ft, turnkey, ideal for a salon, spa, studio or shop. The new tenant pays no rent for the first three months.",
+      cta: "See the space",
+      href: "/179-ground-floor.html?lang=en&ref=promo-3mois",
       close: "Close"
     },
     fr: {
