@@ -39,7 +39,7 @@
     fr: {
       tag: "Offre d’une durée limitée",
       title: "3 mois de loyer gratuit",
-      body: "Vous lancez ou développez une entreprise? Local commercial en vitrine au 179, promenade du Portage, à Gatineau : environ 1 200 pi² clé en main, idéal pour un salon, un spa, un studio ou une boutique. Le nouveau locataire ne paie aucun loyer pendant les trois premiers mois.",
+      body: "Local commercial en vitrine au 179, promenade du Portage, à Gatineau : environ 1 200 pi² clé en main, idéal pour un salon, un spa, un studio ou une boutique. Le nouveau locataire ne paie aucun loyer pendant les trois premiers mois.",
       cta: "Voir le local",
       href: "/179-ground-floor.html?lang=fr&ref=promo-3mois",
       close: "Fermer"
