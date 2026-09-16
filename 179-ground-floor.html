@@ -1162,7 +1162,7 @@ document.head.appendChild(o)}initApollo();</script>
         var fr=window.gfLang==='fr',lbl=btn.innerHTML;btn.disabled=true;btn.textContent=fr?'Envoi en cours...':'Sending...';
         fetch('https://hook.us2.make.com/i1y9xmzsztflopi2r4dr1wdy5t7ha8g8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
         .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);window.location.href='thank-you.html';})
-        .catch(function(){msg.style.display='block';msg.textContent='Error sending message. Please call 873-455-3667.';msg.style.borderLeftColor='#e74c3c';msg.style.color='#e74c3c';})
+        .catch(function(){msg.style.display='block';msg.textContent=fr?'Erreur lors de l’envoi. Veuillez appeler le 873-455-3667.':'Error sending message. Please call 873-455-3667.';msg.style.borderLeftColor='#e74c3c';msg.style.color='#e74c3c';})
         .finally(function(){btn.disabled=false;btn.innerHTML='Send Message';setTimeout(function(){msg.style.display='none';},8000);});});}
       function gfv(id){return document.getElementById(id).value;}
     })();
