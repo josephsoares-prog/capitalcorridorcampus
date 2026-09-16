@@ -211,9 +211,40 @@
     window.gtag('config', GOOGLE_ADS_ID);
   }
 
+  // ------ REF -> GA4 ------
+  // captureRef() above has stored ?ref= since 2026-08-05, but nothing ever read
+  // it except one form handler on index.html, so it reached no report: the value
+  // sat in sessionStorage and died there. 46% of sessions were filed as Direct
+  // with the mechanism meant to resolve them running but not reporting.
+  // Fixed 2026-09-16.
+  //
+  // Two paths, deliberately:
+  //   1. a user property, so every subsequent event in the session carries it
+  //      (needs `campaign_ref` registered in GA4 Admin -> Custom definitions
+  //      -> User-scoped before it shows up as a dimension);
+  //   2. one `campaign_ref` event per session, so the value is visible in the
+  //      Events report immediately, with or without that registration.
+  // Gated on analytics consent, unlike the capture itself - storing a referral
+  // code first-party is not the same act as sending it to Google.
+  function sendRefToGA4(){
+    var ref = (typeof window.cccGetRef === 'function') ? window.cccGetRef() : null;
+    if(!ref || typeof window.gtag !== 'function') return;
+    try{
+      window.gtag('set', 'user_properties', { campaign_ref: ref });
+      if(!sessionStorage.getItem('ccc_ref_sent')){
+        window.gtag('event', 'campaign_ref', {
+          campaign_ref: ref,
+          ref_landing_page: location.pathname
+        });
+        sessionStorage.setItem('ccc_ref_sent', '1');
+      }
+    }catch(e){}
+  }
+
   // Klaro stores per-service consent, not per-purpose. So hasConsent('clarity')
   // checks the literal 'clarity' key in localStorage. Fixed 2026-05-07.
   function loadConsentedTrackers(){
+    if(hasConsent('ga4'))        sendRefToGA4();
     if(hasConsent('clarity'))    loadMicrosoftClarity();
     if(hasConsent('linkedin'))   loadLinkedInInsight();
 
