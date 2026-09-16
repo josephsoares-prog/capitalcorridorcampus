@@ -571,7 +571,9 @@
         }
 
         /* Bilingual Support */
-        [lang="fr"] {
+        /* Scoped to body descendants: the bare [lang="fr"] selector also matched
+           <html lang="fr"> and hid the entire page in French. 2026-09-16 */
+        body:not(.fr) [lang="fr"] {
             display: none;
         }
 
