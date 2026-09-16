@@ -1159,7 +1159,7 @@ document.head.appendChild(o)}initApollo();</script>
       if(f){f.addEventListener('submit',function(e){e.preventDefault();
         var d={name:gfv('gf-name'),email:gfv('gf-email'),phone:gfv('gf-phone'),company:gfv('gf-company'),interest:gfv('gf-interest'),message:gfv('gf-message')};
         var msg=document.getElementById('gfFormMessage'),btn=this.querySelector('button[type="submit"]');
-        btn.disabled=true;btn.innerHTML='Sending...';
+        var fr=window.gfLang==='fr',lbl=btn.innerHTML;btn.disabled=true;btn.textContent=fr?'Envoi en cours...':'Sending...';
         fetch('https://hook.us2.make.com/i1y9xmzsztflopi2r4dr1wdy5t7ha8g8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
         .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);window.location.href='thank-you.html';})
         .catch(function(){msg.style.display='block';msg.textContent='Error sending message. Please call 873-455-3667.';msg.style.borderLeftColor='#e74c3c';msg.style.color='#e74c3c';})
