@@ -61,6 +61,18 @@
     try{
       var s = localStorage.getItem('klaro-consent');
       if(!s) return false;
+      // Klaro writes this value URL-encoded:
+      //   %7B%22ga4%22%3Atrue%2C%22clarity%22%3Atrue...
+      // Parsing it without decoding throws, the catch below swallows the error,
+      // and every consent check returns false - so a visitor who clicks Accept
+      // was still recorded as having refused, and no gated tag ever loaded.
+      // That is what stopped GA4, Clarity, LinkedIn, Meta and Google Ads
+      // conversion tracking dead on 2026-08-28, the day the consent-gated pages
+      // replaced the ungated ones. Decode first; tolerate a plain value too, in
+      // case a future Klaro version stops encoding.
+      if(s.indexOf('%') !== -1){
+        try{ s = decodeURIComponent(s); }catch(e){}
+      }
       var parsed = JSON.parse(s);
       return parsed && parsed[category] === true;
     }catch(e){ return false; }
