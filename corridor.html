@@ -788,7 +788,7 @@ document.head.appendChild(o)}initApollo();</script>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://campuscorridor.ca/corridor.html">
     <meta property="og:image" content="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_1000px.png">
-    <meta property="og:locale" content="en_CA">
+    <meta property="og:locale" content="fr_CA">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Corridor | Political Intelligence for Decision-Makers">
     <meta name="twitter:description" content="The Corridor — Daily political intelligence for decision-makers. Strategic commentary on what's happening in Quebec City, Ottawa, Washington, and capitals.">
@@ -796,10 +796,10 @@ document.head.appendChild(o)}initApollo();</script>
 <body>
 
     <!-- LANG BAR -->
-    <div class="lang-bar">
-        <button class="active" onclick="setLang('en')">EN</button>
+    <div class="lang-bar lang-toggle" role="group" aria-label="Langue / Language">
+        <button class="active" onclick="setLang('fr')" lang="fr">FR</button>
         <span class="lang-sep">·</span>
-        <button onclick="setLang('fr')">FR</button>
+        <button onclick="setLang('en')" lang="en">EN</button>
     </div>
 
     <!-- NAV -->
@@ -995,8 +995,12 @@ document.head.appendChild(o)}initApollo();</script>
 
     <script>
         (function() {
-            let currentLang = 'en';
-            window.setLang = function(lang) {
+            /* French by default (Joseph, 2026-09-16); ?lang=en for English.
+               The class "lang-toggle" on .lang-bar tells ccc-ux.js this page has
+               its own control, so it no longer adds a second FR | EN pair. */
+            let currentLang = 'fr';
+            window.setLang = function(lang, push) {
+                lang = lang === 'en' ? 'en' : 'fr';
                 currentLang = lang;
                 document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
                 document.querySelectorAll('.lang-bar button').forEach(btn => {
@@ -1019,9 +1023,9 @@ document.head.appendChild(o)}initApollo();</script>
                 };
                 const metaDesc = document.querySelector('meta[name="description"]');
                 if (metaDesc) metaDesc.setAttribute('content', descriptions[lang] || descriptions.en);
-                try {
-                    localStorage.setItem('js-lang', lang);
-                } catch(e) {}
+                if (push !== false) {
+                    try { const u = new URL(location.href); if (lang === 'en') u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang'); history.replaceState(null, '', u); } catch(e) {}
+                }
             };
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('[data-fr]').forEach(el => {
@@ -1029,13 +1033,7 @@ document.head.appendChild(o)}initApollo();</script>
                         el.setAttribute('data-en', el.innerHTML);
                     }
                 });
-                let savedLang = null;
-                try {
-                    savedLang = localStorage.getItem('js-lang');
-                } catch(e) {}
-                if (savedLang && ['en', 'fr'].includes(savedLang)) {
-                    setLang(savedLang);
-                }
+                setLang(new URLSearchParams(location.search).get('lang'), false);
             });
         })();
     </script>
