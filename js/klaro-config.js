@@ -2,6 +2,19 @@
    Docs: https://klaro.org */
 window.klaroConfig = {
   version: 1,
+  /* French by default, like the site (2026-09-16); ?lang=en for English.
+     Set explicitly: Klaro otherwise reads <html lang>, which some pages only
+     switch after Klaro has already drawn its notice in English. */
+  lang: (function () {
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      if (q === 'en' || q === 'fr') return q;
+      /* Bilingual pages whose markup is English but which open in French. */
+      if (document.querySelector('script[data-i18n]') || /\/(corridor|privacy)\.html$/.test(location.pathname)) return 'fr';
+      /* Single-language pages (most blog posts) keep their own language. */
+      return (document.documentElement.lang || 'fr').toLowerCase().indexOf('en') === 0 ? 'en' : 'fr';
+    } catch (e) { return 'fr'; }
+  })(),
   elementID: 'klaro',
   styling: { theme: ['light','bottom','wide'] },
   noAutoLoad: false,
