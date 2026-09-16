@@ -4,7 +4,10 @@
    placed BEFORE ccc-ux.js, so the FR | EN control below already exists when
    ccc-ux.js looks for a page's own toggle and it adds nothing of its own.
 
-   English is the default; ?lang=fr selects French. The JSON maps each English
+   French is the default (Joseph, 2026-09-16: the site opens in French);
+   ?lang=en selects English. While French is loading the page is held
+   invisible for at most 1.5 s, so a French reader never sees English flash.
+   In English, internal links carry ?lang=en so the reader stays in English. The JSON maps each English
    text fragment (whitespace-collapsed) to its French. Matching is by exact
    text, so a fragment edited later in English simply stays English until its
    translation is updated — it never shows the wrong sentence.
@@ -17,7 +20,16 @@
   if (!src) return;
 
   var params = new URLSearchParams(location.search);
-  var want = params.get("lang") === "fr" ? "fr" : "en";
+  var want = params.get("lang") === "en" ? "en" : "fr";
+  var HOLD = "ccc-i18n-hold";
+  if (want === "fr") {
+    var hs = document.createElement("style");
+    hs.id = HOLD;
+    hs.textContent = "body{visibility:hidden}";
+    document.head.appendChild(hs);
+    setTimeout(release, 1500);
+  }
+  function release() { var h = document.getElementById(HOLD); if (h) h.parentNode.removeChild(h); }
   var map = null, swaps = null, attrSwaps = null;
   var EN = { title: document.title, desc: "" };
   var md = document.querySelector('meta[name="description"]');
@@ -102,7 +114,24 @@
       if (links[i].getAttribute("data-setlang") === l) links[i].setAttribute("aria-current", "true");
       else links[i].removeAttribute("aria-current");
     }
+    carryLang(l);
     if (push) { try { var u = new URL(location.href); u.searchParams.set("lang", l); history.replaceState(null, "", u); } catch (e) {} }
+  }
+
+  /* Internal page links carry ?lang=en in English, and drop it in French
+     (French being the default). Anchors, mail/tel and other sites untouched. */
+  function carryLang(l) {
+    var as = document.querySelectorAll("a[href]"), i, a, h, u;
+    for (i = 0; i < as.length; i++) {
+      a = as[i];
+      if (box.contains(a)) continue;
+      h = a.getAttribute("href");
+      if (!h || h.charAt(0) === "#" || /^(mailto|tel|javascript):/i.test(h)) continue;
+      try { u = new URL(h, location.href); } catch (e) { continue; }
+      if (u.origin !== location.origin || !/(\/|\.html)$/.test(u.pathname)) continue;
+      if (l === "en") u.searchParams.set("lang", "en"); else u.searchParams.delete("lang");
+      a.setAttribute("href", u.pathname + u.search + u.hash);
+    }
   }
 
   box.addEventListener("click", function (e) {
@@ -110,7 +139,7 @@
     if (!a) return;
     e.preventDefault();
     var l = a.getAttribute("data-setlang");
-    if (l === "fr" && !map) { location.href = "?lang=fr"; return; }
+    if (l === "fr" && !map) { location.href = location.pathname; return; }
     setLang(l, true);
   });
 
@@ -118,5 +147,6 @@
   fetch(src).then(function (r) { return r.json(); }).then(function (j) {
     map = j; map.text = map.text || {};
     if (want === "fr") setLang("fr");
-  }).catch(function () {});
+    release();
+  }).catch(release);
 })();
