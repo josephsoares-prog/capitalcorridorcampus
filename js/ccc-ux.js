@@ -153,6 +153,26 @@
     return true;
   }
 
+  /* A page that declares a real counterpart in the other language gets a real
+     toggle to it, derived from its own hreflang tags - the same mechanism used
+     on josephsoares.com. Returns the counterpart's path, or null. */
+  function declaredTwin(isFr) {
+    var want = isFr ? "en" : "fr";
+    var links = document.querySelectorAll('link[rel="alternate"][hreflang]');
+    var here = location.pathname.replace(/^\/+/, "");
+    for (var i = 0; i < links.length; i++) {
+      var hl = (links[i].getAttribute("hreflang") || "").toLowerCase();
+      if (hl.indexOf(want) !== 0) continue;
+      var href = links[i].getAttribute("href") || "";
+      if (!href) continue;
+      var path;
+      try { path = new URL(href, location.origin).pathname; } catch (e) { continue; }
+      if (path.replace(/^\/+/, "") === here) continue;
+      return path;
+    }
+    return null;
+  }
+
   function mountLanguageLink() {
     if (document.querySelector(".ccc-langlink, .ccc-langpair")) return;
     /* A page that switches its own language keeps its own control. */
@@ -163,6 +183,23 @@
 
     var lang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
     var isFr = lang.indexOf("fr") === 0;
+
+    /* Prefer a declared counterpart over the section link: this page really does
+       exist in the other language, so say so. */
+    var twin = declaredTwin(isFr);
+    if (twin) {
+      css();
+      var tw = document.createElement("a");
+      tw.className = "ccc-langlink";
+      tw.href = twin;
+      tw.setAttribute("lang", isFr ? "en" : "fr");
+      tw.setAttribute("hreflang", isFr ? "en-CA" : "fr-CA");
+      tw.textContent = isFr ? "EN" : "FR";
+      tw.title = isFr ? "Read this article in English" : "Lire cet article en fran\u00e7ais";
+      tw.setAttribute("aria-label", tw.title);
+      nav.appendChild(tw);
+      return;
+    }
 
     css();
     var a = document.createElement("a");
