@@ -1130,24 +1130,31 @@ document.head.appendChild(o)}initApollo();</script>
     }
     </script>
     <script>
-    // ─── Language selection (added 2026-08-25) ───
-    // This page carries a full French translation behind the `body.fr` CSS rule,
-    // but nothing ever added that class, so every French block on the page was
-    // permanently invisible and unreachable. The French-language search terms
-    // this page is advertised against (salon / local commercial) therefore landed
-    // on English copy. ?lang=fr now selects it.
+    // ─── Language selection (rewritten 2026-09-16) ───
+    // Default English; ?lang=fr selects French. The FR | EN control in the nav
+    // switches in place and keeps the URL shareable.
     (function(){
-      try{
-        if(new URLSearchParams(location.search).get('lang') === 'fr'){
-          document.body.classList.add('fr');
-          document.documentElement.lang = 'fr';
-          // The French blocks carry an inline style="display: none;" that beats
-          // any stylesheet rule without !important. Clear it element by element.
-          document.querySelectorAll('[lang="fr"][style]').forEach(function(el){
-            el.style.removeProperty('display');
-          });
-        }
-      }catch(e){}
+      var META={
+        en:{title:"Ground Floor Commercial Space | Campus Corridor",desc:"Street-level commercial space in Gatineau's premier government corridor. 1,200 sq ft, from $20/sq ft triple net."},
+        fr:{title:"Espace commercial au rez-de-chaussée | Campus Corridor",desc:"Espace commercial en vitrine dans le principal corridor gouvernemental de Gatineau. 1 200 pi², dès 20 $/pi² triple net."}
+      };
+      function setLang(l, push){
+        l = (l === 'fr') ? 'fr' : 'en';
+        document.body.classList.toggle('fr', l === 'fr');
+        document.documentElement.lang = (l === 'fr') ? 'fr-CA' : 'en-CA';
+        document.title = META[l].title;
+        var md=document.querySelector('meta[name="description"]'); if(md) md.setAttribute('content', META[l].desc);
+        document.querySelectorAll('[data-setlang]').forEach(function(a){
+          if(a.getAttribute('data-setlang') === l) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');
+        });
+        document.querySelectorAll('option[data-en][data-fr]').forEach(function(o){ o.textContent = o.getAttribute('data-'+l); });
+        window.gfLang = l;
+        if(push){ try{ var u=new URL(location.href); u.searchParams.set('lang', l); history.replaceState(null,'',u); }catch(e){} }
+      }
+      try{ setLang(new URLSearchParams(location.search).get('lang')); }catch(e){ setLang('en'); }
+      document.querySelectorAll('[data-setlang]').forEach(function(a){
+        a.addEventListener('click', function(e){ e.preventDefault(); setLang(a.getAttribute('data-setlang'), true); });
+      });
     })();
     </script>
     <script>
