@@ -220,7 +220,7 @@
     if (document.getElementById("ccc-promo-js")) return;
     var s = document.createElement("script");
     s.id = "ccc-promo-js";
-    s.src = "/js/ccc-promo.js?v=20260916";
+    s.src = "/js/ccc-promo.js?v=20260916b";
     s.defer = true;
     document.head.appendChild(s);
   }
