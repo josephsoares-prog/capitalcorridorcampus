@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-CA">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -624,7 +624,7 @@
     <script defer src="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.js"></script>
     <script defer src="/js/klaro-config.js"></script>
     <script defer src="/js/tracking.js?v=20260916c"></script>
-<script src="/js/ccc-ux.js?v=20260914" defer></script>
+<script src="/js/ccc-ux.js?v=20260916" defer></script>
     <!-- /CCC Tracking Stack -->
   <!-- Apollo.io website visitor tracking -->
   <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
@@ -633,8 +633,8 @@ o.onload=function(){window.trackingFunctions.onLoad({appId:"69b933d5574de0002181
 document.head.appendChild(o)}initApollo();</script>
 
     <link rel="canonical" href="https://campuscorridor.ca/179-ground-floor.html">
-    <link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/179-ground-floor.html">
     <link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/179-ground-floor.html?lang=en">
+    <link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/179-ground-floor.html?lang=fr">
     <link rel="alternate" hreflang="x-default" href="https://campuscorridor.ca/179-ground-floor.html">
     <!-- Google Consent Mode v2 — MUST run before any Google tag loads.
          Quebec Law 25 / GDPR: every consent type denied by default.
@@ -667,11 +667,11 @@ document.head.appendChild(o)}initApollo();</script>
         gtag('config', 'G-FNYX4F5BTX');
     </script>
     <meta property="og:url" content="https://campuscorridor.ca/179-ground-floor.html">
-    <meta property="og:locale" content="fr_CA">
+    <meta property="og:locale" content="en_CA">
     <meta name="twitter:title" content="Ground Floor Commercial Space | Campus Corridor">
     <meta name="twitter:description" content="Street-level commercial space in Gatineau's premier government corridor. 1,200 sq ft, from $20/sq ft triple net.">
 </head>
-<body class="fr">
+<body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -688,8 +688,8 @@ document.head.appendChild(o)}initApollo();</script>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="lang-toggle" role="group" aria-label="Langue / Language">
-                <a href="?lang=fr" hreflang="fr-CA" data-setlang="fr" title="Français" aria-current="true">FR</a>
-                <a href="?lang=en" hreflang="en-CA" data-setlang="en" title="English">EN</a>
+                <a href="?lang=fr" hreflang="fr-CA" data-setlang="fr" title="Français">FR</a>
+                <a href="?lang=en" hreflang="en-CA" data-setlang="en" title="English" aria-current="true">EN</a>
             </div>
             <button class="hamburger" id="gfHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
@@ -1131,7 +1131,7 @@ document.head.appendChild(o)}initApollo();</script>
     </script>
     <script>
     // ─── Language selection (rewritten 2026-09-16) ───
-    // Default French (Joseph, 2026-09-16); ?lang=en selects English. The FR | EN control in the nav
+    // Default English; ?lang=fr selects French. The FR | EN control in the nav
     // switches in place and keeps the URL shareable.
     (function(){
       var META={
@@ -1139,7 +1139,7 @@ document.head.appendChild(o)}initApollo();</script>
         fr:{title:"Espace commercial au rez-de-chaussée | Campus Corridor",desc:"Espace commercial en vitrine dans le principal corridor gouvernemental de Gatineau. 1 200 pi², dès 20 $/pi² triple net."}
       };
       function setLang(l, push){
-        l = (l === 'en') ? 'en' : 'fr';
+        l = (l === 'fr') ? 'fr' : 'en';
         document.body.classList.toggle('fr', l === 'fr');
         document.documentElement.lang = (l === 'fr') ? 'fr-CA' : 'en-CA';
         document.title = META[l].title;
@@ -1149,17 +1149,9 @@ document.head.appendChild(o)}initApollo();</script>
         });
         document.querySelectorAll('option[data-en][data-fr]').forEach(function(o){ o.textContent = o.getAttribute('data-'+l); });
         window.gfLang = l;
-        document.querySelectorAll('a[href]').forEach(function(a){
-          var h=a.getAttribute('href'), u;
-          if(!h || a.hasAttribute('data-setlang') || h.charAt(0)==='#' || /^(mailto|tel|javascript):/i.test(h)) return;
-          try{ u=new URL(h, location.href); }catch(e){ return; }
-          if(u.origin!==location.origin || !/(\/|\.html)$/.test(u.pathname)) return;
-          if(l==='en') u.searchParams.set('lang','en'); else u.searchParams.delete('lang');
-          a.setAttribute('href', u.pathname+u.search+u.hash);
-        });
         if(push){ try{ var u=new URL(location.href); u.searchParams.set('lang', l); history.replaceState(null,'',u); }catch(e){} }
       }
-      try{ setLang(new URLSearchParams(location.search).get('lang')); }catch(e){ setLang('fr'); }
+      try{ setLang(new URLSearchParams(location.search).get('lang')); }catch(e){ setLang('en'); }
       document.querySelectorAll('[data-setlang]').forEach(function(a){
         a.addEventListener('click', function(e){ e.preventDefault(); setLang(a.getAttribute('data-setlang'), true); });
       });
@@ -1176,7 +1168,7 @@ document.head.appendChild(o)}initApollo();</script>
         var msg=document.getElementById('gfFormMessage'),btn=this.querySelector('button[type="submit"]');
         var fr=window.gfLang==='fr',lbl=btn.innerHTML;btn.disabled=true;btn.textContent=fr?'Envoi en cours...':'Sending...';
         fetch('https://hook.us2.make.com/i1y9xmzsztflopi2r4dr1wdy5t7ha8g8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
-        .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);window.location.href='thank-you.html'+(window.gfLang==='en'?'?lang=en':'');})
+        .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);window.location.href='thank-you.html';})
         .catch(function(){msg.style.display='block';msg.textContent=fr?'Erreur lors de l’envoi. Veuillez appeler le 873-455-3667.':'Error sending message. Please call 873-455-3667.';msg.style.borderLeftColor='#e74c3c';msg.style.color='#e74c3c';})
         .finally(function(){btn.disabled=false;btn.innerHTML=lbl;setTimeout(function(){msg.style.display='none';},8000);});});}
       function gfv(id){return document.getElementById(id).value;}

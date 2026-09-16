@@ -216,7 +216,7 @@
     <script defer src="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.js"></script>
     <script defer src="/js/klaro-config.js"></script>
     <script defer src="/js/tracking.js?v=20260916c"></script>
-<script src="/js/ccc-ux.js?v=20260914" defer></script>
+<script src="/js/ccc-ux.js?v=20260916" defer></script>
     <!-- /CCC Tracking Stack -->
   <!-- Apollo.io website visitor tracking -->
   <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
@@ -245,8 +245,8 @@ document.head.appendChild(o)}initApollo();</script>
 
             <div class="nav-right">
                 <div class="lang-toggle">
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
                 </div>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
@@ -338,18 +338,19 @@ document.head.appendChild(o)}initApollo();</script>
             </div>
         </div>
         <div class="footer-bottom">
-            <p><span data-en="&copy; 2026 Capital Corridor Campus. All rights reserved." data-fr="&copy; 2026 Campus du Corridor de la Capitale. Tous droits réservés.">&copy; 2026 Capital Corridor Campus. All rights reserved.</span> | <a href="/terms.html" data-en="Terms of Use" data-fr="Conditions d'utilisation">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html" data-en="Cookies Policy" data-fr="Politique relative aux témoins">Cookies Policy</a></p>
+            <p><span data-en="&copy; 2026 Capital Corridor Campus. All rights reserved." data-fr="&copy; 2026 Campus du Corridor de la Capitale. Tous droits réservés.">&copy; 2026 Capital Corridor Campus. All rights reserved.</span> | <a href="/terms.html" data-en="Terms of Use" data-fr="Conditions d'utilisation">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/cookies.html" data-en="Cookies Policy" data-fr="Politique de témoins">Cookies Policy</a></p>
         </div>
     </footer>
 
     <!-- ═══ Scripts ═══ -->
     <script>
-        // ─── Language Toggle — French by default (2026-09-16); ?lang=en for English ───
+        // ─── Language Toggle ───
         let currentLang = 'en';
 
+        // Check if lang param passed from form redirect
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
-        if (langParam !== 'en') {
+        if (langParam === 'fr') {
             currentLang = 'fr';
             document.documentElement.lang = 'fr';
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
