@@ -3,6 +3,8 @@
    Offer (Joseph, 2026-09-16): three months' free rent for the new tenant of the
    179 ground-floor street-level space (former salon) ONLY - not the rest of the
    building. Shown on every page, pointing to /179-ground-floor.html.
+   Terms (Joseph, 2026-09-16): lease signed by December 31, 2026; minimum
+   lease term five years. The card switches itself off after that date.
    Loaded by ccc-ux.js, so it reaches every page without editing each one.
 
    Behaviour
@@ -11,14 +13,15 @@
    - Waits until the cookie-consent notice is gone, so the two never overlap.
    - Appears after a short delay; closing it hides it for 7 days (per browser).
    - Not shown on thank-you or 404 pages.
-   To end the offer: set ACTIVE to false. */
+   To end the offer early: set ACTIVE to false. It ends by itself at END. */
 (function () {
   "use strict";
   var ACTIVE = true;
+  var END = Date.UTC(2027, 0, 1, 5, 0, 0); /* 2026-12-31 24:00 in Gatineau (EST, UTC-5) */
   var DELAY_MS = 4000;
   var SNOOZE_DAYS = 7;
   var KEY = "ccc-promo-3mois-closed";
-  if (!ACTIVE || window.__cccPromo) return;
+  if (!ACTIVE || Date.now() >= END || window.__cccPromo) return;
   window.__cccPromo = true;
   if (/(thank-you|404)\.html$/.test(location.pathname)) return;
 
@@ -29,17 +32,17 @@
 
   var T = {
     en: {
-      tag: "Limited-time offer",
+      tag: "Offer ends December 31, 2026",
       title: "3 months free rent",
-      body: "Street-level commercial space at 179 Promenade du Portage, Gatineau: about 1,200 sq ft, turnkey, ideal for a salon, spa, studio or shop. The new tenant pays no rent for the first three months.",
+      body: "Street-level commercial space at 179 Promenade du Portage, Gatineau: about 1,200 sq ft, turnkey, ideal for a salon, spa, studio or shop. The new tenant pays no rent for the first three months. Lease signed by December 31, 2026; minimum term five years.",
       cta: "See the space",
       href: "/179-ground-floor.html?lang=en&ref=promo-3mois",
       close: "Close"
     },
     fr: {
-      tag: "Offre d’une durée limitée",
+      tag: "Offre valide jusqu’au 31 décembre 2026",
       title: "3 mois de loyer gratuit",
-      body: "Local commercial en vitrine au 179, promenade du Portage, à Gatineau : environ 1 200 pi² clé en main, idéal pour un salon, un spa, un studio ou une boutique. Le nouveau locataire ne paie aucun loyer pendant les trois premiers mois.",
+      body: "Local commercial en vitrine au 179, promenade du Portage, à Gatineau : environ 1 200 pi² clé en main, idéal pour un salon, un spa, un studio ou une boutique. Le nouveau locataire ne paie aucun loyer pendant les trois premiers mois. Bail signé au plus tard le 31 décembre 2026, d’une durée minimale de cinq ans.",
       cta: "Voir le local",
       href: "/179-ground-floor.html?lang=fr&ref=promo-3mois",
       close: "Fermer"
