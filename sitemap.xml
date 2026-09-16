@@ -664,9 +664,19 @@
   </url>
   <url>
     <loc>https://campuscorridor.ca/blog/stationner-centre-ville-gatineau.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/blog/stationner-centre-ville-gatineau-en.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/blog/stationner-centre-ville-gatineau.html"/>
+  </url>
+  <url>
+    <loc>https://campuscorridor.ca/blog/stationner-centre-ville-gatineau-en.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://campuscorridor.ca/blog/stationner-centre-ville-gatineau-en.html"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://campuscorridor.ca/blog/stationner-centre-ville-gatineau.html"/>
   </url>
   <url>
     <loc>https://campuscorridor.ca/blog/systeme-mecanique-179.html</loc>
