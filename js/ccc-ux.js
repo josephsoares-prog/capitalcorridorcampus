@@ -220,15 +220,59 @@
     if (document.getElementById("ccc-promo-js")) return;
     var s = document.createElement("script");
     s.id = "ccc-promo-js";
-    s.src = "/js/ccc-promo.js?v=20260916b";
+    s.src = "/js/ccc-promo.js?v=20260916";
     s.defer = true;
     document.head.appendChild(s);
+  }
+
+  /* Corridor Intelligence author's note, added 2026-09-16.
+     Foot of blog posts only — never the property, pricing or contact pages,
+     which are there to sell space and should not carry anything else.
+     In the flow, not floating, so it cannot collide with the offer card. */
+  function authorNote() {
+    if (!/^\/blog\/[^/]+\.html$/.test(location.pathname)) return;
+    if (/\/blog\/index(-fr)?\.html$/.test(location.pathname)) return;
+    if (document.querySelector(".ccc-authornote")) return;
+
+    var isFr = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
+    var href = "https://josephsoares.com/" + (isFr ? "accueil.html" : "index.html") +
+      "?utm_source=campuscorridor&utm_medium=banner&utm_campaign=corridor-intelligence&ref=ban-ccc";
+
+    var s = document.createElement("style");
+    s.textContent =
+      ".ccc-authornote{background:#F5F3EE;border-top:1px solid #E7E3DA;padding:22px 24px;margin-top:44px;" +
+        "display:flex;gap:18px;align-items:flex-start}" +
+      ".ccc-authornote .ccc-an-rule{width:3px;align-self:stretch;background:#C6A25A;flex:none;border-radius:2px}" +
+      ".ccc-authornote .ccc-an-name{font-family:'Playfair Display',Georgia,serif;font-size:15px;color:#0C3F6B;" +
+        "font-weight:600;margin:0 0 5px}" +
+      ".ccc-authornote p{font-family:'Inter',system-ui,sans-serif;font-size:13.5px;color:#4A5568;margin:0;" +
+        "line-height:1.55;max-width:64ch}" +
+      ".ccc-authornote a{color:#0C3F6B;font-weight:500;text-decoration:none;border-bottom:1px solid #C6A25A}" +
+      "@media(max-width:600px){.ccc-authornote{padding:18px 16px;gap:13px}}";
+    document.head.appendChild(s);
+
+    var box = document.createElement("aside");
+    box.className = "ccc-authornote";
+    box.innerHTML = '<div class="ccc-an-rule"></div><div>' +
+      '<p class="ccc-an-name">Joseph Soares</p>' +
+      (isFr
+        ? '<p>R\u00e9dige le journal du Capital Corridor Campus. Il publie aussi <a href="' + href +
+          '">Corridor Intelligence</a> \u2014 une analyse strat\u00e9gique sur la g\u00e9opolitique, les capitaux et les ressources, ' +
+          '\u00e0 l\u2019intention des dirigeants d\u2019entreprise.</p>'
+        : '<p>Writes the Capital Corridor Campus journal. He also publishes <a href="' + href +
+          '">Corridor Intelligence</a> \u2014 strategic analysis of geopolitics, capital and resources ' +
+          'for business leaders.</p>') +
+      '</div>';
+
+    var art = document.querySelector("article") || document.querySelector("main");
+    if (art) art.appendChild(box);
   }
 
   function run() {
     css();
     mountLanguageLink();
     wrapWideTables();
+    authorNote();
     loadPromo();
   }
 
