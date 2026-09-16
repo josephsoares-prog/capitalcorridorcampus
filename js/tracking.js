@@ -244,7 +244,6 @@
   // Klaro stores per-service consent, not per-purpose. So hasConsent('clarity')
   // checks the literal 'clarity' key in localStorage. Fixed 2026-05-07.
   function loadConsentedTrackers(){
-    if(hasConsent('ga4'))        sendRefToGA4();
     if(hasConsent('clarity'))    loadMicrosoftClarity();
     if(hasConsent('linkedin'))   loadLinkedInInsight();
 
@@ -257,6 +256,15 @@
     // by the consent state, not by whether the script is present.
     loadGoogleAds();
     pushConsentUpdate();
+
+    // AFTER pushConsentUpdate(), never before. The <head> snippet sets every
+    // consent type to 'denied', so an event fired earlier in this function
+    // goes out with analytics_storage denied — a cookieless ping that never
+    // becomes a session, even for a visitor who has already accepted. The
+    // first cut of this, merged earlier today, called sendRefToGA4() at the
+    // top of the function, so every campaign_ref event would have been
+    // discarded. Caught by tracing a real accept click, not by reading it.
+    if(hasConsent('ga4')) sendRefToGA4();
     fireThankYouConversion();
 
     // Meta Pixel isn't in klaro-config services list yet — gate on 'linkedin'
