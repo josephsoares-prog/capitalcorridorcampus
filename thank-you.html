@@ -245,8 +245,8 @@ document.head.appendChild(o)}initApollo();</script>
 
             <div class="nav-right">
                 <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn active" data-lang="fr">FR</button>
                 </div>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
@@ -347,10 +347,9 @@ document.head.appendChild(o)}initApollo();</script>
         // ─── Language Toggle ───
         let currentLang = 'en';
 
-        // Check if lang param passed from form redirect
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
-        if (langParam === 'fr') {
+        if (langParam !== 'en') {
             currentLang = 'fr';
             document.documentElement.lang = 'fr';
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
