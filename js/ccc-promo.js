@@ -1,6 +1,8 @@
 /* ccc-promo.js — site-wide offer card, added 2026-09-16.
 
-   Offer (Joseph, 2026-09-16): three months' free rent for any new tenant.
+   Offer (Joseph, 2026-09-16): three months' free rent for the new tenant of the
+   179 ground-floor street-level space (former salon) ONLY - not the rest of the
+   building. Shown on every page, pointing to /179-ground-floor.html.
    Loaded by ccc-ux.js, so it reaches every page without editing each one.
 
    Behaviour
