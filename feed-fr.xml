@@ -9,7 +9,7 @@
     <copyright>© 2026 Capital Corridor Campus</copyright>
     <managingEditor>info@campuscorridor.ca (Capital Corridor Campus)</managingEditor>
     <webMaster>info@campuscorridor.ca (Capital Corridor Campus)</webMaster>
-    <lastBuildDate>Wed, 16 Sep 2026 14:31:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:30:22 +0000</lastBuildDate>
     <generator>Static feed, regenerated on publish</generator>
     <item>
       <title>Promenade du Portage — l'artère du corridor gouvernemental</title>
@@ -348,14 +348,6 @@
       <enclosure url="https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png" type="image/png" length="0"/>
     </item>
     <item>
-      <title>La certification LEED Or et la qualité de l'air</title>
-      <link>https://campuscorridor.ca/blog/leed-gold-air-quality-productivity.html</link>
-      <guid isPermaLink="true">https://campuscorridor.ca/blog/leed-gold-air-quality-productivity.html</guid>
-      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Comment les normes LEED Or affectent la qualité de l'air intérieur et la productivité. Recherche appliquée au 179 Promenade du Portage.</description>
-      <enclosure url="https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png" type="image/png" length="0"/>
-    </item>
-    <item>
       <title>La certification LEED Or au 179, promenade du Portage</title>
       <link>https://campuscorridor.ca/blog/leed-or-chez-henri.html</link>
       <guid isPermaLink="true">https://campuscorridor.ca/blog/leed-or-chez-henri.html</guid>
@@ -410,6 +402,14 @@
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <description>Découvrez comment l'espace de bureau partagé au Québec offre des avantages fiscaux significatifs pour les PME, les entrepreneurs et les travailleurs autonomes.</description>
       <enclosure url="https://campuscorridor.ca/Logos/web/CCC_Logo_FR_1000px.png" type="image/png" length="0"/>
+    </item>
+    <item>
+      <title>Perspectives économiques Ottawa-Gatineau 2026</title>
+      <link>https://campuscorridor.ca/blog/perspectives-economiques-ottawa-gatineau-2026.html</link>
+      <guid isPermaLink="true">https://campuscorridor.ca/blog/perspectives-economiques-ottawa-gatineau-2026.html</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Analyse des tendances immobilières commerciales dans la région de la capitale nationale pour 2026.</description>
+      <enclosure url="https://campuscorridor.ca/Logos/web/CCC_Logo_EN_1000px.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
